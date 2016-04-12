@@ -2,10 +2,19 @@ import React from 'react';
 import AppStore from '../../stores/app-store';
 import AppShipmentItem from './app-shipment-item';
 import StoreWatchMixin from '../../mixin/storeWatchMixin';
-import CartButton from '../cart/app-cart-button';
 
-const shipmentItems = () => {
-  return { items: AppStore.getShipments()}
+const shipmentItems = (props) => {
+
+  var items = AppStore.getShipments()
+    .filter(item => {
+      if (props.states) {
+        return props.states.some( state => state === item.state)
+      } else {
+        return true;
+      }
+    })
+
+  return { items: items}
 }
 
 const Shipments = (props) => {
@@ -18,12 +27,6 @@ const Shipments = (props) => {
 
   return (
       <div>
-
-        <div className="app-titled-toolbar">
-          <h2>Shipments</h2>
-          <CartButton txt="+"/>
-        </div>
-
         <table className="mui-table">
           <thead>
             <tr>

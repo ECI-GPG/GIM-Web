@@ -1,18 +1,17 @@
 import React from 'react';
-import Shipments from './shipments/app-shipments';
-import Catalog from './catalog/app-catalog';
-import Cart from './cart/app-cart';
 import Template from './app-template';
 import {Router, Route, IndexRoute} from 'react-router';
-import CatalogDetail from './product/app-catalog-detail.js';
+
+// Pages
+import Monitor from './shipments/app-shipment-monitor';
+import Preparations from './shipments/app-shipment-preparations';
 
 export default () => {
   return (
     <Router>
       <Route path="/" component={Template}>
-        <IndexRoute component={Shipments}></IndexRoute>
-        <Route path="cart" component={Cart}></Route>
-        <Route path="item/:item" component={CatalogDetail}></Route>
+        <IndexRoute component={Monitor}></IndexRoute>
+        <Route path="preparations" component={Preparations}></Route>
       </Route>
     </Router>
   )

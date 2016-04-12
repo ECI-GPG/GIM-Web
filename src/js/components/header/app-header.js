@@ -1,10 +1,30 @@
 import React from 'react'
-import CartSummary from './app-cartsummary';
+import AppActions from '../../actions/app-actions';
 
-export default () => {
-  return (
-    <div className="app-header">
-      <div><h1><i className="fa fa-bars fa-fw"></i>&nbsp;SampleBook</h1><h4>Shipment</h4></div>
-    </div>
-  );
+class Header extends React.Component {
+
+  toggleMenu() {
+    alert(this.refs.leftMenu);
+  }
+
+  render() {
+    return (
+      <div className="app-header">
+
+        <div className="menu-button">
+          <button className="mui-btn" onClick={this.toggleMenu}>
+            <i className="fa fa-bars fa-fw"></i>
+          </button>
+        </div>
+
+        <div className="title">
+          <h1>SampleBook</h1>
+          <h4>Shipment</h4>
+        </div>
+
+      </div>
+    );
+  }
 }
+
+export default Header;

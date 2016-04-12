@@ -5,11 +5,12 @@ import Menu from './menu/app-menu';
 export default (props) => {
   return (
     <div className="app-layout">
-      <Menu></Menu>
+      <Menu ref="leftMenu"></Menu>
       <div className="app-container">
         <Header></Header>
-        <div style={{paddingLeft:15, paddingRight:15}}>{props.children}</div>
+        <div className="app-content">{props.children}</div>
       </div>
+      <div className="app-menu-right"></div>
     </div>
-  )
+  );
 }
