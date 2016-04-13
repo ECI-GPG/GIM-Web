@@ -1,28 +1,27 @@
 import React from 'react'
 import AppActions from '../../actions/app-actions';
+import styles from './app-header.css';
+import Title from '../title/app-title';
 
 class Header extends React.Component {
 
   toggleMenu() {
-    alert(this.refs.leftMenu);
+    alert('TODO: toggle menu');
   }
 
   render() {
     return (
-      <div className="app-header">
+      <header>
 
-        <div className="menu-button">
-          <button className="mui-btn" onClick={this.toggleMenu}>
+        <div id="drawerButton">
+          <button className="mui-btn mui-btn--flat" onClick={this.toggleMenu}>
             <i className="fa fa-bars fa-fw"></i>
           </button>
         </div>
 
-        <div className="title">
-          <h1>SampleBook</h1>
-          <h4>Shipment</h4>
-        </div>
+        <Title />
 
-      </div>
+      </header>
     );
   }
 }

@@ -1,0 +1,50 @@
+#layout {
+  display: flex;
+  color: #FFF;
+  background-color: rgb(33,150,243);
+}
+
+#layout > aside {
+  height: 100vh;
+  min-width: 250px;
+}
+
+#layout > #container {
+  flex: 1;
+  flex-direction:column;
+  display: flex;
+  height: 100vh;
+}
+
+#container > header {
+  display: flex;
+  min-height: 115px;
+}
+
+#container > main {
+  flex: 1;
+  color: rgba(0,0,0,0.8);
+  background-color: #FFF;
+}
+
+#layout > #menu-right {
+  width:100px;
+}
+
+#layout > #drawerButton:target {
+  position: relative;
+}
+
+
+@media all and (max-width:960px) {
+
+  aside {
+    position: absolute;
+    left: -300px;
+  }
+
+  #menu-right {
+    position: absolute;
+    right: -150px;
+  }
+}

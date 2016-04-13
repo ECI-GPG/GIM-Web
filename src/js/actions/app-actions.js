@@ -3,7 +3,7 @@ import { dispatch, register} from '../dispatchers/app-dispatcher';
 
 export default {
 
-  addItem( item ) {
+  addItem( item ) { 
     dispatch({
       actionType: AppConstants.ADD_ITEM, item
     })

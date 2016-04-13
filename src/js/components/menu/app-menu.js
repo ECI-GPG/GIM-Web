@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
+import style from './app-menu.css';
+import Title from '../title/app-title';
 
 class Menu extends React.Component {
 
@@ -13,24 +15,21 @@ class Menu extends React.Component {
 
     var items = options.map(item => {
       return (
-          <Link to={item.to} className="mui--text-light">
-            <div className="app-menu-item">
-              <i className={item.icon}></i>
-              <strong>{item.txt}</strong>
-            </div>
-          </Link>
+        <Link to={item.to} className="mui--text-light">
+          <div className="menu-item">
+            <i className={item.icon}></i>
+            <strong>{item.txt}</strong>
+          </div>
+        </Link>
       )
     });
 
     return (
-      <div className="app-menu">
-        <div>
-          <h1>SampleBook</h1>
-          <h4>Shipment</h4>
-        </div>
+      <aside>
+        <Title />
         <div className="mui-divider"></div>
-        {items}
-      </div>
+        <nav>{items}</nav>
+      </aside>
     )
   }
 }

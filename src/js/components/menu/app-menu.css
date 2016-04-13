@@ -1,0 +1,25 @@
+aside {
+  padding: 15px;
+  color: #FFF;
+  background-color: rgb(33,150,243);
+}
+
+nav {
+
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  height: 50px;
+}
+
+.menu-item > i {
+  width:72px;
+  padding: 16px;
+}
+
+.menu-item:hover {
+  background-color: #82B1FF;
+}
