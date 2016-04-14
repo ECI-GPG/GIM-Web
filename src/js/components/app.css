@@ -1,0 +1,23 @@
+body {
+  color: #FFF;
+  background-color: rgb(33,150,243);
+}
+
+a {
+  text-decoration:none;
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration:none;
+}
+
+.icon {
+    width:72px;
+    padding: 16px;
+    background-color: rgba(0,0,0,0);
+    color: #FFF;
+}

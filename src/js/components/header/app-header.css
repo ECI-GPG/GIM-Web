@@ -2,18 +2,38 @@ header {
   padding: 15px;
   min-height: 100px;
   display: flex;
-}
-
-header > #drawerButton {
-  display: none;
+  align-items: center;
+  justify-content: center;
 }
 
 header > .title {
   display: none;
 }
 
+header > .searchbox {
+  flex:1;
+}
+
+header > #searchButton {
+  display:none;
+}
+
 @media all and (max-width:960px) {
+
+  header {
+    justify-content: flex-start;
+  }
+
   header > .title {
-    display: block;
+    display: flex;
+    flex:1;
+  }
+
+  header > .searchbox {
+    display: none;
+  }
+
+  header > #searchButton {
+    display:flex;
   }
 }

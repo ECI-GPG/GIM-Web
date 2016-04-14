@@ -1,4 +1,21 @@
 .title {
+  display: flex;
   height: 100px;
-  align-items:center;
+}
+
+.title #drawerButton {
+  width:72px;
+  padding: 16px;
+  background-color: rgba(0,0,0,0);
+  color: #FFF;
+}
+
+.title h1 {
+  margin: 5px;
+  text-shadow: 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.title h4 {
+  margin: 5px;
+  text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.15);
 }

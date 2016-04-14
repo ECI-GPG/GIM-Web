@@ -2,6 +2,7 @@ import React from 'react';
 import Shipments from './app-shipments';
 import Constants from '../../constants/app-constants';
 import Button from '../cart/app-cart-button';
+import {Link} from 'react-router';
 
 class Preparations extends React.Component {
 
@@ -14,9 +15,9 @@ class Preparations extends React.Component {
 
     return (
       <div>
-        <div className="app-titled-toolbar">
+        <div>
           <h2>Preparations</h2>
-          <Button txt="+"/>
+          <Link to="/preparations/new" ><Button txt="+"/></Link>
         </div>
         <Shipments states={states}/>
       </div>

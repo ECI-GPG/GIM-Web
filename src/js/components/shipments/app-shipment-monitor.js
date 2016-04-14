@@ -13,7 +13,7 @@ class Monitor extends React.Component {
 
     return (
       <div>
-        <div className="app-titled-toolbar">
+        <div>
           <h2>Monitor</h2>
         </div>
         <Shipments states={states}/>

@@ -27,7 +27,7 @@ export default (props) => {
       <td>{props.item.id}</td>
       <td>{props.item.state}</td>
       <td>{stateDate.toLocaleDateString()}</td>
-      <td><Link to="/">ver...</Link></td>
+      <td><Link to="/preparations/new">ver...</Link></td>
     </tr>
   );
 }

@@ -1,7 +1,5 @@
 aside {
   padding: 15px;
-  color: #FFF;
-  background-color: rgb(33,150,243);
 }
 
 nav {
@@ -21,5 +19,5 @@ nav {
 }
 
 .menu-item:hover {
-  background-color: #82B1FF;
+  background-color: rgba(100, 100, 100, 0.5);
 }

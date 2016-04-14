@@ -1,7 +1,5 @@
 #layout {
   display: flex;
-  color: #FFF;
-  background-color: rgb(33,150,243);
 }
 
 #layout > aside {
@@ -25,16 +23,13 @@
   flex: 1;
   color: rgba(0,0,0,0.8);
   background-color: #FFF;
+  padding: 15px;
+  overflow-y: auto;
 }
 
 #layout > #menu-right {
   width:100px;
 }
-
-#layout > #drawerButton:target {
-  position: relative;
-}
-
 
 @media all and (max-width:960px) {
 
