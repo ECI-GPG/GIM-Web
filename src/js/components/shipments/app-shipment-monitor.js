@@ -1,6 +1,8 @@
 import React from 'react';
 import Constants from '../../constants/app-constants';
+import Header from '../header/app-header';
 import Shipments from './app-shipments';
+import styles from './app-shipments.css';
 
 class Monitor extends React.Component {
 
@@ -12,11 +14,20 @@ class Monitor extends React.Component {
     ];
 
     return (
-      <div>
-        <div>
-          <h2>Monitor</h2>
-        </div>
-        <Shipments states={states}/>
+      <div className="page">
+
+        <Header title="Monitor"/>
+
+        <main>
+          <div>
+            <div>
+              <h2>Monitor</h2>
+              <h5 className="mui--text-dark-secondary">Trace sent shipments state...</h5>
+            </div>
+          </div>
+          <Shipments states={states}/>
+        </main>
+
       </div>
     )
   }

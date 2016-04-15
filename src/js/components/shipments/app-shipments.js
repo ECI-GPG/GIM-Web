@@ -2,6 +2,7 @@ import React from 'react';
 import AppStore from '../../stores/app-store';
 import AppShipmentItem from './app-shipment-item';
 import StoreWatchMixin from '../../mixin/storeWatchMixin';
+import styles from './app-shipments.css';
 
 const shipmentItems = (props) => {
 
@@ -27,12 +28,12 @@ const Shipments = (props) => {
 
   return (
       <div>
-        <table className="mui-table">
+        <table className="mui-table mui-table--bordered">
           <thead>
             <tr>
               <th>Id</th>
-              <th>state</th>
-              <th>date</th>
+              <th>state<i className="material-icons">arrow_downward</i></th>
+              <th>date<i className="material-icons">arrow_downward</i></th>
               <th></th>
             </tr>
           </thead>

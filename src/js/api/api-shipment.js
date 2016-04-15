@@ -6,7 +6,7 @@ const ShipmentAPI = {
 
   init() {
     console.log('loading shipments');
-    for (let i = 1; i < 8; i++) {
+    for (let i = 1; i < 30; i++) {
       this.shipments.push({
         'id': 'Shipment' + i,
         'state': AppConstants.SHIPMENT_STATE[Object.keys(AppConstants.SHIPMENT_STATE)[(i%4)]],

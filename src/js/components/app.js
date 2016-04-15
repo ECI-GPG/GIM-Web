@@ -5,7 +5,7 @@ import styles from './app.css';
 
 // Pages
 import Monitor from './shipments/app-shipment-monitor';
-import Preparations from './shipments/app-shipment-preparations';
+import Outbox from './shipments/app-shipment-outbox';
 import Preparation from './shipments/app-shipment-preparation';
 
 export default () => {
@@ -13,8 +13,8 @@ export default () => {
     <Router>
       <Route path="/" component={Layout}>
         <IndexRoute component={Monitor}></IndexRoute>
-        <Route path="preparations" component={Preparations}></Route>
-        <Route path="preparations/new" component={Preparation}></Route>
+        <Route path="outbox" component={Outbox}></Route>
+        <Route path="outbox/new" component={Preparation}></Route>
       </Route>
     </Router>
   )

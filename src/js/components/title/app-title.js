@@ -6,11 +6,10 @@ class Title extends React.Component {
     return (
       <div className="title">
         <div className="icon" onClick={this.props.toggleMenu}>
-            <i className="fa fa-bars fa-lg"></i>
+            <i className="material-icons">menu</i>
         </div>
         <div>
           <h1>{this.props.text}</h1>
-          <h4>{this.props.subtext}</h4>
         </div>
       </div>
     )
