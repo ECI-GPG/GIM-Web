@@ -16,7 +16,7 @@ class Monitor extends React.Component {
     return (
       <div className="page">
 
-        <Header title="Monitor"/>
+        <Header title="Monitor" toggleDrawer={this.props.toggleDrawer}/>
 
         <main>
           <h2>Monitor</h2>

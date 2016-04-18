@@ -18,7 +18,7 @@ class Outbox extends React.Component {
     return (
       <div className="page">
 
-        <Header title="Outbox"/>
+        <Header title="Outbox" toggleDrawer={this.props.toggleDrawer}/>
 
         <main>
           <h2>Outbox</h2>
@@ -29,7 +29,7 @@ class Outbox extends React.Component {
               <i className="material-icons">add</i>
             </button>
           </Link>
-          
+
         </main>
       </div>
     )

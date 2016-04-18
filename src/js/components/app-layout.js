@@ -21,10 +21,6 @@ export default class Layout extends React.Component {
     return (
       <div id="layout">
 
-        <div id="drawerButton" className="icon" onClick={this.toggleDrawer}>
-          <i className="material-icons">menu</i>
-        </div>
-
         <div id="drawer" ref={(ref) => this.drawer = ref}>
           <Menu selected={this.toggleDrawer}/>
         </div>
@@ -32,7 +28,7 @@ export default class Layout extends React.Component {
         <div id="overlay" ref={(ref) => this.overlay = ref} onClick={this.toggleDrawer}></div>
 
         <div id="container">
-          {this.props.children}
+          {React.cloneElement(this.props.children, {toggleDrawer: this.toggleDrawer })}
         </div>
 
         <Toolbar />

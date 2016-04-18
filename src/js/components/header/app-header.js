@@ -12,10 +12,14 @@ class Header extends React.Component {
 
   render() {
 
-    var link = '';
+    var icon = (
+      <div className="icon" onClick={this.props.toggleDrawer}>
+          <i className="material-icons">menu</i>
+      </div>
+    )
 
     if (this.props.to) {
-      link = (
+      icon = (
         <div className="icon">
           <Link to={this.props.to}>
             <i className="material-icons">arrow_back</i>
@@ -28,7 +32,7 @@ class Header extends React.Component {
       <header>
 
         <div className="title">
-          <div className="icon">{link}</div>
+          {icon}
           <div>
             <h1>{this.props.title}</h1>
           </div>
