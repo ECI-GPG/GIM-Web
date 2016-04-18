@@ -70,7 +70,7 @@
   #layout > #drawer {
     position: absolute;
     left: -300px;
-    background-color: #FFF;
+    background-color: #000;
     border-right: solid 1px #CCC;
   }
 

@@ -15,7 +15,7 @@ class Menu extends React.Component {
     var items = options.map(item => {
       return (
         <Link to={item.to} className="mui--text-light">
-          <div className="menu-item">
+          <div className="menu-item" onClick={this.props.selected}>
             <i className="material-icons">{item.icon}</i>
             <strong>{item.txt}</strong>
           </div>
@@ -36,6 +36,10 @@ class Menu extends React.Component {
       )
 
   }
+}
+
+Menu.propTypes = {
+  selected : React.PropTypes.func
 }
 
 export default Menu;

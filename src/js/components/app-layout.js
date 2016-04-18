@@ -26,7 +26,7 @@ export default class Layout extends React.Component {
         </div>
 
         <div id="drawer" ref={(ref) => this.drawer = ref}>
-          <Menu/>
+          <Menu selected={this.toggleDrawer}/>
         </div>
 
         <div id="overlay" ref={(ref) => this.overlay = ref} onClick={this.toggleDrawer}></div>
