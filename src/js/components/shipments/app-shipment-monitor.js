@@ -19,12 +19,8 @@ class Monitor extends React.Component {
         <Header title="Monitor"/>
 
         <main>
-          <div>
-            <div>
-              <h2>Monitor</h2>
-              <h5 className="mui--text-dark-secondary">Trace sent shipments state...</h5>
-            </div>
-          </div>
+          <h2>Monitor</h2>
+          <h5 className="mui--text-dark-secondary">Trace sent shipments state...</h5>
           <Shipments states={states}/>
         </main>
 

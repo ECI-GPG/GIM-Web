@@ -1,26 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router';
 import style from './app-menu.css';
-import Title from '../title/app-title';
 
 class Menu extends React.Component {
-
-  constructor() {
-    super();
-    this.state = { hidden : true }
-    this.show = this.show.bind(this);
-    this.hide = this.hide.bind(this);
-  }
-
-  show() {
-    this.setState({ hidden : false });
-    console.log('show ' +this.state.hidden)
-  }
-
-  hide() {
-    this.setState({ hidden : true });
-    console.log('hide' + this.state.hidden)
-  }
 
   render() {
 
@@ -41,25 +23,18 @@ class Menu extends React.Component {
       )
     });
 
-    if (this.state.hidden) {
-
       return (
-        <div className="icon drawerButton" onClick={this.show}>
-            <i className="material-icons">menu</i>
-        </div>
-      );
-
-    } else {
-
-      return (
-        <aside id="drawer" ref="drawer">
-          <Title text="SampleBook" subtext="Shipment" toggleMenu={this.hide}/>
+        <aside id="menu">
+          <div className="title">
+            <div className="icon">
+            </div>
+            <h1>SampleBook</h1>
+          </div>
           <div className="mui-divider"></div>
           <nav>{items}</nav>
         </aside>
       )
 
-    }
   }
 }
 

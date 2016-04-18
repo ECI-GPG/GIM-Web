@@ -21,17 +21,15 @@ class Outbox extends React.Component {
         <Header title="Outbox"/>
 
         <main>
-          <div>
-            <div>
-              <h2>Outbox</h2>
-              <Link to="/outbox/new">
-                <button className="mui-btn mui-btn--accent mui-btn--fab  fab">
-                  <i className="material-icons">add</i>
-                </button>
-              </Link>
-            </div>
-            <Shipments states={states}/>
-          </div>
+          <h2>Outbox</h2>
+          <Shipments states={states}/>
+
+          <Link to="/outbox/new">
+            <button className="mui-btn mui-btn--accent mui-btn--fab  fab">
+              <i className="material-icons">add</i>
+            </button>
+          </Link>
+          
         </main>
       </div>
     )

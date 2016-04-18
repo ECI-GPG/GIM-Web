@@ -1,8 +1,8 @@
-aside {
+#menu {
   padding: 15px;
 }
 
-nav {
+#menu nav {
 
 }
 
@@ -20,10 +20,4 @@ nav {
 
 .menu-item:hover {
   background-color: rgba(100, 100, 100, 0.5);
-}
-
-.drawerButton {
-  position:absolute;
-  top:10px;
-  left:10px;
 }

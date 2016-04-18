@@ -9,23 +9,14 @@ class Header extends React.Component {
 
   constructor() {
     super();
-    this.showMenu = this.showMenu.bind(this);
-  }
-
-  showMenu() {
-    alert('TODO: show menu');
   }
 
   render() {
 
-    var icon = (
-      <div className="icon" onclick="hideDrawer()">
-        <i className="material-icons">menu</i>
-      </div>
-    )
+    var link = '';
 
     if (this.props.to) {
-      icon = (
+      link = (
         <div className="icon">
           <Link to={this.props.to}>
             <i className="material-icons">arrow_back</i>
@@ -38,13 +29,14 @@ class Header extends React.Component {
       <header>
 
         <div className="title">
-          {icon}
+          <div className="icon">{link}</div>
           <div>
             <h1>{this.props.title}</h1>
           </div>
         </div>
 
         <SearchBox />
+
         <div id="searchButton" className="icon">
             <i className="fa fa-search fa-lg"></i>
         </div>

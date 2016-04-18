@@ -6,7 +6,7 @@ import styles from './app.css';
 // Pages
 import Monitor from './shipments/app-shipment-monitor';
 import Outbox from './shipments/app-shipment-outbox';
-import Preparation from './shipments/app-shipment-preparation';
+import Preparation from './shipments/app-shipment-form';
 
 export default () => {
   return (
