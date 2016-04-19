@@ -24,6 +24,10 @@ const AppStore = Object.assign(EventEmitter.prototype, {
     return ShipmentAPI.getAll();
   },
 
+  getShipment() {
+    return ShipmentAPI.getShipment();
+  },
+
   getCart() {
     return CartAPI.cartItems;
   },

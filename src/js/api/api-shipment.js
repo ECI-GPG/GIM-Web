@@ -31,6 +31,18 @@ const ShipmentAPI = {
     return this.shipments
       .filter(item => item.state === state)
         .map(item => Object.assign({}, item));
+  },
+
+  getShipment() {
+    return {
+      'id': '12345678',
+      'bar-code': '',
+      'timeline' : [
+        { 'event': 'created', 'date': new Date(), 'author':'John Smith'},
+        { 'event': 'closed', 'date': new Date(), 'author':'John Smith'},
+        { 'event': 'send', 'date': new Date(), 'author':'Mary Higgins'}
+      ]
+    }
   }
 
 }

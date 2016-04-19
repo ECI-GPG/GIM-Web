@@ -6,15 +6,17 @@ import styles from './app.css';
 // Pages
 import Monitor from './shipments/app-shipment-monitor';
 import Outbox from './shipments/app-shipment-outbox';
-import Preparation from './shipments/app-shipment-form';
+import ShipmentForm from './shipments/app-shipment-form';
+import ShipmentInfo from './shipments/app-shipment-info';
 
 export default () => {
   return (
     <Router>
       <Route path="/" component={Layout}>
         <IndexRoute component={Monitor}></IndexRoute>
+        <Route path="shipment" component={ShipmentInfo}></Route>
         <Route path="outbox" component={Outbox}></Route>
-        <Route path="outbox/new" component={Preparation}></Route>
+        <Route path="outbox/new" component={ShipmentForm}></Route>
       </Route>
     </Router>
   )
