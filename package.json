@@ -8,6 +8,7 @@
   "author": "Ernesto Roldan Garcia",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.13.4",
     "flux": "^2.1.1",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
