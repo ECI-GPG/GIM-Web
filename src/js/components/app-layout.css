@@ -58,7 +58,7 @@
   padding-top: 8px;
 }
 
-@media all and (max-width:960px) {
+@media all and (max-width:1280px) {
 
   #layout > #drawerButton {
     display:block;
