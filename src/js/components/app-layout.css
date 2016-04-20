@@ -2,10 +2,6 @@
   display: flex;
 }
 
-#layout > #drawerButton {
-  display:none;
-}
-
 #layout > #drawer {
   height: 100vh;
   min-width: 250px;
@@ -71,8 +67,9 @@
     position: absolute;
     left: -300px;
     background: #444;
-    -webkit-transition: left 1s;
-    transition: left 1s easy-out;
+    -webkit-transition: left 0.5s;
+    -webkit-transition-timming-function: ease-in-out;
+    transition: left 0.5s ease-in-out;
   }
 
   #drawer.open {

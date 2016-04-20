@@ -34,16 +34,18 @@ class Menu extends React.Component {
           <div className="mui-divider"></div>
 
           <div id="menu-user">
-            <div><i className="material-icons md-48">face</i></div>
+            <div id="avatar"><i className="material-icons md-48">face</i></div>
             <h5><strong>John Smith</strong></h5>
             <h6 className="mui--text-light-secondary">johnsmith@mail.com</h6>
           </div>
+
+          <div className="mui-divider"></div>
 
           <nav>
             {items}
             <div className="mui-divider"></div>
           </nav>
-          
+
         </aside>
       )
 
