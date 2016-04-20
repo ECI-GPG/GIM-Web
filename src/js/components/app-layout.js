@@ -12,7 +12,6 @@ export default class Layout extends React.Component {
   }
 
   toggleDrawer() {
-    console.log(this.drawer)
     this.drawer.classList.toggle('open');
     this.overlay.classList.toggle('open');
   }

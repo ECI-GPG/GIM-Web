@@ -25,12 +25,22 @@ class Menu extends React.Component {
 
       return (
         <aside id="menu">
-          <div className="title">
-            <div className="icon">
-            </div>
+
+          <div id="menu-title">
             <h1>SampleBook</h1>
+            <h5>International Office</h5>
           </div>
+
           <div className="mui-divider"></div>
+
+          <div id="menu-user">
+            <div><i className="material-icons md-48">face</i></div>
+            <h5><strong>John Smith</strong></h5>
+            <h6 className="mui--text-light-secondary">johnsmith@mail.com</h6>
+          </div>
+
+          <div className="mui-divider"></div>
+
           <nav>{items}</nav>
         </aside>
       )
