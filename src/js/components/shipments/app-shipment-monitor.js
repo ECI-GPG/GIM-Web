@@ -19,8 +19,6 @@ class Monitor extends React.Component {
         <Header title="Monitor" toggleDrawer={this.props.toggleDrawer}/>
 
         <main>
-          <h2>Monitor</h2>
-          <h5 className="mui--text-dark-secondary">Trace sent shipments state...</h5>
           <Shipments states={states}/>
         </main>
 

@@ -21,7 +21,7 @@ class SearchBox extends React.Component {
           <div className="textfield mui-textfield">
             <input  type="text" onBlur={this.toggleState} autoFocus></input>
           </div>
-          <span><i className="fa fa-close fa-lg"></i></span>
+          <span><i className="material-icons">close</i></span>
         </div>
       );
     } else {

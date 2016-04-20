@@ -21,7 +21,7 @@ class Outbox extends React.Component {
         <Header title="Outbox" toggleDrawer={this.props.toggleDrawer}/>
 
         <main>
-          <h2>Outbox</h2>
+
           <Shipments states={states}/>
 
           <Link to="/outbox/new">

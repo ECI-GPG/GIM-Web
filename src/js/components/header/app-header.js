@@ -12,7 +12,7 @@ class Header extends React.Component {
 
   render() {
 
-    var icon = (
+    let icon = (
       <div className="icon" onClick={this.props.toggleDrawer}>
           <i className="material-icons">menu</i>
       </div>
@@ -28,6 +28,14 @@ class Header extends React.Component {
       )
     }
 
+    let search = (
+      <div id="searchButton" className="icon">
+        <Link to="/search">
+          <i className="material-icons">search</i>
+        </Link>
+      </div>
+    )
+
     return (
       <header>
 
@@ -40,9 +48,8 @@ class Header extends React.Component {
 
         <SearchBox />
 
-        <div id="searchButton" className="icon">
-            <i className="fa fa-search fa-lg"></i>
-        </div>
+        {search}
+
       </header>
     );
   }
