@@ -27,7 +27,7 @@
 }
 
 .mui-divider {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(150, 150, 150, 0.7);
   margin-left: 8px;
   margin-right:8px;
 }
@@ -49,4 +49,13 @@
 
 @media all and (max-width:1280px) {
 
+nav {
+  height: 100vh;
+  background: #FFF;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+  .menu-item {
+    color: rgba(0, 0, 0, 0.8);
+  }
 }

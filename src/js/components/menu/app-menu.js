@@ -17,7 +17,7 @@ class Menu extends React.Component {
         <Link to={item.to} className="mui--text-light">
           <div className="menu-item" onClick={this.props.selected}>
             <i className="material-icons">{item.icon}</i>
-            <strong>{item.txt}</strong>
+            {item.txt}
           </div>
         </Link>
       )
@@ -39,9 +39,11 @@ class Menu extends React.Component {
             <h6 className="mui--text-light-secondary">johnsmith@mail.com</h6>
           </div>
 
-          <div className="mui-divider"></div>
-
-          <nav>{items}</nav>
+          <nav>
+            {items}
+            <div className="mui-divider"></div>
+          </nav>
+          
         </aside>
       )
 
