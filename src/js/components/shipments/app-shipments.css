@@ -1,4 +1,7 @@
 
+th {
+  vertical-align: bottom;
+}
 .timeline-item {
   display: flex;
 }

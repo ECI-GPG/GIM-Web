@@ -43,12 +43,6 @@ const ShipmentInfo = (props) => {
               {timeline}
             </div>
 
-            <Link to="/">
-              <button className="mui-btn mui-btn--accent mui-btn--fab  fab">
-                <i className="material-icons">arrow_back</i>
-              </button>
-            </Link>
-
         </main>
       </div>
     )

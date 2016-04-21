@@ -12,17 +12,23 @@ class Header extends React.Component {
 
   render() {
 
-    let icon = (
-      <div className="icon" onClick={this.props.toggleDrawer}>
-          <i className="material-icons">menu</i>
+    let link = (
+      <div id="navButton" className="icon" onClick={this.props.toggleDrawer}>
+          <i className="material-icons md-36">menu</i>
       </div>
     )
 
+    let icon = (
+      <div id="icon" className="icon">
+          <i className="material-icons md-36">{this.props.icon}</i>
+      </div>
+    )
+      
     if (this.props.to) {
       icon = (
-        <div className="icon">
+        <div id="icon" className="icon">
           <Link to={this.props.to}>
-            <i className="material-icons">arrow_back</i>
+            <i className="material-icons md-36">arrow_back</i>
           </Link>
         </div>
       )
@@ -31,7 +37,7 @@ class Header extends React.Component {
     let search = (
       <div id="searchButton" className="icon">
         <Link to="/search">
-          <i className="material-icons">search</i>
+          <i className="material-icons md-36">search</i>
         </Link>
       </div>
     )
@@ -40,13 +46,11 @@ class Header extends React.Component {
       <header>
 
         <div className="title">
-          {icon}
+          {link}{icon}
           <div>
             <h1>{this.props.title}</h1>
           </div>
         </div>
-
-        <SearchBox />
 
         {search}
 
@@ -59,10 +63,6 @@ Header.propTypes = {
   title: React.PropTypes.string,
   icon: React.PropTypes.string,
   to: React.PropTypes.string
-}
-
-Header.defaultProps = {
-  icon: "menu"
 }
 
 export default Header;

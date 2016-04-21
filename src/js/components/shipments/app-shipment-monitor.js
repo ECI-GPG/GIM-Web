@@ -15,13 +15,10 @@ class Monitor extends React.Component {
 
     return (
       <div className="page">
-
-        <Header title="Monitor" toggleDrawer={this.props.toggleDrawer}/>
-
+        <Header title="Monitor" icon="send" toggleDrawer={this.props.toggleDrawer}/>
         <main>
           <Shipments states={states}/>
         </main>
-
       </div>
     )
   }

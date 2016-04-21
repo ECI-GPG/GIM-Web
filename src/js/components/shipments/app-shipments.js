@@ -1,6 +1,6 @@
 import React from 'react';
 import AppStore from '../../stores/app-store';
-import AppShipmentItem from './app-shipment-item';
+import ShipmentItem from './app-shipment-item';
 import StoreWatchMixin from '../../mixin/storeWatchMixin';
 import styles from './app-shipments.css';
 
@@ -22,7 +22,7 @@ const Shipments = (props) => {
 
   var items = props.items.map( (item, i) => {
     return (
-      <AppShipmentItem item={item}/>
+      <ShipmentItem item={item}/>
     );
   });
 
@@ -32,8 +32,8 @@ const Shipments = (props) => {
           <thead>
             <tr>
               <th>Id</th>
-              <th>state<i className="material-icons">arrow_downward</i></th>
-              <th>date<i className="material-icons">arrow_downward</i></th>
+              <th>state<i className="material-icons md-18">arrow_downward</i></th>
+              <th>date<i className="material-icons md-18">arrow_downward</i></th>
               <th></th>
             </tr>
           </thead>

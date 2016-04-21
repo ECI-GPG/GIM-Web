@@ -18,7 +18,7 @@ class Outbox extends React.Component {
     return (
       <div className="page">
 
-        <Header title="Outbox" toggleDrawer={this.props.toggleDrawer}/>
+        <Header title="Outbox" icon="inbox" toggleDrawer={this.props.toggleDrawer}/>
 
         <main>
 
