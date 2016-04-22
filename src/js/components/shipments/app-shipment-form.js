@@ -23,28 +23,38 @@ class ImportForm extends React.Component {
               <h2>New Shipment</h2>
             </div>
             <form>
-              <div className="input-textfield">
-                <input type="text" placeholder="id"></input>
+
+              <div className="input-textfield mui-textfield mui-textfield--float-label">
+                <input type="text"></input>
+                <label>ID</label>
               </div>
-              <div className="input-textfield">
-                <input type="text" placeholder="state"></input>
+
+              <div className="input-textfield mui-textfield mui-textfield--float-label">
+                <input type="text"></input>
+                <label>State</label>
               </div>
-              <div className="input-textfield">
-                <input type="text" placeholder="Date Created"></input>
+              <div className="input-textfield mui-textfield mui-textfield--float-label">
+                <input type="text"></input>
+                <label>Creation Date</label>
               </div>
-              <div className="input-textfield">
-                <input type="text" placeholder="Date Closed"></input>
+              <div className="input-textfield mui-textfield mui-textfield--float-label">
+                <input type="text"></input>
+                <label>Close Date</label>
               </div>
-              <div className="input-textfield">
-                <input type="text" placeholder="Date Sent"></input>
+              <div className="input-textfield mui-textfield mui-textfield--float-label">
+                <input type="text"></input>
+                <label>Send Date</label>
               </div>
-              <div className="input-textfield">
-                <input type="text" placeholder="Estimated Reception Date"></input>
+              <div className="input-textfield mui-textfield mui-textfield--float-label">
+                <input type="text"></input>
+                <label>Estimated Reception Date</label>
               </div>
-              <div className="input-textfield">
-                <input type="text" placeholder="Date Received"></input>
+              <div className="input-textfield mui-textfield mui-textfield--float-label">
+                <input type="text"></input>
+                <label>Reception Date</label>
               </div>
               <Link to="/outbox"><button className="mui-btn">CANCEL</button></Link>
+              &nbsp;
               <button className="mui-btn">OK</button>
             </form>
         </main>

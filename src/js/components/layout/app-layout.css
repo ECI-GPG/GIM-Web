@@ -3,6 +3,7 @@
 }
 
 #layout > #drawer {
+  height: 100vh;
   min-width: 24rem;
 }
 
@@ -52,7 +53,7 @@
 .page > main {
   flex: 1;
   color: rgba(0,0,0,0.8);
-  background-color: #FFF;
+  background-color: #EEE;
   padding: 15px 15px 0px 15px;
   overflow-y: auto;
 }

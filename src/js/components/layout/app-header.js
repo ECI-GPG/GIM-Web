@@ -4,24 +4,18 @@ import styles from './app-header.css';
 import SearchBox from '../search/app-search';
 import { Link } from 'react-router';
 
-class Header extends React.Component {
+const Header = (props) => {
 
-  constructor() {
-    super();
-  }
-
-  render() {
-
-    let link = (
-      <div id="navButton" className="icon" onClick={this.props.toggleDrawer}>
+    let navButton = (
+      <div id="navButton" className="icon" onClick={props.toggleDrawer}>
           <i className="material-icons md-36">menu</i>
       </div>
     )
 
-    if (this.props.to) {
-      link = (
+    if (props.to) {
+      navButton = (
         <div id="navButton" className="icon">
-          <Link to={this.props.to}>
+          <Link to={props.to}>
             <i className="material-icons md-36">arrow_back</i>
           </Link>
         </div>
@@ -30,14 +24,14 @@ class Header extends React.Component {
 
     let icon = (
       <div id="icon" className="icon">
-          <i className="material-icons md-36">{this.props.icon}</i>
+          <i className="material-icons md-36">{props.icon}</i>
       </div>
     )
 
-    if (this.props.to) {
+    if (props.to) {
       icon = (
         <div id="icon" className="icon">
-          <Link to={this.props.to}>
+          <Link to={props.to}>
             <i className="material-icons md-36">arrow_back</i>
           </Link>
         </div>
@@ -55,15 +49,15 @@ class Header extends React.Component {
     return (
       <header>
         <div className="title">
-          {link}{icon}
+          {navButton}{icon}
           <div>
-            <h1>{this.props.title}</h1>
+            <h1>{props.title}</h1>
           </div>
         </div>
         {search}
       </header>
     );
-  }
+
 }
 
 export default Header;

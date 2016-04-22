@@ -1,10 +1,9 @@
 import React from 'react'
-import styles from './app-layout.css';
-
 import Menu from './app-menu';
+import Styles from './app-layout.css';
 import SearchBox from '../search/app-search';
 
-export default class Layout extends React.Component {
+class Layout extends React.Component {
 
   constructor() {
     super();
@@ -28,7 +27,6 @@ export default class Layout extends React.Component {
           {React.cloneElement(this.props.children, {toggleDrawer: this.toggleDrawer })}
         </div>
         <div id="toolbar"></div>
-
       </div>
     );
   }

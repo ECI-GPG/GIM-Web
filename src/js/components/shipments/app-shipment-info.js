@@ -36,6 +36,35 @@ const ShipmentInfo = (props) => {
             <div className="mui-panel">
               <h5> [shihpment-id] </h5>
               <div><image src="http://generator.barcoding.com/images/Barcodes/UCC-EAN128.gif"></image></div>
+              <div className="input-textfield mui-textfield mui-textfield--float-label">
+                <input type="text"></input>
+                <label>ID</label>
+              </div>
+
+              <div className="input-textfield mui-textfield mui-textfield--float-label">
+                <input type="text"></input>
+                <label>State</label>
+              </div>
+              <div className="input-textfield mui-textfield mui-textfield--float-label">
+                <input type="text"></input>
+                <label>Creation Date</label>
+              </div>
+              <div className="input-textfield mui-textfield mui-textfield--float-label">
+                <input type="text"></input>
+                <label>Close Date</label>
+              </div>
+              <div className="input-textfield mui-textfield mui-textfield--float-label">
+                <input type="text"></input>
+                <label>Send Date</label>
+              </div>
+              <div className="input-textfield mui-textfield mui-textfield--float-label">
+                <input type="text"></input>
+                <label>Estimated Reception Date</label>
+              </div>
+              <div className="input-textfield mui-textfield mui-textfield--float-label">
+                <input type="text"></input>
+                <label>Reception Date</label>
+              </div>
             </div>
 
             <h5 className="mui--text-dark-secondary">Samples</h5>
