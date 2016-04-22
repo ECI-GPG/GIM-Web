@@ -1,5 +1,8 @@
 #menu {
+  height:100vh;
   font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
 }
 
 #menu nav {
@@ -59,11 +62,11 @@
 }
 @media all and (max-width:1280px) {
 
-nav {
-  height: 100vh;
-  background: #FFF;
-  color: rgba(0, 0, 0, 0.8);
-}
+  nav {
+    flex:1;
+    background: #FFF;
+    color: rgba(0, 0, 0, 0.8);
+  }
 
   .menu-item {
     color: rgba(0, 0, 0, 0.8);
