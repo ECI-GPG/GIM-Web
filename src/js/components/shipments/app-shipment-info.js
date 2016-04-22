@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../header/app-header';
+import Page from '../layout/app-page';
 import {Link} from 'react-router';
 import AppStore from '../../stores/app-store';
 import StoreWatchMixin from '../../mixin/storeWatchMixin';
@@ -13,7 +13,7 @@ function getShipmentInfo() {
 
 const ShipmentEvent = (props) => {
     return (
-      <div className="mui-panel timeline-item">
+      <div className="timeline-item">
         <span>{props.item.date.toLocaleDateString()}</span>
         <span>{props.item.event}</span>
         <span>{props.item.author}</span>
@@ -28,23 +28,27 @@ const ShipmentInfo = (props) => {
     });
 
     return (
-      <div className="page">
-        <Header title="Shipment Info" to="/"/>
-        <main style={{backgroundColor:'#EEE'}}>
+      <Page title="Shipment Info" to="/">
+
             <br/>
+
+            <h5 className="mui--text-dark-secondary">Info</h5>
             <div className="mui-panel">
-              <h2>Shipment Info</h2>
               <h5> [shihpment-id] </h5>
               <div><image src="http://generator.barcoding.com/images/Barcodes/UCC-EAN128.gif"></image></div>
             </div>
 
+            <h5 className="mui--text-dark-secondary">Samples</h5>
             <div className="mui-panel">
-              <h5 className="mui--text-dark-secondary">Timeline</h5>
+              samples
+            </div>
+
+            <h5 className="mui--text-dark-secondary">Timeline</h5>
+            <div className="mui-panel">
               {timeline}
             </div>
 
-        </main>
-      </div>
+      </Page>
     )
 }
 

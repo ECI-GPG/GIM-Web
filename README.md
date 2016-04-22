@@ -18,3 +18,7 @@ del proyecto en la consola de comandos y ejecutar:
 El cliente web estará disponible en la siguiente dirección:
 
     http://localhost:3333
+
+### empaquetado manual
+
+    webpack

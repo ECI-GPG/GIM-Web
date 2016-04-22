@@ -19707,9 +19707,11 @@
 
 	var _appShipmentInfo2 = _interopRequireDefault(_appShipmentInfo);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _appSearchPage = __webpack_require__(256);
 
-	// Pages
+	var _appSearchPage2 = _interopRequireDefault(_appSearchPage);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = function () {
 	  return _react2.default.createElement(
@@ -19721,10 +19723,13 @@
 	      _react2.default.createElement(_reactRouter.IndexRoute, { component: _appShipmentMonitor2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: 'shipment', component: _appShipmentInfo2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: 'outbox', component: _appShipmentOutbox2.default }),
-	      _react2.default.createElement(_reactRouter.Route, { path: 'outbox/new', component: _appShipmentForm2.default })
+	      _react2.default.createElement(_reactRouter.Route, { path: 'outbox/new', component: _appShipmentForm2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: 'search', component: _appSearchPage2.default })
 	    )
 	  );
 	};
+
+	// Pages
 
 /***/ },
 /* 160 */
@@ -19753,6 +19758,10 @@
 	var _appToolbar = __webpack_require__(235);
 
 	var _appToolbar2 = _interopRequireDefault(_appToolbar);
+
+	var _appSearch = __webpack_require__(172);
+
+	var _appSearch2 = _interopRequireDefault(_appSearch);
 
 	var _appLayout = __webpack_require__(238);
 
@@ -19805,6 +19814,11 @@
 	        _react2.default.createElement(
 	          'div',
 	          { id: 'container' },
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'searchbar' },
+	            _react2.default.createElement(_appSearch2.default, null)
+	          ),
 	          _react2.default.cloneElement(this.props.children, { toggleDrawer: this.toggleDrawer })
 	        ),
 	        _react2.default.createElement(_appToolbar2.default, null)
@@ -19868,31 +19882,55 @@
 	    key: 'render',
 	    value: function render() {
 
-	      var icon = _react2.default.createElement(
+	      var link = _react2.default.createElement(
 	        'div',
-	        { className: 'icon', onClick: this.props.toggleDrawer },
+	        { id: 'navButton', className: 'icon', onClick: this.props.toggleDrawer },
 	        _react2.default.createElement(
 	          'i',
-	          { className: 'material-icons' },
+	          { className: 'material-icons md-36' },
 	          'menu'
+	        )
+	      );
+
+	      var icon = _react2.default.createElement(
+	        'div',
+	        { id: 'icon', className: 'icon' },
+	        _react2.default.createElement(
+	          'i',
+	          { className: 'material-icons md-36' },
+	          this.props.icon
 	        )
 	      );
 
 	      if (this.props.to) {
 	        icon = _react2.default.createElement(
 	          'div',
-	          { className: 'icon' },
+	          { id: 'icon', className: 'icon' },
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: this.props.to },
 	            _react2.default.createElement(
 	              'i',
-	              { className: 'material-icons' },
+	              { className: 'material-icons md-36' },
 	              'arrow_back'
 	            )
 	          )
 	        );
 	      }
+
+	      var search = _react2.default.createElement(
+	        'div',
+	        { id: 'searchButton', className: 'icon' },
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: '/search' },
+	          _react2.default.createElement(
+	            'i',
+	            { className: 'material-icons md-36' },
+	            'search'
+	          )
+	        )
+	      );
 
 	      return _react2.default.createElement(
 	        'header',
@@ -19900,6 +19938,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'title' },
+	          link,
 	          icon,
 	          _react2.default.createElement(
 	            'div',
@@ -19911,12 +19950,7 @@
 	            )
 	          )
 	        ),
-	        _react2.default.createElement(_appSearch2.default, null),
-	        _react2.default.createElement(
-	          'div',
-	          { id: 'searchButton', className: 'icon' },
-	          _react2.default.createElement('i', { className: 'fa fa-search fa-lg' })
-	        )
+	        search
 	      );
 	    }
 	  }]);
@@ -19928,10 +19962,6 @@
 	  title: _react2.default.PropTypes.string,
 	  icon: _react2.default.PropTypes.string,
 	  to: _react2.default.PropTypes.string
-	};
-
-	Header.defaultProps = {
-	  icon: "menu"
 	};
 
 	exports.default = Header;
@@ -20369,7 +20399,7 @@
 
 
 	// module
-	exports.push([module.id, "header {\n  padding: 15px;\n  min-height: 115px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\nheader > .title {\n  display: none;\n}\n\nheader > .searchbox {\n  flex:1;\n}\n\nheader > #searchButton {\n  display:none;\n}\n\n\n@media all and (max-width:1280px) {\n\n  header {\n    justify-content: flex-start;\n  }\n\n  header > .title {\n    display: flex;\n    flex:1;\n  }\n\n  .title .icon {\n    margin-top: 15px;\n  }\n  .title h1 {\n    text-shadow: 2px 4px 0px rgba(0, 0, 0, 0.15);\n  }\n\n  header > .searchbox {\n    display: none;\n  }\n\n  header > #searchButton {\n    display:flex;\n  }\n}\n", ""]);
+	exports.push([module.id, "header {\n  padding: 15px;\n  min-height: 115px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #FFF;\n  color: rgba(0, 0, 0, 0.8);\n}\n\nheader > .title {\n  display: flex;\n  flex:1;\n  align-items: center;\n}\n\nheader > .title > #navButton {\n  display:none;\n}\n\nheader > .title > #icon {\n  display:flex;\n}\n\nheader > .title > .icon {\n  color: rgba(0, 0, 0, 0.8);\n  display:flex;\n  align-items: center;\n  justify-content: center;\n}\n\nheader > .title  h1 {\n  text-shadow: 2px 4px 0px rgba(0, 0, 0, 0.15);\n  margin: 0px;\n}\n\nheader > .searchbox {\n  flex:1;\n}\n\nheader > #searchButton {\n  display:none;\n}\n\n@media all and (max-width:1280px) {\n\n  header {\n    background-color: inherit;\n    color: inherit;\n    justify-content: flex-start;\n  }\n\n  header > .title > .icon {\n    color: inherit;\n    margin-top: 15px;\n  }\n\n  header > .title > #navButton {\n    display: block;\n  }\n  header > .title > #icon {\n    display:none;\n  }\n\n  header > .searchbox {\n    display: none;\n  }\n\n  header > #searchButton {\n    display:flex;\n  }\n}\n", ""]);
 
 	// exports
 
@@ -20744,7 +20774,11 @@
 	          _react2.default.createElement(
 	            'span',
 	            null,
-	            _react2.default.createElement('i', { className: 'fa fa-close fa-lg' })
+	            _react2.default.createElement(
+	              'i',
+	              { className: 'material-icons' },
+	              'close'
+	            )
 	          )
 	        );
 	      } else {
@@ -25960,10 +25994,10 @@
 	          { id: 'menu-user' },
 	          _react2.default.createElement(
 	            'div',
-	            null,
+	            { id: 'avatar' },
 	            _react2.default.createElement(
 	              'i',
-	              { className: 'material-icons md-48' },
+	              { className: 'material-icons md-36' },
 	              'face'
 	            )
 	          ),
@@ -25982,6 +26016,7 @@
 	            'johnsmith@mail.com'
 	          )
 	        ),
+	        _react2.default.createElement('div', { className: 'mui-divider' }),
 	        _react2.default.createElement(
 	          'nav',
 	          null,
@@ -26036,7 +26071,7 @@
 
 
 	// module
-	exports.push([module.id, "#menu {\n  padding-top: 11px;\n}\n\n#menu nav {\n  padding-top: 8px;\n}\n\n.menu-item {\n  display: flex;\n  align-items: center;\n  color: #FFF;\n  height: 50px;\n}\n\n.menu-item > i {\n  width:72px;\n  padding: 16px;\n}\n\n.menu-item:hover {\n  background-color: rgba(100, 100, 100, 0.5);\n}\n\n#menu-title {\n  padding-left:16px;\n}\n\n.mui-divider {\n  background-color: rgba(150, 150, 150, 0.7);\n  margin-left: 8px;\n  margin-right:8px;\n}\n\n#menu-user {\n  padding-top: 16px;\n  padding-left:16px;\n}\n\n#menu-user > h5 {\n  margin-top: 10px;\n  margin-bottom: 0px;\n}\n\n#menu-user > h6 {\n  margin-top: 0px;\n  margin-bottom: 10px;\n}\n\n@media all and (max-width:1280px) {\n\nnav {\n  height: 100vh;\n  background: #FFF;\n  color: rgba(0, 0, 0, 0.8);\n}\n\n  .menu-item {\n    color: rgba(0, 0, 0, 0.8);\n  }\n}\n", ""]);
+	exports.push([module.id, "#menu {\n  padding-top: 11px;\n}\n\n#menu nav {\n  padding-top: 8px;\n}\n\n.menu-item {\n  display: flex;\n  align-items: center;\n  color: #FFF;\n  height: 50px;\n}\n\n.menu-item > i {\n  width:72px;\n  padding: 16px;\n}\n\n.menu-item:hover {\n  background-color: rgba(100, 100, 100, 0.5);\n}\n\n#menu-title {\n  padding-left:16px;\n}\n\n.mui-divider {\n  background-color: rgba(150, 150, 150, 0.7);\n  margin-left: 8px;\n  margin-right:8px;\n}\n\n#menu-user {\n  padding-top: 16px;\n  padding-left:16px;\n}\n\n#menu-user > h5 {\n  margin-top: 10px;\n  margin-bottom: 0px;\n}\n\n#menu-user > h6 {\n  margin-top: 0px;\n  margin-bottom: 10px;\n}\n\n#menu-user #avatar {\n  width:40px;\n  height:40px;\n  background: #FFF;\n  color: rgba(0, 0, 0, 0.8);\n  border-radius: 20px;\n  display:flex;\n  align-items: center;\n  justify-content: center;\n}\n@media all and (max-width:1280px) {\n\nnav {\n  height: 100vh;\n  background: #FFF;\n  color: rgba(0, 0, 0, 0.8);\n}\n\n  .menu-item {\n    color: rgba(0, 0, 0, 0.8);\n  }\n}\n", ""]);
 
 	// exports
 
@@ -26165,7 +26200,7 @@
 
 
 	// module
-	exports.push([module.id, "#layout {\n  display: flex;\n}\n\n#layout > #drawerButton {\n  display:none;\n}\n\n#layout > #drawer {\n  height: 100vh;\n  min-width: 250px;\n}\n\n#layout > #overlay {\n  display:none;\n}\n\n.hidden {\n  display:none\n}\n\n#layout > #container {\n  flex: 1;\n  height: 100vh;\n\n  display: flex;\n  flex-direction:column;\n}\n\n#layout > #toolbar {\n  width:100px;\n}\n\n.page {\n  display: flex;\n  flex-direction: column;\n  flex:1;\n}\n\n.page > header {\n  display: flex;\n  min-height: 115px;\n}\n\n.page > main {\n  flex: 1;\n  color: rgba(0,0,0,0.8);\n  background-color: #FFF;\n  padding: 15px;\n  overflow-y: auto;\n}\n\n.fab {\n  position: absolute;\n  top: 80px;\n  bottom: auto;\n  right: 130px;\n  padding-top: 8px;\n}\n\n@media all and (max-width:1280px) {\n\n  #layout > #drawerButton {\n    display:block;\n    position:absolute;\n    top:30px;\n    left:15px;\n  }\n\n  #layout > #drawer {\n    position: absolute;\n    left: -300px;\n    background: #444;\n    -webkit-transition: left 1s;\n    transition: left 1s easy-out;\n  }\n\n  #drawer.open {\n    z-index: 1001;\n    left: 0px !important;\n    -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n  }\n\n  #overlay.open {\n    z-index: 1000;\n    display: block !important;\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(100, 100, 100, 0.7);\n  }\n\n  #toolbar {\n    display:none;\n    position: absolute;\n    right: -150px;\n  }\n\n  .fab {\n    position: absolute;\n    top: auto;\n    bottom: 16px;\n    right: 30px;\n    padding-top: 8px;\n  }\n}\n", ""]);
+	exports.push([module.id, "#layout {\n  display: flex;\n}\n\n#layout > #drawer {\n  height: 100vh;\n  min-width: 250px;\n}\n\n#layout > #overlay {\n  display:none;\n}\n\n.hidden {\n  display:none\n}\n\n#layout > #container {\n  flex: 1;\n  height: 100vh;\n  display: flex;\n  flex-direction:column;\n}\n\n#container > #searchbar {\n  padding: 15px;\n  min-height: 115px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n#searchbar > .searchbox {\n  flex:1;\n}\n\n#container > .page {\n  flex:1;\n  display: flex;\n  flex-direction: column;\n  background-color: #EEE;\n  padding: 15px 15px 0px 15px;\n}\n\n#layout > #toolbar {\n  width:100px;\n}\n\n.page > header {\n  display: flex;\n  min-height: 115px;\n}\n\n.page > main {\n  flex: 1;\n  color: rgba(0,0,0,0.8);\n  background-color: #FFF;\n  padding: 15px 15px 0px 15px;\n  overflow-y: auto;\n}\n\n.fab {\n  position: absolute;\n  top: 80px;\n  bottom: auto;\n  right: 130px;\n  padding-top: 8px;\n}\n\n@media all and (max-width:1280px) {\n\n  #layout > #drawerButton {\n    display:block;\n    position:absolute;\n    top:30px;\n    left:15px;\n  }\n\n  #layout > #drawer {\n    position: absolute;\n    left: -300px;\n    background: #444;\n    -webkit-transition: left 0.5s;\n    -webkit-transition-timming-function: ease-in-out;\n    transition: left 0.5s ease-in-out;\n  }\n\n  #drawer.open {\n    z-index: 1001;\n    left: 0px !important;\n    -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n  }\n\n  #overlay.open {\n    z-index: 1000;\n    display: block !important;\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(100, 100, 100, 0.7);\n  }\n\n  #container > #searchbar {\n    display:none;\n  }\n\n  #container > .page {\n    padding:0px;\n    background-color: inherit;\n  }\n\n  #container > .page main {\n    color: rgba(0, 0, 0, 0.8);\n    background-color: #FFF;\n  }\n\n  #toolbar {\n    display:none;\n    position: absolute;\n    right: -150px;\n  }\n\n  .fab {\n    position: absolute;\n    top: auto;\n    bottom: 16px;\n    right: 30px;\n    padding-top: 8px;\n  }\n}\n", ""]);
 
 	// exports
 
@@ -26205,7 +26240,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  color: #FFF;\n  background-color: rgb(33,150,243);\n}\n\na {\n  text-decoration:none;\n}\n\na:focus {\n  text-decoration: none;\n}\n\na:hover {\n  text-decoration:none;\n}\n\n.icon {\n    width:72px;\n    padding: 16px;\n    background-color: rgba(0,0,0,0);\n    color: #FFF;\n}\n\ntr:hover {\n  background-color: #EEE;\n}\n", ""]);
+	exports.push([module.id, "body {\n  color: #FFF;\n  background-color: #000;\n}\n\na {\n  text-decoration:none;\n}\n\na:focus {\n  text-decoration: none;\n}\n\na:hover {\n  text-decoration:none;\n}\n\n.icon {\n    width:72px;\n    padding: 16px;\n    background-color: rgba(0,0,0,0);\n    color: #FFF;\n}\n\n.material-icons.md-18 {\n  font-size: 18px; }\n.material-icons.md-24 {\n  font-size: 24px; }\n.material-icons.md-36 {\n  font-size: 36px; }\n.material-icons.md-48 {\n  font-size: 48px; }\n.material-icons.md-dark {\n  color: rgba(0, 0, 0, 0.54); }\n.material-icons.md-dark.md-inactive {\n  color: rgba(0, 0, 0, 0.26); }\n.material-icons.md-light {\n  color: white; }\n.material-icons.md-light.md-inactive {\n  color: rgba(255, 255, 255, 0.3); }\n", ""]);
 
 	// exports
 
@@ -26268,20 +26303,10 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'page' },
-	        _react2.default.createElement(_appHeader2.default, { title: 'Monitor', toggleDrawer: this.props.toggleDrawer }),
+	        _react2.default.createElement(_appHeader2.default, { title: 'Monitor', icon: 'send', toggleDrawer: this.props.toggleDrawer }),
 	        _react2.default.createElement(
 	          'main',
 	          null,
-	          _react2.default.createElement(
-	            'h2',
-	            null,
-	            'Monitor'
-	          ),
-	          _react2.default.createElement(
-	            'h5',
-	            { className: 'mui--text-dark-secondary' },
-	            'Trace sent shipments state...'
-	          ),
 	          _react2.default.createElement(_appShipments2.default, { states: states })
 	        )
 	      );
@@ -26369,7 +26394,7 @@
 	            'state',
 	            _react2.default.createElement(
 	              'i',
-	              { className: 'material-icons' },
+	              { className: 'material-icons md-18' },
 	              'arrow_downward'
 	            )
 	          ),
@@ -26379,7 +26404,7 @@
 	            'date',
 	            _react2.default.createElement(
 	              'i',
-	              { className: 'material-icons' },
+	              { className: 'material-icons md-18' },
 	              'arrow_downward'
 	            )
 	          ),
@@ -27142,7 +27167,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.timeline-item {\n  display: flex;\n}\n", ""]);
+	exports.push([module.id, "\nth {\n  vertical-align: bottom;\n}\n.timeline-item {\n  display: flex;\n}\n", ""]);
 
 	// exports
 
@@ -27211,15 +27236,10 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'page' },
-	        _react2.default.createElement(_appHeader2.default, { title: 'Outbox', toggleDrawer: this.props.toggleDrawer }),
+	        _react2.default.createElement(_appHeader2.default, { title: 'Outbox', icon: 'inbox', toggleDrawer: this.props.toggleDrawer }),
 	        _react2.default.createElement(
 	          'main',
 	          null,
-	          _react2.default.createElement(
-	            'h2',
-	            null,
-	            'Outbox'
-	          ),
 	          _react2.default.createElement(_appShipments2.default, { states: states }),
 	          _react2.default.createElement(
 	            _reactRouter.Link,
@@ -27480,25 +27500,78 @@
 	          'Timeline'
 	        ),
 	        timeline
-	      ),
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/' },
-	        _react2.default.createElement(
-	          'button',
-	          { className: 'mui-btn mui-btn--accent mui-btn--fab  fab' },
-	          _react2.default.createElement(
-	            'i',
-	            { className: 'material-icons' },
-	            'arrow_back'
-	          )
-	        )
 	      )
 	    )
 	  );
 	};
 
 	exports.default = (0, _storeWatchMixin2.default)(ShipmentInfo, getShipmentInfo);
+
+/***/ },
+/* 256 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _appSearch = __webpack_require__(173);
+
+	var _appSearch2 = _interopRequireDefault(_appSearch);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Search = function (_React$Component) {
+	  _inherits(Search, _React$Component);
+
+	  function Search() {
+	    _classCallCheck(this, Search);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Search).apply(this, arguments));
+	  }
+
+	  _createClass(Search, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'searchbox busy' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'textfield mui-textfield' },
+	          _react2.default.createElement('input', { type: 'text', autoFocus: true })
+	        ),
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          _react2.default.createElement(
+	            'i',
+	            { className: 'material-icons' },
+	            'close'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Search;
+	}(_react2.default.Component);
+
+	exports.default = Search;
 
 /***/ }
 /******/ ]);

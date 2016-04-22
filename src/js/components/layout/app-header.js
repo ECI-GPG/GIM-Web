@@ -18,12 +18,22 @@ class Header extends React.Component {
       </div>
     )
 
+    if (this.props.to) {
+      link = (
+        <div id="navButton" className="icon">
+          <Link to={this.props.to}>
+            <i className="material-icons md-36">arrow_back</i>
+          </Link>
+        </div>
+      )
+    }
+
     let icon = (
       <div id="icon" className="icon">
           <i className="material-icons md-36">{this.props.icon}</i>
       </div>
     )
-      
+
     if (this.props.to) {
       icon = (
         <div id="icon" className="icon">
@@ -44,25 +54,16 @@ class Header extends React.Component {
 
     return (
       <header>
-
         <div className="title">
           {link}{icon}
           <div>
             <h1>{this.props.title}</h1>
           </div>
         </div>
-
         {search}
-
       </header>
     );
   }
-}
-
-Header.propTypes = {
-  title: React.PropTypes.string,
-  icon: React.PropTypes.string,
-  to: React.PropTypes.string
 }
 
 export default Header;

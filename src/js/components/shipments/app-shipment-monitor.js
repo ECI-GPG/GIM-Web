@@ -1,27 +1,21 @@
 import React from 'react';
 import Constants from '../../constants/app-constants';
-import Header from '../header/app-header';
+import Page from '../header/app-page';
 import Shipments from './app-shipments';
 import styles from './app-shipments.css';
 
-class Monitor extends React.Component {
+const Monitor = (props) => {
 
-  render() {
+  let states = [
+    Constants.SHIPMENT_STATE.SENT,
+    Constants.SHIPMENT_STATE.RECEIVED
+  ];
 
-    let states = [
-      Constants.SHIPMENT_STATE.SENT,
-      Constants.SHIPMENT_STATE.RECEIVED
-    ];
-
-    return (
-      <div className="page">
-        <Header title="Monitor" icon="send" toggleDrawer={this.props.toggleDrawer}/>
-        <main>
-          <Shipments states={states}/>
-        </main>
-      </div>
-    )
-  }
+  return (
+    <Page title="Monitor" icon="send" toggleDrawer={props.toggleDrawer}>
+      <Shipments states={states}/>
+    </Page>
+  )
 }
 
 export default Monitor;

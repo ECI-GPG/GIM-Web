@@ -7,9 +7,9 @@ class Menu extends React.Component {
   render() {
 
     let options = [
-      { txt : 'Monitor',    to:'/',          icon: 'send'},
-      { txt : 'Outbox',     to:'outbox',     icon: 'inbox'},
-      { txt : 'Incidences', to:'incidences', icon: 'warning'},
+      { txt : 'Monitor', to:'/', icon: 'send'},
+      { txt : 'Outbox', to:'outbox', icon: 'inbox'},
+      { txt : 'Issues', to:'issues', icon: 'warning'},
     ];
 
     var items = options.map(item => {

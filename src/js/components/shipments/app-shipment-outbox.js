@@ -1,10 +1,9 @@
 import React from 'react';
-import Shipments from './app-shipments';
-import Constants from '../../constants/app-constants';
-import Header from '../header/app-header';
-import Button from '../cart/app-cart-button';
 import {Link} from 'react-router';
+import Constants from '../../constants/app-constants';
+import Page from '../layout/app-page';
 import styles from './app-shipments.css';
+import Shipments from './app-shipments';
 
 class Outbox extends React.Component {
 
@@ -16,22 +15,17 @@ class Outbox extends React.Component {
     ];
 
     return (
-      <div className="page">
+      <Page title="Outbox" icon="inbox" toggleDrawer={this.props.toggleDrawer}>
 
-        <Header title="Outbox" icon="inbox" toggleDrawer={this.props.toggleDrawer}/>
+        <Shipments states={states}/>
 
-        <main>
+        <Link to="/outbox/new">
+          <button className="mui-btn mui-btn--accent mui-btn--fab  fab">
+            <i className="material-icons">add</i>
+          </button>
+        </Link>
 
-          <Shipments states={states}/>
-
-          <Link to="/outbox/new">
-            <button className="mui-btn mui-btn--accent mui-btn--fab  fab">
-              <i className="material-icons">add</i>
-            </button>
-          </Link>
-
-        </main>
-      </div>
+      </Page>
     )
   }
 }
