@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../header/app-header';
+import Header from '../layout/app-header';
 import {Link} from 'react-router';
 
 class ImportForm extends React.Component {

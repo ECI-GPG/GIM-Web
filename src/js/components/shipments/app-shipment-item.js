@@ -1,5 +1,4 @@
 import React from 'react';
-import CartButton from '../cart/app-cart-button';
 import AppConstants from '../../constants/app-constants';
 import {Link} from 'react-router';
 

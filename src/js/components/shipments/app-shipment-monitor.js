@@ -1,6 +1,6 @@
 import React from 'react';
 import Constants from '../../constants/app-constants';
-import Page from '../header/app-page';
+import Page from '../layout/app-page';
 import Shipments from './app-shipments';
 import styles from './app-shipments.css';
 
