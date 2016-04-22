@@ -4,7 +4,7 @@
 
 #layout > #drawer {
   height: 100vh;
-  min-width: 250px;
+  min-width: 24rem;
 }
 
 #layout > #overlay {
@@ -24,7 +24,7 @@
 
 #container > #searchbar {
   padding: 15px;
-  min-height: 115px;
+  min-height: 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,6 +68,10 @@
 
 @media all and (max-width:1280px) {
 
+  html {
+    font-size : 100%;
+  }
+
   #layout > #drawerButton {
     display:block;
     position:absolute;
@@ -77,7 +81,8 @@
 
   #layout > #drawer {
     position: absolute;
-    left: -300px;
+    min-width: 30rem;
+    left: -30rem;
     background: #444;
     -webkit-transition: left 0.5s;
     -webkit-transition-timming-function: ease-in-out;
