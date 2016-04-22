@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './app-layout.css';
 
 import Menu from './app-menu';
+import SearchBox from '../search/app-search';
 
 export default class Layout extends React.Component {
 
@@ -23,7 +24,7 @@ export default class Layout extends React.Component {
         </div>
         <div id="overlay" ref={(ref) => this.overlay = ref} onClick={this.toggleDrawer}></div>
         <div id="container">
-          <div id="searchbar">...</div>
+          <div id="searchbar"><SearchBox/></div>
           {React.cloneElement(this.props.children, {toggleDrawer: this.toggleDrawer })}
         </div>
         <div id="toolbar"></div>
