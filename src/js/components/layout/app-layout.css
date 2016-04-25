@@ -39,6 +39,7 @@
   display: flex;
   flex-direction: column;
   background-color: #EEE;
+  overflow: hidden;
 }
 
 #layout > #toolbar {
@@ -70,10 +71,6 @@
 
 @media all and (max-width:1280px) {
 
-  html {
-    font-size : 100%;
-  }
-
   #layout > #drawerButton {
     display:block;
     position:absolute;
@@ -83,8 +80,8 @@
 
   #layout > #drawer {
     position: absolute;
-    min-width: 30rem;
-    left: -30rem;
+    min-width: 27rem;
+    left: -28rem;
     background: #444;
     -webkit-transition: left 0.5s;
     -webkit-transition-timming-function: ease-in-out;
@@ -137,8 +134,3 @@
   }
 }
 
-@media all and (max-width:700px) {
-  html {
-    font-size : 150%;
-  }
-}
