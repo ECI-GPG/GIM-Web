@@ -5,3 +5,15 @@ th {
 .timeline-item {
   display: flex;
 }
+
+.formField {
+  display:flex;
+}
+
+.formField .icon {
+  color : rgba(0, 0, 0, 0.8);
+}
+
+.formField .input-textfield {
+  flex:1;
+}

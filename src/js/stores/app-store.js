@@ -44,10 +44,10 @@ const AppStore = Object.assign(EventEmitter.prototype, {
 
     switch(action.actionType) {
       case AppConstants.ADD_ITEM:
-        CartAPI.addItem(action.item);
+        ShipmentAPI.add(action.item);
         break;
       case AppConstants.REMOVE_ITEM:
-        CartAPI.removeItem(action.item);
+        ShipmentAPI.remove(action.item);
         break;
       case AppConstants.INCREASE_ITEM:
         CartAPI.increaseItem(action.item);

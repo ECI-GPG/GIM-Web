@@ -26393,7 +26393,7 @@
 
 
 	// module
-	exports.push([module.id, "\nth {\n  vertical-align: bottom;\n}\n.timeline-item {\n  display: flex;\n}\n", ""]);
+	exports.push([module.id, "\nth {\n  vertical-align: bottom;\n}\n.timeline-item {\n  display: flex;\n}\n\n.formField {\n  display:flex;\n}\n\n.formField .icon {\n  color : rgba(0, 0, 0, 0.8);\n}\n\n.formField .input-textfield {\n  flex:1;\n}\n", ""]);
 
 	// exports
 
@@ -26563,10 +26563,10 @@
 
 	    switch (action.actionType) {
 	      case _appConstants2.default.ADD_ITEM:
-	        _apiCart2.default.addItem(action.item);
+	        _apiShipment2.default.add(action.item);
 	        break;
 	      case _appConstants2.default.REMOVE_ITEM:
-	        _apiCart2.default.removeItem(action.item);
+	        _apiShipment2.default.remove(action.item);
 	        break;
 	      case _appConstants2.default.INCREASE_ITEM:
 	        _apiCart2.default.increaseItem(action.item);
@@ -27017,6 +27017,14 @@
 	      'bar-code': '',
 	      'timeline': [{ 'event': 'created', 'date': new Date(), 'author': 'John Smith' }, { 'event': 'closed', 'date': new Date(), 'author': 'John Smith' }, { 'event': 'send', 'date': new Date(), 'author': 'Mary Higgins' }]
 	    };
+	  },
+	  add: function add(item) {
+	    this.shipments.push(Object.assign({ dateCreated: new Date() }, item));
+	  },
+	  remove: function remove(item) {
+	    this.shipments.splice(this.shipments.findIndex(function (i) {
+	      return i === item;
+	    }), 1);
 	  }
 	};
 
@@ -27278,6 +27286,8 @@
 	  _createClass(ImportForm, [{
 	    key: 'render',
 	    value: function render() {
+
+	      var date = new Date().toLocaleDateString();
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'page' },
@@ -27299,72 +27309,82 @@
 	            null,
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'input-textfield mui-textfield mui-textfield--float-label' },
-	              _react2.default.createElement('input', { type: 'text' }),
+	              { className: 'formField' },
 	              _react2.default.createElement(
-	                'label',
-	                null,
-	                'ID'
+	                'div',
+	                { className: 'icon' },
+	                _react2.default.createElement(
+	                  'i',
+	                  { className: 'material-icons' },
+	                  'fingerprint'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'input-textfield mui-textfield mui-textfield--float-label' },
+	                _react2.default.createElement('input', { type: 'text', value: '12345678', readOnly: true }),
+	                _react2.default.createElement(
+	                  'label',
+	                  null,
+	                  'ID'
+	                )
+	              ),
+	              ' ',
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'input-textfield mui-textfield mui-textfield--float-label' },
+	                _react2.default.createElement('input', { type: 'text', value: date, readOnly: true }),
+	                _react2.default.createElement(
+	                  'label',
+	                  null,
+	                  'Creation Date'
+	                )
 	              )
 	            ),
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'input-textfield mui-textfield mui-textfield--float-label' },
-	              _react2.default.createElement('input', { type: 'text' }),
+	              { className: 'formField' },
 	              _react2.default.createElement(
-	                'label',
-	                null,
-	                'State'
+	                'div',
+	                { className: 'icon' },
+	                _react2.default.createElement(
+	                  'i',
+	                  { className: 'material-icons' },
+	                  'person'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'input-textfield mui-textfield mui-textfield--float-label' },
+	                _react2.default.createElement('input', { type: 'text', value: 'John Smith' }),
+	                _react2.default.createElement(
+	                  'label',
+	                  null,
+	                  'Creator'
+	                )
 	              )
 	            ),
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'input-textfield mui-textfield mui-textfield--float-label' },
-	              _react2.default.createElement('input', { type: 'text' }),
+	              { className: 'formField' },
 	              _react2.default.createElement(
-	                'label',
-	                null,
-	                'Creation Date'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'input-textfield mui-textfield mui-textfield--float-label' },
-	              _react2.default.createElement('input', { type: 'text' }),
+	                'div',
+	                { className: 'icon' },
+	                _react2.default.createElement(
+	                  'i',
+	                  { className: 'material-icons' },
+	                  'edit'
+	                )
+	              ),
 	              _react2.default.createElement(
-	                'label',
-	                null,
-	                'Close Date'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'input-textfield mui-textfield mui-textfield--float-label' },
-	              _react2.default.createElement('input', { type: 'text' }),
-	              _react2.default.createElement(
-	                'label',
-	                null,
-	                'Send Date'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'input-textfield mui-textfield mui-textfield--float-label' },
-	              _react2.default.createElement('input', { type: 'text' }),
-	              _react2.default.createElement(
-	                'label',
-	                null,
-	                'Estimated Reception Date'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'input-textfield mui-textfield mui-textfield--float-label' },
-	              _react2.default.createElement('input', { type: 'text' }),
-	              _react2.default.createElement(
-	                'label',
-	                null,
-	                'Reception Date'
+	                'div',
+	                { className: 'input-textfield mui-textfield mui-textfield--float-label' },
+	                _react2.default.createElement('textarea', null),
+	                _react2.default.createElement(
+	                  'label',
+	                  null,
+	                  'Description'
+	                )
 	              )
 	            ),
 	            _react2.default.createElement(

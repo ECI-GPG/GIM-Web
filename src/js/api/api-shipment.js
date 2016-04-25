@@ -43,6 +43,14 @@ const ShipmentAPI = {
         { 'event': 'send', 'date': new Date(), 'author':'Mary Higgins'}
       ]
     }
+  },
+
+  add(item) {
+    this.shipments.push(Object.assign({dateCreated: new Date()},item));
+  },
+
+  remove(item) {
+    this.shipments.splice( this.shipments.findIndex( i => i === item ), 1);
   }
 
 }

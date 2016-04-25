@@ -15,6 +15,8 @@ class ImportForm extends React.Component {
 
 
   render() {
+
+    let date = new Date().toLocaleDateString();
     return (
       <div className="page">
         <Header title="New Shipment" to="/outbox"/>
@@ -24,35 +26,36 @@ class ImportForm extends React.Component {
             </div>
             <form>
 
-              <div className="input-textfield mui-textfield mui-textfield--float-label">
-                <input type="text"></input>
-                <label>ID</label>
+
+              <div className="formField">
+                <div className="icon"><i className="material-icons">fingerprint</i></div>
+                <div className="input-textfield mui-textfield mui-textfield--float-label">
+                  <input type="text" value="12345678" readOnly></input>
+                  <label>ID</label>
+                </div>
+                &nbsp;
+                <div className="input-textfield mui-textfield mui-textfield--float-label">
+                  <input type="text" value={date} readOnly></input>
+                  <label>Creation Date</label>
+                </div>
               </div>
 
-              <div className="input-textfield mui-textfield mui-textfield--float-label">
-                <input type="text"></input>
-                <label>State</label>
+              <div className="formField">
+                <div className="icon"><i className="material-icons">person</i></div>
+                <div className="input-textfield mui-textfield mui-textfield--float-label">
+                  <input type="text" value="John Smith"></input>
+                  <label>Creator</label>
+                </div>
               </div>
-              <div className="input-textfield mui-textfield mui-textfield--float-label">
-                <input type="text"></input>
-                <label>Creation Date</label>
+
+              <div className="formField">
+                <div className="icon"><i className="material-icons">edit</i></div>
+                <div className="input-textfield mui-textfield mui-textfield--float-label">
+                  <textarea></textarea>
+                  <label>Description</label>
+                </div>
               </div>
-              <div className="input-textfield mui-textfield mui-textfield--float-label">
-                <input type="text"></input>
-                <label>Close Date</label>
-              </div>
-              <div className="input-textfield mui-textfield mui-textfield--float-label">
-                <input type="text"></input>
-                <label>Send Date</label>
-              </div>
-              <div className="input-textfield mui-textfield mui-textfield--float-label">
-                <input type="text"></input>
-                <label>Estimated Reception Date</label>
-              </div>
-              <div className="input-textfield mui-textfield mui-textfield--float-label">
-                <input type="text"></input>
-                <label>Reception Date</label>
-              </div>
+
               <Link to="/outbox"><button className="mui-btn">CANCEL</button></Link>
               &nbsp;
               <button className="mui-btn">OK</button>
