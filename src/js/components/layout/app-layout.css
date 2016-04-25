@@ -61,7 +61,7 @@
 
 .fab {
   position: absolute;
-  top: 80px;
+  top: 65px;
   bottom: auto;
   right: 130px;
   padding-top: 8px;
@@ -116,7 +116,7 @@
 
   #container > .page main {
     color: rgba(0, 0, 0, 0.8);
-    background-color: #FFF;
+    background-color: #EEE;
   }
 
   #toolbar {
@@ -133,4 +133,3 @@
     padding-top: 8px;
   }
 }
-

@@ -25442,7 +25442,7 @@
 
 
 	// module
-	exports.push([module.id, "#layout {\n  display: flex;\n}\n\n#layout > #drawer {\n  height: 100vh;\n  min-width: 24rem;\n}\n\n#layout > #overlay {\n  display:none;\n}\n\n.hidden {\n  display:none\n}\n\n#layout > #container {\n  flex: 1;\n  height: 100vh;\n  display: flex;\n  flex-direction:column;\n}\n\n#container > #searchbar {\n  padding: 15px;\n  min-height: 10rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n#searchbar > .searchbox {\n  flex:1;\n}\n\n#container > .page {\n  flex:1;\n  display: flex;\n  flex-direction: column;\n  background-color: #EEE;\n  overflow: hidden;\n}\n\n#layout > #toolbar {\n  width:100px;\n}\n\n.page > header {\n  display: flex;\n  min-height: 115px;\n}\n\n.page > main {\n  flex: 1;\n  color: rgba(0,0,0,0.8);\n  background-color: #EEE;\n  padding: 15px 15px 0px 15px;\n  overflow-y: auto;\n}\n\n.fab {\n  position: absolute;\n  top: 80px;\n  bottom: auto;\n  right: 130px;\n  padding-top: 8px;\n}\n\n\n\n@media all and (max-width:1280px) {\n\n  #layout > #drawerButton {\n    display:block;\n    position:absolute;\n    top:30px;\n    left:15px;\n  }\n\n  #layout > #drawer {\n    position: absolute;\n    min-width: 27rem;\n    left: -28rem;\n    background: #444;\n    -webkit-transition: left 0.5s;\n    -webkit-transition-timming-function: ease-in-out;\n    transition: left 0.5s ease-in-out;\n  }\n\n  #drawer.open {\n    z-index: 1001;\n    left: 0px !important;\n    -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n  }\n\n  #overlay.open {\n    z-index: 1000;\n    display: block !important;\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(100, 100, 100, 0.7);\n  }\n\n  #container > #searchbar {\n    display:none;\n  }\n\n  #container > .page {\n    padding:0px;\n    background-color: inherit;\n  }\n\n  #container > .page main {\n    color: rgba(0, 0, 0, 0.8);\n    background-color: #FFF;\n  }\n\n  #toolbar {\n    display:none;\n    position: absolute;\n    right: -150px;\n  }\n\n  .fab {\n    position: absolute;\n    top: auto;\n    bottom: 16px;\n    right: 30px;\n    padding-top: 8px;\n  }\n}\n\n", ""]);
+	exports.push([module.id, "#layout {\n  display: flex;\n}\n\n#layout > #drawer {\n  height: 100vh;\n  min-width: 24rem;\n}\n\n#layout > #overlay {\n  display:none;\n}\n\n.hidden {\n  display:none\n}\n\n#layout > #container {\n  flex: 1;\n  height: 100vh;\n  display: flex;\n  flex-direction:column;\n}\n\n#container > #searchbar {\n  padding: 15px;\n  min-height: 10rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n#searchbar > .searchbox {\n  flex:1;\n}\n\n#container > .page {\n  flex:1;\n  display: flex;\n  flex-direction: column;\n  background-color: #EEE;\n  overflow: hidden;\n}\n\n#layout > #toolbar {\n  width:100px;\n}\n\n.page > header {\n  display: flex;\n  min-height: 115px;\n}\n\n.page > main {\n  flex: 1;\n  color: rgba(0,0,0,0.8);\n  background-color: #EEE;\n  padding: 15px 15px 0px 15px;\n  overflow-y: auto;\n}\n\n.fab {\n  position: absolute;\n  top: 65px;\n  bottom: auto;\n  right: 130px;\n  padding-top: 8px;\n}\n\n\n\n@media all and (max-width:1280px) {\n\n  #layout > #drawerButton {\n    display:block;\n    position:absolute;\n    top:30px;\n    left:15px;\n  }\n\n  #layout > #drawer {\n    position: absolute;\n    min-width: 27rem;\n    left: -28rem;\n    background: #444;\n    -webkit-transition: left 0.5s;\n    -webkit-transition-timming-function: ease-in-out;\n    transition: left 0.5s ease-in-out;\n  }\n\n  #drawer.open {\n    z-index: 1001;\n    left: 0px !important;\n    -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n  }\n\n  #overlay.open {\n    z-index: 1000;\n    display: block !important;\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(100, 100, 100, 0.7);\n  }\n\n  #container > #searchbar {\n    display:none;\n  }\n\n  #container > .page {\n    padding:0px;\n    background-color: inherit;\n  }\n\n  #container > .page main {\n    color: rgba(0, 0, 0, 0.8);\n    background-color: #EEE;\n  }\n\n  #toolbar {\n    display:none;\n    position: absolute;\n    right: -150px;\n  }\n\n  .fab {\n    position: absolute;\n    top: auto;\n    bottom: 16px;\n    right: 30px;\n    padding-top: 8px;\n  }\n}\n", ""]);
 
 	// exports
 
@@ -27117,6 +27117,16 @@
 	          { className: 'material-icons' },
 	          'info'
 	        )
+	      ),
+	      '    ',
+	      _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/outbox/new' },
+	        _react2.default.createElement(
+	          'i',
+	          { className: 'material-icons' },
+	          'edit'
+	        )
 	      )
 	    )
 	  );
@@ -27291,116 +27301,118 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'page' },
-	        _react2.default.createElement(_appHeader2.default, { title: 'New Shipment', to: '/outbox' }),
+	        _react2.default.createElement(_appHeader2.default, { title: 'Shipment Form', to: '/outbox' }),
 	        _react2.default.createElement(
 	          'main',
 	          null,
+	          _react2.default.createElement('br', null),
 	          _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement(
-	              'h2',
-	              null,
-	              'New Shipment'
-	            )
+	            'h4',
+	            { className: 'mui--text-dark-secondary' },
+	            'Form'
 	          ),
 	          _react2.default.createElement(
-	            'form',
-	            null,
+	            'div',
+	            { className: 'mui-panel' },
 	            _react2.default.createElement(
-	              'div',
-	              { className: 'formField' },
+	              'form',
+	              null,
+	              _react2.default.createElement('br', null),
 	              _react2.default.createElement(
 	                'div',
-	                { className: 'icon' },
+	                { className: 'formField' },
 	                _react2.default.createElement(
-	                  'i',
-	                  { className: 'material-icons' },
-	                  'fingerprint'
+	                  'div',
+	                  { className: 'icon' },
+	                  _react2.default.createElement(
+	                    'i',
+	                    { className: 'material-icons' },
+	                    'fingerprint'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'input-textfield mui-textfield mui-textfield--float-label' },
+	                  _react2.default.createElement('input', { type: 'text', value: '12345678', readOnly: true }),
+	                  _react2.default.createElement(
+	                    'label',
+	                    null,
+	                    'ID'
+	                  )
+	                ),
+	                ' ',
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'input-textfield mui-textfield mui-textfield--float-label' },
+	                  _react2.default.createElement('input', { type: 'text', value: date, readOnly: true }),
+	                  _react2.default.createElement(
+	                    'label',
+	                    null,
+	                    'Creation Date'
+	                  )
 	                )
 	              ),
 	              _react2.default.createElement(
 	                'div',
-	                { className: 'input-textfield mui-textfield mui-textfield--float-label' },
-	                _react2.default.createElement('input', { type: 'text', value: '12345678', readOnly: true }),
+	                { className: 'formField' },
 	                _react2.default.createElement(
-	                  'label',
-	                  null,
-	                  'ID'
+	                  'div',
+	                  { className: 'icon' },
+	                  _react2.default.createElement(
+	                    'i',
+	                    { className: 'material-icons' },
+	                    'person'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'input-textfield mui-textfield mui-textfield--float-label' },
+	                  _react2.default.createElement('input', { type: 'text', value: 'John Smith' }),
+	                  _react2.default.createElement(
+	                    'label',
+	                    null,
+	                    'Creator'
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'formField' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'icon' },
+	                  _react2.default.createElement(
+	                    'i',
+	                    { className: 'material-icons' },
+	                    'edit'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'input-textfield mui-textfield mui-textfield--float-label' },
+	                  _react2.default.createElement('textarea', null),
+	                  _react2.default.createElement(
+	                    'label',
+	                    null,
+	                    'Description'
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/outbox' },
+	                _react2.default.createElement(
+	                  'button',
+	                  { className: 'mui-btn' },
+	                  'CANCEL'
 	                )
 	              ),
 	              ' ',
 	              _react2.default.createElement(
-	                'div',
-	                { className: 'input-textfield mui-textfield mui-textfield--float-label' },
-	                _react2.default.createElement('input', { type: 'text', value: date, readOnly: true }),
-	                _react2.default.createElement(
-	                  'label',
-	                  null,
-	                  'Creation Date'
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'formField' },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'icon' },
-	                _react2.default.createElement(
-	                  'i',
-	                  { className: 'material-icons' },
-	                  'person'
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'input-textfield mui-textfield mui-textfield--float-label' },
-	                _react2.default.createElement('input', { type: 'text', value: 'John Smith' }),
-	                _react2.default.createElement(
-	                  'label',
-	                  null,
-	                  'Creator'
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'formField' },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'icon' },
-	                _react2.default.createElement(
-	                  'i',
-	                  { className: 'material-icons' },
-	                  'edit'
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'input-textfield mui-textfield mui-textfield--float-label' },
-	                _react2.default.createElement('textarea', null),
-	                _react2.default.createElement(
-	                  'label',
-	                  null,
-	                  'Description'
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/outbox' },
-	              _react2.default.createElement(
 	                'button',
 	                { className: 'mui-btn' },
-	                'CANCEL'
+	                'OK'
 	              )
-	            ),
-	            ' ',
-	            _react2.default.createElement(
-	              'button',
-	              { className: 'mui-btn' },
-	              'OK'
 	            )
 	          )
 	        )
