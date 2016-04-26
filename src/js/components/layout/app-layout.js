@@ -2,6 +2,7 @@ import React from 'react'
 import Menu from './app-menu';
 import Styles from './app-layout.css';
 import SearchBox from '../search/app-search';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class Layout extends React.Component {
 
@@ -24,7 +25,9 @@ class Layout extends React.Component {
         <div id="overlay" ref={(ref) => this.overlay = ref} onClick={this.toggleDrawer}></div>
         <div id="container">
           <div id="searchbar"><SearchBox/></div>
-          {React.cloneElement(this.props.children, {toggleDrawer: this.toggleDrawer })}
+			<ReactCSSTransitionGroup component="div" transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
+				{React.cloneElement(this.props.children, { key: this.props.location.pathname, toggleDrawer: this.toggleDrawer })}
+			</ReactCSSTransitionGroup>          
         </div>
         <div id="toolbar"></div>
       </div>
