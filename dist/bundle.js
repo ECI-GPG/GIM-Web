@@ -19691,33 +19691,35 @@
 
 	var _reactRouter = __webpack_require__(168);
 
-	var _appIssues = __webpack_require__(230);
+	var _appIssues = __webpack_require__(237);
 
 	var _appIssues2 = _interopRequireDefault(_appIssues);
 
-	var _appSearchPage = __webpack_require__(241);
+	var _appSearchPage = __webpack_require__(248);
 
 	var _appSearchPage2 = _interopRequireDefault(_appSearchPage);
 
-	var _appShipmentOutbox = __webpack_require__(242);
+	var _appShipmentOutbox = __webpack_require__(249);
 
 	var _appShipmentOutbox2 = _interopRequireDefault(_appShipmentOutbox);
 
-	var _appShipmentMonitor = __webpack_require__(252);
+	var _appShipmentMonitor = __webpack_require__(261);
 
 	var _appShipmentMonitor2 = _interopRequireDefault(_appShipmentMonitor);
 
-	var _appShipmentForm = __webpack_require__(253);
+	var _appProducts = __webpack_require__(263);
+
+	var _appProducts2 = _interopRequireDefault(_appProducts);
+
+	var _appShipmentForm = __webpack_require__(266);
 
 	var _appShipmentForm2 = _interopRequireDefault(_appShipmentForm);
 
-	var _appShipmentInfo = __webpack_require__(254);
+	var _appShipmentInfo = __webpack_require__(267);
 
 	var _appShipmentInfo2 = _interopRequireDefault(_appShipmentInfo);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// Pages
 
 	exports.default = function () {
 	  return _react2.default.createElement(
@@ -19731,10 +19733,13 @@
 	      _react2.default.createElement(_reactRouter.Route, { path: 'issues', component: _appIssues2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: 'outbox', component: _appShipmentOutbox2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: 'shipment', component: _appShipmentInfo2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: 'products', component: _appProducts2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: 'outbox/new', component: _appShipmentForm2.default })
 	    )
 	  );
 	};
+
+	// Pages
 
 /***/ },
 /* 160 */
@@ -20112,6 +20117,10 @@
 
 	var _appSearch2 = _interopRequireDefault(_appSearch);
 
+	var _reactAddonsCssTransitionGroup = __webpack_require__(230);
+
+	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20164,7 +20173,11 @@
 	            { id: 'searchbar' },
 	            _react2.default.createElement(_appSearch2.default, null)
 	          ),
-	          _react2.default.cloneElement(this.props.children, { toggleDrawer: this.toggleDrawer })
+	          _react2.default.createElement(
+	            _reactAddonsCssTransitionGroup2.default,
+	            { component: 'div', transitionName: 'example', transitionEnterTimeout: 1000, transitionLeaveTimeout: 1000 },
+	            _react2.default.cloneElement(this.props.children, { key: this.props.location.pathname, toggleDrawer: this.toggleDrawer })
+	          )
 	        ),
 	        _react2.default.createElement('div', { id: 'toolbar' })
 	      );
@@ -20220,7 +20233,7 @@
 	    value: function render() {
 	      var _this2 = this;
 
-	      var options = [{ txt: 'Monitor', to: '/', icon: 'send' }, { txt: 'Outbox', to: 'outbox', icon: 'inbox' }, { txt: 'Issues', to: 'issues', icon: 'warning' }];
+	      var options = [{ txt: 'Monitor', to: '/', icon: 'send' }, { txt: 'Outbox', to: 'outbox', icon: 'inbox' }, { txt: 'Issues', to: 'issues', icon: 'warning' }, { txt: 'Products', to: 'products', icon: 'local_offer' }];
 
 	      var items = options.map(function (item) {
 	        return _react2.default.createElement(
@@ -25442,7 +25455,7 @@
 
 
 	// module
-	exports.push([module.id, "#layout {\n  display: flex;\n}\n\n#layout > #drawer {\n  height: 100vh;\n  min-width: 24rem;\n}\n\n#layout > #overlay {\n  display:none;\n}\n\n.hidden {\n  display:none\n}\n\n#layout > #container {\n  flex: 1;\n  height: 100vh;\n  display: flex;\n  flex-direction:column;\n}\n\n#container > #searchbar {\n  padding: 15px;\n  min-height: 10rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n#searchbar > .searchbox {\n  flex:1;\n}\n\n#container > .page {\n  flex:1;\n  display: flex;\n  flex-direction: column;\n  background-color: #EEE;\n  overflow: hidden;\n}\n\n#layout > #toolbar {\n  width:100px;\n}\n\n.page > header {\n  display: flex;\n  min-height: 115px;\n}\n\n.page > main {\n  flex: 1;\n  color: rgba(0,0,0,0.8);\n  background-color: #EEE;\n  padding: 15px 15px 0px 15px;\n  overflow-y: auto;\n}\n\n.fab {\n  position: absolute;\n  top: 65px;\n  bottom: auto;\n  right: 130px;\n  padding-top: 8px;\n}\n\n\n\n@media all and (max-width:1280px) {\n\n  #layout > #drawerButton {\n    display:block;\n    position:absolute;\n    top:30px;\n    left:15px;\n  }\n\n  #layout > #drawer {\n    position: absolute;\n    min-width: 27rem;\n    left: -28rem;\n    background: #444;\n    -webkit-transition: left 0.5s;\n    -webkit-transition-timming-function: ease-in-out;\n    transition: left 0.5s ease-in-out;\n  }\n\n  #drawer.open {\n    z-index: 1001;\n    left: 0px !important;\n    -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n  }\n\n  #overlay.open {\n    z-index: 1000;\n    display: block !important;\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(100, 100, 100, 0.7);\n  }\n\n  #container > #searchbar {\n    display:none;\n  }\n\n  #container > .page {\n    padding:0px;\n    background-color: inherit;\n  }\n\n  #container > .page main {\n    color: rgba(0, 0, 0, 0.8);\n    background-color: #EEE;\n  }\n\n  #toolbar {\n    display:none;\n    position: absolute;\n    right: -150px;\n  }\n\n  .fab {\n    position: absolute;\n    top: auto;\n    bottom: 16px;\n    right: 30px;\n    padding-top: 8px;\n  }\n}\n", ""]);
+	exports.push([module.id, "#layout {\n  display: flex;\n}\n\n#layout > #drawer {\n  height: 100vh;\n  min-width: 24rem;\n}\n\n#layout > #overlay {\n  display:none;\n}\n\n.hidden {\n  display:none\n}\n\n#layout > #container {\n  flex: 1;\n  height: 100vh;\n  display: flex;\n  flex-direction:column;\n}\n\n#container > #searchbar {\n  padding: 15px;\n  min-height: 10rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n#searchbar > .searchbox {\n  flex:1;\n}\n\n#container > .page {\n  flex:1;\n  display: flex;\n  flex-direction: column;\n  background-color: #EEE;\n  overflow: hidden;\n}\n\n#layout > #toolbar {\n  width:100px;\n}\n\n.page > header {\n  display: flex;\n  min-height: 115px;\n}\n\n.page > main {\n  flex: 1;\n  color: rgba(0,0,0,0.8);\n  background-color: #EEE;\n  padding: 15px 15px 0px 15px;\n  overflow-y: auto;\n}\n\n.fab {\n  position: absolute;\n  top: 65px;\n  bottom: auto;\n  right: 130px;\n  padding-top: 8px;\n}\n\n\n\n@media all and (max-width:1280px) {\n\n  #layout > #drawerButton {\n    display:block;\n    position:absolute;\n    top:30px;\n    left:15px;\n  }\n\n  #layout > #drawer {\n    position: absolute;\n    min-width: 27rem;\n    left: -28rem;\n    background: #444;\n    -webkit-transition: left 0.5s;\n    -webkit-transition-timming-function: ease-in-out;\n    transition: left 0.5s ease-in-out;\n  }\n\n  #drawer.open {\n    z-index: 1001;\n    left: 0px !important;\n    -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n  }\n\n  #overlay.open {\n    z-index: 1000;\n    display: block !important;\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(100, 100, 100, 0.7);\n  }\n\n  #container > #searchbar {\n    display:none;\n  }\n\n  #container > .page {\n    padding:0px;\n    background-color: inherit;\n  }\n\n  #container > .page main {\n    color: rgba(0, 0, 0, 0.8);\n    background-color: #EEE;\n  }\n\n  #toolbar {\n    display:none;\n    position: absolute;\n    right: -150px;\n  }\n\n  .fab {\n    position: absolute;\n    top: auto;\n    bottom: 16px;\n    right: 30px;\n    padding-top: 8px;\n  }\n}\n\n\n.example-leave {\n  overflow:hidden;\n  height: 100vh;\n  transition: height 1000ms ease-out;\n}\n\n.example-leave.example-leave-active {\n  height: 0vh;\n}\n\n.example-enter {\n  overflow:hidden;\n  height: 0vh;\n  transition: height 1000ms ease-out;\n}\n\n.example-enter.example-enter-active {\n  height: 100vh;\n}\n\n\n.boxer {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.box {\n  width:calc(25% - 20px);\n  margin: 10px;\n}\n\n@media all and (max-width:1280px) {\n  .box {\n    width:calc(25% - 20px);\n    margin:10px;\n  }\n}\n\n\n@media all and (max-width:1024px) {\n  .box {\n    width:calc(33.333333% - 14px);\n    margin:7px;\n  }\n}\n\n@media all and (max-width:720px) {\n  .box {\n    width:calc(50% - 10px);\n    margin:5px;\n  }\n}\n\n@media all and (max-width:480px) {\n  .box {\n    width:calc(100% - 10px);\n    margin:5px;\n  }\n}\n\n.horizontal {\n  display: flex;\n}\n", ""]);
 
 	// exports
 
@@ -25523,12 +25536,16 @@
 	          _react2.default.createElement(
 	            'span',
 	            null,
-	            _react2.default.createElement('i', { className: 'fa fa-search fa-lg' })
+	            _react2.default.createElement(
+	              'i',
+	              { className: 'material-icons' },
+	              'search'
+	            )
 	          ),
 	          _react2.default.createElement(
 	            'span',
-	            null,
-	            'Buscar Envios'
+	            { className: 'mui--text-light-secondary' },
+	            'Search...'
 	          )
 	        );
 	      }
@@ -25584,6 +25601,800 @@
 /* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__(231);
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @typechecks
+	 * @providesModule ReactCSSTransitionGroup
+	 */
+
+	'use strict';
+
+	var React = __webpack_require__(2);
+
+	var assign = __webpack_require__(39);
+
+	var ReactTransitionGroup = __webpack_require__(232);
+	var ReactCSSTransitionGroupChild = __webpack_require__(234);
+
+	function createTransitionTimeoutPropValidator(transitionType) {
+	  var timeoutPropName = 'transition' + transitionType + 'Timeout';
+	  var enabledPropName = 'transition' + transitionType;
+
+	  return function (props) {
+	    // If the transition is enabled
+	    if (props[enabledPropName]) {
+	      // If no timeout duration is provided
+	      if (props[timeoutPropName] == null) {
+	        return new Error(timeoutPropName + ' wasn\'t supplied to ReactCSSTransitionGroup: ' + 'this can cause unreliable animations and won\'t be supported in ' + 'a future version of React. See ' + 'https://fb.me/react-animation-transition-group-timeout for more ' + 'information.');
+
+	        // If the duration isn't a number
+	      } else if (typeof props[timeoutPropName] !== 'number') {
+	          return new Error(timeoutPropName + ' must be a number (in milliseconds)');
+	        }
+	    }
+	  };
+	}
+
+	var ReactCSSTransitionGroup = React.createClass({
+	  displayName: 'ReactCSSTransitionGroup',
+
+	  propTypes: {
+	    transitionName: ReactCSSTransitionGroupChild.propTypes.name,
+
+	    transitionAppear: React.PropTypes.bool,
+	    transitionEnter: React.PropTypes.bool,
+	    transitionLeave: React.PropTypes.bool,
+	    transitionAppearTimeout: createTransitionTimeoutPropValidator('Appear'),
+	    transitionEnterTimeout: createTransitionTimeoutPropValidator('Enter'),
+	    transitionLeaveTimeout: createTransitionTimeoutPropValidator('Leave')
+	  },
+
+	  getDefaultProps: function () {
+	    return {
+	      transitionAppear: false,
+	      transitionEnter: true,
+	      transitionLeave: true
+	    };
+	  },
+
+	  _wrapChild: function (child) {
+	    // We need to provide this childFactory so that
+	    // ReactCSSTransitionGroupChild can receive updates to name, enter, and
+	    // leave while it is leaving.
+	    return React.createElement(ReactCSSTransitionGroupChild, {
+	      name: this.props.transitionName,
+	      appear: this.props.transitionAppear,
+	      enter: this.props.transitionEnter,
+	      leave: this.props.transitionLeave,
+	      appearTimeout: this.props.transitionAppearTimeout,
+	      enterTimeout: this.props.transitionEnterTimeout,
+	      leaveTimeout: this.props.transitionLeaveTimeout
+	    }, child);
+	  },
+
+	  render: function () {
+	    return React.createElement(ReactTransitionGroup, assign({}, this.props, { childFactory: this._wrapChild }));
+	  }
+	});
+
+	module.exports = ReactCSSTransitionGroup;
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactTransitionGroup
+	 */
+
+	'use strict';
+
+	var React = __webpack_require__(2);
+	var ReactTransitionChildMapping = __webpack_require__(233);
+
+	var assign = __webpack_require__(39);
+	var emptyFunction = __webpack_require__(15);
+
+	var ReactTransitionGroup = React.createClass({
+	  displayName: 'ReactTransitionGroup',
+
+	  propTypes: {
+	    component: React.PropTypes.any,
+	    childFactory: React.PropTypes.func
+	  },
+
+	  getDefaultProps: function () {
+	    return {
+	      component: 'span',
+	      childFactory: emptyFunction.thatReturnsArgument
+	    };
+	  },
+
+	  getInitialState: function () {
+	    return {
+	      children: ReactTransitionChildMapping.getChildMapping(this.props.children)
+	    };
+	  },
+
+	  componentWillMount: function () {
+	    this.currentlyTransitioningKeys = {};
+	    this.keysToEnter = [];
+	    this.keysToLeave = [];
+	  },
+
+	  componentDidMount: function () {
+	    var initialChildMapping = this.state.children;
+	    for (var key in initialChildMapping) {
+	      if (initialChildMapping[key]) {
+	        this.performAppear(key);
+	      }
+	    }
+	  },
+
+	  componentWillReceiveProps: function (nextProps) {
+	    var nextChildMapping = ReactTransitionChildMapping.getChildMapping(nextProps.children);
+	    var prevChildMapping = this.state.children;
+
+	    this.setState({
+	      children: ReactTransitionChildMapping.mergeChildMappings(prevChildMapping, nextChildMapping)
+	    });
+
+	    var key;
+
+	    for (key in nextChildMapping) {
+	      var hasPrev = prevChildMapping && prevChildMapping.hasOwnProperty(key);
+	      if (nextChildMapping[key] && !hasPrev && !this.currentlyTransitioningKeys[key]) {
+	        this.keysToEnter.push(key);
+	      }
+	    }
+
+	    for (key in prevChildMapping) {
+	      var hasNext = nextChildMapping && nextChildMapping.hasOwnProperty(key);
+	      if (prevChildMapping[key] && !hasNext && !this.currentlyTransitioningKeys[key]) {
+	        this.keysToLeave.push(key);
+	      }
+	    }
+
+	    // If we want to someday check for reordering, we could do it here.
+	  },
+
+	  componentDidUpdate: function () {
+	    var keysToEnter = this.keysToEnter;
+	    this.keysToEnter = [];
+	    keysToEnter.forEach(this.performEnter);
+
+	    var keysToLeave = this.keysToLeave;
+	    this.keysToLeave = [];
+	    keysToLeave.forEach(this.performLeave);
+	  },
+
+	  performAppear: function (key) {
+	    this.currentlyTransitioningKeys[key] = true;
+
+	    var component = this.refs[key];
+
+	    if (component.componentWillAppear) {
+	      component.componentWillAppear(this._handleDoneAppearing.bind(this, key));
+	    } else {
+	      this._handleDoneAppearing(key);
+	    }
+	  },
+
+	  _handleDoneAppearing: function (key) {
+	    var component = this.refs[key];
+	    if (component.componentDidAppear) {
+	      component.componentDidAppear();
+	    }
+
+	    delete this.currentlyTransitioningKeys[key];
+
+	    var currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);
+
+	    if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
+	      // This was removed before it had fully appeared. Remove it.
+	      this.performLeave(key);
+	    }
+	  },
+
+	  performEnter: function (key) {
+	    this.currentlyTransitioningKeys[key] = true;
+
+	    var component = this.refs[key];
+
+	    if (component.componentWillEnter) {
+	      component.componentWillEnter(this._handleDoneEntering.bind(this, key));
+	    } else {
+	      this._handleDoneEntering(key);
+	    }
+	  },
+
+	  _handleDoneEntering: function (key) {
+	    var component = this.refs[key];
+	    if (component.componentDidEnter) {
+	      component.componentDidEnter();
+	    }
+
+	    delete this.currentlyTransitioningKeys[key];
+
+	    var currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);
+
+	    if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
+	      // This was removed before it had fully entered. Remove it.
+	      this.performLeave(key);
+	    }
+	  },
+
+	  performLeave: function (key) {
+	    this.currentlyTransitioningKeys[key] = true;
+
+	    var component = this.refs[key];
+	    if (component.componentWillLeave) {
+	      component.componentWillLeave(this._handleDoneLeaving.bind(this, key));
+	    } else {
+	      // Note that this is somewhat dangerous b/c it calls setState()
+	      // again, effectively mutating the component before all the work
+	      // is done.
+	      this._handleDoneLeaving(key);
+	    }
+	  },
+
+	  _handleDoneLeaving: function (key) {
+	    var component = this.refs[key];
+
+	    if (component.componentDidLeave) {
+	      component.componentDidLeave();
+	    }
+
+	    delete this.currentlyTransitioningKeys[key];
+
+	    var currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);
+
+	    if (currentChildMapping && currentChildMapping.hasOwnProperty(key)) {
+	      // This entered again before it fully left. Add it again.
+	      this.performEnter(key);
+	    } else {
+	      this.setState(function (state) {
+	        var newChildren = assign({}, state.children);
+	        delete newChildren[key];
+	        return { children: newChildren };
+	      });
+	    }
+	  },
+
+	  render: function () {
+	    // TODO: we could get rid of the need for the wrapper node
+	    // by cloning a single child
+	    var childrenToRender = [];
+	    for (var key in this.state.children) {
+	      var child = this.state.children[key];
+	      if (child) {
+	        // You may need to apply reactive updates to a child as it is leaving.
+	        // The normal React way to do it won't work since the child will have
+	        // already been removed. In case you need this behavior you can provide
+	        // a childFactory function to wrap every child, even the ones that are
+	        // leaving.
+	        childrenToRender.push(React.cloneElement(this.props.childFactory(child), { ref: key, key: key }));
+	      }
+	    }
+	    return React.createElement(this.props.component, this.props, childrenToRender);
+	  }
+	});
+
+	module.exports = ReactTransitionGroup;
+
+/***/ },
+/* 233 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @typechecks static-only
+	 * @providesModule ReactTransitionChildMapping
+	 */
+
+	'use strict';
+
+	var flattenChildren = __webpack_require__(116);
+
+	var ReactTransitionChildMapping = {
+	  /**
+	   * Given `this.props.children`, return an object mapping key to child. Just
+	   * simple syntactic sugar around flattenChildren().
+	   *
+	   * @param {*} children `this.props.children`
+	   * @return {object} Mapping of key to child
+	   */
+	  getChildMapping: function (children) {
+	    if (!children) {
+	      return children;
+	    }
+	    return flattenChildren(children);
+	  },
+
+	  /**
+	   * When you're adding or removing children some may be added or removed in the
+	   * same render pass. We want to show *both* since we want to simultaneously
+	   * animate elements in and out. This function takes a previous set of keys
+	   * and a new set of keys and merges them with its best guess of the correct
+	   * ordering. In the future we may expose some of the utilities in
+	   * ReactMultiChild to make this easy, but for now React itself does not
+	   * directly have this concept of the union of prevChildren and nextChildren
+	   * so we implement it here.
+	   *
+	   * @param {object} prev prev children as returned from
+	   * `ReactTransitionChildMapping.getChildMapping()`.
+	   * @param {object} next next children as returned from
+	   * `ReactTransitionChildMapping.getChildMapping()`.
+	   * @return {object} a key set that contains all keys in `prev` and all keys
+	   * in `next` in a reasonable order.
+	   */
+	  mergeChildMappings: function (prev, next) {
+	    prev = prev || {};
+	    next = next || {};
+
+	    function getValueForKey(key) {
+	      if (next.hasOwnProperty(key)) {
+	        return next[key];
+	      } else {
+	        return prev[key];
+	      }
+	    }
+
+	    // For each key of `next`, the list of keys to insert before that key in
+	    // the combined list
+	    var nextKeysPending = {};
+
+	    var pendingKeys = [];
+	    for (var prevKey in prev) {
+	      if (next.hasOwnProperty(prevKey)) {
+	        if (pendingKeys.length) {
+	          nextKeysPending[prevKey] = pendingKeys;
+	          pendingKeys = [];
+	        }
+	      } else {
+	        pendingKeys.push(prevKey);
+	      }
+	    }
+
+	    var i;
+	    var childMapping = {};
+	    for (var nextKey in next) {
+	      if (nextKeysPending.hasOwnProperty(nextKey)) {
+	        for (i = 0; i < nextKeysPending[nextKey].length; i++) {
+	          var pendingNextKey = nextKeysPending[nextKey][i];
+	          childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);
+	        }
+	      }
+	      childMapping[nextKey] = getValueForKey(nextKey);
+	    }
+
+	    // Finally, add the keys which didn't appear before any key in `next`
+	    for (i = 0; i < pendingKeys.length; i++) {
+	      childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
+	    }
+
+	    return childMapping;
+	  }
+	};
+
+	module.exports = ReactTransitionChildMapping;
+
+/***/ },
+/* 234 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @typechecks
+	 * @providesModule ReactCSSTransitionGroupChild
+	 */
+
+	'use strict';
+
+	var React = __webpack_require__(2);
+	var ReactDOM = __webpack_require__(3);
+
+	var CSSCore = __webpack_require__(235);
+	var ReactTransitionEvents = __webpack_require__(236);
+
+	var onlyChild = __webpack_require__(156);
+
+	// We don't remove the element from the DOM until we receive an animationend or
+	// transitionend event. If the user screws up and forgets to add an animation
+	// their node will be stuck in the DOM forever, so we detect if an animation
+	// does not start and if it doesn't, we just call the end listener immediately.
+	var TICK = 17;
+
+	var ReactCSSTransitionGroupChild = React.createClass({
+	  displayName: 'ReactCSSTransitionGroupChild',
+
+	  propTypes: {
+	    name: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.shape({
+	      enter: React.PropTypes.string,
+	      leave: React.PropTypes.string,
+	      active: React.PropTypes.string
+	    }), React.PropTypes.shape({
+	      enter: React.PropTypes.string,
+	      enterActive: React.PropTypes.string,
+	      leave: React.PropTypes.string,
+	      leaveActive: React.PropTypes.string,
+	      appear: React.PropTypes.string,
+	      appearActive: React.PropTypes.string
+	    })]).isRequired,
+
+	    // Once we require timeouts to be specified, we can remove the
+	    // boolean flags (appear etc.) and just accept a number
+	    // or a bool for the timeout flags (appearTimeout etc.)
+	    appear: React.PropTypes.bool,
+	    enter: React.PropTypes.bool,
+	    leave: React.PropTypes.bool,
+	    appearTimeout: React.PropTypes.number,
+	    enterTimeout: React.PropTypes.number,
+	    leaveTimeout: React.PropTypes.number
+	  },
+
+	  transition: function (animationType, finishCallback, userSpecifiedDelay) {
+	    var node = ReactDOM.findDOMNode(this);
+
+	    if (!node) {
+	      if (finishCallback) {
+	        finishCallback();
+	      }
+	      return;
+	    }
+
+	    var className = this.props.name[animationType] || this.props.name + '-' + animationType;
+	    var activeClassName = this.props.name[animationType + 'Active'] || className + '-active';
+	    var timeout = null;
+
+	    var endListener = function (e) {
+	      if (e && e.target !== node) {
+	        return;
+	      }
+
+	      clearTimeout(timeout);
+
+	      CSSCore.removeClass(node, className);
+	      CSSCore.removeClass(node, activeClassName);
+
+	      ReactTransitionEvents.removeEndEventListener(node, endListener);
+
+	      // Usually this optional callback is used for informing an owner of
+	      // a leave animation and telling it to remove the child.
+	      if (finishCallback) {
+	        finishCallback();
+	      }
+	    };
+
+	    CSSCore.addClass(node, className);
+
+	    // Need to do this to actually trigger a transition.
+	    this.queueClass(activeClassName);
+
+	    // If the user specified a timeout delay.
+	    if (userSpecifiedDelay) {
+	      // Clean-up the animation after the specified delay
+	      timeout = setTimeout(endListener, userSpecifiedDelay);
+	      this.transitionTimeouts.push(timeout);
+	    } else {
+	      // DEPRECATED: this listener will be removed in a future version of react
+	      ReactTransitionEvents.addEndEventListener(node, endListener);
+	    }
+	  },
+
+	  queueClass: function (className) {
+	    this.classNameQueue.push(className);
+
+	    if (!this.timeout) {
+	      this.timeout = setTimeout(this.flushClassNameQueue, TICK);
+	    }
+	  },
+
+	  flushClassNameQueue: function () {
+	    if (this.isMounted()) {
+	      this.classNameQueue.forEach(CSSCore.addClass.bind(CSSCore, ReactDOM.findDOMNode(this)));
+	    }
+	    this.classNameQueue.length = 0;
+	    this.timeout = null;
+	  },
+
+	  componentWillMount: function () {
+	    this.classNameQueue = [];
+	    this.transitionTimeouts = [];
+	  },
+
+	  componentWillUnmount: function () {
+	    if (this.timeout) {
+	      clearTimeout(this.timeout);
+	    }
+	    this.transitionTimeouts.forEach(function (timeout) {
+	      clearTimeout(timeout);
+	    });
+	  },
+
+	  componentWillAppear: function (done) {
+	    if (this.props.appear) {
+	      this.transition('appear', done, this.props.appearTimeout);
+	    } else {
+	      done();
+	    }
+	  },
+
+	  componentWillEnter: function (done) {
+	    if (this.props.enter) {
+	      this.transition('enter', done, this.props.enterTimeout);
+	    } else {
+	      done();
+	    }
+	  },
+
+	  componentWillLeave: function (done) {
+	    if (this.props.leave) {
+	      this.transition('leave', done, this.props.leaveTimeout);
+	    } else {
+	      done();
+	    }
+	  },
+
+	  render: function () {
+	    return onlyChild(this.props.children);
+	  }
+	});
+
+	module.exports = ReactCSSTransitionGroupChild;
+
+/***/ },
+/* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule CSSCore
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var invariant = __webpack_require__(13);
+
+	/**
+	 * The CSSCore module specifies the API (and implements most of the methods)
+	 * that should be used when dealing with the display of elements (via their
+	 * CSS classes and visibility on screen. It is an API focused on mutating the
+	 * display and not reading it as no logical state should be encoded in the
+	 * display of elements.
+	 */
+
+	var CSSCore = {
+
+	  /**
+	   * Adds the class passed in to the element if it doesn't already have it.
+	   *
+	   * @param {DOMElement} element the element to set the class on
+	   * @param {string} className the CSS className
+	   * @return {DOMElement} the element passed in
+	   */
+	  addClass: function (element, className) {
+	    !!/\s/.test(className) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'CSSCore.addClass takes only a single class name. "%s" contains ' + 'multiple classes.', className) : invariant(false) : undefined;
+
+	    if (className) {
+	      if (element.classList) {
+	        element.classList.add(className);
+	      } else if (!CSSCore.hasClass(element, className)) {
+	        element.className = element.className + ' ' + className;
+	      }
+	    }
+	    return element;
+	  },
+
+	  /**
+	   * Removes the class passed in from the element
+	   *
+	   * @param {DOMElement} element the element to set the class on
+	   * @param {string} className the CSS className
+	   * @return {DOMElement} the element passed in
+	   */
+	  removeClass: function (element, className) {
+	    !!/\s/.test(className) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'CSSCore.removeClass takes only a single class name. "%s" contains ' + 'multiple classes.', className) : invariant(false) : undefined;
+
+	    if (className) {
+	      if (element.classList) {
+	        element.classList.remove(className);
+	      } else if (CSSCore.hasClass(element, className)) {
+	        element.className = element.className.replace(new RegExp('(^|\\s)' + className + '(?:\\s|$)', 'g'), '$1').replace(/\s+/g, ' ') // multiple spaces to one
+	        .replace(/^\s*|\s*$/g, ''); // trim the ends
+	      }
+	    }
+	    return element;
+	  },
+
+	  /**
+	   * Helper to add or remove a class from an element based on a condition.
+	   *
+	   * @param {DOMElement} element the element to set the class on
+	   * @param {string} className the CSS className
+	   * @param {*} bool condition to whether to add or remove the class
+	   * @return {DOMElement} the element passed in
+	   */
+	  conditionClass: function (element, className, bool) {
+	    return (bool ? CSSCore.addClass : CSSCore.removeClass)(element, className);
+	  },
+
+	  /**
+	   * Tests whether the element has the class specified.
+	   *
+	   * @param {DOMNode|DOMWindow} element the element to set the class on
+	   * @param {string} className the CSS className
+	   * @return {boolean} true if the element has the class, false if not
+	   */
+	  hasClass: function (element, className) {
+	    !!/\s/.test(className) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'CSS.hasClass takes only a single class name.') : invariant(false) : undefined;
+	    if (element.classList) {
+	      return !!className && element.classList.contains(className);
+	    }
+	    return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
+	  }
+
+	};
+
+	module.exports = CSSCore;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactTransitionEvents
+	 */
+
+	'use strict';
+
+	var ExecutionEnvironment = __webpack_require__(9);
+
+	/**
+	 * EVENT_NAME_MAP is used to determine which event fired when a
+	 * transition/animation ends, based on the style property used to
+	 * define that event.
+	 */
+	var EVENT_NAME_MAP = {
+	  transitionend: {
+	    'transition': 'transitionend',
+	    'WebkitTransition': 'webkitTransitionEnd',
+	    'MozTransition': 'mozTransitionEnd',
+	    'OTransition': 'oTransitionEnd',
+	    'msTransition': 'MSTransitionEnd'
+	  },
+
+	  animationend: {
+	    'animation': 'animationend',
+	    'WebkitAnimation': 'webkitAnimationEnd',
+	    'MozAnimation': 'mozAnimationEnd',
+	    'OAnimation': 'oAnimationEnd',
+	    'msAnimation': 'MSAnimationEnd'
+	  }
+	};
+
+	var endEvents = [];
+
+	function detectEvents() {
+	  var testEl = document.createElement('div');
+	  var style = testEl.style;
+
+	  // On some platforms, in particular some releases of Android 4.x,
+	  // the un-prefixed "animation" and "transition" properties are defined on the
+	  // style object but the events that fire will still be prefixed, so we need
+	  // to check if the un-prefixed events are useable, and if not remove them
+	  // from the map
+	  if (!('AnimationEvent' in window)) {
+	    delete EVENT_NAME_MAP.animationend.animation;
+	  }
+
+	  if (!('TransitionEvent' in window)) {
+	    delete EVENT_NAME_MAP.transitionend.transition;
+	  }
+
+	  for (var baseEventName in EVENT_NAME_MAP) {
+	    var baseEvents = EVENT_NAME_MAP[baseEventName];
+	    for (var styleName in baseEvents) {
+	      if (styleName in style) {
+	        endEvents.push(baseEvents[styleName]);
+	        break;
+	      }
+	    }
+	  }
+	}
+
+	if (ExecutionEnvironment.canUseDOM) {
+	  detectEvents();
+	}
+
+	// We use the raw {add|remove}EventListener() call because EventListener
+	// does not know how to remove event listeners and we really should
+	// clean up. Also, these events are not triggered in older browsers
+	// so we should be A-OK here.
+
+	function addEventListener(node, eventName, eventListener) {
+	  node.addEventListener(eventName, eventListener, false);
+	}
+
+	function removeEventListener(node, eventName, eventListener) {
+	  node.removeEventListener(eventName, eventListener, false);
+	}
+
+	var ReactTransitionEvents = {
+	  addEndEventListener: function (node, eventListener) {
+	    if (endEvents.length === 0) {
+	      // If CSS transitions are not supported, trigger an "end animation"
+	      // event immediately.
+	      window.setTimeout(eventListener, 0);
+	      return;
+	    }
+	    endEvents.forEach(function (endEvent) {
+	      addEventListener(node, endEvent, eventListener);
+	    });
+	  },
+
+	  removeEndEventListener: function (node, eventListener) {
+	    if (endEvents.length === 0) {
+	      return;
+	    }
+	    endEvents.forEach(function (endEvent) {
+	      removeEventListener(node, endEvent, eventListener);
+	    });
+	  }
+	};
+
+	module.exports = ReactTransitionEvents;
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -25594,7 +26405,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appPage = __webpack_require__(231);
+	var _appPage = __webpack_require__(238);
 
 	var _appPage2 = _interopRequireDefault(_appPage);
 
@@ -25615,7 +26426,7 @@
 	exports.default = Issues;
 
 /***/ },
-/* 231 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25628,7 +26439,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appHeader = __webpack_require__(232);
+	var _appHeader = __webpack_require__(239);
 
 	var _appHeader2 = _interopRequireDefault(_appHeader);
 
@@ -25650,7 +26461,7 @@
 	exports.default = Page;
 
 /***/ },
-/* 232 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25663,11 +26474,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appActions = __webpack_require__(233);
+	var _appActions = __webpack_require__(240);
 
 	var _appActions2 = _interopRequireDefault(_appActions);
 
-	var _appHeader = __webpack_require__(239);
+	var _appHeader = __webpack_require__(246);
 
 	var _appHeader2 = _interopRequireDefault(_appHeader);
 
@@ -25772,7 +26583,7 @@
 	exports.default = Header;
 
 /***/ },
-/* 233 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25781,11 +26592,11 @@
 	  value: true
 	});
 
-	var _appConstants = __webpack_require__(234);
+	var _appConstants = __webpack_require__(241);
 
 	var _appConstants2 = _interopRequireDefault(_appConstants);
 
-	var _appDispatcher = __webpack_require__(235);
+	var _appDispatcher = __webpack_require__(242);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25813,7 +26624,7 @@
 	};
 
 /***/ },
-/* 234 */
+/* 241 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -25837,7 +26648,7 @@
 	};
 
 /***/ },
-/* 235 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25848,7 +26659,7 @@
 	exports.register = register;
 	exports.dispatch = dispatch;
 
-	var _flux = __webpack_require__(236);
+	var _flux = __webpack_require__(243);
 
 	var flux = new _flux.Dispatcher();
 
@@ -25862,7 +26673,7 @@
 	}
 
 /***/ },
-/* 236 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -25874,11 +26685,11 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 */
 
-	module.exports.Dispatcher = __webpack_require__(237);
+	module.exports.Dispatcher = __webpack_require__(244);
 
 
 /***/ },
-/* 237 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -25900,7 +26711,7 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-	var invariant = __webpack_require__(238);
+	var invariant = __webpack_require__(245);
 
 	var _prefix = 'ID_';
 
@@ -26115,7 +26926,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 238 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -26170,13 +26981,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 239 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(240);
+	var content = __webpack_require__(247);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(163)(content, {});
@@ -26196,7 +27007,7 @@
 	}
 
 /***/ },
-/* 240 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(162)();
@@ -26210,7 +27021,7 @@
 
 
 /***/ },
-/* 241 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26276,7 +27087,7 @@
 	exports.default = Search;
 
 /***/ },
-/* 242 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26293,19 +27104,19 @@
 
 	var _reactRouter = __webpack_require__(168);
 
-	var _appConstants = __webpack_require__(234);
+	var _appConstants = __webpack_require__(241);
 
 	var _appConstants2 = _interopRequireDefault(_appConstants);
 
-	var _appPage = __webpack_require__(231);
+	var _appPage = __webpack_require__(238);
 
 	var _appPage2 = _interopRequireDefault(_appPage);
 
-	var _appShipments = __webpack_require__(243);
+	var _appShipments = __webpack_require__(250);
 
 	var _appShipments2 = _interopRequireDefault(_appShipments);
 
-	var _appShipments3 = __webpack_require__(245);
+	var _appShipments3 = __webpack_require__(252);
 
 	var _appShipments4 = _interopRequireDefault(_appShipments3);
 
@@ -26359,13 +27170,13 @@
 	exports.default = Outbox;
 
 /***/ },
-/* 243 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(244);
+	var content = __webpack_require__(251);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(163)(content, {});
@@ -26385,7 +27196,7 @@
 	}
 
 /***/ },
-/* 244 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(162)();
@@ -26399,7 +27210,7 @@
 
 
 /***/ },
-/* 245 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26412,21 +27223,25 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appStore = __webpack_require__(246);
+	var _appShipments = __webpack_require__(250);
+
+	var _appShipments2 = _interopRequireDefault(_appShipments);
+
+	var _appStore = __webpack_require__(253);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
 
-	var _appShipmentItem = __webpack_require__(250);
+	var _appShipmentItem = __webpack_require__(258);
 
 	var _appShipmentItem2 = _interopRequireDefault(_appShipmentItem);
 
-	var _storeWatchMixin = __webpack_require__(251);
+	var _appShipmentCard = __webpack_require__(259);
+
+	var _appShipmentCard2 = _interopRequireDefault(_appShipmentCard);
+
+	var _storeWatchMixin = __webpack_require__(260);
 
 	var _storeWatchMixin2 = _interopRequireDefault(_storeWatchMixin);
-
-	var _appShipments = __webpack_require__(243);
-
-	var _appShipments2 = _interopRequireDefault(_appShipments);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26448,62 +27263,20 @@
 	var Shipments = function Shipments(props) {
 
 	  var items = props.items.map(function (item, i) {
-	    return _react2.default.createElement(_appShipmentItem2.default, { item: item });
+	    return _react2.default.createElement(_appShipmentCard2.default, { item: item });
 	  });
 
 	  return _react2.default.createElement(
 	    'div',
-	    null,
-	    _react2.default.createElement(
-	      'table',
-	      { className: 'mui-table mui-table--bordered' },
-	      _react2.default.createElement(
-	        'thead',
-	        null,
-	        _react2.default.createElement(
-	          'tr',
-	          null,
-	          _react2.default.createElement(
-	            'th',
-	            null,
-	            'Id'
-	          ),
-	          _react2.default.createElement(
-	            'th',
-	            null,
-	            'state',
-	            _react2.default.createElement(
-	              'i',
-	              { className: 'material-icons md-18' },
-	              'arrow_downward'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'th',
-	            null,
-	            'date',
-	            _react2.default.createElement(
-	              'i',
-	              { className: 'material-icons md-18' },
-	              'arrow_downward'
-	            )
-	          ),
-	          _react2.default.createElement('th', null)
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'tbody',
-	        null,
-	        items
-	      )
-	    )
+	    { className: 'boxer' },
+	    items
 	  );
 	};
 
 	exports.default = (0, _storeWatchMixin2.default)(Shipments, shipmentItems);
 
 /***/ },
-/* 246 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26512,21 +27285,25 @@
 	  value: true
 	});
 
-	var _appDispatcher = __webpack_require__(235);
-
-	var _appConstants = __webpack_require__(234);
-
-	var _appConstants2 = _interopRequireDefault(_appConstants);
-
-	var _events = __webpack_require__(247);
-
-	var _apiCart = __webpack_require__(248);
+	var _apiCart = __webpack_require__(254);
 
 	var _apiCart2 = _interopRequireDefault(_apiCart);
 
-	var _apiShipment = __webpack_require__(249);
+	var _apiProducts = __webpack_require__(255);
+
+	var _apiProducts2 = _interopRequireDefault(_apiProducts);
+
+	var _apiShipment = __webpack_require__(256);
 
 	var _apiShipment2 = _interopRequireDefault(_apiShipment);
+
+	var _appConstants = __webpack_require__(241);
+
+	var _appConstants2 = _interopRequireDefault(_appConstants);
+
+	var _events = __webpack_require__(257);
+
+	var _appDispatcher = __webpack_require__(242);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26557,6 +27334,9 @@
 	  getCartTotals: function getCartTotals() {
 	    return _apiCart2.default.cartTotals();
 	  },
+	  getProducts: function getProducts() {
+	    return _apiProducts2.default.getAll();
+	  },
 
 
 	  dispatcherIndex: (0, _appDispatcher.register)(function (action) {
@@ -26583,7 +27363,207 @@
 	exports.default = AppStore;
 
 /***/ },
-/* 247 */
+/* 254 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var CartAPI = {
+
+	  catalog: [],
+	  cartItems: [],
+
+	  removeItem: function removeItem(item) {
+	    this.cartItems.splice(this.cartItems.findIndex(function (i) {
+	      return i === item;
+	    }), 1);
+	  },
+	  findCartItem: function findCartItem(item) {
+	    return this.cartItems.find(function (cartItem) {
+	      return cartItem.id === item.id;
+	    });
+	  },
+	  increaseItem: function increaseItem(item) {
+	    item.qty++;
+	  },
+	  decreaseItem: function decreaseItem(item) {
+	    item.qty--;
+	    if (item.qty === 0) {
+	      this.removeItem(item);
+	    }
+	  },
+	  addItem: function addItem(item) {
+	    var cartItem = this.findCartItem(item);
+	    if (!cartItem) {
+	      this.cartItems.push(Object.assign({ qty: 1 }, item));
+	    } else {
+	      this.increaseItem(cartItem);
+	    }
+	  },
+	  cartTotals: function cartTotals() {
+	    var qty = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
+	    var total = arguments.length <= 1 || arguments[1] === undefined ? 0 : arguments[1];
+
+	    this.cartItems.forEach(function (cartItem) {
+	      qty += cartItem.qty;
+	      total += cartItem.qty * cartItem.cost;
+	    });
+	    return { qty: qty, total: total };
+	  },
+	  getCatalog: function getCatalog() {
+	    var _this = this;
+
+	    return this.catalog.map(function (item) {
+	      return Object.assign({}, item, _this.cartItems.find(function (cItem) {
+	        return cItem.id === item.id;
+	      }));
+	    });
+	  },
+	  init: function init() {
+	    console.log('initing');
+	    for (var i = 1; i < 6; i++) {
+	      this.catalog.push({
+	        'id': 'Widget' + i,
+	        'title': 'Widget #' + i,
+	        'summary': 'A great widget',
+	        'description': 'Lorem ipsum dolor sit amet.',
+	        'cost': i
+	      });
+	    }
+	  }
+	};
+
+	CartAPI.init();
+	exports.default = CartAPI;
+
+/***/ },
+/* 255 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _appConstants = __webpack_require__(241);
+
+	var _appConstants2 = _interopRequireDefault(_appConstants);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ProductsAPI = {
+
+	  products: [],
+
+	  init: function init() {
+	    console.log('loading products');
+	    for (var i = 1; i < 30; i++) {
+	      this.products.push({
+	        'id': 'P' + i,
+	        'name': 'Product ' + i
+	      });
+	    }
+	  },
+	  getAll: function getAll() {
+	    return this.products.map(function (item) {
+	      return Object.assign({}, item);
+	    });
+	  }
+	};
+
+	ProductsAPI.init();
+	exports.default = ProductsAPI;
+
+/***/ },
+/* 256 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _appConstants = __webpack_require__(241);
+
+	var _appConstants2 = _interopRequireDefault(_appConstants);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ShipmentAPI = {
+
+	  shipments: [],
+
+	  init: function init() {
+	    console.log('loading shipments');
+	    for (var i = 1; i < 30; i++) {
+	      this.shipments.push({
+	        'id': 'Shipment' + i,
+	        'state': _appConstants2.default.SHIPMENT_STATE[Object.keys(_appConstants2.default.SHIPMENT_STATE)[i % 4]],
+	        'dateCreated': new Date(),
+	        'dateClosed': new Date(),
+	        'dateSent': new Date(),
+	        'dateEstimatedReception': new Date(),
+	        'dateReceived': new Date(),
+	        'samples': []
+	      });
+	    }
+	    console.table(this.shipments);
+	  },
+	  getAll: function getAll() {
+	    return this.shipments.map(function (item) {
+	      return Object.assign({}, item);
+	    });
+	  },
+	  getAllFilterByState: function getAllFilterByState(state) {
+	    return this.shipments.filter(function (item) {
+	      return item.state === state;
+	    }).map(function (item) {
+	      return Object.assign({}, item);
+	    });
+	  },
+	  getShipment: function getShipment() {
+	    return {
+	      'id': '12345678',
+	      'bar-code': '',
+	      'timeline': [{ 'event': 'created', 'date': new Date(), 'author': 'John Smith' }, { 'event': 'closed', 'date': new Date(), 'author': 'John Smith' }, { 'event': 'send', 'date': new Date(), 'author': 'Mary Higgins' }]
+	    };
+	  },
+	  add: function add(item) {
+	    this.shipments.push(Object.assign({ dateCreated: new Date() }, item));
+	  },
+	  remove: function remove(item) {
+	    this.shipments.splice(this.shipments.findIndex(function (i) {
+	      return i === item;
+	    }), 1);
+	  }
+	};
+
+	ShipmentAPI.init();
+	exports.default = ShipmentAPI;
+
+	/*  sample model
+	{
+	  'id': 'Shipment' + i,
+	  'providerId': '#provider_' + i,
+	  'orderId': '#order_'+i,
+	  'division': '#division_'+i,
+	  'uneco': '#uneco_'+i,
+	  'ref':'#ref_'+i,
+	  'brand':'#brand_'+i,
+	  'season':'#season_'+i,
+	  'qty':'#qty_'+i,
+	  'sampleType':'#sampleType_'+i,
+	  'description':'This is the shipment number '+i
+	}
+	*/
+
+/***/ },
+/* 257 */
 /***/ function(module, exports) {
 
 	// Copyright Joyent, Inc. and other Node contributors.
@@ -26887,168 +27867,7 @@
 
 
 /***/ },
-/* 248 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var CartAPI = {
-
-	  catalog: [],
-	  cartItems: [],
-
-	  removeItem: function removeItem(item) {
-	    this.cartItems.splice(this.cartItems.findIndex(function (i) {
-	      return i === item;
-	    }), 1);
-	  },
-	  findCartItem: function findCartItem(item) {
-	    return this.cartItems.find(function (cartItem) {
-	      return cartItem.id === item.id;
-	    });
-	  },
-	  increaseItem: function increaseItem(item) {
-	    item.qty++;
-	  },
-	  decreaseItem: function decreaseItem(item) {
-	    item.qty--;
-	    if (item.qty === 0) {
-	      this.removeItem(item);
-	    }
-	  },
-	  addItem: function addItem(item) {
-	    var cartItem = this.findCartItem(item);
-	    if (!cartItem) {
-	      this.cartItems.push(Object.assign({ qty: 1 }, item));
-	    } else {
-	      this.increaseItem(cartItem);
-	    }
-	  },
-	  cartTotals: function cartTotals() {
-	    var qty = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
-	    var total = arguments.length <= 1 || arguments[1] === undefined ? 0 : arguments[1];
-
-	    this.cartItems.forEach(function (cartItem) {
-	      qty += cartItem.qty;
-	      total += cartItem.qty * cartItem.cost;
-	    });
-	    return { qty: qty, total: total };
-	  },
-	  getCatalog: function getCatalog() {
-	    var _this = this;
-
-	    return this.catalog.map(function (item) {
-	      return Object.assign({}, item, _this.cartItems.find(function (cItem) {
-	        return cItem.id === item.id;
-	      }));
-	    });
-	  },
-	  init: function init() {
-	    console.log('initing');
-	    for (var i = 1; i < 6; i++) {
-	      this.catalog.push({
-	        'id': 'Widget' + i,
-	        'title': 'Widget #' + i,
-	        'summary': 'A great widget',
-	        'description': 'Lorem ipsum dolor sit amet.',
-	        'cost': i
-	      });
-	    }
-	  }
-	};
-
-	CartAPI.init();
-	exports.default = CartAPI;
-
-/***/ },
-/* 249 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _appConstants = __webpack_require__(234);
-
-	var _appConstants2 = _interopRequireDefault(_appConstants);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var ShipmentAPI = {
-
-	  shipments: [],
-
-	  init: function init() {
-	    console.log('loading shipments');
-	    for (var i = 1; i < 30; i++) {
-	      this.shipments.push({
-	        'id': 'Shipment' + i,
-	        'state': _appConstants2.default.SHIPMENT_STATE[Object.keys(_appConstants2.default.SHIPMENT_STATE)[i % 4]],
-	        'dateCreated': new Date(),
-	        'dateClosed': new Date(),
-	        'dateSent': new Date(),
-	        'dateEstimatedReception': new Date(),
-	        'dateReceived': new Date(),
-	        'samples': []
-	      });
-	    }
-	    console.table(this.shipments);
-	  },
-	  getAll: function getAll() {
-	    return this.shipments.map(function (item) {
-	      return Object.assign({}, item);
-	    });
-	  },
-	  getAllFilterByState: function getAllFilterByState(state) {
-	    return this.shipments.filter(function (item) {
-	      return item.state === state;
-	    }).map(function (item) {
-	      return Object.assign({}, item);
-	    });
-	  },
-	  getShipment: function getShipment() {
-	    return {
-	      'id': '12345678',
-	      'bar-code': '',
-	      'timeline': [{ 'event': 'created', 'date': new Date(), 'author': 'John Smith' }, { 'event': 'closed', 'date': new Date(), 'author': 'John Smith' }, { 'event': 'send', 'date': new Date(), 'author': 'Mary Higgins' }]
-	    };
-	  },
-	  add: function add(item) {
-	    this.shipments.push(Object.assign({ dateCreated: new Date() }, item));
-	  },
-	  remove: function remove(item) {
-	    this.shipments.splice(this.shipments.findIndex(function (i) {
-	      return i === item;
-	    }), 1);
-	  }
-	};
-
-	ShipmentAPI.init();
-	exports.default = ShipmentAPI;
-
-	/*  sample model
-	{
-	  'id': 'Shipment' + i,
-	  'providerId': '#provider_' + i,
-	  'orderId': '#order_'+i,
-	  'division': '#division_'+i,
-	  'uneco': '#uneco_'+i,
-	  'ref':'#ref_'+i,
-	  'brand':'#brand_'+i,
-	  'season':'#season_'+i,
-	  'qty':'#qty_'+i,
-	  'sampleType':'#sampleType_'+i,
-	  'description':'This is the shipment number '+i
-	}
-	*/
-
-/***/ },
-/* 250 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27061,7 +27880,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appConstants = __webpack_require__(234);
+	var _appConstants = __webpack_require__(241);
 
 	var _appConstants2 = _interopRequireDefault(_appConstants);
 
@@ -27133,7 +27952,103 @@
 	};
 
 /***/ },
-/* 251 */
+/* 259 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _appConstants = __webpack_require__(241);
+
+	var _appConstants2 = _interopRequireDefault(_appConstants);
+
+	var _reactRouter = __webpack_require__(168);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ShipmentCard = function ShipmentCard(props) {
+
+	  var stateDate = new Date();
+
+	  switch (props.item.state) {
+	    case _appConstants2.default.SHIPMENT_STATE.NEW:
+	      stateDate = props.item.dateCreated;
+	      break;
+	    case _appConstants2.default.SHIPMENT_STATE.CLOSED:
+	      stateDate = props.item.dateClosed;
+	      break;
+	    case _appConstants2.default.SHIPMENT_STATE.SENT:
+	      stateDate = props.item.dateSent;
+	      break;
+	    case _appConstants2.default.SHIPMENT_STATE.RECEIVED:
+	      stateDate = props.item.dateReceived;
+	      break;
+	  }
+
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'box mui-panel' },
+	    _react2.default.createElement(
+	      'h3',
+	      null,
+	      _react2.default.createElement(
+	        'i',
+	        { className: 'material-icons' },
+	        'archive'
+	      ),
+	      ' ',
+	      props.item.id,
+	      ' - ',
+	      props.item.name
+	    ),
+	    _react2.default.createElement('div', { className: 'mui-divider' }),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'horizontal mui--text-dark-secondary' },
+	      _react2.default.createElement('img', { src: '', alt: 'product image', width: '100' }),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        props.item.id,
+	        ' - ',
+	        props.item.state,
+	        ' - ',
+	        stateDate.toLocaleDateString()
+	      )
+	    ),
+	    _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: '/shipment' },
+	      _react2.default.createElement(
+	        'i',
+	        { className: 'material-icons' },
+	        'info'
+	      )
+	    ),
+	    '    ',
+	    _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: '/outbox/new' },
+	      _react2.default.createElement(
+	        'i',
+	        { className: 'material-icons' },
+	        'edit'
+	      )
+	    )
+	  );
+	};
+
+	exports.default = ShipmentCard;
+
+/***/ },
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27150,7 +28065,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appStore = __webpack_require__(246);
+	var _appStore = __webpack_require__(253);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
 
@@ -27203,7 +28118,7 @@
 	};
 
 /***/ },
-/* 252 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27216,19 +28131,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appConstants = __webpack_require__(234);
+	var _appConstants = __webpack_require__(241);
 
 	var _appConstants2 = _interopRequireDefault(_appConstants);
 
-	var _appPage = __webpack_require__(231);
+	var _appPage = __webpack_require__(238);
 
 	var _appPage2 = _interopRequireDefault(_appPage);
 
-	var _appShipments = __webpack_require__(245);
+	var _appShipments = __webpack_require__(262);
 
 	var _appShipments2 = _interopRequireDefault(_appShipments);
 
-	var _appShipments3 = __webpack_require__(243);
+	var _appShipments3 = __webpack_require__(250);
 
 	var _appShipments4 = _interopRequireDefault(_appShipments3);
 
@@ -27248,7 +28163,232 @@
 	exports.default = Monitor;
 
 /***/ },
-/* 253 */
+/* 262 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _appStore = __webpack_require__(253);
+
+	var _appStore2 = _interopRequireDefault(_appStore);
+
+	var _appShipmentItem = __webpack_require__(258);
+
+	var _appShipmentItem2 = _interopRequireDefault(_appShipmentItem);
+
+	var _storeWatchMixin = __webpack_require__(260);
+
+	var _storeWatchMixin2 = _interopRequireDefault(_storeWatchMixin);
+
+	var _appShipments = __webpack_require__(250);
+
+	var _appShipments2 = _interopRequireDefault(_appShipments);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var shipmentItems = function shipmentItems(props) {
+
+	  var items = _appStore2.default.getShipments().filter(function (item) {
+	    if (props.states) {
+	      return props.states.some(function (state) {
+	        return state === item.state;
+	      });
+	    } else {
+	      return true;
+	    }
+	  });
+
+	  return { items: items };
+	};
+
+	var Shipments = function Shipments(props) {
+
+	  var items = props.items.map(function (item, i) {
+	    return _react2.default.createElement(_appShipmentItem2.default, { item: item });
+	  });
+
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(
+	      'table',
+	      { className: 'mui-table mui-table--bordered' },
+	      _react2.default.createElement(
+	        'thead',
+	        null,
+	        _react2.default.createElement(
+	          'tr',
+	          null,
+	          _react2.default.createElement(
+	            'th',
+	            null,
+	            'Id'
+	          ),
+	          _react2.default.createElement(
+	            'th',
+	            null,
+	            'state',
+	            _react2.default.createElement(
+	              'i',
+	              { className: 'material-icons md-18' },
+	              'arrow_downward'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'th',
+	            null,
+	            'date',
+	            _react2.default.createElement(
+	              'i',
+	              { className: 'material-icons md-18' },
+	              'arrow_downward'
+	            )
+	          ),
+	          _react2.default.createElement('th', null)
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'tbody',
+	        null,
+	        items
+	      )
+	    )
+	  );
+	};
+
+	exports.default = (0, _storeWatchMixin2.default)(Shipments, shipmentItems);
+
+/***/ },
+/* 263 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _appPage = __webpack_require__(238);
+
+	var _appPage2 = _interopRequireDefault(_appPage);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _appProducts = __webpack_require__(264);
+
+	var _appProducts2 = _interopRequireDefault(_appProducts);
+
+	var _appStore = __webpack_require__(253);
+
+	var _appStore2 = _interopRequireDefault(_appStore);
+
+	var _storeWatchMixin = __webpack_require__(260);
+
+	var _storeWatchMixin2 = _interopRequireDefault(_storeWatchMixin);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var products = function products(props) {
+	  var items = _appStore2.default.getProducts();
+	  return { items: items };
+	};
+
+	var Product = function Product(props) {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'box mui-panel' },
+	    _react2.default.createElement(
+	      'h3',
+	      null,
+	      props.item.id,
+	      ' - ',
+	      props.item.name
+	    ),
+	    _react2.default.createElement('div', { className: 'mui-divider' }),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'horizontal mui--text-dark-secondary' },
+	      _react2.default.createElement('img', { src: 'xxx', alt: 'product image', width: '100' }),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ...'
+	      )
+	    )
+	  );
+	};
+
+	var ProductList = function ProductList(props) {
+
+	  var products = props.items.map(function (item) {
+	    return _react2.default.createElement(Product, { item: item });
+	  });
+
+	  return _react2.default.createElement(
+	    _appPage2.default,
+	    { title: 'Products', icon: 'local_offer' },
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'boxer' },
+	      products
+	    )
+	  );
+	};
+
+	exports.default = (0, _storeWatchMixin2.default)(ProductList, products);
+
+/***/ },
+/* 264 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(265);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(163)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./app-products.css", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./app-products.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 265 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(162)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "", ""]);
+
+	// exports
+
+
+/***/ },
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27263,7 +28403,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appHeader = __webpack_require__(232);
+	var _appHeader = __webpack_require__(239);
 
 	var _appHeader2 = _interopRequireDefault(_appHeader);
 
@@ -27430,7 +28570,7 @@
 	exports.default = ImportForm;
 
 /***/ },
-/* 254 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27443,21 +28583,21 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appPage = __webpack_require__(231);
+	var _appPage = __webpack_require__(238);
 
 	var _appPage2 = _interopRequireDefault(_appPage);
 
 	var _reactRouter = __webpack_require__(168);
 
-	var _appStore = __webpack_require__(246);
+	var _appStore = __webpack_require__(253);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
 
-	var _storeWatchMixin = __webpack_require__(251);
+	var _storeWatchMixin = __webpack_require__(260);
 
 	var _storeWatchMixin2 = _interopRequireDefault(_storeWatchMixin);
 
-	var _appShipments = __webpack_require__(243);
+	var _appShipments = __webpack_require__(250);
 
 	var _appShipments2 = _interopRequireDefault(_appShipments);
 

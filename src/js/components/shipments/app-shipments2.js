@@ -1,9 +1,8 @@
 import React from 'react';
-import styles from './app-shipments.css';
 import AppStore from '../../stores/app-store';
 import ShipmentItem from './app-shipment-item';
-import ShipmentCard from './app-shipment-card';
 import StoreWatchMixin from '../../mixin/storeWatchMixin';
+import styles from './app-shipments.css';
 
 const shipmentItems = (props) => {
 
@@ -23,13 +22,27 @@ const Shipments = (props) => {
 
   var items = props.items.map( (item, i) => {
     return (
-      <ShipmentCard item={item}/>
+      <ShipmentItem item={item}/>
     );
   });
 
   return (
-    <div className="boxer">{items}</div>
-  )
+      <div>
+        <table className="mui-table mui-table--bordered">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>state<i className="material-icons md-18">arrow_downward</i></th>
+              <th>date<i className="material-icons md-18">arrow_downward</i></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {items}
+          </tbody>
+        </table>
+      </div>
+  );
 }
 
 export default StoreWatchMixin(Shipments, shipmentItems);

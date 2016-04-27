@@ -10,6 +10,7 @@ class Menu extends React.Component {
       { txt : 'Monitor', to:'/', icon: 'send'},
       { txt : 'Outbox', to:'outbox', icon: 'inbox'},
       { txt : 'Issues', to:'issues', icon: 'warning'},
+      { txt : 'Products', to:'products', icon:'local_offer'}
     ];
 
     var items = options.map(item => {

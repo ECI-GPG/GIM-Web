@@ -13,7 +13,6 @@ class ImportForm extends React.Component {
     }
   }
 
-
   render() {
 
     let date = new Date().toLocaleDateString();

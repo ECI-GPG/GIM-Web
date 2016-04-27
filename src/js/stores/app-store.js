@@ -1,8 +1,9 @@
-import {dispatch, register} from '../dispatchers/app-dispatcher';
+import CartAPI from '../api/api-cart';
+import ProductAPI from '../api/api-products';
+import ShipmentAPI from '../api/api-shipment';
 import AppConstants from '../constants/app-constants';
 import {EventEmitter } from 'events';
-import CartAPI from '../api/api-cart';
-import ShipmentAPI from '../api/api-shipment';
+import {dispatch, register} from '../dispatchers/app-dispatcher';
 
 const CHANGE_EVENT = "change"
 
@@ -38,6 +39,10 @@ const AppStore = Object.assign(EventEmitter.prototype, {
 
   getCartTotals() {
     return CartAPI.cartTotals();
+  },
+
+  getProducts() {
+    return ProductAPI.getAll();
   },
 
   dispatcherIndex: register( function (action) {

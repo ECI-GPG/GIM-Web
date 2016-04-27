@@ -27,8 +27,8 @@ class SearchBox extends React.Component {
     } else {
       return(
         <div className="searchbox" onClick={this.toggleState}>
-          <span><i className="fa fa-search fa-lg"></i></span>
-          <span>Buscar Envios</span>
+          <span><i className="material-icons">search</i></span>
+          <span className="mui--text-light-secondary">Search...</span>
         </div>
       );
     }
