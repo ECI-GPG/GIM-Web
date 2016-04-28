@@ -4,6 +4,7 @@ import Layout from './layout/app-layout';
 import {Router, Route, IndexRoute} from 'react-router';
 
 // Pages
+import Inbox from './shipments/app-shipment-inbox';
 import Issues from './issues/app-issues';
 import Search from './search/app-search-page';
 import Outbox from './shipments/app-shipment-outbox';
@@ -21,5 +22,6 @@ export default () =>  <Router>
                           <Route path="shipment" component={ShipmentInfo}/>
                           <Route path="products" component={Products}/>
                           <Route path="outbox/new" component={ShipmentForm}/>
+                          <Route path="inbox" component={Inbox}/>
                         </Route>
                       </Router>

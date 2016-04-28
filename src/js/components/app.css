@@ -17,15 +17,18 @@ a:hover {
 
 .icon {
     width:72px;
-    padding: 16px;
+    padding: 0px;
     background-color: rgba(0,0,0,0);
     color: #FFF;
+    display: flex;
 }
 
 .material-icons.md-18 {
   font-size: 18px; }
 .material-icons.md-24 {
   font-size: 24px; }
+  .material-icons.md-32 {
+    font-size: 3rem; }
 .material-icons.md-36 {
   font-size: 36px; }
 .material-icons.md-48 {
@@ -38,3 +41,54 @@ a:hover {
   color: white; }
 .material-icons.md-light.md-inactive {
   color: rgba(255, 255, 255, 0.3); }
+
+
+  .card {
+    display : flex;
+    flex-direction:column;
+    min-height: 18rem;
+  }
+
+  .card > .header {
+    display:flex;
+  }
+
+  .card > .header > .logo {
+    padding: 12px;
+    margin-right:12px;
+    width:40px;
+    height:40px;
+    background: #FFF;
+    color: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    border : 1px solid #CCC;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card > .header > .title {
+    flex:1;
+    display:flex;
+    flex-direction: column;
+  }
+
+  .card > .header > .title > .title1 {
+    margin-top: 2px;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .card > .header > .title > .title2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  .card > .content {
+    flex:1;
+  }
+
+  .card > .actions {
+    display: flex;
+    justify-content: flex-end;
+  }

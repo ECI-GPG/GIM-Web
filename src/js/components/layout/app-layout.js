@@ -25,9 +25,7 @@ class Layout extends React.Component {
         <div id="overlay" ref={(ref) => this.overlay = ref} onClick={this.toggleDrawer}></div>
         <div id="container">
           <div id="searchbar"><SearchBox/></div>
-          <ReactCSSTransitionGroup component="div" transitionName="example" transitionEnterTimeout={1000} transitionLeaveTimeout={1000}>
-				      {React.cloneElement(this.props.children, { key: this.props.location.pathname, toggleDrawer: this.toggleDrawer })}
-          </ReactCSSTransitionGroup>
+				  {React.cloneElement(this.props.children, { key: this.props.location.pathname, toggleDrawer: this.toggleDrawer })}
         </div>
         <div id="toolbar"></div>
       </div>

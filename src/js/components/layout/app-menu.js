@@ -7,13 +7,26 @@ class Menu extends React.Component {
   render() {
 
     let options = [
-      { txt : 'Monitor', to:'/', icon: 'send'},
-      { txt : 'Outbox', to:'outbox', icon: 'inbox'},
-      { txt : 'Issues', to:'issues', icon: 'warning'},
-      { txt : 'Products', to:'products', icon:'local_offer'}
+      { type: 'divider', txt : 'International Office'},
+      { type: 'menu-item', txt : 'Monitor', to:'/', icon: 'send'},
+      { type: 'menu-item', txt : 'Outbox', to:'outbox', icon: 'inbox'},
+      { type: 'menu-item', txt : 'Issues', to:'issues', icon: 'warning'},
+      { type: 'divider', txt : 'Central Store'},
+      { type: 'menu-item', txt : 'Products', to:'/products', icon:'local_offer'},
+      { type: 'menu-item', txt : 'Inbox', to:'/inbox', icon:'move_to_inbox'},
     ];
 
     var items = options.map(item => {
+
+      if (item.type === 'divider') {
+        return (
+          <div>
+            <div className="mui-divider"/>
+            <h5>{item.txt}</h5>
+          </div>
+        )
+      }
+
       return (
         <Link to={item.to} className="mui--text-light">
           <div className="menu-item" onClick={this.props.selected}>
@@ -39,8 +52,6 @@ class Menu extends React.Component {
             <h5><strong>John Smith</strong></h5>
             <h6 className="mui--text-light-secondary">johnsmith@mail.com</h6>
           </div>
-
-          <div className="mui-divider"></div>
 
           <nav>
             {items}

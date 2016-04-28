@@ -7,41 +7,41 @@ import { Link } from 'react-router';
 const Header = (props) => {
 
     let navButton = (
-      <div id="navButton" className="icon" onClick={props.toggleDrawer}>
-          <i className="material-icons md-36">menu</i>
+      <div id="navButton" onClick={props.toggleDrawer}>
+          <i className="material-icons md-32">menu</i>
       </div>
     )
 
     if (props.to) {
       navButton = (
-        <div id="navButton" className="icon">
+        <div id="navButton">
           <Link to={props.to}>
-            <i className="material-icons md-36">arrow_back</i>
+            <i className="material-icons md-32">arrow_back</i>
           </Link>
         </div>
       )
     }
 
     let icon = (
-      <div id="icon" className="icon">
-          <i className="material-icons md-36">{props.icon}</i>
+      <div id="icon">
+          <i className="material-icons md-32">{props.icon}</i>
       </div>
     )
 
     if (props.to) {
       icon = (
-        <div id="icon" className="icon">
+        <div id="icon">
           <Link to={props.to}>
-            <i className="material-icons md-36">arrow_back</i>
+            <i className="material-icons md-32">arrow_back</i>
           </Link>
         </div>
       )
     }
 
     let search = (
-      <div id="searchButton" className="icon">
+      <div id="searchButton">
         <Link to="/search">
-          <i className="material-icons md-36">search</i>
+          <i className="material-icons md-32">search</i>
         </Link>
       </div>
     )
@@ -49,10 +49,7 @@ const Header = (props) => {
     return (
       <header>
         <div className="title">
-          {navButton}{icon}
-          <div>
-            <h1>{props.title}</h1>
-          </div>
+          {navButton} {icon} <h1>{props.title}</h1>
         </div>
         {search}
       </header>

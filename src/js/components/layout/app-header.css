@@ -1,11 +1,15 @@
 header {
-  padding: 15px;
-  min-height: 115px;
+  padding: 1.6rem;
+  min-height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #FFF;
   color: rgba(0, 0, 0, 0.8);
+
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
 }
 
 header > .title {
@@ -31,6 +35,8 @@ header > .title > .icon {
 
 header > .title  h1 {
   margin: 0px;
+  padding-left: 2.4rem;
+  font-size: 3rem;
 }
 
 header > .searchbox {
@@ -44,19 +50,23 @@ header > #searchButton {
 @media all and (max-width:1280px) {
 
   header {
+    min-height: 7rem;
     background-color: inherit;
     color: inherit;
     justify-content: flex-start;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);
   }
 
   header > .title > .icon {
     color: inherit;
-    margin-top: 15px;
   }
 
   header > .title > #navButton {
     display: block;
   }
+
   header > .title > #icon {
     display:none;
   }

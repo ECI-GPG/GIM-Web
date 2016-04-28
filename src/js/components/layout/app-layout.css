@@ -48,10 +48,13 @@
 
 .page > header {
   display: flex;
-  min-height: 115px;
+  min-height: 7rem;
+  position: relative;
+  z-index: +1;
 }
 
 .page > main {
+
   flex: 1;
   color: rgba(0,0,0,0.8);
   background-color: #EEE;
@@ -197,4 +200,14 @@
 
 .horizontal {
   display: flex;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  flex:1;
+}
+
+.right {
+  justify-content: flex-end;
 }

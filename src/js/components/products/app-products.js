@@ -1,4 +1,5 @@
 import Page from '../layout/app-page';
+import Card from '../layout/app-card';
 import React from 'react';
 import Styles from './app-products.css';
 import AppStore from '../../stores/app-store';
@@ -10,6 +11,14 @@ const products = (props) => {
 }
 
 const Product = (props) => {
+
+
+    return (
+      <Card icon="tags" title={props.item.name} subtitle={props.item.id}>
+        ...
+      </Card>
+    )
+
     return  <div className="box mui-panel">
               <h3>{props.item.id} - {props.item.name}</h3>
               <div className="mui-divider"/>
