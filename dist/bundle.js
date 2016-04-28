@@ -19691,35 +19691,41 @@
 
 	var _reactRouter = __webpack_require__(168);
 
-	var _appIssues = __webpack_require__(237);
+	var _appShipmentInbox = __webpack_require__(237);
+
+	var _appShipmentInbox2 = _interopRequireDefault(_appShipmentInbox);
+
+	var _appIssues = __webpack_require__(260);
 
 	var _appIssues2 = _interopRequireDefault(_appIssues);
 
-	var _appSearchPage = __webpack_require__(248);
+	var _appSearchPage = __webpack_require__(261);
 
 	var _appSearchPage2 = _interopRequireDefault(_appSearchPage);
 
-	var _appShipmentOutbox = __webpack_require__(249);
+	var _appShipmentOutbox = __webpack_require__(262);
 
 	var _appShipmentOutbox2 = _interopRequireDefault(_appShipmentOutbox);
 
-	var _appShipmentMonitor = __webpack_require__(261);
+	var _appShipmentMonitor = __webpack_require__(263);
 
 	var _appShipmentMonitor2 = _interopRequireDefault(_appShipmentMonitor);
 
-	var _appProducts = __webpack_require__(263);
+	var _appProducts = __webpack_require__(265);
 
 	var _appProducts2 = _interopRequireDefault(_appProducts);
 
-	var _appShipmentForm = __webpack_require__(266);
+	var _appShipmentForm = __webpack_require__(268);
 
 	var _appShipmentForm2 = _interopRequireDefault(_appShipmentForm);
 
-	var _appShipmentInfo = __webpack_require__(267);
+	var _appShipmentInfo = __webpack_require__(269);
 
 	var _appShipmentInfo2 = _interopRequireDefault(_appShipmentInfo);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// Pages
 
 	exports.default = function () {
 	  return _react2.default.createElement(
@@ -19734,12 +19740,11 @@
 	      _react2.default.createElement(_reactRouter.Route, { path: 'outbox', component: _appShipmentOutbox2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: 'shipment', component: _appShipmentInfo2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: 'products', component: _appProducts2.default }),
-	      _react2.default.createElement(_reactRouter.Route, { path: 'outbox/new', component: _appShipmentForm2.default })
+	      _react2.default.createElement(_reactRouter.Route, { path: 'outbox/new', component: _appShipmentForm2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: 'inbox', component: _appShipmentInbox2.default })
 	    )
 	  );
 	};
-
-	// Pages
 
 /***/ },
 /* 160 */
@@ -19776,7 +19781,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  color: #FFF;\n  background-color: #000;\n}\n\na {\n  text-decoration:none;\n}\n\na:focus {\n  text-decoration: none;\n}\n\na:hover {\n  text-decoration:none;\n}\n\n.icon {\n    width:72px;\n    padding: 16px;\n    background-color: rgba(0,0,0,0);\n    color: #FFF;\n}\n\n.material-icons.md-18 {\n  font-size: 18px; }\n.material-icons.md-24 {\n  font-size: 24px; }\n.material-icons.md-36 {\n  font-size: 36px; }\n.material-icons.md-48 {\n  font-size: 48px; }\n.material-icons.md-dark {\n  color: rgba(0, 0, 0, 0.54); }\n.material-icons.md-dark.md-inactive {\n  color: rgba(0, 0, 0, 0.26); }\n.material-icons.md-light {\n  color: white; }\n.material-icons.md-light.md-inactive {\n  color: rgba(255, 255, 255, 0.3); }\n", ""]);
+	exports.push([module.id, "body {\n  color: #FFF;\n  background-color: #000;\n}\n\na {\n  text-decoration:none;\n}\n\na:focus {\n  text-decoration: none;\n}\n\na:hover {\n  text-decoration:none;\n}\n\n.icon {\n    width:72px;\n    padding: 0px;\n    background-color: rgba(0,0,0,0);\n    color: #FFF;\n    display: flex;\n}\n\n.material-icons.md-18 {\n  font-size: 18px; }\n.material-icons.md-24 {\n  font-size: 24px; }\n  .material-icons.md-32 {\n    font-size: 3rem; }\n.material-icons.md-36 {\n  font-size: 36px; }\n.material-icons.md-48 {\n  font-size: 48px; }\n.material-icons.md-dark {\n  color: rgba(0, 0, 0, 0.54); }\n.material-icons.md-dark.md-inactive {\n  color: rgba(0, 0, 0, 0.26); }\n.material-icons.md-light {\n  color: white; }\n.material-icons.md-light.md-inactive {\n  color: rgba(255, 255, 255, 0.3); }\n\n\n  .card {\n    display : flex;\n    flex-direction:column;\n    min-height: 18rem;\n  }\n\n  .card > .header {\n    display:flex;\n  }\n\n  .card > .header > .logo {\n    padding: 12px;\n    margin-right:12px;\n    width:40px;\n    height:40px;\n    background: #FFF;\n    color: rgba(0, 0, 0, 0.8);\n    border-radius: 20px;\n    border : 1px solid #CCC;\n    display:flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .card > .header > .title {\n    flex:1;\n    display:flex;\n    flex-direction: column;\n  }\n\n  .card > .header > .title > .title1 {\n    margin-top: 2px;\n    font-size: 1.4rem;\n    font-weight: 600;\n  }\n\n  .card > .header > .title > .title2 {\n    font-size: 1.2rem;\n    font-weight: 400;\n  }\n\n  .card > .content {\n    flex:1;\n  }\n\n  .card > .actions {\n    display: flex;\n    justify-content: flex-end;\n  }\n", ""]);
 
 	// exports
 
@@ -20173,11 +20178,7 @@
 	            { id: 'searchbar' },
 	            _react2.default.createElement(_appSearch2.default, null)
 	          ),
-	          _react2.default.createElement(
-	            _reactAddonsCssTransitionGroup2.default,
-	            { component: 'div', transitionName: 'example', transitionEnterTimeout: 1000, transitionLeaveTimeout: 1000 },
-	            _react2.default.cloneElement(this.props.children, { key: this.props.location.pathname, toggleDrawer: this.toggleDrawer })
-	          )
+	          _react2.default.cloneElement(this.props.children, { key: this.props.location.pathname, toggleDrawer: this.toggleDrawer })
 	        ),
 	        _react2.default.createElement('div', { id: 'toolbar' })
 	      );
@@ -20233,9 +20234,23 @@
 	    value: function render() {
 	      var _this2 = this;
 
-	      var options = [{ txt: 'Monitor', to: '/', icon: 'send' }, { txt: 'Outbox', to: 'outbox', icon: 'inbox' }, { txt: 'Issues', to: 'issues', icon: 'warning' }, { txt: 'Products', to: 'products', icon: 'local_offer' }];
+	      var options = [{ type: 'divider', txt: 'International Office' }, { type: 'menu-item', txt: 'Monitor', to: '/', icon: 'send' }, { type: 'menu-item', txt: 'Outbox', to: 'outbox', icon: 'inbox' }, { type: 'menu-item', txt: 'Issues', to: 'issues', icon: 'warning' }, { type: 'divider', txt: 'Central Store' }, { type: 'menu-item', txt: 'Products', to: '/products', icon: 'local_offer' }, { type: 'menu-item', txt: 'Inbox', to: '/inbox', icon: 'move_to_inbox' }];
 
 	      var items = options.map(function (item) {
+
+	        if (item.type === 'divider') {
+	          return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement('div', { className: 'mui-divider' }),
+	            _react2.default.createElement(
+	              'h5',
+	              null,
+	              item.txt
+	            )
+	          );
+	        }
+
 	        return _react2.default.createElement(
 	          _reactRouter.Link,
 	          { to: item.to, className: 'mui--text-light' },
@@ -20297,7 +20312,6 @@
 	            'johnsmith@mail.com'
 	          )
 	        ),
-	        _react2.default.createElement('div', { className: 'mui-divider' }),
 	        _react2.default.createElement(
 	          'nav',
 	          null,
@@ -20352,7 +20366,7 @@
 
 
 	// module
-	exports.push([module.id, "#menu {\n  height:100vh;\n  font-size: 1.6rem;\n  display: flex;\n  flex-direction: column;\n}\n\n#menu nav {\n  padding-top: 8px;\n}\n\n.menu-item {\n  display: flex;\n  align-items: center;\n  color: #FFF;\n  height: 4rem;\n}\n\n.menu-item > i {\n  width:72px;\n  padding: 16px;\n}\n\n.menu-item:hover {\n  background-color: rgba(100, 100, 100, 0.5);\n}\n\n#menu-title {\n  padding-left:16px;\n  text-shadow: 2px 4px 0px rgba(0, 0, 0, 0.15);\n}\n\n.mui-divider {\n  background-color: rgba(150, 150, 150, 0.7);\n  margin-left: 8px;\n  margin-right:8px;\n  margin-top: 2px;\n}\n\n#menu-user {\n  padding-top: 16px;\n  padding-left:16px;\n}\n\n#menu-user > h5 {\n  margin-top: 10px;\n  margin-bottom: 0px;\n}\n\n#menu-user > h6 {\n  margin-top: 0px;\n  margin-bottom: 10px;\n}\n\n#menu-user #avatar {\n  width:40px;\n  height:40px;\n  background: #FFF;\n  color: rgba(0, 0, 0, 0.8);\n  border-radius: 20px;\n  display:flex;\n  align-items: center;\n  justify-content: center;\n}\n@media all and (max-width:1280px) {\n\n\t#header {\n\t\tfont-size: 1rem;\n\t}\n\n  nav {\n    flex:1;\n    background: #FFF;\n    color: rgba(0, 0, 0, 0.8);\n  }\n\n  .menu-item {\n    color: rgba(0, 0, 0, 0.8);\n  }\n}\n", ""]);
+	exports.push([module.id, "#menu {\n  height:100vh;\n  font-size: 1.6rem;\n  display: flex;\n  flex-direction: column;\n}\n\n#menu nav {\n}\n\nnav  h5 {\n  padding-left: 16px;\n  color: rgba(255, 255, 255, 0.7);\n  font-size: 1.4rem;\n  font-weight: 400;\n  height: 3.8rem;\n}\n\n.menu-item {\n  display: flex;\n  align-items: center;\n  color: #FFF;\n  height: 4rem;\n}\n\n.menu-item > i {\n  width:72px;\n  padding: 16px;\n}\n\n.menu-item:hover {\n  background-color: rgba(100, 100, 100, 0.5);\n}\n\n#menu-title {\n  padding-left:16px;\n  text-shadow: 2px 4px 0px rgba(0, 0, 0, 0.15);\n}\n\n.mui-divider {\n  background-color: rgba(150, 150, 150, 0.7);\n  margin-top: 2px;\n}\n\n#menu-user {\n  padding-top: 16px;\n  padding-left:16px;\n}\n\n#menu-user > h5 {\n  margin-top: 10px;\n  margin-bottom: 0px;\n}\n\n#menu-user > h6 {\n  margin-top: 0px;\n  margin-bottom: 10px;\n}\n\n#menu-user #avatar {\n  width:40px;\n  height:40px;\n  background: #FFF;\n  color: rgba(0, 0, 0, 0.8);\n  border-radius: 20px;\n  display:flex;\n  align-items: center;\n  justify-content: center;\n}\n\n\n\n@media all and (max-width:1280px) {\n\n\t#header {\n\t\tfont-size: 1rem;\n\t}\n\n  nav {\n    flex:1;\n    background: #FFF;\n    color: rgba(0, 0, 0, 0.8);\n  }\n\n  nav h5 {\n    color: rgba(0, 0, 0,.54);\n  }\n\n  .menu-item {\n    color: rgba(0, 0, 0, 0.8);\n  }\n}\n", ""]);
 
 	// exports
 
@@ -25455,7 +25469,7 @@
 
 
 	// module
-	exports.push([module.id, "#layout {\n  display: flex;\n}\n\n#layout > #drawer {\n  height: 100vh;\n  min-width: 24rem;\n}\n\n#layout > #overlay {\n  display:none;\n}\n\n.hidden {\n  display:none\n}\n\n#layout > #container {\n  flex: 1;\n  height: 100vh;\n  display: flex;\n  flex-direction:column;\n}\n\n#container > #searchbar {\n  padding: 15px;\n  min-height: 10rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n#searchbar > .searchbox {\n  flex:1;\n}\n\n#container > .page {\n  flex:1;\n  display: flex;\n  flex-direction: column;\n  background-color: #EEE;\n  overflow: hidden;\n}\n\n#layout > #toolbar {\n  width:100px;\n}\n\n.page > header {\n  display: flex;\n  min-height: 115px;\n}\n\n.page > main {\n  flex: 1;\n  color: rgba(0,0,0,0.8);\n  background-color: #EEE;\n  padding: 15px 15px 0px 15px;\n  overflow-y: auto;\n}\n\n.fab {\n  position: absolute;\n  top: 65px;\n  bottom: auto;\n  right: 130px;\n  padding-top: 8px;\n}\n\n\n\n@media all and (max-width:1280px) {\n\n  #layout > #drawerButton {\n    display:block;\n    position:absolute;\n    top:30px;\n    left:15px;\n  }\n\n  #layout > #drawer {\n    position: absolute;\n    min-width: 27rem;\n    left: -28rem;\n    background: #444;\n    -webkit-transition: left 0.5s;\n    -webkit-transition-timming-function: ease-in-out;\n    transition: left 0.5s ease-in-out;\n  }\n\n  #drawer.open {\n    z-index: 1001;\n    left: 0px !important;\n    -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n  }\n\n  #overlay.open {\n    z-index: 1000;\n    display: block !important;\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(100, 100, 100, 0.7);\n  }\n\n  #container > #searchbar {\n    display:none;\n  }\n\n  #container > .page {\n    padding:0px;\n    background-color: inherit;\n  }\n\n  #container > .page main {\n    color: rgba(0, 0, 0, 0.8);\n    background-color: #EEE;\n  }\n\n  #toolbar {\n    display:none;\n    position: absolute;\n    right: -150px;\n  }\n\n  .fab {\n    position: absolute;\n    top: auto;\n    bottom: 16px;\n    right: 30px;\n    padding-top: 8px;\n  }\n}\n\n\n.example-leave {\n  overflow:hidden;\n  height: 100vh;\n  transition: height 1000ms ease-out;\n}\n\n.example-leave.example-leave-active {\n  height: 0vh;\n}\n\n.example-enter {\n  overflow:hidden;\n  height: 0vh;\n  transition: height 1000ms ease-out;\n}\n\n.example-enter.example-enter-active {\n  height: 100vh;\n}\n\n\n.boxer {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.box {\n  width:calc(25% - 20px);\n  margin: 10px;\n}\n\n@media all and (max-width:1280px) {\n  .box {\n    width:calc(25% - 20px);\n    margin:10px;\n  }\n}\n\n\n@media all and (max-width:1024px) {\n  .box {\n    width:calc(33.333333% - 14px);\n    margin:7px;\n  }\n}\n\n@media all and (max-width:720px) {\n  .box {\n    width:calc(50% - 10px);\n    margin:5px;\n  }\n}\n\n@media all and (max-width:480px) {\n  .box {\n    width:calc(100% - 10px);\n    margin:5px;\n  }\n}\n\n.horizontal {\n  display: flex;\n}\n", ""]);
+	exports.push([module.id, "#layout {\n  display: flex;\n}\n\n#layout > #drawer {\n  height: 100vh;\n  min-width: 24rem;\n}\n\n#layout > #overlay {\n  display:none;\n}\n\n.hidden {\n  display:none\n}\n\n#layout > #container {\n  flex: 1;\n  height: 100vh;\n  display: flex;\n  flex-direction:column;\n}\n\n#container > #searchbar {\n  padding: 15px;\n  min-height: 10rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n#searchbar > .searchbox {\n  flex:1;\n}\n\n#container > .page {\n  flex:1;\n  display: flex;\n  flex-direction: column;\n  background-color: #EEE;\n  overflow: hidden;\n}\n\n#layout > #toolbar {\n  width:100px;\n}\n\n.page > header {\n  display: flex;\n  min-height: 7rem;\n  position: relative;\n  z-index: +1;\n}\n\n.page > main {\n\n  flex: 1;\n  color: rgba(0,0,0,0.8);\n  background-color: #EEE;\n  padding: 15px 15px 0px 15px;\n  overflow-y: auto;\n}\n\n.fab {\n  position: absolute;\n  top: 65px;\n  bottom: auto;\n  right: 130px;\n  padding-top: 8px;\n}\n\n\n\n@media all and (max-width:1280px) {\n\n  #layout > #drawerButton {\n    display:block;\n    position:absolute;\n    top:30px;\n    left:15px;\n  }\n\n  #layout > #drawer {\n    position: absolute;\n    min-width: 27rem;\n    left: -28rem;\n    background: #444;\n    -webkit-transition: left 0.5s;\n    -webkit-transition-timming-function: ease-in-out;\n    transition: left 0.5s ease-in-out;\n  }\n\n  #drawer.open {\n    z-index: 1001;\n    left: 0px !important;\n    -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n  }\n\n  #overlay.open {\n    z-index: 1000;\n    display: block !important;\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(100, 100, 100, 0.7);\n  }\n\n  #container > #searchbar {\n    display:none;\n  }\n\n  #container > .page {\n    padding:0px;\n    background-color: inherit;\n  }\n\n  #container > .page main {\n    color: rgba(0, 0, 0, 0.8);\n    background-color: #EEE;\n  }\n\n  #toolbar {\n    display:none;\n    position: absolute;\n    right: -150px;\n  }\n\n  .fab {\n    position: absolute;\n    top: auto;\n    bottom: 16px;\n    right: 30px;\n    padding-top: 8px;\n  }\n}\n\n\n.example-leave {\n  overflow:hidden;\n  height: 100vh;\n  transition: height 1000ms ease-out;\n}\n\n.example-leave.example-leave-active {\n  height: 0vh;\n}\n\n.example-enter {\n  overflow:hidden;\n  height: 0vh;\n  transition: height 1000ms ease-out;\n}\n\n.example-enter.example-enter-active {\n  height: 100vh;\n}\n\n\n.boxer {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.box {\n  width:calc(25% - 20px);\n  margin: 10px;\n}\n\n@media all and (max-width:1280px) {\n  .box {\n    width:calc(25% - 20px);\n    margin:10px;\n  }\n}\n\n\n@media all and (max-width:1024px) {\n  .box {\n    width:calc(33.333333% - 14px);\n    margin:7px;\n  }\n}\n\n@media all and (max-width:720px) {\n  .box {\n    width:calc(50% - 10px);\n    margin:5px;\n  }\n}\n\n@media all and (max-width:480px) {\n  .box {\n    width:calc(100% - 10px);\n    margin:5px;\n  }\n}\n\n.horizontal {\n  display: flex;\n}\n\n.vertical {\n  display: flex;\n  flex-direction: column;\n  flex:1;\n}\n\n.right {\n  justify-content: flex-end;\n}\n", ""]);
 
 	// exports
 
@@ -26401,32 +26415,105 @@
 	  value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appPage = __webpack_require__(238);
+	var _reactRouter = __webpack_require__(168);
+
+	var _appConstants = __webpack_require__(238);
+
+	var _appConstants2 = _interopRequireDefault(_appConstants);
+
+	var _appPage = __webpack_require__(239);
 
 	var _appPage2 = _interopRequireDefault(_appPage);
 
+	var _appShipments = __webpack_require__(248);
+
+	var _appShipments2 = _interopRequireDefault(_appShipments);
+
+	var _appShipments3 = __webpack_require__(250);
+
+	var _appShipments4 = _interopRequireDefault(_appShipments3);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Issues = function Issues(props) {
-	  return _react2.default.createElement(
-	    _appPage2.default,
-	    { title: 'Issues', icon: 'warning', toggleDrawer: props.toggleDrawer },
-	    _react2.default.createElement(
-	      'p',
-	      null,
-	      'issues'
-	    )
-	  );
-	};
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	exports.default = Issues;
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Inbox = function (_React$Component) {
+	  _inherits(Inbox, _React$Component);
+
+	  function Inbox() {
+	    _classCallCheck(this, Inbox);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Inbox).apply(this, arguments));
+	  }
+
+	  _createClass(Inbox, [{
+	    key: 'render',
+	    value: function render() {
+
+	      var states = [_appConstants2.default.SHIPMENT_STATE.CLOSED, _appConstants2.default.SHIPMENT_STATE.NEW];
+
+	      return _react2.default.createElement(
+	        _appPage2.default,
+	        { title: 'Inbox', icon: 'inbox', toggleDrawer: this.props.toggleDrawer },
+	        _react2.default.createElement(_appShipments4.default, { states: states }),
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: '/inbox/new' },
+	          _react2.default.createElement(
+	            'button',
+	            { className: 'mui-btn mui-btn--accent mui-btn--fab  fab' },
+	            _react2.default.createElement(
+	              'i',
+	              { className: 'material-icons' },
+	              'add'
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Inbox;
+	}(_react2.default.Component);
+
+	exports.default = Inbox;
 
 /***/ },
 /* 238 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  ADD_ITEM: 'ADD_ITEM',
+	  REMOVE_ITEM: 'REMOVE_ITEM',
+	  INCREASE_ITEM: 'INCREASE_ITEM',
+	  DECREASE_ITEM: 'DECREASE_ITEM',
+
+	  SHIPMENT_STATE: {
+	    NEW: 'NEW',
+	    CLOSED: 'CLOSED',
+	    SENT: 'SENT',
+	    RECEIVED: 'RECEIVED'
+	  }
+
+	};
+
+/***/ },
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26439,7 +26526,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appHeader = __webpack_require__(239);
+	var _appHeader = __webpack_require__(240);
 
 	var _appHeader2 = _interopRequireDefault(_appHeader);
 
@@ -26461,7 +26548,7 @@
 	exports.default = Page;
 
 /***/ },
-/* 239 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26474,7 +26561,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appActions = __webpack_require__(240);
+	var _appActions = __webpack_require__(241);
 
 	var _appActions2 = _interopRequireDefault(_appActions);
 
@@ -26494,10 +26581,10 @@
 
 	  var navButton = _react2.default.createElement(
 	    'div',
-	    { id: 'navButton', className: 'icon', onClick: props.toggleDrawer },
+	    { id: 'navButton', onClick: props.toggleDrawer },
 	    _react2.default.createElement(
 	      'i',
-	      { className: 'material-icons md-36' },
+	      { className: 'material-icons md-32' },
 	      'menu'
 	    )
 	  );
@@ -26505,13 +26592,13 @@
 	  if (props.to) {
 	    navButton = _react2.default.createElement(
 	      'div',
-	      { id: 'navButton', className: 'icon' },
+	      { id: 'navButton' },
 	      _react2.default.createElement(
 	        _reactRouter.Link,
 	        { to: props.to },
 	        _react2.default.createElement(
 	          'i',
-	          { className: 'material-icons md-36' },
+	          { className: 'material-icons md-32' },
 	          'arrow_back'
 	        )
 	      )
@@ -26520,10 +26607,10 @@
 
 	  var icon = _react2.default.createElement(
 	    'div',
-	    { id: 'icon', className: 'icon' },
+	    { id: 'icon' },
 	    _react2.default.createElement(
 	      'i',
-	      { className: 'material-icons md-36' },
+	      { className: 'material-icons md-32' },
 	      props.icon
 	    )
 	  );
@@ -26531,13 +26618,13 @@
 	  if (props.to) {
 	    icon = _react2.default.createElement(
 	      'div',
-	      { id: 'icon', className: 'icon' },
+	      { id: 'icon' },
 	      _react2.default.createElement(
 	        _reactRouter.Link,
 	        { to: props.to },
 	        _react2.default.createElement(
 	          'i',
-	          { className: 'material-icons md-36' },
+	          { className: 'material-icons md-32' },
 	          'arrow_back'
 	        )
 	      )
@@ -26546,13 +26633,13 @@
 
 	  var search = _react2.default.createElement(
 	    'div',
-	    { id: 'searchButton', className: 'icon' },
+	    { id: 'searchButton' },
 	    _react2.default.createElement(
 	      _reactRouter.Link,
 	      { to: '/search' },
 	      _react2.default.createElement(
 	        'i',
-	        { className: 'material-icons md-36' },
+	        { className: 'material-icons md-32' },
 	        'search'
 	      )
 	    )
@@ -26565,15 +26652,13 @@
 	      'div',
 	      { className: 'title' },
 	      navButton,
+	      ' ',
 	      icon,
+	      ' ',
 	      _react2.default.createElement(
-	        'div',
+	        'h1',
 	        null,
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          props.title
-	        )
+	        props.title
 	      )
 	    ),
 	    search
@@ -26583,7 +26668,7 @@
 	exports.default = Header;
 
 /***/ },
-/* 240 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26592,7 +26677,7 @@
 	  value: true
 	});
 
-	var _appConstants = __webpack_require__(241);
+	var _appConstants = __webpack_require__(238);
 
 	var _appConstants2 = _interopRequireDefault(_appConstants);
 
@@ -26621,30 +26706,6 @@
 	      actionType: _appConstants2.default.DECREASE_ITEM, item: item
 	    });
 	  }
-	};
-
-/***/ },
-/* 241 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = {
-	  ADD_ITEM: 'ADD_ITEM',
-	  REMOVE_ITEM: 'REMOVE_ITEM',
-	  INCREASE_ITEM: 'INCREASE_ITEM',
-	  DECREASE_ITEM: 'DECREASE_ITEM',
-
-	  SHIPMENT_STATE: {
-	    NEW: 'NEW',
-	    CLOSED: 'CLOSED',
-	    SENT: 'SENT',
-	    RECEIVED: 'RECEIVED'
-	  }
-
 	};
 
 /***/ },
@@ -27015,7 +27076,7 @@
 
 
 	// module
-	exports.push([module.id, "header {\n  padding: 15px;\n  min-height: 115px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #FFF;\n  color: rgba(0, 0, 0, 0.8);\n}\n\nheader > .title {\n  display: flex;\n  flex:1;\n  align-items: center;\n}\n\nheader > .title > #navButton {\n  display:none;\n}\n\nheader > .title > #icon {\n  display:flex;\n}\n\nheader > .title > .icon {\n  color: rgba(0, 0, 0, 0.8);\n  display:flex;\n  align-items: center;\n  justify-content: center;\n}\n\nheader > .title  h1 {\n  margin: 0px;\n}\n\nheader > .searchbox {\n  flex:1;\n}\n\nheader > #searchButton {\n  display:none;\n}\n\n@media all and (max-width:1280px) {\n\n  header {\n    background-color: inherit;\n    color: inherit;\n    justify-content: flex-start;\n  }\n\n  header > .title > .icon {\n    color: inherit;\n    margin-top: 15px;\n  }\n\n  header > .title > #navButton {\n    display: block;\n  }\n  header > .title > #icon {\n    display:none;\n  }\n\n  header > .searchbox {\n    display: none;\n  }\n\n  header > #searchButton {\n    display:flex;\n  }\n}\n", ""]);
+	exports.push([module.id, "header {\n  padding: 1.6rem;\n  min-height: 5rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #FFF;\n  color: rgba(0, 0, 0, 0.8);\n\n  -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);\n  -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);\n  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);\n}\n\nheader > .title {\n  display: flex;\n  flex:1;\n  align-items: center;\n}\n\nheader > .title > #navButton {\n  display:none;\n}\n\nheader > .title > #icon {\n  display:flex;\n}\n\nheader > .title > .icon {\n  color: rgba(0, 0, 0, 0.8);\n  display:flex;\n  align-items: center;\n  justify-content: center;\n}\n\nheader > .title  h1 {\n  margin: 0px;\n  padding-left: 2.4rem;\n  font-size: 3rem;\n}\n\nheader > .searchbox {\n  flex:1;\n}\n\nheader > #searchButton {\n  display:none;\n}\n\n@media all and (max-width:1280px) {\n\n  header {\n    min-height: 7rem;\n    background-color: inherit;\n    color: inherit;\n    justify-content: flex-start;\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);\n    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);\n    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);\n  }\n\n  header > .title > .icon {\n    color: inherit;\n  }\n\n  header > .title > #navButton {\n    display: block;\n  }\n\n  header > .title > #icon {\n    display:none;\n  }\n\n  header > .searchbox {\n    display: none;\n  }\n\n  header > #searchButton {\n    display:flex;\n  }\n}\n", ""]);
 
 	// exports
 
@@ -27024,159 +27085,10 @@
 /* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _appSearch = __webpack_require__(228);
-
-	var _appSearch2 = _interopRequireDefault(_appSearch);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Search = function (_React$Component) {
-	  _inherits(Search, _React$Component);
-
-	  function Search() {
-	    _classCallCheck(this, Search);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Search).apply(this, arguments));
-	  }
-
-	  _createClass(Search, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'searchbox busy' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'textfield mui-textfield' },
-	          _react2.default.createElement('input', { type: 'text', autoFocus: true })
-	        ),
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          _react2.default.createElement(
-	            'i',
-	            { className: 'material-icons' },
-	            'close'
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return Search;
-	}(_react2.default.Component);
-
-	exports.default = Search;
-
-/***/ },
-/* 249 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(168);
-
-	var _appConstants = __webpack_require__(241);
-
-	var _appConstants2 = _interopRequireDefault(_appConstants);
-
-	var _appPage = __webpack_require__(238);
-
-	var _appPage2 = _interopRequireDefault(_appPage);
-
-	var _appShipments = __webpack_require__(250);
-
-	var _appShipments2 = _interopRequireDefault(_appShipments);
-
-	var _appShipments3 = __webpack_require__(252);
-
-	var _appShipments4 = _interopRequireDefault(_appShipments3);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Outbox = function (_React$Component) {
-	  _inherits(Outbox, _React$Component);
-
-	  function Outbox() {
-	    _classCallCheck(this, Outbox);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Outbox).apply(this, arguments));
-	  }
-
-	  _createClass(Outbox, [{
-	    key: 'render',
-	    value: function render() {
-
-	      var states = [_appConstants2.default.SHIPMENT_STATE.NEW, _appConstants2.default.SHIPMENT_STATE.CLOSED];
-
-	      return _react2.default.createElement(
-	        _appPage2.default,
-	        { title: 'Outbox', icon: 'inbox', toggleDrawer: this.props.toggleDrawer },
-	        _react2.default.createElement(_appShipments4.default, { states: states }),
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: '/outbox/new' },
-	          _react2.default.createElement(
-	            'button',
-	            { className: 'mui-btn mui-btn--accent mui-btn--fab  fab' },
-	            _react2.default.createElement(
-	              'i',
-	              { className: 'material-icons' },
-	              'add'
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return Outbox;
-	}(_react2.default.Component);
-
-	exports.default = Outbox;
-
-/***/ },
-/* 250 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(251);
+	var content = __webpack_require__(249);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(163)(content, {});
@@ -27196,7 +27108,7 @@
 	}
 
 /***/ },
-/* 251 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(162)();
@@ -27210,7 +27122,7 @@
 
 
 /***/ },
-/* 252 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27223,23 +27135,23 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appShipments = __webpack_require__(250);
+	var _appShipments = __webpack_require__(248);
 
 	var _appShipments2 = _interopRequireDefault(_appShipments);
 
-	var _appStore = __webpack_require__(253);
+	var _appStore = __webpack_require__(251);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
 
-	var _appShipmentItem = __webpack_require__(258);
+	var _appShipmentItem = __webpack_require__(256);
 
 	var _appShipmentItem2 = _interopRequireDefault(_appShipmentItem);
 
-	var _appShipmentCard = __webpack_require__(259);
+	var _appShipmentCard = __webpack_require__(257);
 
 	var _appShipmentCard2 = _interopRequireDefault(_appShipmentCard);
 
-	var _storeWatchMixin = __webpack_require__(260);
+	var _storeWatchMixin = __webpack_require__(259);
 
 	var _storeWatchMixin2 = _interopRequireDefault(_storeWatchMixin);
 
@@ -27276,7 +27188,7 @@
 	exports.default = (0, _storeWatchMixin2.default)(Shipments, shipmentItems);
 
 /***/ },
-/* 253 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27285,23 +27197,23 @@
 	  value: true
 	});
 
-	var _apiCart = __webpack_require__(254);
+	var _apiCart = __webpack_require__(252);
 
 	var _apiCart2 = _interopRequireDefault(_apiCart);
 
-	var _apiProducts = __webpack_require__(255);
+	var _apiProducts = __webpack_require__(253);
 
 	var _apiProducts2 = _interopRequireDefault(_apiProducts);
 
-	var _apiShipment = __webpack_require__(256);
+	var _apiShipment = __webpack_require__(254);
 
 	var _apiShipment2 = _interopRequireDefault(_apiShipment);
 
-	var _appConstants = __webpack_require__(241);
+	var _appConstants = __webpack_require__(238);
 
 	var _appConstants2 = _interopRequireDefault(_appConstants);
 
-	var _events = __webpack_require__(257);
+	var _events = __webpack_require__(255);
 
 	var _appDispatcher = __webpack_require__(242);
 
@@ -27363,7 +27275,7 @@
 	exports.default = AppStore;
 
 /***/ },
-/* 254 */
+/* 252 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -27440,7 +27352,7 @@
 	exports.default = CartAPI;
 
 /***/ },
-/* 255 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27449,7 +27361,7 @@
 	  value: true
 	});
 
-	var _appConstants = __webpack_require__(241);
+	var _appConstants = __webpack_require__(238);
 
 	var _appConstants2 = _interopRequireDefault(_appConstants);
 
@@ -27479,7 +27391,7 @@
 	exports.default = ProductsAPI;
 
 /***/ },
-/* 256 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27488,7 +27400,7 @@
 	  value: true
 	});
 
-	var _appConstants = __webpack_require__(241);
+	var _appConstants = __webpack_require__(238);
 
 	var _appConstants2 = _interopRequireDefault(_appConstants);
 
@@ -27563,7 +27475,7 @@
 	*/
 
 /***/ },
-/* 257 */
+/* 255 */
 /***/ function(module, exports) {
 
 	// Copyright Joyent, Inc. and other Node contributors.
@@ -27867,7 +27779,7 @@
 
 
 /***/ },
-/* 258 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27880,7 +27792,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appConstants = __webpack_require__(241);
+	var _appConstants = __webpack_require__(238);
 
 	var _appConstants2 = _interopRequireDefault(_appConstants);
 
@@ -27952,7 +27864,7 @@
 	};
 
 /***/ },
-/* 259 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27965,16 +27877,21 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appConstants = __webpack_require__(241);
+	var _appConstants = __webpack_require__(238);
 
 	var _appConstants2 = _interopRequireDefault(_appConstants);
 
 	var _reactRouter = __webpack_require__(168);
 
+	var _appCard = __webpack_require__(258);
+
+	var _appCard2 = _interopRequireDefault(_appCard);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var ShipmentCard = function ShipmentCard(props) {
 
+	  var stateIcon = "dropbox";
 	  var stateDate = new Date();
 
 	  switch (props.item.state) {
@@ -27983,6 +27900,7 @@
 	      break;
 	    case _appConstants2.default.SHIPMENT_STATE.CLOSED:
 	      stateDate = props.item.dateClosed;
+	      stateIcon = "cube";
 	      break;
 	    case _appConstants2.default.SHIPMENT_STATE.SENT:
 	      stateDate = props.item.dateSent;
@@ -27993,46 +27911,8 @@
 	  }
 
 	  return _react2.default.createElement(
-	    'div',
-	    { className: 'box mui-panel' },
-	    _react2.default.createElement(
-	      'h3',
-	      null,
-	      _react2.default.createElement(
-	        'i',
-	        { className: 'material-icons' },
-	        'archive'
-	      ),
-	      ' ',
-	      props.item.id,
-	      ' - ',
-	      props.item.name
-	    ),
-	    _react2.default.createElement('div', { className: 'mui-divider' }),
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'horizontal mui--text-dark-secondary' },
-	      _react2.default.createElement('img', { src: '', alt: 'product image', width: '100' }),
-	      _react2.default.createElement(
-	        'p',
-	        null,
-	        props.item.id,
-	        ' - ',
-	        props.item.state,
-	        ' - ',
-	        stateDate.toLocaleDateString()
-	      )
-	    ),
-	    _react2.default.createElement(
-	      _reactRouter.Link,
-	      { to: '/shipment' },
-	      _react2.default.createElement(
-	        'i',
-	        { className: 'material-icons' },
-	        'info'
-	      )
-	    ),
-	    '    ',
+	    _appCard2.default,
+	    { icon: stateIcon, title: props.item.id, subtitle: stateDate.toLocaleDateString() },
 	    _react2.default.createElement(
 	      _reactRouter.Link,
 	      { to: '/outbox/new' },
@@ -28048,7 +27928,67 @@
 	exports.default = ShipmentCard;
 
 /***/ },
-/* 260 */
+/* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Card = function Card(props) {
+
+	  var icon = "";
+	  if (props.icon) {
+	    icon = _react2.default.createElement(
+	      "div",
+	      { className: "logo" },
+	      _react2.default.createElement("i", { className: "fa fa-" + props.icon + " fa-lg" })
+	    );
+	  }
+
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "box mui-panel card" },
+	    _react2.default.createElement(
+	      "div",
+	      { className: "header" },
+	      icon,
+	      _react2.default.createElement(
+	        "div",
+	        { className: "title" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "title1" },
+	          props.title
+	        ),
+	        _react2.default.createElement(
+	          "span",
+	          { className: "title2 mui--text-dark-secondary" },
+	          props.subtitle
+	        )
+	      )
+	    ),
+	    _react2.default.createElement("div", { className: "content" }),
+	    _react2.default.createElement(
+	      "div",
+	      { className: "actions" },
+	      props.children
+	    )
+	  );
+	};
+
+	exports.default = Card;
+
+/***/ },
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28065,7 +28005,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appStore = __webpack_require__(253);
+	var _appStore = __webpack_require__(251);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
 
@@ -28118,7 +28058,7 @@
 	};
 
 /***/ },
-/* 261 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28131,19 +28071,202 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appConstants = __webpack_require__(241);
-
-	var _appConstants2 = _interopRequireDefault(_appConstants);
-
-	var _appPage = __webpack_require__(238);
+	var _appPage = __webpack_require__(239);
 
 	var _appPage2 = _interopRequireDefault(_appPage);
 
-	var _appShipments = __webpack_require__(262);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Issues = function Issues(props) {
+	  return _react2.default.createElement(
+	    _appPage2.default,
+	    { title: 'Issues', icon: 'warning', toggleDrawer: props.toggleDrawer },
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      'issues'
+	    )
+	  );
+	};
+
+	exports.default = Issues;
+
+/***/ },
+/* 261 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _appSearch = __webpack_require__(228);
+
+	var _appSearch2 = _interopRequireDefault(_appSearch);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Search = function (_React$Component) {
+	  _inherits(Search, _React$Component);
+
+	  function Search() {
+	    _classCallCheck(this, Search);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Search).apply(this, arguments));
+	  }
+
+	  _createClass(Search, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'searchbox busy' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'textfield mui-textfield' },
+	          _react2.default.createElement('input', { type: 'text', autoFocus: true })
+	        ),
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          _react2.default.createElement(
+	            'i',
+	            { className: 'material-icons' },
+	            'close'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Search;
+	}(_react2.default.Component);
+
+	exports.default = Search;
+
+/***/ },
+/* 262 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(168);
+
+	var _appConstants = __webpack_require__(238);
+
+	var _appConstants2 = _interopRequireDefault(_appConstants);
+
+	var _appPage = __webpack_require__(239);
+
+	var _appPage2 = _interopRequireDefault(_appPage);
+
+	var _appShipments = __webpack_require__(248);
 
 	var _appShipments2 = _interopRequireDefault(_appShipments);
 
 	var _appShipments3 = __webpack_require__(250);
+
+	var _appShipments4 = _interopRequireDefault(_appShipments3);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Outbox = function (_React$Component) {
+	  _inherits(Outbox, _React$Component);
+
+	  function Outbox() {
+	    _classCallCheck(this, Outbox);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Outbox).apply(this, arguments));
+	  }
+
+	  _createClass(Outbox, [{
+	    key: 'render',
+	    value: function render() {
+
+	      var states = [_appConstants2.default.SHIPMENT_STATE.NEW, _appConstants2.default.SHIPMENT_STATE.CLOSED];
+
+	      return _react2.default.createElement(
+	        _appPage2.default,
+	        { title: 'Outbox', icon: 'inbox', toggleDrawer: this.props.toggleDrawer },
+	        _react2.default.createElement(_appShipments4.default, { states: states }),
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: '/outbox/new' },
+	          _react2.default.createElement(
+	            'button',
+	            { className: 'mui-btn mui-btn--accent mui-btn--fab  fab' },
+	            _react2.default.createElement(
+	              'i',
+	              { className: 'material-icons' },
+	              'add'
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Outbox;
+	}(_react2.default.Component);
+
+	exports.default = Outbox;
+
+/***/ },
+/* 263 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _appConstants = __webpack_require__(238);
+
+	var _appConstants2 = _interopRequireDefault(_appConstants);
+
+	var _appPage = __webpack_require__(239);
+
+	var _appPage2 = _interopRequireDefault(_appPage);
+
+	var _appShipments = __webpack_require__(264);
+
+	var _appShipments2 = _interopRequireDefault(_appShipments);
+
+	var _appShipments3 = __webpack_require__(248);
 
 	var _appShipments4 = _interopRequireDefault(_appShipments3);
 
@@ -28163,7 +28286,7 @@
 	exports.default = Monitor;
 
 /***/ },
-/* 262 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28176,19 +28299,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appStore = __webpack_require__(253);
+	var _appStore = __webpack_require__(251);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
 
-	var _appShipmentItem = __webpack_require__(258);
+	var _appShipmentItem = __webpack_require__(256);
 
 	var _appShipmentItem2 = _interopRequireDefault(_appShipmentItem);
 
-	var _storeWatchMixin = __webpack_require__(260);
+	var _storeWatchMixin = __webpack_require__(259);
 
 	var _storeWatchMixin2 = _interopRequireDefault(_storeWatchMixin);
 
-	var _appShipments = __webpack_require__(250);
+	var _appShipments = __webpack_require__(248);
 
 	var _appShipments2 = _interopRequireDefault(_appShipments);
 
@@ -28267,7 +28390,7 @@
 	exports.default = (0, _storeWatchMixin2.default)(Shipments, shipmentItems);
 
 /***/ },
-/* 263 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28276,23 +28399,27 @@
 	  value: true
 	});
 
-	var _appPage = __webpack_require__(238);
+	var _appPage = __webpack_require__(239);
 
 	var _appPage2 = _interopRequireDefault(_appPage);
+
+	var _appCard = __webpack_require__(258);
+
+	var _appCard2 = _interopRequireDefault(_appCard);
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appProducts = __webpack_require__(264);
+	var _appProducts = __webpack_require__(266);
 
 	var _appProducts2 = _interopRequireDefault(_appProducts);
 
-	var _appStore = __webpack_require__(253);
+	var _appStore = __webpack_require__(251);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
 
-	var _storeWatchMixin = __webpack_require__(260);
+	var _storeWatchMixin = __webpack_require__(259);
 
 	var _storeWatchMixin2 = _interopRequireDefault(_storeWatchMixin);
 
@@ -28304,6 +28431,13 @@
 	};
 
 	var Product = function Product(props) {
+
+	  return _react2.default.createElement(
+	    _appCard2.default,
+	    { icon: 'tags', title: props.item.name, subtitle: props.item.id },
+	    '...'
+	  );
+
 	  return _react2.default.createElement(
 	    'div',
 	    { className: 'box mui-panel' },
@@ -28348,13 +28482,13 @@
 	exports.default = (0, _storeWatchMixin2.default)(ProductList, products);
 
 /***/ },
-/* 264 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(265);
+	var content = __webpack_require__(267);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(163)(content, {});
@@ -28374,7 +28508,7 @@
 	}
 
 /***/ },
-/* 265 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(162)();
@@ -28388,7 +28522,7 @@
 
 
 /***/ },
-/* 266 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28403,7 +28537,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appHeader = __webpack_require__(239);
+	var _appHeader = __webpack_require__(240);
 
 	var _appHeader2 = _interopRequireDefault(_appHeader);
 
@@ -28570,7 +28704,7 @@
 	exports.default = ImportForm;
 
 /***/ },
-/* 267 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28583,21 +28717,21 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appPage = __webpack_require__(238);
+	var _appPage = __webpack_require__(239);
 
 	var _appPage2 = _interopRequireDefault(_appPage);
 
 	var _reactRouter = __webpack_require__(168);
 
-	var _appStore = __webpack_require__(253);
+	var _appStore = __webpack_require__(251);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
 
-	var _storeWatchMixin = __webpack_require__(260);
+	var _storeWatchMixin = __webpack_require__(259);
 
 	var _storeWatchMixin2 = _interopRequireDefault(_storeWatchMixin);
 
-	var _appShipments = __webpack_require__(250);
+	var _appShipments = __webpack_require__(248);
 
 	var _appShipments2 = _interopRequireDefault(_appShipments);
 
