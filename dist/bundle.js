@@ -19723,9 +19723,11 @@
 
 	var _appShipmentInfo2 = _interopRequireDefault(_appShipmentInfo);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _appShipmentReceptionForm = __webpack_require__(270);
 
-	// Pages
+	var _appShipmentReceptionForm2 = _interopRequireDefault(_appShipmentReceptionForm);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = function () {
 	  return _react2.default.createElement(
@@ -19737,14 +19739,17 @@
 	      _react2.default.createElement(_reactRouter.IndexRoute, { component: _appShipmentMonitor2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: 'search', component: _appSearchPage2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: 'issues', component: _appIssues2.default }),
-	      _react2.default.createElement(_reactRouter.Route, { path: 'outbox', component: _appShipmentOutbox2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: 'shipment', component: _appShipmentInfo2.default }),
-	      _react2.default.createElement(_reactRouter.Route, { path: 'products', component: _appProducts2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: 'outbox', component: _appShipmentOutbox2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: 'outbox/new', component: _appShipmentForm2.default }),
-	      _react2.default.createElement(_reactRouter.Route, { path: 'inbox', component: _appShipmentInbox2.default })
+	      _react2.default.createElement(_reactRouter.Route, { path: 'products', component: _appProducts2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: 'inbox', component: _appShipmentInbox2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: 'inbox/reception', component: _appShipmentReceptionForm2.default })
 	    )
 	  );
 	};
+
+	// Pages
 
 /***/ },
 /* 160 */
@@ -19781,7 +19786,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  color: #FFF;\n  background-color: #000;\n}\n\na {\n  text-decoration:none;\n}\n\na:focus {\n  text-decoration: none;\n}\n\na:hover {\n  text-decoration:none;\n}\n\n.icon {\n    width:72px;\n    padding: 0px;\n    background-color: rgba(0,0,0,0);\n    color: #FFF;\n    display: flex;\n}\n\n.material-icons.md-18 {\n  font-size: 18px; }\n.material-icons.md-24 {\n  font-size: 24px; }\n  .material-icons.md-32 {\n    font-size: 3rem; }\n.material-icons.md-36 {\n  font-size: 36px; }\n.material-icons.md-48 {\n  font-size: 48px; }\n.material-icons.md-dark {\n  color: rgba(0, 0, 0, 0.54); }\n.material-icons.md-dark.md-inactive {\n  color: rgba(0, 0, 0, 0.26); }\n.material-icons.md-light {\n  color: white; }\n.material-icons.md-light.md-inactive {\n  color: rgba(255, 255, 255, 0.3); }\n\n\n  .card {\n    display : flex;\n    flex-direction:column;\n    min-height: 18rem;\n  }\n\n  .card > .header {\n    display:flex;\n  }\n\n  .card > .header > .logo {\n    padding: 12px;\n    margin-right:12px;\n    width:40px;\n    height:40px;\n    background: #FFF;\n    color: rgba(0, 0, 0, 0.8);\n    border-radius: 20px;\n    border : 1px solid #CCC;\n    display:flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .card > .header > .title {\n    flex:1;\n    display:flex;\n    flex-direction: column;\n  }\n\n  .card > .header > .title > .title1 {\n    margin-top: 2px;\n    font-size: 1.4rem;\n    font-weight: 600;\n  }\n\n  .card > .header > .title > .title2 {\n    font-size: 1.2rem;\n    font-weight: 400;\n  }\n\n  .card > .content {\n    flex:1;\n  }\n\n  .card > .actions {\n    display: flex;\n    justify-content: flex-end;\n  }\n", ""]);
+	exports.push([module.id, "body {\n  color: #FFF;\n  background-color: #000;\n}\n\na {\n  text-decoration:none;\n}\n\na:focus {\n  text-decoration: none;\n}\n\na:hover {\n  text-decoration:none;\n}\n\n.icon {\n    width:72px;\n    padding: 0px;\n    background-color: rgba(0,0,0,0);\n    color: #FFF;\n    display: flex;\n}\n\n.material-icons.md-18 {\n  font-size: 18px; }\n.material-icons.md-24 {\n  font-size: 24px; }\n  .material-icons.md-32 {\n    font-size: 3rem; }\n.material-icons.md-36 {\n  font-size: 36px; }\n.material-icons.md-48 {\n  font-size: 48px; }\n.material-icons.md-dark {\n  color: rgba(0, 0, 0, 0.54); }\n.material-icons.md-dark.md-inactive {\n  color: rgba(0, 0, 0, 0.26); }\n.material-icons.md-light {\n  color: white; }\n.material-icons.md-light.md-inactive {\n  color: rgba(255, 255, 255, 0.3); }\n\n\n  .card {\n    display : flex;\n    flex-direction:column;\n    min-height: 18rem;\n  }\n\n  .card > .header {\n    display:flex;\n  }\n\n  .logo {\n    padding: 12px;\n    margin-right:12px;\n    width:40px;\n    height:40px;\n    background: #FFF;\n    color: rgba(0, 0, 0, 0.8);\n    border-radius: 20px;\n    border : 1px solid #CCC;\n    display:flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .card > .header > .title {\n    flex:1;\n    display:flex;\n    flex-direction: column;\n  }\n\n  .card > .header > .title > .title1 {\n    margin-top: 2px;\n    font-size: 1.4rem;\n    font-weight: 600;\n  }\n\n  .card > .header > .title > .title2 {\n    font-size: 1.2rem;\n    font-weight: 400;\n  }\n\n  .card > .content {\n    flex:1;\n  }\n\n  .card > .actions {\n    display: flex;\n    justify-content: flex-end;\n  }\n", ""]);
 
 	// exports
 
@@ -25469,7 +25474,7 @@
 
 
 	// module
-	exports.push([module.id, "#layout {\n  display: flex;\n}\n\n#layout > #drawer {\n  height: 100vh;\n  min-width: 24rem;\n}\n\n#layout > #overlay {\n  display:none;\n}\n\n.hidden {\n  display:none\n}\n\n#layout > #container {\n  flex: 1;\n  height: 100vh;\n  display: flex;\n  flex-direction:column;\n}\n\n#container > #searchbar {\n  padding: 15px;\n  min-height: 10rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n#searchbar > .searchbox {\n  flex:1;\n}\n\n#container > .page {\n  flex:1;\n  display: flex;\n  flex-direction: column;\n  background-color: #EEE;\n  overflow: hidden;\n}\n\n#layout > #toolbar {\n  width:100px;\n}\n\n.page > header {\n  display: flex;\n  min-height: 7rem;\n  position: relative;\n  z-index: +1;\n}\n\n.page > main {\n\n  flex: 1;\n  color: rgba(0,0,0,0.8);\n  background-color: #EEE;\n  padding: 15px 15px 0px 15px;\n  overflow-y: auto;\n}\n\n.fab {\n  position: absolute;\n  top: 65px;\n  bottom: auto;\n  right: 130px;\n  padding-top: 8px;\n}\n\n\n\n@media all and (max-width:1280px) {\n\n  #layout > #drawerButton {\n    display:block;\n    position:absolute;\n    top:30px;\n    left:15px;\n  }\n\n  #layout > #drawer {\n    position: absolute;\n    min-width: 27rem;\n    left: -28rem;\n    background: #444;\n    -webkit-transition: left 0.5s;\n    -webkit-transition-timming-function: ease-in-out;\n    transition: left 0.5s ease-in-out;\n  }\n\n  #drawer.open {\n    z-index: 1001;\n    left: 0px !important;\n    -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n  }\n\n  #overlay.open {\n    z-index: 1000;\n    display: block !important;\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(100, 100, 100, 0.7);\n  }\n\n  #container > #searchbar {\n    display:none;\n  }\n\n  #container > .page {\n    padding:0px;\n    background-color: inherit;\n  }\n\n  #container > .page main {\n    color: rgba(0, 0, 0, 0.8);\n    background-color: #EEE;\n  }\n\n  #toolbar {\n    display:none;\n    position: absolute;\n    right: -150px;\n  }\n\n  .fab {\n    position: absolute;\n    top: auto;\n    bottom: 16px;\n    right: 30px;\n    padding-top: 8px;\n  }\n}\n\n\n.example-leave {\n  overflow:hidden;\n  height: 100vh;\n  transition: height 1000ms ease-out;\n}\n\n.example-leave.example-leave-active {\n  height: 0vh;\n}\n\n.example-enter {\n  overflow:hidden;\n  height: 0vh;\n  transition: height 1000ms ease-out;\n}\n\n.example-enter.example-enter-active {\n  height: 100vh;\n}\n\n\n.boxer {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.box {\n  width:calc(25% - 20px);\n  margin: 10px;\n}\n\n@media all and (max-width:1280px) {\n  .box {\n    width:calc(25% - 20px);\n    margin:10px;\n  }\n}\n\n\n@media all and (max-width:1024px) {\n  .box {\n    width:calc(33.333333% - 14px);\n    margin:7px;\n  }\n}\n\n@media all and (max-width:720px) {\n  .box {\n    width:calc(50% - 10px);\n    margin:5px;\n  }\n}\n\n@media all and (max-width:480px) {\n  .box {\n    width:calc(100% - 10px);\n    margin:5px;\n  }\n}\n\n.horizontal {\n  display: flex;\n}\n\n.vertical {\n  display: flex;\n  flex-direction: column;\n  flex:1;\n}\n\n.right {\n  justify-content: flex-end;\n}\n", ""]);
+	exports.push([module.id, "#layout {\n  display: flex;\n}\n\n#layout > #drawer {\n  height: 100vh;\n  min-width: 24rem;\n}\n\n#layout > #overlay {\n  display:none;\n}\n\n.hidden {\n  display:none\n}\n\n#layout > #container {\n  flex: 1;\n  height: 100vh;\n  display: flex;\n  flex-direction:column;\n}\n\n#container > #searchbar {\n  padding: 15px;\n  min-height: 10rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n#searchbar > .searchbox {\n  flex:1;\n}\n\n#container > .page {\n  flex:1;\n  display: flex;\n  flex-direction: column;\n  background-color: #EEE;\n  overflow: hidden;\n}\n\n#layout > #toolbar {\n  width:100px;\n}\n\n.page > header {\n  display: flex;\n  min-height: 7rem;\n  position: relative;\n  z-index: +1;\n}\n\n.page > main {\n\n  flex: 1;\n  color: rgba(0,0,0,0.8);\n  background-color: #EEE;\n  padding: 15px 15px 0px 15px;\n  overflow-y: auto;\n}\n\n.fab {\n  position: absolute;\n  top: 65px;\n  bottom: auto;\n  right: 130px;\n  padding-top: 8px;\n}\n\n\n\n@media all and (max-width:1280px) {\n\n  #layout > #drawerButton {\n    display:block;\n    position:absolute;\n    top:30px;\n    left:15px;\n  }\n\n  #layout > #drawer {\n    position: absolute;\n    min-width: 27rem;\n    left: -28rem;\n    background: #444;\n    -webkit-transition: left 0.5s;\n    -webkit-transition-timming-function: ease-in-out;\n    transition: left 0.5s ease-in-out;\n  }\n\n  #drawer.open {\n    z-index: 1001;\n    left: 0px !important;\n    -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n  }\n\n  #overlay.open {\n    z-index: 1000;\n    display: block !important;\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(100, 100, 100, 0.7);\n  }\n\n  #container > #searchbar {\n    display:none;\n  }\n\n  #container > .page {\n    padding:0px;\n    background-color: inherit;\n  }\n\n  #container > .page main {\n    color: rgba(0, 0, 0, 0.8);\n    background-color: #EEE;\n  }\n\n  #toolbar {\n    display:none;\n    position: absolute;\n    right: -150px;\n  }\n\n  .fab {\n    position: absolute;\n    top: auto;\n    bottom: 16px;\n    right: 30px;\n    padding-top: 8px;\n  }\n}\n\n\n.example-leave {\n  overflow:hidden;\n  height: 100vh;\n  transition: height 1000ms ease-out;\n}\n\n.example-leave.example-leave-active {\n  height: 0vh;\n}\n\n.example-enter {\n  overflow:hidden;\n  height: 0vh;\n  transition: height 1000ms ease-out;\n}\n\n.example-enter.example-enter-active {\n  height: 100vh;\n}\n\n\n.boxer {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.box {\n  width:calc(25% - 20px);\n  margin: 10px;\n}\n\n.fieldgroup {\n  flex:1;\n  display: flex;\n}\n\n.fieldgroup > .fields {\n  flex:1;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n}\n\n.fields > .field {\n  flex: 1 0.4 auto;\n  padding-left:8px;\n}\n\n@media all and (max-width:1280px) {\n  .box {\n    width:calc(25% - 20px);\n    margin:10px;\n  }\n}\n\n\n@media all and (max-width:1024px) {\n  .box {\n    width:calc(33.333333% - 14px);\n    margin:7px;\n  }\n}\n\n@media all and (max-width:720px) {\n  .box {\n    width:calc(50% - 10px);\n    margin:5px;\n  }\n}\n\n@media all and (max-width:480px) {\n  .box {\n    width:calc(100% - 10px);\n    margin:5px;\n  }\n}\n\n.horizontal {\n  display: flex;\n}\n\n.vertical {\n  display: flex;\n  flex-direction: column;\n  flex:1;\n}\n\n.right {\n  justify-content: flex-end;\n}\n", ""]);
 
 	// exports
 
@@ -26464,11 +26469,11 @@
 
 	      return _react2.default.createElement(
 	        _appPage2.default,
-	        { title: 'Inbox', icon: 'inbox', toggleDrawer: this.props.toggleDrawer },
+	        { title: 'Inbox', icon: 'move_to_inbox', toggleDrawer: this.props.toggleDrawer },
 	        _react2.default.createElement(_appShipments4.default, { states: states }),
 	        _react2.default.createElement(
 	          _reactRouter.Link,
-	          { to: '/inbox/new' },
+	          { to: '/inbox/reception' },
 	          _react2.default.createElement(
 	            'button',
 	            { className: 'mui-btn mui-btn--accent mui-btn--fab  fab' },
@@ -27116,7 +27121,7 @@
 
 
 	// module
-	exports.push([module.id, "\nth {\n  vertical-align: bottom;\n}\n.timeline-item {\n  display: flex;\n}\n\n.formField {\n  display:flex;\n}\n\n.formField .icon {\n  color : rgba(0, 0, 0, 0.8);\n}\n\n.formField .input-textfield {\n  flex:1;\n}\n", ""]);
+	exports.push([module.id, "\nth {\n  vertical-align: bottom;\n}\n.timeline-item {\n  display: flex;\n}\n\n.formField {\n  display:flex;\n  flex-wrap: wrap;\n}\n\n.formField .icon {\n  color : rgba(0, 0, 0, 0.8);\n}\n\n.formField .input-textfield {\n  flex:1;\n}\n", ""]);
 
 	// exports
 
@@ -27847,16 +27852,6 @@
 	          'i',
 	          { className: 'material-icons' },
 	          'info'
-	        )
-	      ),
-	      '    ',
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/outbox/new' },
-	        _react2.default.createElement(
-	          'i',
-	          { className: 'material-icons' },
-	          'edit'
 	        )
 	      )
 	    )
@@ -28888,6 +28883,164 @@
 	};
 
 	exports.default = (0, _storeWatchMixin2.default)(ShipmentInfo, getShipmentInfo);
+
+/***/ },
+/* 270 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _appPage = __webpack_require__(239);
+
+	var _appPage2 = _interopRequireDefault(_appPage);
+
+	var _reactRouter = __webpack_require__(168);
+
+	var _appField = __webpack_require__(271);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ShipmentReceptionForm = function ShipmentReceptionForm(props) {
+	  return _react2.default.createElement(
+	    _appPage2.default,
+	    { icon: 'unarchive', title: 'Shipment Reception', to: '/inbox' },
+	    _react2.default.createElement(
+	      'h5',
+	      { className: 'mui--text-dark-secondary' },
+	      _react2.default.createElement('i', { className: 'fa fa-barcode fa-lg' }),
+	      '   Shipment Info'
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'mui-panel' },
+	      _react2.default.createElement(
+	        _appField.FieldGroup,
+	        { icon: 'fingerprint' },
+	        _react2.default.createElement(_appField.Field, { label: 'ID', icon: 'fingerprint', value: '1234678' }),
+	        _react2.default.createElement(_appField.Field, { label: 'Currier', value: '1234678' }),
+	        _react2.default.createElement(_appField.Field, { label: 'Order ID', value: '1234678' })
+	      ),
+	      _react2.default.createElement(
+	        _appField.FieldGroup,
+	        { icon: 'home' },
+	        _react2.default.createElement(_appField.Field, { label: 'Origin Date', icon: 'today', value: '01/10/2015' }),
+	        _react2.default.createElement(_appField.Field, { label: 'Origin', value: 'New York' }),
+	        _react2.default.createElement(_appField.Field, { label: 'Contact', value: 'John Smith' })
+	      ),
+	      _react2.default.createElement(
+	        _appField.FieldGroup,
+	        { icon: 'archive' },
+	        _react2.default.createElement(_appField.Field, { label: 'State', value: 'CLOSED' }),
+	        _react2.default.createElement(_appField.Field, { label: 'Num.Samples', value: '1' }),
+	        _react2.default.createElement(_appField.Field, { label: 'Observations', value: '' })
+	      )
+	    ),
+	    _react2.default.createElement(
+	      'h5',
+	      { className: 'mui--text-dark-secondary' },
+	      _react2.default.createElement(
+	        'i',
+	        { className: 'material-icons' },
+	        'timeline'
+	      ),
+	      '   Timeline'
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'mui-panel' },
+	      _react2.default.createElement(
+	        _appField.FieldGroup,
+	        { icon: 'flight_takeoff' },
+	        _react2.default.createElement(_appField.Field, { label: 'Agency', value: 'UPS' }),
+	        _react2.default.createElement(_appField.Field, { label: 'Send Date', value: '02/10/2015' }),
+	        _react2.default.createElement(_appField.Field, { label: 'Reception Date', value: '03/10/2015' }),
+	        _react2.default.createElement(_appField.Field, { label: 'Registry Date', value: '03/10/2015' })
+	      ),
+	      _react2.default.createElement(
+	        _appField.FieldGroup,
+	        { icon: 'warning' },
+	        _react2.default.createElement(_appField.Field, { label: 'Issue #1' })
+	      )
+	    ),
+	    _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: '/outbox/new' },
+	      _react2.default.createElement(
+	        'button',
+	        { className: 'mui-btn mui-btn--accent mui-btn--fab  fab' },
+	        _react2.default.createElement(
+	          'i',
+	          { className: 'material-icons' },
+	          'done'
+	        )
+	      )
+	    )
+	  );
+	};
+
+	exports.default = ShipmentReceptionForm;
+
+/***/ },
+/* 271 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.Field = exports.FieldGroup = undefined;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var FieldGroup = function FieldGroup(props) {
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "fieldgroup" },
+	    _react2.default.createElement(
+	      "div",
+	      { className: "logo" },
+	      _react2.default.createElement(
+	        "i",
+	        { className: "material-icons" },
+	        props.icon
+	      )
+	    ),
+	    _react2.default.createElement(
+	      "div",
+	      { className: "fields" },
+	      props.children
+	    )
+	  );
+	};
+
+	var Field = function Field(props) {
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "field input-textfield mui-textfield mui-textfield--float-label" },
+	    _react2.default.createElement("input", { type: "text", value: props.value }),
+	    _react2.default.createElement(
+	      "label",
+	      null,
+	      props.label
+	    )
+	  );
+	};
+
+	exports.FieldGroup = FieldGroup;
+	exports.Field = Field;
 
 /***/ }
 /******/ ]);
