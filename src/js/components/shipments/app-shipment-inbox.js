@@ -15,9 +15,9 @@ class Inbox extends React.Component {
     ];
 
     return (
-      <Page title="Inbox" icon="inbox" toggleDrawer={this.props.toggleDrawer}>
+      <Page title="Inbox" icon="move_to_inbox" toggleDrawer={this.props.toggleDrawer}>
         <Shipments states={states}/>
-        <Link to="/inbox/new">
+        <Link to="/inbox/reception">
           <button className="mui-btn mui-btn--accent mui-btn--fab  fab">
             <i className="material-icons">add</i>
           </button>

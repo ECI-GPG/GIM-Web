@@ -169,6 +169,23 @@
   margin: 10px;
 }
 
+.fieldgroup {
+  flex:1;
+  display: flex;
+}
+
+.fieldgroup > .fields {
+  flex:1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.fields > .field {
+  flex: 1 0.4 auto;
+  padding-left:8px;
+}
+
 @media all and (max-width:1280px) {
   .box {
     width:calc(25% - 20px);

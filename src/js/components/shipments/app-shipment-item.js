@@ -28,8 +28,6 @@ export default (props) => {
       <td>{stateDate.toLocaleDateString()}</td>
       <td>
         <Link to="/shipment"><i className="material-icons">info</i></Link>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <Link to="/outbox/new"><i className="material-icons">edit</i></Link>
       </td>
     </tr>
   );

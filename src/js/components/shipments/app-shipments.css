@@ -8,6 +8,7 @@ th {
 
 .formField {
   display:flex;
+  flex-wrap: wrap;
 }
 
 .formField .icon {
