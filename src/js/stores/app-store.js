@@ -45,25 +45,20 @@ const AppStore = Object.assign(EventEmitter.prototype, {
     return ProductAPI.getAll();
   },
 
-  dispatcherIndex: register( function (action) {
+  actions: {
+     [AppConstants.ADD_ITEM]: (action) => ShipmentAPI.add(action.item),
+     [AppConstants.REMOVE_ITEM]: (action) => ShipmentAPI.remove(action.item),
+     [AppConstants.INCREASE_ITEM]: (action) => ShipmentAPI.increaseItem(action.item),
+     [AppConstants.DECREASE_ITEM]: (action) => ShipmentAPI.decreaseItem(action.item)
+   },
 
-    switch(action.actionType) {
-      case AppConstants.ADD_ITEM:
-        ShipmentAPI.add(action.item);
-        break;
-      case AppConstants.REMOVE_ITEM:
-        ShipmentAPI.remove(action.item);
-        break;
-      case AppConstants.INCREASE_ITEM:
-        CartAPI.increaseItem(action.item);
-        break;
-      case AppConstants.DECREASE_ITEM:
-        CartAPI.decreaseItem(action.item);
-        break;
-    }
-
-    AppStore.emitChange();
-  })
+   dispatcherIndex: register( function (action) {
+     const doAction = this.actions[action.actionType]
+     if(typeof doAction === 'function') {
+       doAction();
+       AppStore.emitChange();
+     }
+   })
 });
 
 export default AppStore
