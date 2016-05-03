@@ -12,22 +12,11 @@ const products = (props) => {
 
 const Product = (props) => {
 
-
     return (
       <Card icon="tags" title={props.item.name} subtitle={props.item.id}>
         ...
       </Card>
     )
-
-    return  <div className="box mui-panel">
-              <h3>{props.item.id} - {props.item.name}</h3>
-              <div className="mui-divider"/>
-              <div className="horizontal mui--text-dark-secondary">
-                <img src="xxx" alt="product image" width="100"></img>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ...</p>
-              </div>
-            </div>
 }
 
 const ProductList = (props) => {
@@ -37,7 +26,7 @@ const ProductList = (props) => {
   });
 
   return (
-    <Page title="Products" icon="local_offer">
+    <Page title="Products" icon="local_offer" toggleDrawer={props.toggleDrawer}>
       <div className="boxer">{products}</div>
     </Page>
   );

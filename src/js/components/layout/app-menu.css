@@ -32,6 +32,10 @@ nav  h5 {
   background-color: rgba(100, 100, 100, 0.5);
 }
 
+.menu-item .selected {
+  background-color: rgba(50, 50, 50, 0.5);
+}
+
 #menu-title {
   padding-left:16px;
   text-shadow: 2px 4px 0px rgba(0, 0, 0, 0.15);

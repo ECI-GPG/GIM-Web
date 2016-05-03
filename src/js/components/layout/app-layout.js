@@ -8,15 +8,13 @@ class Layout extends React.Component {
 
   constructor() {
     super();
-    this.state = {
-      opened: false
-    };
+    this.state = { opened: false };
     this.toggleDrawer = this.toggleDrawer.bind(this);
   }
 
-   toggleDrawer() {
-     this.setState({opened: !this.state.opened});
-   }
+  toggleDrawer() {
+    this.setState({opened: !this.state.opened});
+  }
 
   render() {
 
@@ -25,7 +23,7 @@ class Layout extends React.Component {
     return (
       <div id="layout">
         <div id="drawer" className={drawerClass}>
-          <Menu selected={this.toggleDrawer}/>
+          <Menu open={this.toggleDrawer}/>
         </div>
         <div id="overlay" className={drawerClass} onClick={this.toggleDrawer}></div>
         <div id="container">
