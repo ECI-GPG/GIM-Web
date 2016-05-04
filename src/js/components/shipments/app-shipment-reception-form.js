@@ -39,6 +39,13 @@ const ShipmentReceptionForm = (props) => {
         </FieldGroup>
       </div>
 
+      <h5 className="mui--text-dark-secondary"><i className="material-icons">photo</i>&nbsp;&nbsp;&nbsp;Images</h5>
+      <div className="mui-panel">
+        <Link to="/camera">
+          <button className="mui-btn mui-btn--accent"><i className="material-icons">add_a_photo</i></button>
+        </Link>
+      </div>
+
       <Link to="/outbox/new">
         <button className="mui-btn mui-btn--accent mui-btn--fab  fab">
           <i className="material-icons">done</i>

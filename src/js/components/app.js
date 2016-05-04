@@ -13,6 +13,7 @@ import Products from './products/app-products';
 import ShipmentForm from './shipments/app-shipment-form';
 import ShipmentInfo from './shipments/app-shipment-info';
 import ShipmentReceptionForm from './shipments/app-shipment-reception-form';
+import Camera from './media/app-photobooth';
 
 export default () =>  <Router>
                         <Route path="/" component={Layout}>
@@ -25,5 +26,6 @@ export default () =>  <Router>
                           <Route path="products" component={Products}/>
                           <Route path="inbox" component={Inbox}/>
                           <Route path="inbox/reception" component={ShipmentReceptionForm}/>
+                          <Route path="camera" component={Camera}/>
                         </Route>
                       </Router>

@@ -2,13 +2,38 @@
   display: flex;
 }
 
+#layout > #overlay {
+  display:none;
+}
+
+#layout > #overlay.open {
+  z-index: 1000;
+  display: block !important;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(100, 100, 100, 0.7);
+}
+
 #layout > #drawer {
   height: 100vh;
   min-width: 24rem;
 }
 
-#layout > #overlay {
+#dialog {
+  position: absolute;
   display:none;
+  z-index: 1002;
+  left:0px;
+  width: 100%;
+  height: 100%;
+  border: solid 5px red;
+}
+
+#dialog.open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hidden {
@@ -97,15 +122,6 @@
     -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);
     -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);
     box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);
-  }
-
-  #overlay.open {
-    z-index: 1000;
-    display: block !important;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(100, 100, 100, 0.7);
   }
 
   #container > #searchbar {
