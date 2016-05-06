@@ -79,12 +79,18 @@
 }
 
 .page > main {
-
+  display: flex;
+  flex-direction: column;
   flex: 1;
   color: rgba(0,0,0,0.8);
   background-color: #EEE;
   padding: 15px 15px 0px 15px;
   overflow-y: auto;
+}
+
+.page > main.window {
+  overflow: hidden;
+  padding: 0px;
 }
 
 .fab {
@@ -94,8 +100,6 @@
   right: 130px;
   padding-top: 8px;
 }
-
-
 
 @media all and (max-width:1280px) {
 

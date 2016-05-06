@@ -1,11 +1,11 @@
 import React from 'react';
-import Page from '../layout/app-page';
+import {Page} from '../layout/app-page';
 import {Link} from 'react-router';
 import {FieldGroup, Field} from '../layout/app-field';
 
 const ShipmentReceptionForm = (props) => {
   return (
-    <Page icon="unarchive" title="Shipment Reception" to="/inbox">
+    <Page icon="unarchive" title="Check-In" to="/inbox">
 
       <h5 className="mui--text-dark-secondary"><i className="fa fa-barcode fa-lg"></i>&nbsp;&nbsp;&nbsp;Shipment Info</h5>
       <div className="mui-panel">
@@ -46,7 +46,7 @@ const ShipmentReceptionForm = (props) => {
         </Link>
       </div>
 
-      <Link to="/outbox/new">
+      <Link to="/inbox">
         <button className="mui-btn mui-btn--accent mui-btn--fab  fab">
           <i className="material-icons">done</i>
         </button>

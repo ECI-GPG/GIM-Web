@@ -1,4 +1,4 @@
-import Page from '../layout/app-page';
+import {Page} from '../layout/app-page';
 import Card from '../layout/app-card';
 import React from 'react';
 import Styles from './app-products.css';

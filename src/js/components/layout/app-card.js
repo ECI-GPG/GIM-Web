@@ -13,7 +13,7 @@ const Card = (props) => {
 
   return (
     <div className="box mui-panel card">
-    
+
       <div className="header">
         {icon}
         <div className="title">
@@ -23,11 +23,10 @@ const Card = (props) => {
       </div>
 
       <div className="content">
-
+        {props.children}
       </div>
 
       <div className="actions">
-        {props.children}
       </div>
     </div>
   )

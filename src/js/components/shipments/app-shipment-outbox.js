@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import Constants from '../../constants/app-constants';
-import Page from '../layout/app-page';
+import {Page} from '../layout/app-page';
 import styles from './app-shipments.css';
 import Shipments from './app-shipments';
 

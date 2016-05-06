@@ -1,30 +1,30 @@
 import React from 'react';
-import {Link} from 'react-router';
-import Constants from '../../constants/app-constants';
-import Page from '../layout/app-page';
+import Inbox from '../layout/app-inbox';
 import styles from './app-shipments.css';
-import Shipments from './app-shipments';
+import {Window} from '../layout/app-page';
+import AppStore from '../../stores/app-store';
+import {ListItem} from '../layout/list';
+import StoreWatchMixin from '../../mixin/storeWatchMixin';
 
-class Inbox extends React.Component {
+const Shipments = (props) => {
+  var items = AppStore.getShipments();
+  return { items: items}
+}
+
+class ShipmentsInbox extends React.Component {
 
   render() {
 
-    let states = [
-      Constants.SHIPMENT_STATE.CLOSED,
-      Constants.SHIPMENT_STATE.NEW,
-    ];
+    let listItems = this.props.items.map(item => {
+      return (<ListItem to={`/inbox/shipment/${item.id}`}>{item.id}</ListItem>)
+    });
 
     return (
-      <Page title="Inbox" icon="move_to_inbox" toggleDrawer={this.props.toggleDrawer}>
-        <Shipments states={states}/>
-        <Link to="/inbox/reception">
-          <button className="mui-btn mui-btn--accent mui-btn--fab  fab">
-            <i className="material-icons">add</i>
-          </button>
-        </Link>
-      </Page>
+      <Window title="Inbox" icon="move_to_inbox" toggleDrawer={this.props.toggleDrawer}>
+        <Inbox items={listItems} add="/inbox/checkin">{this.props.children}</Inbox>
+      </Window>
     )
   }
 }
 
-export default Inbox;
+export default StoreWatchMixin(ShipmentsInbox, Shipments);

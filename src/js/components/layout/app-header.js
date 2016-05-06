@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import AppActions from '../../actions/app-actions';
 import styles from './app-header.css';
 import SearchBox from '../search/app-search';
@@ -49,7 +49,7 @@ const Header = (props) => {
     return (
       <header>
         <div className="title">
-          {navButton} {icon} <h1>{props.title}</h1>
+          {navButton} {icon} <h3>{props.title}</h3>
         </div>
         {search}
       </header>

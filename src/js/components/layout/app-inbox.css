@@ -1,0 +1,16 @@
+.inbox {
+  flex: 1;
+  display: flex;
+}
+
+.inbox > .list {
+  min-width: 35rem;
+}
+
+.inbox > .viewer {
+  flex:1;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+}

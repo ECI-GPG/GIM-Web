@@ -33,10 +33,11 @@ header > .title > .icon {
   justify-content: center;
 }
 
-header > .title  h1 {
+header > .title  h3 {
   margin: 0px;
   padding-left: 2.4rem;
-  font-size: 3rem;
+  font-size: 2rem;
+  font-weight: normal;
 }
 
 header > .searchbox {

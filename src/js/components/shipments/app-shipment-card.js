@@ -5,29 +5,16 @@ import Card from '../layout/app-card';
 
 const ShipmentCard = (props) => {
 
-    var stateIcon = "dropbox";
     var stateDate = new Date();
+    var stateIcon =
+      props.item.state == AppConstants.SHIPMENT_STATE.CLOSED ? "cube" : "dropbox";
 
-    switch (props.item.state) {
-      case AppConstants.SHIPMENT_STATE.NEW:
-        stateDate = props.item.dateCreated;
-        break;
-      case AppConstants.SHIPMENT_STATE.CLOSED:
-        stateDate = props.item.dateClosed;
-        stateIcon = "cube";
-        break;
-      case AppConstants.SHIPMENT_STATE.SENT:
-        stateDate = props.item.dateSent;
-        break;
-      case AppConstants.SHIPMENT_STATE.RECEIVED:
-        stateDate = props.item.dateReceived;
-        break;
-    }
-
-    return  <Card icon={stateIcon} title={props.item.id} subtitle={stateDate.toLocaleDateString()}>
-              <Link to="/outbox/new"><i className="material-icons">edit</i></Link>
-            </Card>
-
+    return  (
+      <Card icon={stateIcon} title={props.item.id} subtitle={stateDate.toLocaleDateString()}>
+        <progress max="100" value="50"></progress>
+        <Link to="/inbox/reception"><i className="material-icons">edit</i></Link>
+      </Card>
+    );
 }
 
 export default ShipmentCard;
