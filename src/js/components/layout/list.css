@@ -10,7 +10,15 @@
   top: auto;
   right: auto;
   bottom:2rem;
-  left: 52rem !important;
+  left: 52rem;
+}
+
+@media all and (max-width:1280px) {
+  .list .fab {
+    position: absolute;
+    bottom:2rem;
+    left: 28rem;
+  }
 }
 
 .list > ul {
