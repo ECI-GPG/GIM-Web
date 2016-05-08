@@ -14,3 +14,7 @@
   justify-content: center;
   overflow-y: auto;
 }
+
+.viewer .page {
+  background-color: red;
+}

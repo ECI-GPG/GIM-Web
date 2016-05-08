@@ -1,8 +1,8 @@
 import React from 'react';
-import Constants from '../../constants/app-constants';
 import {Page} from '../layout/app-page';
-import Shipments from './app-shipments2';
 import styles from './app-shipments.css';
+import Shipments from './app-shipments2';
+import Constants from '../../constants/app-constants';
 
 const Monitor = (props) => {
 

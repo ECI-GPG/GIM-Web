@@ -1,5 +1,5 @@
 import React from 'react';
-import Page from '../layout/app-page';
+import {Page} from '../layout/app-page';
 
 const Issues = (props) => {
   return(
