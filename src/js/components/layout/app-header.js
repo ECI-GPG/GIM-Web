@@ -6,8 +6,12 @@ import { Link } from 'react-router';
 
 const Header = (props) => {
 
+    let toggleDrawer = () => {
+      props.toggleDrawer();
+    }
+
     let navButton = (
-      <div id="navButton" onClick={props.toggleDrawer}>
+      <div id="navButton" onClick={toggleDrawer}>
           <i className="material-icons md-32">menu</i>
       </div>
     )

@@ -3,8 +3,8 @@
   display: flex;
 }
 
-.inbox > .list {
-  min-width: 35rem;
+.inbox > .tabpanel {
+  min-width: 38rem;
 }
 
 .inbox > .viewer {

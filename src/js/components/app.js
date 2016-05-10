@@ -1,6 +1,6 @@
 import React from 'react';
 import Styles from './app.css';
-import Layout from './layout/app-layout';
+import Layout from './layout/layout';
 import {Router, Route, IndexRoute} from 'react-router';
 
 // Pages
@@ -13,24 +13,28 @@ import Products from './products/app-products';
 import ShipmentForm from './shipments/app-shipment-form';
 import ShipmentInfo from './shipments/app-shipment-info';
 import ShipmentCheckin from './shipments/app-shipment-reception-form';
+import ShipmentCheckinDetail from './shipments/app-checkin-form';
+
 import Camera from './media/app-photobooth';
 
 export default () =>  <Router>
                         <Route path="/" component={Layout}>
 
-                          <IndexRoute component={Monitor}/>
+                          <IndexRoute component={Inbox}/>
+
+                          <Route path="inbox" component={Inbox}>
+                            <Route path="shipment/:id" component={ShipmentCheckinDetail}/>
+                          </Route>
+                          <Route path="inbox/checkin" component={ShipmentCheckin}/>
+                          <Route path="products" component={Products}/>
+
+                          <Route path="monitor" component={Monitor}/>
                           <Route path="outbox" component={Outbox}/>
                           <Route path="outbox/new" component={ShipmentForm}/>
                           <Route path="issues" component={Issues}/>
                           <Route path="shipment" component={ShipmentInfo}/>
 
-                          <Route path="products" component={Products}/>
-                          <Route path="inbox" component={Inbox}>
-                            <Route path="shipment/:id" component={ShipmentCheckin}/>
-                          </Route>
-                          <Route path="inbox/checkin" component={ShipmentCheckin}/>
                           <Route path="camera" component={Camera}/>
-
                           <Route path="search" component={Search}/>
                         </Route>
                       </Router>

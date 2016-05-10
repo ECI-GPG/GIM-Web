@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './app-header';
+import style from './page.css';
 
 const Page = (props) => {
   return (

@@ -3,14 +3,25 @@ import Style from './app-menu.css';
 import {Link} from 'react-router';
 
 const options = [
+
+  { type: 'divider', txt : 'Central Store'},
+  { type: 'menu-item', txt : 'Inbox', to:'/inbox', icon:'move_to_inbox'},
+  { type: 'menu-item', txt : 'Products', to:'/products', icon:'local_offer'},
+
   { type: 'divider', txt : 'International Office'},
-  { type: 'menu-item', txt : 'Monitor', to:'/', icon: 'send'},
+  { type: 'menu-item', txt : 'Monitor', to:'monitor', icon: 'send'},
   { type: 'menu-item', txt : 'Outbox', to:'outbox', icon: 'inbox'},
   { type: 'menu-item', txt : 'Issues', to:'issues', icon: 'warning'},
-  { type: 'divider', txt : 'Central Store'},
-  { type: 'menu-item', txt : 'Products', to:'/products', icon:'local_offer'},
-  { type: 'menu-item', txt : 'Inbox', to:'/inbox', icon:'move_to_inbox'},
+
 ];
+
+const MenuButton = (props) => {
+  return (
+    <div id="menu-button" onClick={props.toggleDrawer}>
+      <i className="material-icons md-32">menu</i>
+    </div>
+  )
+}
 
 const MenuTitle = (props) => {
   return (
@@ -33,7 +44,7 @@ const MenuUser = (props) => {
 
 const MenuDivider = (props) => {
   return (
-    <div>
+    <div className="menu-divider">
       <div className="mui-divider"/>
       <h5>{props.txt}</h5>
     </div>
@@ -41,9 +52,14 @@ const MenuDivider = (props) => {
 }
 
 const MenuItem = (props) => {
+
+  let closeDrawer = function() {
+    props.toggleDrawer(false);
+  }
+
   return (
     <Link to={props.to} className="mui--text-light">
-      <div className="menu-item" activeClassName="selected" onClick={props.open}>
+      <div className="menu-item" activeClassName="selected" onClick={closeDrawer}>
         <i className="material-icons">{props.icon}</i>
         {props.txt}
       </div>
@@ -58,16 +74,23 @@ const menuItemTypes = {
 
 class Menu extends React.Component {
 
+
   componentWillMount() {
     this.items = options.map( item => {
       return menuItemTypes[item.type](item, this.props);
     });
   }
 
+  toggleDrawer() {
+    this.props.toggleDrawer();
+  }
+
   render() {
 
     return (
       <aside id="menu">
+
+        <MenuButton toggleDrawer={this.toggleDrawer.bind(this)}/>
 
         <MenuTitle title="SampleBook" subtitle="Shipments"/>
 

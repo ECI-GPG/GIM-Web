@@ -26,6 +26,9 @@ const ListDivider = (props) => {
 const List = (props) => {
   return (
     <div className="list">
+      <div className="textfield mui-textfield">
+        <input type="text" placeholder="Filter by..."></input>
+      </div>
       <ul>{props.children}</ul>
       <FAB icon="fiber_new" to={props.add}></FAB>
     </div>

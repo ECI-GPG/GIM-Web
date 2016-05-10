@@ -1,8 +1,9 @@
 .list {
+  flex:1;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
   border-right: solid 1px #DDD;
+  border-left: solid 1px #DDD;
 }
 
 .list .fab {
@@ -13,7 +14,27 @@
   left: 52rem;
 }
 
-@media all and (max-width:1280px) {
+.list > .textfield {
+  padding : 1.4rem;
+  background-color: #FFF;
+  margin-bottom: 3px;
+  min-height: 6rem;
+}
+
+.list > ul {
+  flex:1;
+  overflow-y: auto;
+}
+
+@media all and (min-width:960px) and (orientation:landscape) {
+  .list .fab {
+    position: absolute;
+    bottom:2rem;
+    left: 36rem;
+  }
+}
+
+@media all and (min-width:1280px) {
   .list .fab {
     position: absolute;
     bottom:2rem;
@@ -24,6 +45,7 @@
 .list > ul {
   list-style: none;
   padding:0px;
+  margin: 0px;
 }
 
 .listitem {
