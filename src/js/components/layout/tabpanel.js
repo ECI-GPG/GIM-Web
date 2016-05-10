@@ -3,13 +3,13 @@ import style from './tabpanel.css';
 
 const Tab = (props) => {
 
-  var activeClass = props.active ? "mui--is-active" : ""
+  var activeClass = props.active ? "tab mui--is-active" : "tab"
 
   let selectTab = () => {
     props.selectTab(props.id);
   }
   return (
-    <li className={activeClass} onClick={selectTab}><a>{props.label}</a></li>
+    <li className={activeClass} onClick={selectTab}><a><i className={`fa fa-${props.icon} fab-lg`}></i>&nbsp;&nbsp;&nbsp;{props.label}</a></li>
   )
 }
 
@@ -17,7 +17,7 @@ class TabPanel extends React.Component {
 
   constructor() {
     super();
-    this.state = { selected : 'opened'}
+    this.state = { selected : ''}
   }
 
   selectTab(tabID) {
@@ -28,7 +28,7 @@ class TabPanel extends React.Component {
 
     var tabs = React.Children.map(this.props.children, (child) => {
       var active = this.state.selected === child.props.id;
-      return (<Tab label={child.props.name} active={active} id={child.props.id} selectTab={this.selectTab.bind(this)}/>);
+      return (<Tab icon={child.props.icon} label={child.props.name} active={active} id={child.props.id} selectTab={this.selectTab.bind(this)}/>);
     });
 
     let content = [];

@@ -5,16 +5,24 @@ const ShipmentAPI = {
   shipments: [],
 
   init() {
+
+    let origins = [
+      { initial:'NY', city : 'New York'},
+      { initial:'P' , city : 'Paris'},
+      { initial:'M' , city : 'Milan'}
+    ]
+
     console.log('loading shipments');
     for (let i = 1; i < 30; i++) {
       this.shipments.push({
         'id': 'Shipment' + i,
-        'state': AppConstants.SHIPMENT_STATE[Object.keys(AppConstants.SHIPMENT_STATE)[(i%4)]],
+        'state': AppConstants.SHIPMENT_STATE[Object.keys(AppConstants.SHIPMENT_STATE)[(i%5)]],
         'dateCreated': new Date(),
         'dateClosed': new Date(),
         'dateSent': new Date(),
         'dateEstimatedReception': new Date(),
         'dateReceived': new Date(),
+        'origin': origins[i%3],
         'samples': []
       });
     }

@@ -3,11 +3,11 @@ import style from './list.css';
 import {Link} from 'react-router';
 import FAB from './button';
 
-const ListItem = ({title="Title", to, children}) => {
+const ListItem = ({title="Title", icon, to, children}) => {
   return (
     <Link to={to}>
       <li className="listitem">
-        <i className="material-icons logo">archive</i>
+        {icon}
         <div>
           <div className="title">{title}</div>
           <p className="subtitle">{children}</p>

@@ -7,13 +7,18 @@ const CheckinForm = (props) => {
 
   return (
     <div>
-    <h5 className="mui--text-dark-secondary"><i className="fa fa-barcode fa-lg"></i>&nbsp;&nbsp;&nbsp;Shipment Info</h5>
+
+    <h5 className="mui--text-dark-secondary"><i className="fa fa-barcode fa-lg"></i>&nbsp;&nbsp;&nbsp;Shipment</h5>
     <div className="mui-panel">
       <FieldGroup icon="fingerprint">
         <Field label="ID" icon="fingerprint" value="1234678"/>
         <Field label="Currier" value="1234678"/>
         <Field label="Order ID" value="1234678"/>
       </FieldGroup>
+    </div>
+
+    <h5 className="mui--text-dark-secondary"><i className="fa fa-info fa-lg"></i>&nbsp;&nbsp;&nbsp;Info</h5>
+    <div className="mui-panel">
       <FieldGroup icon="home">
         <Field label="Origin Date" icon="today" value="01/10/2015"/>
         <Field label="Origin" value="New York"/>

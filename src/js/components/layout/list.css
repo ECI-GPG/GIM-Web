@@ -11,14 +11,17 @@
   top: auto;
   right: auto;
   bottom:2rem;
-  left: 52rem;
+  left: 30rem;
 }
 
 .list > .textfield {
-  padding : 1.4rem;
+  padding-top : 0.8rem;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  padding-bottom: 1rem;
   background-color: #FFF;
   margin-bottom: 3px;
-  min-height: 6rem;
+  min-height: 5rem;
 }
 
 .list > ul {
@@ -30,7 +33,7 @@
   .list .fab {
     position: absolute;
     bottom:2rem;
-    left: 36rem;
+    left: 38rem;
   }
 }
 
@@ -38,7 +41,7 @@
   .list .fab {
     position: absolute;
     bottom:2rem;
-    left: 28rem;
+    left: 58rem;
   }
 }
 
@@ -84,4 +87,5 @@
   font-weight: 500;
   letter-spacing: .01em;
   line-height: 1.6rem;
+  color: rgba(0, 0, 0, 0.5);
 }

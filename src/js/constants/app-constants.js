@@ -8,7 +8,8 @@ export default {
     NEW : 'NEW',
     CLOSED : 'CLOSED',
     SENT : 'SENT',
-    RECEIVED : 'RECEIVED'
+    RECEIVED : 'RECEIVED',
+    OPENED : 'OPENED'
   }
 
 

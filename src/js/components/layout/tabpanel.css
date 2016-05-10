@@ -8,6 +8,11 @@
   min-height: 5rem;
   background-color: #FFF;
   margin-bottom: 8px;
+  display: flex;
+}
+
+.tab {
+  flex:1;
 }
 
 .tabcontents {
