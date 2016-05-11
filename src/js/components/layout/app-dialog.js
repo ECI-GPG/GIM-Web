@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './app-layout.css';
+import Styles from './layout.css';
 
 const Dialog = (props) => {
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './list.css';
 import {Link} from 'react-router';
-import FAB from './button';
+import {FAB} from './button';
 
 const ListItem = ({title="Title", icon, to, children}) => {
   return (

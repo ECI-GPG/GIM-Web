@@ -1,5 +1,5 @@
 import React from 'react';
-import {Page} from '../layout/app-page';
+import {Page} from '../layout/page';
 import styles from './app-shipments.css';
 import Shipments from './app-shipments2';
 import Constants from '../../constants/app-constants';

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Page} from '../layout/app-page';
+import {Page} from '../layout/page';
 import BrowserDetection from 'react-browser-detection';
 import PhotoBooth from './photobooth';
 

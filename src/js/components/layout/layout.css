@@ -71,7 +71,7 @@ body * {
 }
 
 .toolbar {
-  display:flex;
+  display:none;
   position:absolute;
   right: -6rem;
   height: 100vh;
@@ -119,6 +119,7 @@ body * {
   }
 
   .toolbar {
+    display: flex;
     position: relative;
     right:0px;
   }

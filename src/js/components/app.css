@@ -1,5 +1,6 @@
 html {
   font-size:62.5%;
+  box-sizing: border-box;
 }
 
 body {
@@ -20,14 +21,6 @@ a:focus {
 
 a:hover {
   text-decoration:none;
-}
-
-.icon {
-    width:72px;
-    padding: 0px;
-    background-color: rgba(0,0,0,0);
-    color: #FFF;
-    display: flex;
 }
 
 .material-icons.md-18 {

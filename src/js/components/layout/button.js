@@ -1,5 +1,22 @@
 import React from 'react';
 import {Link} from 'react-router';
+import styles from './button.css';
+
+const Icon = (props) => {
+  return (
+    <div id={props.id} className="icon">
+      <i className="material-icons md-24">{props.icon}</i>
+    </div>
+  )
+}
+
+const Button = (props) => {
+  return (
+    <button id={props.id} className="button" onClick={props.onClick}>
+      <i className="material-icons md-24">{props.icon}</i>
+    </button>
+  )
+}
 
 const FAB = (props) => {
   return (
@@ -11,4 +28,4 @@ const FAB = (props) => {
   );
 }
 
-export default FAB;
+export {Icon, Button, FAB};

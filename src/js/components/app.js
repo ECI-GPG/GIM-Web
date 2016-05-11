@@ -1,7 +1,7 @@
 import React from 'react';
 import Styles from './app.css';
 import Layout from './layout/layout';
-import {Router, Route, IndexRoute} from 'react-router';
+import {browserHistory, Router, Route, IndexRoute} from 'react-router';
 
 // Pages
 import Inbox from './shipments/app-shipment-inbox';
@@ -17,7 +17,7 @@ import ShipmentCheckinDetail from './shipments/app-checkin-form';
 
 import Camera from './media/app-photobooth';
 
-export default () =>  <Router>
+export default () =>  <Router history={browserHistory}>
                         <Route path="/" component={Layout}>
 
                           <IndexRoute component={Inbox}/>

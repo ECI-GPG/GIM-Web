@@ -1,5 +1,5 @@
 import React from 'react';
-import {Page} from '../layout/app-page';
+import {Page} from '../layout/page';
 import {Link} from 'react-router';
 import AppStore from '../../stores/app-store';
 import StoreWatchMixin from '../../mixin/storeWatchMixin';

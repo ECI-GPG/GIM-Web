@@ -1,7 +1,7 @@
 import React from 'react';
 import Inbox from '../layout/app-inbox';
 import styles from './app-shipments.css';
-import {Window} from '../layout/app-page';
+import {Window} from '../layout/page';
 import AppStore from '../../stores/app-store';
 import {List, ListItem} from '../layout/list';
 import StoreWatchMixin from '../../mixin/storeWatchMixin';
