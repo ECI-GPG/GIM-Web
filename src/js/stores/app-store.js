@@ -1,11 +1,16 @@
-import CartAPI from '../api/api-cart';
+import AppConstants from '../constants/app-constants';
+import {dispatch, register} from '../dispatchers/app-dispatcher';
+import {EventEmitter } from 'events';
+
 import ProductAPI from '../api/api-products';
 import ShipmentAPI from '../api/api-shipment';
-import AppConstants from '../constants/app-constants';
-import {EventEmitter } from 'events';
-import {dispatch, register} from '../dispatchers/app-dispatcher';
+import PagesAPI from '../api/api-pages';
 
 const CHANGE_EVENT = "change"
+
+var _inbox = {
+  tab : "opened"
+}
 
 const AppStore = Object.assign(EventEmitter.prototype, {
 
@@ -14,7 +19,7 @@ const AppStore = Object.assign(EventEmitter.prototype, {
   },
 
   addChangeListener(callback) {
-    this.on( CHANGE_EVENT, callback);
+    this.on(CHANGE_EVENT, callback);
   },
 
   removeChangeListener(callback) {
@@ -25,37 +30,31 @@ const AppStore = Object.assign(EventEmitter.prototype, {
     return ShipmentAPI.getAll();
   },
 
+  getShipmentsByStatus(state) {
+    return ShipmentAPI.getAllFilterByState(state);
+  },
+
   getShipment() {
     return ShipmentAPI.getShipment();
-  },
-
-  getCart() {
-    return CartAPI.cartItems;
-  },
-
-  getCatalog() {
-    return CartAPI.getCatalog();
-  },
-
-  getCartTotals() {
-    return CartAPI.cartTotals();
   },
 
   getProducts() {
     return ProductAPI.getAll();
   },
 
-  actions: {
-     [AppConstants.ADD_ITEM]: (action) => ShipmentAPI.add(action.item),
-     [AppConstants.REMOVE_ITEM]: (action) => ShipmentAPI.remove(action.item),
-     [AppConstants.INCREASE_ITEM]: (action) => ShipmentAPI.increaseItem(action.item),
-     [AppConstants.DECREASE_ITEM]: (action) => ShipmentAPI.decreaseItem(action.item)
-   },
+  getInbox() {
+    return PagesAPI.getInbox();
+  },
 
    dispatcherIndex: register( function (action) {
-     const doAction = this.actions[action.actionType]
+
+     let actions = {
+       [AppConstants.INBOX.GET_SHIPMENTS]: (action) => PagesAPI.setInboxTab(action.status)
+     };
+
+     const doAction = actions[action.actionType];
      if(typeof doAction === 'function') {
-       doAction();
+       doAction(action);
        AppStore.emitChange();
      }
    })

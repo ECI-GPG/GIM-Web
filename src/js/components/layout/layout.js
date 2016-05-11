@@ -10,14 +10,12 @@ class Layout extends React.Component {
   constructor() {
     super();
     this.state = { drawer: false, dialog: false};
-
     this.toggleDrawer = this.toggleDrawer.bind(this);
     this.toggleDialog = this.toggleDialog.bind(this);
     this.toggleOverlay = this.toggleOverlay.bind(this);
   }
 
   toggleDrawer(forced) {
-    console.log(this.state.drawer);
     var drawerState = forced!=null ? forced : !this.state.drawer;
     this.setState({drawer: drawerState});
   }
@@ -42,15 +40,15 @@ class Layout extends React.Component {
         <div className={`overlay ${overlayClass} centred`} onClick={this.toggleOverlay}>
           <div className={`dialog ${dialogClass}`}>dialog</div>
         </div>
-          <div className={`drawer ${drawerClass}`}>
-            <Menu toggleDrawer={this.toggleDrawer} />
-          </div>
-          <div className="container">
-            <div id="searchbar" onClick={this.toggleDialog}><SearchBox/></div>
-            {React.cloneElement(this.props.children, { key: this.props.location.pathname, toggleDrawer: this.toggleDrawer })}
-          </div>
-          <div className="toolbar">toolbar</div>
+        <div className={`drawer ${drawerClass}`}>
+          <Menu toggleDrawer={this.toggleDrawer} />
         </div>
+        <div className="container">
+          <div id="searchbar" onClick={this.toggleDialog}><SearchBox/></div>
+          {React.cloneElement(this.props.children, { key: this.props.location.pathname, toggleDrawer: this.toggleDrawer })}
+        </div>
+        <div className="toolbar">toolbar</div>
+      </div>
     );
   }
 }

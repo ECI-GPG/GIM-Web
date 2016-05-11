@@ -1,19 +1,17 @@
 import React from 'react';
 import style from './list.css';
-import {Link} from 'react-router';
 import {FAB} from './button';
 
-const ListItem = ({title="Title", icon, to, children}) => {
+const ListItem = ({title, subtitle, icon, children}) => {
   return (
-    <Link to={to}>
       <li className="listitem">
         {icon}
         <div>
           <div className="title">{title}</div>
-          <p className="subtitle">{children}</p>
+          <div className="subtitle">{subtitle}</div>
+          <div className="content">{children}</div>
         </div>
       </li>
-    </Link>
   );
 }
 
@@ -30,7 +28,6 @@ const List = (props) => {
         <input type="text" placeholder="Filter by..."></input>
       </div>
       <ul>{props.children}</ul>
-      <FAB icon="fiber_new" to={props.add}></FAB>
     </div>
   );
 }

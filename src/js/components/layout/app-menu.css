@@ -94,11 +94,13 @@ nav  h5 {
 
   #menu-user {
     max-height: 7rem;
+    background-color: #FFF;
   }
 
   .menu-item {
     padding-left: 1rem;
   }
+
   .menu-divider > h5 {
     display: none;
   }
@@ -128,5 +130,9 @@ nav  h5 {
 
   .menu-item {
     color: #FFF;
+  }
+
+  .menu-divider > h5 {
+    display: block;
   }
 }

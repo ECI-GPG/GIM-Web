@@ -1,8 +1,4 @@
 export default {
-  ADD_ITEM: 'ADD_ITEM',
-  REMOVE_ITEM: 'REMOVE_ITEM',
-  INCREASE_ITEM: 'INCREASE_ITEM',
-  DECREASE_ITEM: 'DECREASE_ITEM',
 
   SHIPMENT_STATE: {
     NEW : 'NEW',
@@ -10,7 +6,10 @@ export default {
     SENT : 'SENT',
     RECEIVED : 'RECEIVED',
     OPENED : 'OPENED'
-  }
+  },
 
+  INBOX: {
+    GET_SHIPMENTS: 'GET_SHIPMENTS'
+  }
 
 }

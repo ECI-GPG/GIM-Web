@@ -93,12 +93,12 @@ body * {
     min-width: 8rem;
     max-width: 8rem;
     overflow: hidden;
-
+    padding-top: 5.6rem;
+    box-shadow: inherit;
   }
 
   .drawer.uncoverleft {
     min-width: 24rem;
-    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);
   }
 
   .overlay {
@@ -149,4 +149,19 @@ body * {
 .centred {
   justify-content: center;
   align-items: center;
+}
+
+.flex {
+  display: flex;
+  padding-right: 1.6rem;
+  align-items: center;
+}
+
+.up {
+  align-self: flex-start;
+  margin-top: 2rem;
+}
+
+.expand {
+  flex:1;
 }
