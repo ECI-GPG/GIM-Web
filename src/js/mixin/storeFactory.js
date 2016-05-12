@@ -1,9 +1,19 @@
 import {EventEmitter } from 'events';
+import {dispatch, register} from '../dispatchers/app-dispatcher';
 
 const CHANGE_EVENT = "change";
 
-const eventBus = function (handlers) {
+const state = (model) => {
   return {
+    getState() {
+      return Object.assign({}, model);
+    }
+  }
+}
+
+const storeFactory = (model, handlers) => {
+
+  let store = Object.assign(EventEmitter.prototype, {
 
     emitChange(){
       this.emit(CHANGE_EVENT);
@@ -18,22 +28,15 @@ const eventBus = function (handlers) {
     },
 
     dispatcherIndex: register( function (action) {
-      const doAction = handlers[action.actionType];
+      const doAction = handlers(model)[action.actionType];
       if(typeof doAction === 'function') {
         doAction(action);
-        bus.emitChange();
+        store.emitChange();
       }
     })
+  }, state(model));
 
-  };
-})
-
-const state = (model) => {
-  getState() { return Object.assign({}, model);
+  return store;
 }
 
-const storeFactory = function( model, handlers ) {
-  return Object.assign( EventEmitter.prototype, bus(handlers(model)), state(model));
-}
-
-export default storeFactory();
+export default storeFactory;

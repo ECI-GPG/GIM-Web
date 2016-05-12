@@ -9,6 +9,7 @@ export default {
   },
 
   INBOX: {
+    SELECT_TAB:'SELECT_TAB',
     GET_SHIPMENTS: 'GET_SHIPMENTS'
   }
 

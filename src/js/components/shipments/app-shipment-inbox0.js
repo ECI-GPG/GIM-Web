@@ -2,7 +2,8 @@ import React from 'react';
 
 import InboxStore from '../../stores/inbox-store';
 import AppActions from '../../actions/app-actions';
-import StoreWatchMixin from '../../mixin/storeWatchMixin';
+import AppConstants from '../../constants/app-constants';
+import StoreWatchMixin from '../../mixin/storeWatchMixin0';
 
 import {Page} from '../layout/page';
 import {Tabs, Tab} from '../layout/tabs';
@@ -19,50 +20,51 @@ const StepInfo = ({icon, city, date}) => {
   );
 }
 
+
 class ShipmentsInbox extends React.Component {
 
-  constructor() {
-    super();
-    this.state = AppStore.getInbox();
+  constructor(props) {
+    super(props);
     this.tabSelected = this.tabSelected.bind(this);
   }
 
   tabSelected(tab) {
-    AppActions.getShipmentsByStatus(tab);
+    AppActions.send( AppConstants.INBOX.SELECT_TAB, tab)
   }
 
   render() {
-
-    let shipments = this.props.shipments
-      .filter((shipment) => {
-        return shipment.state === this.state.tab;
-      }).map((shipment) => {
-        let icon = (<i className="logo up">{shipment.origin.initial}</i>)
-        return (
-          <ListItem icon={icon} title={shipment.origin.contact}>
-            <StepInfo icon="keyboard_arrow_right" city={shipment.origin.city} date={shipment.dateSent}/>
-            <div><i className="material-icons md-18 mui--text-dark-secondary mui--text-dark-hint">more_vert</i></div>
-            <StepInfo icon="keyboard_arrow_left" city="Madrid" date={shipment.dateReceived}/>
-          </ListItem>
-        )
-      });
-
     return (
       <Page title="Inbox" icon="move_to_inbox" toggleDrawer={this.props.toggleDrawer}>
         <div className="inbox">
           <Tabs>
-            <Tab id="CLOSED" icon="cube" label="Closed" active={this.state.tab === "CLOSED"} selected={this.tabSelected}/>
-            <Tab id="OPENED" icon="cube" label="Opened" active={this.state.tab === "OPENED"} selected={this.tabSelected}/>
+            <Tab id="CLOSED" icon="cube" label="Closed" active={this.props.tab === "CLOSED"} selected={this.tabSelected}/>
+            <Tab id="OPENED" icon="cube" label="Opened" active={this.props.tab === "OPENED"} selected={this.tabSelected}/>
           </Tabs>
-          <List>{shipments}</List>
+          <List>{this.props.shipments.map(renderShipment)}</List>
           <div className="viewer">{this.props.children}</div>
         </div>
       </Page>
     )
   }
+
+  renderShipment(shipment) {
+    let icon = (<i className="logo up">{shipment.origin.initial}</i>)
+    return (
+        <ListItem icon={renderIcon(shipment.origin.initial)} title={shipment.origin.contact}>
+          <StepInfo icon="keyboard_arrow_right" city={shipment.origin.city} date={shipment.dateSent}/>
+          <div><i className="material-icons md-18 mui--text-dark-secondary mui--text-dark-hint">more_vert</i></div>
+          <StepInfo icon="keyboard_arrow_left" city="Madrid" date={shipment.dateReceived}/>
+        </ListItem>
+    )
+  }
+
+  renderIcon(icon) {
+    return (<i className="logo up">{shipment.origin.initial}</i>)
+  }
+
 }
 
-export default StoreWatchMixin(ShipmentsInbox, () => {
-  var items = InboxStore.getShipments();
-  return { shipments: items }
+export default StoreWatchMixin(ShipmentsInbox, InboxStore, (props) => {
+  const state = InboxStore.getState();
+  return state;
 });
