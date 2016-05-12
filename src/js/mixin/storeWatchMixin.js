@@ -18,7 +18,7 @@ export default ( InnerComponent, stateCallback) => class extends React.Component
   }
 
   _onChange(){
-    this.setState( stateCallback(this.props) )
+    this.setState(stateCallback(this.props));
   }
 
   render() {

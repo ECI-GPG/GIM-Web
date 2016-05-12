@@ -25,7 +25,17 @@ const List = (props) => {
   return (
     <div className="list">
       <div className="textfield mui-textfield">
-        <input type="text" placeholder="Filter by..."></input>
+        <div className="mui-textfield expand">
+          <input type="text" placeholder="Filter by..."></input>
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        <div className="mui-select">
+          <select>
+            <option>Contact</option>
+            <option>Origin</option>
+            <option>Sent Date</option>
+          </select>
+        </div>
       </div>
       <ul>{props.children}</ul>
     </div>

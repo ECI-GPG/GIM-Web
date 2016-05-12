@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AppStore from '../../stores/app-store';
+import InboxStore from '../../stores/inbox-store';
 import AppActions from '../../actions/app-actions';
 import StoreWatchMixin from '../../mixin/storeWatchMixin';
 
@@ -9,11 +9,6 @@ import {Tabs, Tab} from '../layout/tabs';
 import {List, ListItem} from '../layout/list';
 
 import styles from './app-shipments.css';
-
-const Shipments = (props) => {
-  var items = AppStore.getShipments();
-  return { shipments: items}; 
-}
 
 const StepInfo = ({icon, city, date}) => {
   return (
@@ -67,4 +62,7 @@ class ShipmentsInbox extends React.Component {
   }
 }
 
-export default StoreWatchMixin(ShipmentsInbox, Shipments);
+export default StoreWatchMixin(ShipmentsInbox, () => {
+  var items = InboxStore.getShipments();
+  return { shipments: items }
+});

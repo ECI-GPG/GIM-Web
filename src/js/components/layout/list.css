@@ -22,6 +22,8 @@
   background-color: #FFF;
   margin-bottom: 3px;
   min-height: 5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .list > ul {
