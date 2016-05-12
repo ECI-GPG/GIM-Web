@@ -19695,15 +19695,15 @@
 
 	var _appShipmentInbox2 = _interopRequireDefault(_appShipmentInbox);
 
-	var _appIssues = __webpack_require__(273);
+	var _appIssues = __webpack_require__(269);
 
 	var _appIssues2 = _interopRequireDefault(_appIssues);
 
-	var _appSearchPage = __webpack_require__(274);
+	var _appSearchPage = __webpack_require__(270);
 
 	var _appSearchPage2 = _interopRequireDefault(_appSearchPage);
 
-	var _appShipmentOutbox = __webpack_require__(275);
+	var _appShipmentOutbox = __webpack_require__(271);
 
 	var _appShipmentOutbox2 = _interopRequireDefault(_appShipmentOutbox);
 
@@ -19740,7 +19740,7 @@
 	exports.default = function () {
 	  return _react2.default.createElement(
 	    _reactRouter.Router,
-	    null,
+	    { history: _reactRouter.browserHistory },
 	    _react2.default.createElement(
 	      _reactRouter.Route,
 	      { path: '/', component: _layout2.default },
@@ -19800,7 +19800,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  font-size:62.5%;\n}\n\nbody {\n  color: #FFF;\n  background-color: #000;\n  font-size: 1.4rem;\n  font-family: 'Roboto', sans-serif !important;\n  text-rendering: geometricPrecision;\n}\n\na {\n  text-decoration:none;\n}\n\na:focus {\n  text-decoration: none;\n}\n\na:hover {\n  text-decoration:none;\n}\n\n.icon {\n    width:72px;\n    padding: 0px;\n    background-color: rgba(0,0,0,0);\n    color: #FFF;\n    display: flex;\n}\n\n.material-icons.md-18 {\n  font-size: 18px; }\n.material-icons.md-24 {\n  font-size: 24px; }\n  .material-icons.md-32 {\n    font-size: 3rem; }\n.material-icons.md-36 {\n  font-size: 36px; }\n.material-icons.md-48 {\n  font-size: 48px; }\n.material-icons.md-dark {\n  color: rgba(0, 0, 0, 0.54); }\n.material-icons.md-dark.md-inactive {\n  color: rgba(0, 0, 0, 0.26); }\n.material-icons.md-light {\n  color: white; }\n.material-icons.md-light.md-inactive {\n  color: rgba(255, 255, 255, 0.3); }\n\n\n  .card {\n    display : flex;\n    flex-direction:column;\n    min-height: 18rem;\n  }\n\n  .card > .header {\n    display:flex;\n  }\n\n  .logo {\n    padding: 12px;\n    margin-right:12px;\n    width:40px;\n    height:40px;\n    background: #FFF;\n    color: rgba(0, 0, 0, 0.8);\n    border-radius: 20px;\n    border : 1px solid #CCC;\n    display:flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .card > .header > .title {\n    flex:1;\n    display:flex;\n    flex-direction: column;\n  }\n\n  .card > .header > .title > .title1 {\n    margin-top: 2px;\n    font-size: 1.4rem;\n    font-weight: 600;\n  }\n\n  .card > .header > .title > .title2 {\n    font-size: 1.2rem;\n    font-weight: 400;\n  }\n\n  .card > .content {\n    flex:1;\n  }\n\n  .card > .actions {\n    display: flex;\n    justify-content: flex-end;\n  }\n", ""]);
+	exports.push([module.id, "html {\n  font-size:62.5%;\n  box-sizing: border-box;\n}\n\nbody {\n  color: #FFF;\n  background-color: #000;\n  font-size: 1.4rem;\n  font-family: 'Roboto', sans-serif !important;\n  text-rendering: geometricPrecision;\n}\n\na {\n  text-decoration:none;\n}\n\na:focus {\n  text-decoration: none;\n}\n\na:hover {\n  text-decoration:none;\n}\n\n.material-icons.md-12 {\n  font-size: 12px; }\n\n.material-icons.md-18 {\n  font-size: 18px; }\n.material-icons.md-24 {\n  font-size: 24px; }\n  .material-icons.md-32 {\n    font-size: 3rem; }\n.material-icons.md-36 {\n  font-size: 36px; }\n.material-icons.md-48 {\n  font-size: 48px; }\n.material-icons.md-dark {\n  color: rgba(0, 0, 0, 0.54); }\n.material-icons.md-dark.md-inactive {\n  color: rgba(0, 0, 0, 0.26); }\n.material-icons.md-light {\n  color: white; }\n.material-icons.md-light.md-inactive {\n  color: rgba(255, 255, 255, 0.3); }\n\n\n  .card {\n    display : flex;\n    flex-direction:column;\n    min-height: 18rem;\n  }\n\n  .card > .header {\n    display:flex;\n  }\n\n  .logo {\n    padding: 12px;\n    margin-right:12px;\n    width:40px;\n    height:40px;\n    background: #FFF;\n    color: rgba(0, 0, 0, 0.8);\n    border-radius: 20px;\n    border : 1px solid #CCC;\n    display:flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .card > .header > .title {\n    flex:1;\n    display:flex;\n    flex-direction: column;\n  }\n\n  .card > .header > .title > .title1 {\n    margin-top: 2px;\n    font-size: 1.4rem;\n    font-weight: 600;\n  }\n\n  .card > .header > .title > .title2 {\n    font-size: 1.2rem;\n    font-weight: 400;\n  }\n\n  .card > .content {\n    flex:1;\n  }\n\n  .card > .actions {\n    display: flex;\n    justify-content: flex-end;\n  }\n", ""]);
 
 	// exports
 
@@ -20166,7 +20166,6 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Layout).call(this));
 
 	    _this.state = { drawer: false, dialog: false };
-
 	    _this.toggleDrawer = _this.toggleDrawer.bind(_this);
 	    _this.toggleDialog = _this.toggleDialog.bind(_this);
 	    _this.toggleOverlay = _this.toggleOverlay.bind(_this);
@@ -20176,7 +20175,6 @@
 	  _createClass(Layout, [{
 	    key: 'toggleDrawer',
 	    value: function toggleDrawer(forced) {
-	      console.log(this.state.drawer);
 	      var drawerState = forced != null ? forced : !this.state.drawer;
 	      this.setState({ drawer: drawerState });
 	    }
@@ -20461,7 +20459,7 @@
 
 
 	// module
-	exports.push([module.id, "#menu {\n  height:100vh;\n  font-size: 1.6rem;\n  display: flex;\n  flex-direction: column;\n}\n\n#menu nav {\n  flex:1;\n  overflow-y: auto;\n  color: rgba(0, 0, 0, 0.8);\n  background-color: #FFF;\n}\n\nnav  h5 {\n  padding-left: 16px;\n  color: rgba(255, 255, 255, 0.7);\n  font-size: 1.4rem;\n  font-weight: 400;\n  height: 3.8rem;\n}\n\n.menu-item {\n  display: flex;\n  align-items: center;\n  color: rgba(0, 0, 0, 0.8);\n  height: 4rem;\n}\n\n.menu-item > i {\n  width:72px;\n  padding: 16px;\n}\n\n.menu-item:hover {\n  background-color: rgba(100, 100, 100, 0.5);\n}\n\n.menu-item .selected {\n  background-color: rgba(50, 50, 50, 0.5);\n}\n\n#menu-button {\n  display: none;\n  min-height: 7rem;\n  padding:16px;\n}\n\n#menu-title {\n  padding-left:16px;\n  text-shadow: 2px 4px 0px rgba(0, 0, 0, 0.15);\n}\n\n.mui-divider {\n  background-color: rgba(150, 150, 150, 0.7);\n  margin-top: 2px;\n}\n\n#menu-user {\n  padding-top: 16px;\n  padding-left:16px;\n}\n\n#menu-user > h5 {\n  margin-top: 10px;\n  margin-bottom: 0px;\n}\n\n#menu-user > h6 {\n  margin-top: 0px;\n  margin-bottom: 10px;\n}\n\n#menu-user #avatar {\n  width:40px;\n  height:40px;\n  background: #FFF;\n  color: rgba(0, 0, 0, 0.8);\n  border-radius: 20px;\n  display:flex;\n  align-items: center;\n  justify-content: center;\n}\n\n@media (min-width:960px) and (orientation:landscape) {\n\n  #menu-button {\n    display:none;\n  }\n\n  #menu-title {\n    display:none;\n  }\n\n  #menu-user {\n    max-height: 7rem;\n  }\n\n  .menu-item {\n    padding-left: 1rem;\n  }\n  .menu-divider > h5 {\n    display: none;\n  }\n}\n\n@media all and (min-width:1280px) {\n\n  #menu-button {\n    display:none;\n  }\n\n  #menu-title {\n    display: block;\n  }\n\n  #menu-user {\n    max-height: none;\n  }\n\n\t#header {\n\t\tfont-size: 1rem;\n\t}\n\n  nav{\n    background-color: inherit !important;\n  }\n\n  .menu-item {\n    color: #FFF;\n  }\n}\n", ""]);
+	exports.push([module.id, "#menu {\n  height:100vh;\n  font-size: 1.6rem;\n  display: flex;\n  flex-direction: column;\n}\n\n#menu nav {\n  flex:1;\n  overflow-y: auto;\n  color: rgba(0, 0, 0, 0.8);\n  background-color: #FFF;\n}\n\nnav  h5 {\n  padding-left: 16px;\n  color: rgba(100, 100, 100, 0.8);\n  font-size: 1.4rem;\n  font-weight: 400;\n  height: 3.8rem;\n}\n\n.menu-item {\n  display: flex;\n  align-items: center;\n  color: rgba(0, 0, 0, 0.8);\n  height: 4rem;\n  width: 25rem;\n}\n\n.menu-item > i {\n  width:72px;\n  padding: 16px;\n}\n\n.menu-item:hover {\n  background-color: rgba(100, 100, 100, 0.5);\n}\n\n.menu-item .selected {\n  background-color: rgba(50, 50, 50, 0.5);\n}\n\n#menu-button {\n  display: none;\n  min-height: 7rem;\n  padding:16px;\n}\n\n#menu-title {\n  background-color: #444;\n  padding-left:16px;\n  text-shadow: 2px 4px 0px rgba(0, 0, 0, 0.15);\n}\n\n.mui-divider {\n  background-color: rgba(150, 150, 150, 0.7);\n  margin-top: 2px;\n}\n\n#menu-user {\n  background-color: #444;\n  padding-top: 16px;\n  padding-left:16px;\n}\n\n#menu-user > h5 {\n  margin-top: 10px;\n  margin-bottom: 0px;\n}\n\n#menu-user > h6 {\n  margin-top: 0px;\n  margin-bottom: 10px;\n}\n\n#menu-user #avatar {\n  width:40px;\n  height:40px;\n  background: #FFF;\n  color: rgba(0, 0, 0, 0.8);\n  border-radius: 20px;\n  display:flex;\n  align-items: center;\n  justify-content: center;\n}\n\n@media (min-width:960px) and (orientation:landscape) {\n\n  #menu-button {\n    display:none;\n  }\n\n  #menu-title {\n    display:none;\n  }\n\n  #menu-user {\n    max-height: 7rem;\n    background-color: #FFF;\n  }\n\n  .menu-item {\n    padding-left: 1rem;\n  }\n\n  .menu-divider > h5 {\n    display: none;\n  }\n}\n\n@media all and (min-width:1280px) {\n\n  #menu-button {\n    display:none;\n  }\n\n  #menu-title {\n    display: block;\n  }\n\n  #menu-user {\n    max-height: none;\n  }\n\n\t#header {\n\t\tfont-size: 1rem;\n\t}\n\n  nav{\n    background-color: inherit !important;\n  }\n\n  .menu-item {\n    color: #FFF;\n  }\n\n  .menu-divider > h5 {\n    display: block;\n  }\n}\n", ""]);
 
 	// exports
 
@@ -26001,7 +25999,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  font-size:62.5%;\n}\n\nbody {\n  font-size: 1.4rem;\n  font-family: 'Roboto', sans-serif !important;\n  text-rendering: geometricPrecision;\n}\n\nbody * {\n  border: dashed 0px rgba(255, 255, 255, 0.5);;\n}\n\n.layout {\n  height: 100vh;\n  display: flex;\n}\n\n.drawer {\n  display: flex;\n  position: absolute;\n  left:-28rem;\n  height: 100vh;\n  z-index: 1001;\n\n  -webkit-transition: left 0.5s;\n  -webkit-transition-timming-function: ease-in-out;\n  transition: left 0.5s ease-in-out;\n\n  -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.26);\n  -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.26);\n  box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.26);\n}\n\n.drawer > * {\n  flex:1;\n}\n\n.dialog {\n    display:flex;\n    z-index: 1002;\n    min-width: 10rem;\n    min-height: 10rem;\n    background-color: #FFF;\n}\n\n.overlay {\n  display: flex;\n  position: absolute;\n  width:100%;\n  height:100%;\n  z-index: 1000;\n  background-color: rgba(100,100,100,0.7);\n}\n\n.container {\n  flex:1;\n  display:flex;\n  flex-direction: column;\n}\n\n.container > #searchbar {\n  display:none;\n  padding: 15px;\n  min-height: 10rem;\n}\n\n.container > .page {\n  flex:1;\n}\n\n.toolbar {\n  display:flex;\n  position:absolute;\n  right: -6rem;\n  height: 100vh;\n  z-index: 1001;\n  min-width: 6rem;\n\n  -webkit-transition: right 0.5s;\n  -webkit-transition-timming-function: ease-in-out;\n  transition: right 0.5s ease-in-out;\n\n}\n\n\n@media (min-width: 960px) and (orientation:landscape) {\n\n  .drawer {\n    position:relative;\n    left:0px;\n    min-width: 8rem;\n    max-width: 8rem;\n    overflow: hidden;\n\n  }\n\n  .drawer.uncoverleft {\n    min-width: 24rem;\n    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.46);\n  }\n\n  .overlay {\n    display:none;\n  }\n\n  .toolbar {\n    display:none;\n  }\n}\n\n@media (min-width: 1280px) {\n\n  .drawer {\n    position:relative;\n    left:0px;\n    min-width: 24rem;\n  }\n\n  .toolbar {\n    display: flex;\n    position: relative;\n    right:0px;\n  }\n  .drawer {\n    background-color: inherit;\n    box-shadow: inherit;\n  }\n  .container > #searchbar {\n    display: flex;\n  }\n}\n\n/* -------------- */\n\n.uncoverleft {\n  left:0rem;\n}\n\n.uncoverright {\n  right:0px;\n}\n\n.hidden {\n  display: none;\n}\n\n.centred {\n  justify-content: center;\n  align-items: center;\n}\n", ""]);
+	exports.push([module.id, "html {\n  font-size:62.5%;\n}\n\nbody {\n  font-size: 1.4rem;\n  font-family: 'Roboto', sans-serif !important;\n  text-rendering: geometricPrecision;\n}\n\nbody * {\n  border: dashed 0px rgba(255, 255, 255, 0.5);;\n}\n\n.layout {\n  height: 100vh;\n  display: flex;\n}\n\n.drawer {\n  display: flex;\n  position: absolute;\n  left:-28rem;\n  height: 100vh;\n  z-index: 1001;\n\n  -webkit-transition: left 0.5s;\n  -webkit-transition-timming-function: ease-in-out;\n  transition: left 0.5s ease-in-out;\n\n  -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.26);\n  -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.26);\n  box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.26);\n}\n\n.drawer > * {\n  flex:1;\n}\n\n.dialog {\n    display:flex;\n    z-index: 1002;\n    min-width: 10rem;\n    min-height: 10rem;\n    background-color: #FFF;\n}\n\n.overlay {\n  display: flex;\n  position: absolute;\n  width:100%;\n  height:100%;\n  z-index: 1000;\n  background-color: rgba(100,100,100,0.7);\n}\n\n.container {\n  flex:1;\n  display:flex;\n  flex-direction: column;\n}\n\n.container > #searchbar {\n  display:none;\n  padding: 15px;\n  min-height: 10rem;\n}\n\n.container > .page {\n  flex:1;\n}\n\n.toolbar {\n  display:none;\n  position:absolute;\n  right: -6rem;\n  height: 100vh;\n  z-index: 1001;\n  min-width: 6rem;\n\n  -webkit-transition: right 0.5s;\n  -webkit-transition-timming-function: ease-in-out;\n  transition: right 0.5s ease-in-out;\n\n}\n\n\n@media (min-width: 960px) and (orientation:landscape) {\n\n  .drawer {\n    position:relative;\n    left:0px;\n    min-width: 8rem;\n    max-width: 8rem;\n    overflow: hidden;\n    padding-top: 5.6rem;\n    box-shadow: inherit;\n  }\n\n  .drawer.uncoverleft {\n    min-width: 24rem;\n  }\n\n  .overlay {\n    display:none;\n  }\n\n  .toolbar {\n    display:none;\n  }\n}\n\n@media (min-width: 1280px) {\n\n  .drawer {\n    position:relative;\n    left:0px;\n    min-width: 24rem;\n  }\n\n  .toolbar {\n    display: flex;\n    position: relative;\n    right:0px;\n  }\n  .drawer {\n    background-color: inherit;\n    box-shadow: inherit;\n  }\n  .container > #searchbar {\n    display: flex;\n  }\n}\n\n/* -------------- */\n\n.uncoverleft {\n  left:0rem;\n}\n\n.uncoverright {\n  right:0px;\n}\n\n.hidden {\n  display: none;\n}\n\n.centred {\n  justify-content: center;\n  align-items: center;\n}\n\n.flex {\n  display: flex;\n  padding-right: 1.6rem;\n  align-items: center;\n}\n\n.up {\n  align-self: flex-start;\n  margin-top: 2rem;\n}\n\n.expand {\n  flex:1;\n}\n", ""]);
 
 	// exports
 
@@ -26951,9 +26949,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appLayout = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./app-layout.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _layout = __webpack_require__(229);
 
-	var _appLayout2 = _interopRequireDefault(_appLayout);
+	var _layout2 = _interopRequireDefault(_layout);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27009,25 +27007,31 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appInbox = __webpack_require__(243);
+	var _inboxStore = __webpack_require__(243);
 
-	var _appInbox2 = _interopRequireDefault(_appInbox);
+	var _inboxStore2 = _interopRequireDefault(_inboxStore);
 
-	var _appShipments = __webpack_require__(262);
+	var _appActions = __webpack_require__(252);
 
-	var _appShipments2 = _interopRequireDefault(_appShipments);
+	var _appActions2 = _interopRequireDefault(_appActions);
 
-	var _appPage = __webpack_require__(264);
+	var _appConstants = __webpack_require__(244);
 
-	var _appStore = __webpack_require__(267);
+	var _appConstants2 = _interopRequireDefault(_appConstants);
 
-	var _appStore2 = _interopRequireDefault(_appStore);
-
-	var _list = __webpack_require__(255);
-
-	var _storeWatchMixin = __webpack_require__(272);
+	var _storeWatchMixin = __webpack_require__(253);
 
 	var _storeWatchMixin2 = _interopRequireDefault(_storeWatchMixin);
+
+	var _page = __webpack_require__(254);
+
+	var _tabs = __webpack_require__(261);
+
+	var _list = __webpack_require__(264);
+
+	var _appShipments = __webpack_require__(267);
+
+	var _appShipments2 = _interopRequireDefault(_appShipments);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27037,63 +27041,100 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Shipments = function Shipments(props) {
-	  var items = _appStore2.default.getShipments();
-	  return { items: items };
+	var StepInfo = function StepInfo(_ref) {
+	  var icon = _ref.icon;
+	  var city = _ref.city;
+	  var date = _ref.date;
+
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'flex mui--text-dark-secondary' },
+	    _react2.default.createElement(
+	      'span',
+	      { className: 'flex expand' },
+	      _react2.default.createElement(
+	        'i',
+	        { className: 'material-icons md-18 mui--text-dark-hint' },
+	        icon
+	      ),
+	      ' ',
+	      city
+	    ),
+	    _react2.default.createElement(
+	      'span',
+	      { className: 'mui--text-dark-secondary' },
+	      date.toLocaleDateString()
+	    )
+	  );
 	};
 
 	var ShipmentsInbox = function (_React$Component) {
 	  _inherits(ShipmentsInbox, _React$Component);
 
-	  function ShipmentsInbox() {
+	  function ShipmentsInbox(props) {
 	    _classCallCheck(this, ShipmentsInbox);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(ShipmentsInbox).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ShipmentsInbox).call(this, props));
+
+	    _this.tabSelected = _this.tabSelected.bind(_this);
+	    return _this;
 	  }
 
 	  _createClass(ShipmentsInbox, [{
-	    key: 'listItem',
-	    value: function listItem(item) {
-	      console.log(item);
-	      var icon = _react2.default.createElement(
-	        'i',
-	        { className: 'logo' },
-	        item.origin.initial
-	      );
-	      return _react2.default.createElement(
-	        _list.ListItem,
-	        { title: item.origin.city, icon: icon, to: '/inbox/shipment/' + item.id },
-	        item.dateSent.toLocaleDateString()
-	      );
+	    key: 'tabSelected',
+	    value: function tabSelected(tab) {
+	      _appActions2.default.send(_appConstants2.default.INBOX.SELECT_TAB, tab);
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
 
-	      var closedShipments = this.props.items.filter(function (item) {
-	        return item.state === 'RECEIVED';
-	      }).map(this.listItem);
-
-	      var openedShipments = this.props.items.filter(function (item) {
-	        return item.state === 'OPENED';
-	      }).map(this.listItem);
-
-	      var lists = [];
-	      lists.push(_react2.default.createElement(
-	        _list.List,
-	        { id: 'closed', icon: 'cube', name: 'Closed', add: 'inbox/checkin', active: 'true' },
-	        openedShipments
-	      ));
-	      lists.push(_react2.default.createElement(
-	        _list.List,
-	        { id: 'opened', icon: 'dropbox', name: 'Open', add: 'inbox/checkin', active: 'false' },
-	        closedShipments
-	      ));
+	      var shipments = this.props.shipments.map(function (shipment) {
+	        var icon = _react2.default.createElement(
+	          'i',
+	          { className: 'logo up' },
+	          shipment.origin.initial
+	        );
+	        return _react2.default.createElement(
+	          _list.ListItem,
+	          { icon: icon, title: shipment.origin.contact },
+	          _react2.default.createElement(StepInfo, { icon: 'keyboard_arrow_right', city: shipment.origin.city, date: shipment.dateSent }),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'i',
+	              { className: 'material-icons md-18 mui--text-dark-secondary mui--text-dark-hint' },
+	              'more_vert'
+	            )
+	          ),
+	          _react2.default.createElement(StepInfo, { icon: 'keyboard_arrow_left', city: 'Madrid', date: shipment.dateReceived })
+	        );
+	      });
 
 	      return _react2.default.createElement(
-	        _appPage.Window,
+	        _page.Page,
 	        { title: 'Inbox', icon: 'move_to_inbox', toggleDrawer: this.props.toggleDrawer },
-	        _react2.default.createElement(_appInbox2.default, { lists: lists, pages: this.props.children })
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'inbox' },
+	          _react2.default.createElement(
+	            _tabs.Tabs,
+	            null,
+	            _react2.default.createElement(_tabs.Tab, { id: 'CLOSED', icon: 'cube', label: 'Closed', active: this.props.tab === "CLOSED", selected: this.tabSelected }),
+	            _react2.default.createElement(_tabs.Tab, { id: 'OPENED', icon: 'cube', label: 'Opened', active: this.props.tab === "OPENED", selected: this.tabSelected })
+	          ),
+	          _react2.default.createElement(
+	            _list.List,
+	            null,
+	            shipments
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'viewer' },
+	            this.props.children
+	          )
+	        )
 	      );
 	    }
 	  }]);
@@ -27101,7 +27142,10 @@
 	  return ShipmentsInbox;
 	}(_react2.default.Component);
 
-	exports.default = (0, _storeWatchMixin2.default)(ShipmentsInbox, Shipments);
+	exports.default = (0, _storeWatchMixin2.default)(ShipmentsInbox, _inboxStore2.default, function (props) {
+	  var state = _inboxStore2.default.getState();
+	  return state;
+	});
 
 /***/ },
 /* 243 */
@@ -27113,252 +27157,39 @@
 	  value: true
 	});
 
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _appInbox = __webpack_require__(244);
-
-	var _appInbox2 = _interopRequireDefault(_appInbox);
-
-	var _appHeader = __webpack_require__(246);
-
-	var _appHeader2 = _interopRequireDefault(_appHeader);
-
-	var _list = __webpack_require__(255);
-
-	var _tabpanel = __webpack_require__(259);
-
-	var _tabpanel2 = _interopRequireDefault(_tabpanel);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Inbox = function Inbox(props) {
-	  return _react2.default.createElement(
-	    'div',
-	    { className: 'inbox' },
-	    _react2.default.createElement(
-	      _tabpanel2.default,
-	      null,
-	      props.lists
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'viewer' },
-	      props.pages
-	    )
-	  );
-	};
-
-	exports.default = Inbox;
-
-/***/ },
-/* 244 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(245);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(163)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./app-inbox.css", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./app-inbox.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 245 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(162)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".inbox {\n  flex: 1;\n  display: flex;\n}\n\n.inbox > .tabpanel {\n  min-width: 38rem;\n}\n\n.inbox > .viewer {\n  flex:1;\n  padding: 1rem;\n  display: flex;\n  justify-content: center;\n  overflow-y: auto;\n}\n\n.viewer .page {\n  background-color: red;\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 246 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _appActions = __webpack_require__(247);
-
-	var _appActions2 = _interopRequireDefault(_appActions);
-
-	var _appHeader = __webpack_require__(253);
-
-	var _appHeader2 = _interopRequireDefault(_appHeader);
-
-	var _appSearch = __webpack_require__(231);
-
-	var _appSearch2 = _interopRequireDefault(_appSearch);
-
-	var _reactRouter = __webpack_require__(168);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Header = function Header(props) {
-
-	  var toggleDrawer = function toggleDrawer() {
-	    props.toggleDrawer();
-	  };
-
-	  var navButton = _react2.default.createElement(
-	    'div',
-	    { id: 'navButton', onClick: toggleDrawer },
-	    _react2.default.createElement(
-	      'i',
-	      { className: 'material-icons md-32' },
-	      'menu'
-	    )
-	  );
-
-	  if (props.to) {
-	    navButton = _react2.default.createElement(
-	      'div',
-	      { id: 'navButton' },
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: props.to },
-	        _react2.default.createElement(
-	          'i',
-	          { className: 'material-icons md-32' },
-	          'arrow_back'
-	        )
-	      )
-	    );
-	  }
-
-	  var icon = _react2.default.createElement(
-	    'div',
-	    { id: 'icon' },
-	    _react2.default.createElement(
-	      'i',
-	      { className: 'material-icons md-32' },
-	      props.icon
-	    )
-	  );
-
-	  if (props.to) {
-	    icon = _react2.default.createElement(
-	      'div',
-	      { id: 'icon' },
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: props.to },
-	        _react2.default.createElement(
-	          'i',
-	          { className: 'material-icons md-32' },
-	          'arrow_back'
-	        )
-	      )
-	    );
-	  }
-
-	  var search = _react2.default.createElement(
-	    'div',
-	    { id: 'searchButton' },
-	    _react2.default.createElement(
-	      _reactRouter.Link,
-	      { to: '/search' },
-	      _react2.default.createElement(
-	        'i',
-	        { className: 'material-icons md-32' },
-	        'search'
-	      )
-	    )
-	  );
-
-	  return _react2.default.createElement(
-	    'header',
-	    null,
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'title' },
-	      navButton,
-	      ' ',
-	      icon,
-	      ' ',
-	      _react2.default.createElement(
-	        'h3',
-	        null,
-	        props.title
-	      )
-	    ),
-	    search
-	  );
-	};
-
-	exports.default = Header;
-
-/***/ },
-/* 247 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _appConstants = __webpack_require__(248);
+	var _appConstants = __webpack_require__(244);
 
 	var _appConstants2 = _interopRequireDefault(_appConstants);
 
-	var _appDispatcher = __webpack_require__(249);
+	var _storeFactory = __webpack_require__(245);
+
+	var _storeFactory2 = _interopRequireDefault(_storeFactory);
+
+	var _apiShipment = __webpack_require__(251);
+
+	var _apiShipment2 = _interopRequireDefault(_apiShipment);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = {
-	  addItem: function addItem(item) {
-	    (0, _appDispatcher.dispatch)({
-	      actionType: _appConstants2.default.ADD_ITEM, item: item
-	    });
-	  },
-	  removeItem: function removeItem(item) {
-	    (0, _appDispatcher.dispatch)({
-	      actionType: _appConstants2.default.REMOVE_ITEM, item: item
-	    });
-	  },
-	  increaseItem: function increaseItem(item) {
-	    (0, _appDispatcher.dispatch)({
-	      actionType: _appConstants2.default.INCREASE_ITEM, item: item
-	    });
-	  },
-	  decreaseItem: function decreaseItem(item) {
-	    (0, _appDispatcher.dispatch)({
-	      actionType: _appConstants2.default.DECREASE_ITEM, item: item
-	    });
-	  }
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	var model = {
+	  tab: 'OPENED',
+	  shipments: _apiShipment2.default.getAllFilterByState('OPENED')
 	};
 
+	var handlers = function handlers(model) {
+	  return _defineProperty({}, _appConstants2.default.INBOX.SELECT_TAB, function (action) {
+	    var shipments = _apiShipment2.default.getAllFilterByState(action.payload);
+	    Object.assign(model, { tab: action.payload, shipments: shipments });
+	  });
+	};
+
+	var InboxStore = (0, _storeFactory2.default)(model, handlers);
+	exports.default = InboxStore;
+
 /***/ },
-/* 248 */
+/* 244 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -27367,10 +27198,6 @@
 	  value: true
 	});
 	exports.default = {
-	  ADD_ITEM: 'ADD_ITEM',
-	  REMOVE_ITEM: 'REMOVE_ITEM',
-	  INCREASE_ITEM: 'INCREASE_ITEM',
-	  DECREASE_ITEM: 'DECREASE_ITEM',
 
 	  SHIPMENT_STATE: {
 	    NEW: 'NEW',
@@ -27378,510 +27205,17 @@
 	    SENT: 'SENT',
 	    RECEIVED: 'RECEIVED',
 	    OPENED: 'OPENED'
+	  },
+
+	  INBOX: {
+	    SELECT_TAB: 'SELECT_TAB',
+	    GET_SHIPMENTS: 'GET_SHIPMENTS'
 	  }
 
 	};
 
 /***/ },
-/* 249 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.register = register;
-	exports.dispatch = dispatch;
-
-	var _flux = __webpack_require__(250);
-
-	var flux = new _flux.Dispatcher();
-
-	function register(callback) {
-	  return flux.register(callback);
-	}
-
-	function dispatch(actionType, action) {
-	  console.log(actionType);
-	  flux.dispatch(actionType, action);
-	}
-
-/***/ },
-/* 250 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright (c) 2014-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 */
-
-	module.exports.Dispatcher = __webpack_require__(251);
-
-
-/***/ },
-/* 251 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright (c) 2014-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule Dispatcher
-	 * 
-	 * @preventMunge
-	 */
-
-	'use strict';
-
-	exports.__esModule = true;
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	var invariant = __webpack_require__(252);
-
-	var _prefix = 'ID_';
-
-	/**
-	 * Dispatcher is used to broadcast payloads to registered callbacks. This is
-	 * different from generic pub-sub systems in two ways:
-	 *
-	 *   1) Callbacks are not subscribed to particular events. Every payload is
-	 *      dispatched to every registered callback.
-	 *   2) Callbacks can be deferred in whole or part until other callbacks have
-	 *      been executed.
-	 *
-	 * For example, consider this hypothetical flight destination form, which
-	 * selects a default city when a country is selected:
-	 *
-	 *   var flightDispatcher = new Dispatcher();
-	 *
-	 *   // Keeps track of which country is selected
-	 *   var CountryStore = {country: null};
-	 *
-	 *   // Keeps track of which city is selected
-	 *   var CityStore = {city: null};
-	 *
-	 *   // Keeps track of the base flight price of the selected city
-	 *   var FlightPriceStore = {price: null}
-	 *
-	 * When a user changes the selected city, we dispatch the payload:
-	 *
-	 *   flightDispatcher.dispatch({
-	 *     actionType: 'city-update',
-	 *     selectedCity: 'paris'
-	 *   });
-	 *
-	 * This payload is digested by `CityStore`:
-	 *
-	 *   flightDispatcher.register(function(payload) {
-	 *     if (payload.actionType === 'city-update') {
-	 *       CityStore.city = payload.selectedCity;
-	 *     }
-	 *   });
-	 *
-	 * When the user selects a country, we dispatch the payload:
-	 *
-	 *   flightDispatcher.dispatch({
-	 *     actionType: 'country-update',
-	 *     selectedCountry: 'australia'
-	 *   });
-	 *
-	 * This payload is digested by both stores:
-	 *
-	 *   CountryStore.dispatchToken = flightDispatcher.register(function(payload) {
-	 *     if (payload.actionType === 'country-update') {
-	 *       CountryStore.country = payload.selectedCountry;
-	 *     }
-	 *   });
-	 *
-	 * When the callback to update `CountryStore` is registered, we save a reference
-	 * to the returned token. Using this token with `waitFor()`, we can guarantee
-	 * that `CountryStore` is updated before the callback that updates `CityStore`
-	 * needs to query its data.
-	 *
-	 *   CityStore.dispatchToken = flightDispatcher.register(function(payload) {
-	 *     if (payload.actionType === 'country-update') {
-	 *       // `CountryStore.country` may not be updated.
-	 *       flightDispatcher.waitFor([CountryStore.dispatchToken]);
-	 *       // `CountryStore.country` is now guaranteed to be updated.
-	 *
-	 *       // Select the default city for the new country
-	 *       CityStore.city = getDefaultCityForCountry(CountryStore.country);
-	 *     }
-	 *   });
-	 *
-	 * The usage of `waitFor()` can be chained, for example:
-	 *
-	 *   FlightPriceStore.dispatchToken =
-	 *     flightDispatcher.register(function(payload) {
-	 *       switch (payload.actionType) {
-	 *         case 'country-update':
-	 *         case 'city-update':
-	 *           flightDispatcher.waitFor([CityStore.dispatchToken]);
-	 *           FlightPriceStore.price =
-	 *             getFlightPriceStore(CountryStore.country, CityStore.city);
-	 *           break;
-	 *     }
-	 *   });
-	 *
-	 * The `country-update` payload will be guaranteed to invoke the stores'
-	 * registered callbacks in order: `CountryStore`, `CityStore`, then
-	 * `FlightPriceStore`.
-	 */
-
-	var Dispatcher = (function () {
-	  function Dispatcher() {
-	    _classCallCheck(this, Dispatcher);
-
-	    this._callbacks = {};
-	    this._isDispatching = false;
-	    this._isHandled = {};
-	    this._isPending = {};
-	    this._lastID = 1;
-	  }
-
-	  /**
-	   * Registers a callback to be invoked with every dispatched payload. Returns
-	   * a token that can be used with `waitFor()`.
-	   */
-
-	  Dispatcher.prototype.register = function register(callback) {
-	    var id = _prefix + this._lastID++;
-	    this._callbacks[id] = callback;
-	    return id;
-	  };
-
-	  /**
-	   * Removes a callback based on its token.
-	   */
-
-	  Dispatcher.prototype.unregister = function unregister(id) {
-	    !this._callbacks[id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.unregister(...): `%s` does not map to a registered callback.', id) : invariant(false) : undefined;
-	    delete this._callbacks[id];
-	  };
-
-	  /**
-	   * Waits for the callbacks specified to be invoked before continuing execution
-	   * of the current callback. This method should only be used by a callback in
-	   * response to a dispatched payload.
-	   */
-
-	  Dispatcher.prototype.waitFor = function waitFor(ids) {
-	    !this._isDispatching ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.waitFor(...): Must be invoked while dispatching.') : invariant(false) : undefined;
-	    for (var ii = 0; ii < ids.length; ii++) {
-	      var id = ids[ii];
-	      if (this._isPending[id]) {
-	        !this._isHandled[id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.waitFor(...): Circular dependency detected while ' + 'waiting for `%s`.', id) : invariant(false) : undefined;
-	        continue;
-	      }
-	      !this._callbacks[id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.waitFor(...): `%s` does not map to a registered callback.', id) : invariant(false) : undefined;
-	      this._invokeCallback(id);
-	    }
-	  };
-
-	  /**
-	   * Dispatches a payload to all registered callbacks.
-	   */
-
-	  Dispatcher.prototype.dispatch = function dispatch(payload) {
-	    !!this._isDispatching ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatch.dispatch(...): Cannot dispatch in the middle of a dispatch.') : invariant(false) : undefined;
-	    this._startDispatching(payload);
-	    try {
-	      for (var id in this._callbacks) {
-	        if (this._isPending[id]) {
-	          continue;
-	        }
-	        this._invokeCallback(id);
-	      }
-	    } finally {
-	      this._stopDispatching();
-	    }
-	  };
-
-	  /**
-	   * Is this Dispatcher currently dispatching.
-	   */
-
-	  Dispatcher.prototype.isDispatching = function isDispatching() {
-	    return this._isDispatching;
-	  };
-
-	  /**
-	   * Call the callback stored with the given id. Also do some internal
-	   * bookkeeping.
-	   *
-	   * @internal
-	   */
-
-	  Dispatcher.prototype._invokeCallback = function _invokeCallback(id) {
-	    this._isPending[id] = true;
-	    this._callbacks[id](this._pendingPayload);
-	    this._isHandled[id] = true;
-	  };
-
-	  /**
-	   * Set up bookkeeping needed when dispatching.
-	   *
-	   * @internal
-	   */
-
-	  Dispatcher.prototype._startDispatching = function _startDispatching(payload) {
-	    for (var id in this._callbacks) {
-	      this._isPending[id] = false;
-	      this._isHandled[id] = false;
-	    }
-	    this._pendingPayload = payload;
-	    this._isDispatching = true;
-	  };
-
-	  /**
-	   * Clear bookkeeping used for dispatching.
-	   *
-	   * @internal
-	   */
-
-	  Dispatcher.prototype._stopDispatching = function _stopDispatching() {
-	    delete this._pendingPayload;
-	    this._isDispatching = false;
-	  };
-
-	  return Dispatcher;
-	})();
-
-	module.exports = Dispatcher;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 252 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule invariant
-	 */
-
-	"use strict";
-
-	/**
-	 * Use invariant() to assert state which your program assumes to be true.
-	 *
-	 * Provide sprintf-style format (only %s is supported) and arguments
-	 * to provide information about what broke and what you were
-	 * expecting.
-	 *
-	 * The invariant message will be stripped in production, but the invariant
-	 * will remain to ensure logic does not differ in production.
-	 */
-
-	var invariant = function (condition, format, a, b, c, d, e, f) {
-	  if (process.env.NODE_ENV !== 'production') {
-	    if (format === undefined) {
-	      throw new Error('invariant requires an error message argument');
-	    }
-	  }
-
-	  if (!condition) {
-	    var error;
-	    if (format === undefined) {
-	      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
-	    } else {
-	      var args = [a, b, c, d, e, f];
-	      var argIndex = 0;
-	      error = new Error('Invariant Violation: ' + format.replace(/%s/g, function () {
-	        return args[argIndex++];
-	      }));
-	    }
-
-	    error.framesToPop = 1; // we don't care about invariant's own frame
-	    throw error;
-	  }
-	};
-
-	module.exports = invariant;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 253 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(254);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(163)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./app-header.css", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./app-header.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 254 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(162)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "header {\n  padding: 1.6rem;\n  min-height: 5rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #FFF;\n  color: rgba(0, 0, 0, 0.8);\n\n  -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);\n  -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);\n  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);\n}\n\nheader > .title {\n  display: flex;\n  flex:1;\n  align-items: center;\n}\n\nheader > .title > #navButton {\n  display:none;\n}\n\nheader > .title > #icon {\n  display:flex;\n}\n\nheader > .title > .icon {\n  color: rgba(0, 0, 0, 0.8);\n  display:flex;\n  align-items: center;\n  justify-content: center;\n}\n\nheader > .title  h3 {\n  margin: 0px;\n  padding-left: 2.4rem;\n  font-size: 2rem;\n  font-weight: normal;\n}\n\nheader > .searchbox {\n  flex:1;\n}\n\nheader > #searchButton {\n  display:none;\n}\n\n@media all and (max-width:1280px) {\n\n  header {\n    min-height: 7rem;\n    background-color: inherit;\n    color: inherit;\n    justify-content: flex-start;\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);\n    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);\n    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);\n  }\n\n  header > .title > .icon {\n    color: inherit;\n  }\n\n  header > .title > #navButton {\n    display: block;\n  }\n\n  header > .title > #icon {\n    display:none;\n  }\n\n  header > .searchbox {\n    display: none;\n  }\n\n  header > #searchButton {\n    display:flex;\n  }\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 255 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.ListDivider = exports.ListItem = exports.List = undefined;
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _list = __webpack_require__(256);
-
-	var _list2 = _interopRequireDefault(_list);
-
-	var _reactRouter = __webpack_require__(168);
-
-	var _button = __webpack_require__(258);
-
-	var _button2 = _interopRequireDefault(_button);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var ListItem = function ListItem(_ref) {
-	  var _ref$title = _ref.title;
-	  var title = _ref$title === undefined ? "Title" : _ref$title;
-	  var icon = _ref.icon;
-	  var to = _ref.to;
-	  var children = _ref.children;
-
-	  return _react2.default.createElement(
-	    _reactRouter.Link,
-	    { to: to },
-	    _react2.default.createElement(
-	      'li',
-	      { className: 'listitem' },
-	      icon,
-	      _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'title' },
-	          title
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          { className: 'subtitle' },
-	          children
-	        )
-	      )
-	    )
-	  );
-	};
-
-	var ListDivider = function ListDivider(props) {
-	  return _react2.default.createElement('li', { className: 'mui-divider' });
-	};
-
-	var List = function List(props) {
-	  return _react2.default.createElement(
-	    'div',
-	    { className: 'list' },
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'textfield mui-textfield' },
-	      _react2.default.createElement('input', { type: 'text', placeholder: 'Filter by...' })
-	    ),
-	    _react2.default.createElement(
-	      'ul',
-	      null,
-	      props.children
-	    ),
-	    _react2.default.createElement(_button2.default, { icon: 'fiber_new', to: props.add })
-	  );
-	};
-
-	exports.List = List;
-	exports.ListItem = ListItem;
-	exports.ListDivider = ListDivider;
-
-/***/ },
-/* 256 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(257);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(163)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./list.css", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./list.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 257 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(162)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".list {\n  flex:1;\n  display: flex;\n  flex-direction: column;\n  border-right: solid 1px #DDD;\n  border-left: solid 1px #DDD;\n}\n\n.list .fab {\n  position: absolute;\n  top: auto;\n  right: auto;\n  bottom:2rem;\n  left: 30rem;\n}\n\n.list > .textfield {\n  padding-top : 0.8rem;\n  padding-left: 1.4rem;\n  padding-right: 1.4rem;\n  padding-bottom: 1rem;\n  background-color: #FFF;\n  margin-bottom: 3px;\n  min-height: 5rem;\n}\n\n.list > ul {\n  flex:1;\n  overflow-y: auto;\n}\n\n@media all and (min-width:960px) and (orientation:landscape) {\n  .list .fab {\n    position: absolute;\n    bottom:2rem;\n    left: 38rem;\n  }\n}\n\n@media all and (min-width:1280px) {\n  .list .fab {\n    position: absolute;\n    bottom:2rem;\n    left: 58rem;\n  }\n}\n\n.list > ul {\n  list-style: none;\n  padding:0px;\n  margin: 0px;\n}\n\n.listitem {\n  flex:1;\n  min-height: 9rem;\n  background-color: #FFF;\n  border-bottom: solid 1px #DDD;\n\n  display: flex;\n  align-items: center;\n  padding-left: 1.6rem;\n}\n\n.listitem:hover {\n  background-color: rgba(0, 0, 0, 0.1);\n}\n\n.listitem > div {\n  flex:1;\n  display:flex;\n  flex-direction: column;\n  padding-top: 2rem;\n  padding-bottom: 1.6rem;\n}\n\n.listitem .title {\n  font-size: 1.4rem;\n  font-weight: 500;\n  letter-spacing: .01em;\n  line-height: 2.4rem;\n  color: rgba(0, 0, 0, 0.8);\n}\n\n.listitem .subtitle {\n  font-size: 1.4rem;\n  font-weight: 500;\n  letter-spacing: .01em;\n  line-height: 1.6rem;\n  color: rgba(0, 0, 0, 0.5);\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 258 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27890,607 +27224,50 @@
 	  value: true
 	});
 
-	var _react = __webpack_require__(1);
+	var _events = __webpack_require__(246);
 
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(168);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var FAB = function FAB(props) {
-	  return _react2.default.createElement(
-	    _reactRouter.Link,
-	    { to: props.to },
-	    _react2.default.createElement(
-	      'button',
-	      { className: 'mui-btn mui-btn--accent mui-btn--fab  fab' },
-	      _react2.default.createElement(
-	        'i',
-	        { className: 'material-icons' },
-	        props.icon
-	      )
-	    )
-	  );
-	};
-
-	exports.default = FAB;
-
-/***/ },
-/* 259 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _tabpanel = __webpack_require__(260);
-
-	var _tabpanel2 = _interopRequireDefault(_tabpanel);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Tab = function Tab(props) {
-
-	  var activeClass = props.active ? "tab mui--is-active" : "tab";
-
-	  var selectTab = function selectTab() {
-	    props.selectTab(props.id);
-	  };
-	  return _react2.default.createElement(
-	    'li',
-	    { className: activeClass, onClick: selectTab },
-	    _react2.default.createElement(
-	      'a',
-	      null,
-	      _react2.default.createElement('i', { className: 'fa fa-' + props.icon + ' fab-lg' }),
-	      '   ',
-	      props.label
-	    )
-	  );
-	};
-
-	var TabPanel = function (_React$Component) {
-	  _inherits(TabPanel, _React$Component);
-
-	  function TabPanel() {
-	    _classCallCheck(this, TabPanel);
-
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(TabPanel).call(this));
-
-	    _this.state = { selected: '' };
-	    return _this;
-	  }
-
-	  _createClass(TabPanel, [{
-	    key: 'selectTab',
-	    value: function selectTab(tabID) {
-	      this.setState({ 'selected': tabID });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-
-	      var tabs = _react2.default.Children.map(this.props.children, function (child) {
-	        var active = _this2.state.selected === child.props.id;
-	        return _react2.default.createElement(Tab, { icon: child.props.icon, label: child.props.name, active: active, id: child.props.id, selectTab: _this2.selectTab.bind(_this2) });
-	      });
-
-	      var content = [];
-	      _react2.default.Children.forEach(this.props.children, function (child) {
-	        if (child.props.id === _this2.state.selected) content.push(_react2.default.createElement(
-	          'div',
-	          { id: child.props.id, className: 'tabcontent' },
-	          child
-	        ));
-	      });
-
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'tabpanel' },
-	        _react2.default.createElement(
-	          'ul',
-	          { className: 'tabbar mui-tabs__bar' },
-	          tabs
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'tabcontents' },
-	          content
-	        )
-	      );
-	    }
-	  }]);
-
-	  return TabPanel;
-	}(_react2.default.Component);
-
-	exports.default = TabPanel;
-
-/***/ },
-/* 260 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(261);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(163)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./tabpanel.css", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./tabpanel.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 261 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(162)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".tabpanel {\n  display:flex;\n  flex-direction: column;\n  padding: 10px 10px 0px 10px;\n}\n\n.tabbar {\n  min-height: 5rem;\n  background-color: #FFF;\n  margin-bottom: 8px;\n  display: flex;\n}\n\n.tab {\n  flex:1;\n}\n\n.tabcontents {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n}\n\n.tabcontent {\n  flex:1;\n  display:flex;\n  flex-direction: column;\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 262 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(263);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(163)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./app-shipments.css", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./app-shipments.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 263 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(162)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\nth {\n  vertical-align: bottom;\n}\n.timeline-item {\n  display: flex;\n}\n\n.formField {\n  display:flex;\n  flex-wrap: wrap;\n}\n\n.formField .icon {\n  color : rgba(0, 0, 0, 0.8);\n}\n\n.formField .input-textfield {\n  flex:1;\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 264 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.Window = exports.Page = undefined;
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _appHeader = __webpack_require__(246);
-
-	var _appHeader2 = _interopRequireDefault(_appHeader);
-
-	var _page = __webpack_require__(265);
-
-	var _page2 = _interopRequireDefault(_page);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Page = function Page(props) {
-	  return _react2.default.createElement(
-	    'div',
-	    { className: 'page' },
-	    _react2.default.createElement(_appHeader2.default, { title: props.title, icon: props.icon, to: props.to, toggleDrawer: props.toggleDrawer }),
-	    _react2.default.createElement(
-	      'main',
-	      null,
-	      props.children
-	    )
-	  );
-	};
-
-	var Window = function Window(props) {
-	  return _react2.default.createElement(
-	    'div',
-	    { className: 'page' },
-	    _react2.default.createElement(_appHeader2.default, { title: props.title, icon: props.icon, to: props.to, toggleDrawer: props.toggleDrawer }),
-	    _react2.default.createElement(
-	      'main',
-	      { className: 'window' },
-	      props.children
-	    )
-	  );
-	};
-
-	exports.Page = Page;
-	exports.Window = Window;
-
-/***/ },
-/* 265 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(266);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(163)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./page.css", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./page.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 266 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(162)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".page {\n  display: flex;\n  flex-direction: column;\n}\n\n.page > * {\n  padding: 2rem;\n}\n\n.page > main {\n  flex:1;\n  overflow-y: auto;\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 267 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _actions;
-
-	var _apiCart = __webpack_require__(268);
-
-	var _apiCart2 = _interopRequireDefault(_apiCart);
-
-	var _apiProducts = __webpack_require__(269);
-
-	var _apiProducts2 = _interopRequireDefault(_apiProducts);
-
-	var _apiShipment = __webpack_require__(270);
-
-	var _apiShipment2 = _interopRequireDefault(_apiShipment);
-
-	var _appConstants = __webpack_require__(248);
-
-	var _appConstants2 = _interopRequireDefault(_appConstants);
-
-	var _events = __webpack_require__(271);
-
-	var _appDispatcher = __webpack_require__(249);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	var _appDispatcher = __webpack_require__(247);
 
 	var CHANGE_EVENT = "change";
 
-	var AppStore = Object.assign(_events.EventEmitter.prototype, {
-	  emitChange: function emitChange() {
-	    this.emit(CHANGE_EVENT);
-	  },
-	  addChangeListener: function addChangeListener(callback) {
-	    this.on(CHANGE_EVENT, callback);
-	  },
-	  removeChangeListener: function removeChangeListener(callback) {
-	    this.removeListener(CHANGE_EVENT, callback);
-	  },
-	  getShipments: function getShipments() {
-	    return _apiShipment2.default.getAll();
-	  },
-	  getShipment: function getShipment() {
-	    return _apiShipment2.default.getShipment();
-	  },
-	  getCart: function getCart() {
-	    return _apiCart2.default.cartItems;
-	  },
-	  getCatalog: function getCatalog() {
-	    return _apiCart2.default.getCatalog();
-	  },
-	  getCartTotals: function getCartTotals() {
-	    return _apiCart2.default.cartTotals();
-	  },
-	  getProducts: function getProducts() {
-	    return _apiProducts2.default.getAll();
-	  },
-
-
-	  actions: (_actions = {}, _defineProperty(_actions, _appConstants2.default.ADD_ITEM, function (action) {
-	    return _apiShipment2.default.add(action.item);
-	  }), _defineProperty(_actions, _appConstants2.default.REMOVE_ITEM, function (action) {
-	    return _apiShipment2.default.remove(action.item);
-	  }), _defineProperty(_actions, _appConstants2.default.INCREASE_ITEM, function (action) {
-	    return _apiShipment2.default.increaseItem(action.item);
-	  }), _defineProperty(_actions, _appConstants2.default.DECREASE_ITEM, function (action) {
-	    return _apiShipment2.default.decreaseItem(action.item);
-	  }), _actions),
-
-	  dispatcherIndex: (0, _appDispatcher.register)(function (action) {
-	    var doAction = this.actions[action.actionType];
-	    if (typeof doAction === 'function') {
-	      doAction();
-	      AppStore.emitChange();
+	var state = function state(model) {
+	  return {
+	    getState: function getState() {
+	      return Object.assign({}, model);
 	    }
-	  })
-	});
-
-	exports.default = AppStore;
-
-/***/ },
-/* 268 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var CartAPI = {
-
-	  catalog: [],
-	  cartItems: [],
-
-	  removeItem: function removeItem(item) {
-	    this.cartItems.splice(this.cartItems.findIndex(function (i) {
-	      return i === item;
-	    }), 1);
-	  },
-	  findCartItem: function findCartItem(item) {
-	    return this.cartItems.find(function (cartItem) {
-	      return cartItem.id === item.id;
-	    });
-	  },
-	  increaseItem: function increaseItem(item) {
-	    item.qty++;
-	  },
-	  decreaseItem: function decreaseItem(item) {
-	    item.qty--;
-	    if (item.qty === 0) {
-	      this.removeItem(item);
-	    }
-	  },
-	  addItem: function addItem(item) {
-	    var cartItem = this.findCartItem(item);
-	    if (!cartItem) {
-	      this.cartItems.push(Object.assign({ qty: 1 }, item));
-	    } else {
-	      this.increaseItem(cartItem);
-	    }
-	  },
-	  cartTotals: function cartTotals() {
-	    var qty = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
-	    var total = arguments.length <= 1 || arguments[1] === undefined ? 0 : arguments[1];
-
-	    this.cartItems.forEach(function (cartItem) {
-	      qty += cartItem.qty;
-	      total += cartItem.qty * cartItem.cost;
-	    });
-	    return { qty: qty, total: total };
-	  },
-	  getCatalog: function getCatalog() {
-	    var _this = this;
-
-	    return this.catalog.map(function (item) {
-	      return Object.assign({}, item, _this.cartItems.find(function (cItem) {
-	        return cItem.id === item.id;
-	      }));
-	    });
-	  },
-	  init: function init() {
-	    console.log('initing');
-	    for (var i = 1; i < 6; i++) {
-	      this.catalog.push({
-	        'id': 'Widget' + i,
-	        'title': 'Widget #' + i,
-	        'summary': 'A great widget',
-	        'description': 'Lorem ipsum dolor sit amet.',
-	        'cost': i
-	      });
-	    }
-	  }
+	  };
 	};
 
-	CartAPI.init();
-	exports.default = CartAPI;
+	var storeFactory = function storeFactory(model, handlers) {
 
-/***/ },
-/* 269 */
-/***/ function(module, exports, __webpack_require__) {
+	  var store = Object.assign(_events.EventEmitter.prototype, {
+	    emitChange: function emitChange() {
+	      this.emit(CHANGE_EVENT);
+	    },
+	    addChangeListener: function addChangeListener(callback) {
+	      this.on(CHANGE_EVENT, callback);
+	    },
+	    removeChangeListener: function removeChangeListener(callback) {
+	      this.removeListener(CHANGE_EVENT, callback);
+	    },
 
-	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
+	    dispatcherIndex: (0, _appDispatcher.register)(function (action) {
+	      var doAction = handlers(model)[action.actionType];
+	      if (typeof doAction === 'function') {
+	        doAction(action);
+	        store.emitChange();
+	      }
+	    })
+	  }, state(model));
 
-	var _appConstants = __webpack_require__(248);
-
-	var _appConstants2 = _interopRequireDefault(_appConstants);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var ProductsAPI = {
-
-	  products: [],
-
-	  init: function init() {
-	    console.log('loading products');
-	    for (var i = 1; i < 30; i++) {
-	      this.products.push({
-	        'id': 'P' + i,
-	        'name': 'Product ' + i
-	      });
-	    }
-	  },
-	  getAll: function getAll() {
-	    return this.products.map(function (item) {
-	      return Object.assign({}, item);
-	    });
-	  }
+	  return store;
 	};
 
-	ProductsAPI.init();
-	exports.default = ProductsAPI;
+	exports.default = storeFactory;
 
 /***/ },
-/* 270 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _appConstants = __webpack_require__(248);
-
-	var _appConstants2 = _interopRequireDefault(_appConstants);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var ShipmentAPI = {
-
-	  shipments: [],
-
-	  init: function init() {
-
-	    var origins = [{ initial: 'NY', city: 'New York' }, { initial: 'P', city: 'Paris' }, { initial: 'M', city: 'Milan' }];
-
-	    console.log('loading shipments');
-	    for (var i = 1; i < 30; i++) {
-	      this.shipments.push({
-	        'id': 'Shipment' + i,
-	        'state': _appConstants2.default.SHIPMENT_STATE[Object.keys(_appConstants2.default.SHIPMENT_STATE)[i % 5]],
-	        'dateCreated': new Date(),
-	        'dateClosed': new Date(),
-	        'dateSent': new Date(),
-	        'dateEstimatedReception': new Date(),
-	        'dateReceived': new Date(),
-	        'origin': origins[i % 3],
-	        'samples': []
-	      });
-	    }
-	    console.table(this.shipments);
-	  },
-	  getAll: function getAll() {
-	    return this.shipments.map(function (item) {
-	      return Object.assign({}, item);
-	    });
-	  },
-	  getAllFilterByState: function getAllFilterByState(state) {
-	    return this.shipments.filter(function (item) {
-	      return item.state === state;
-	    }).map(function (item) {
-	      return Object.assign({}, item);
-	    });
-	  },
-	  getShipment: function getShipment() {
-	    return {
-	      'id': '12345678',
-	      'bar-code': '',
-	      'timeline': [{ 'event': 'created', 'date': new Date(), 'author': 'John Smith' }, { 'event': 'closed', 'date': new Date(), 'author': 'John Smith' }, { 'event': 'send', 'date': new Date(), 'author': 'Mary Higgins' }]
-	    };
-	  },
-	  add: function add(item) {
-	    this.shipments.push(Object.assign({ dateCreated: new Date() }, item));
-	  },
-	  remove: function remove(item) {
-	    this.shipments.splice(this.shipments.findIndex(function (i) {
-	      return i === item;
-	    }), 1);
-	  }
-	};
-
-	ShipmentAPI.init();
-	exports.default = ShipmentAPI;
-
-	/*  sample model
-	{
-	  'id': 'Shipment' + i,
-	  'providerId': '#provider_' + i,
-	  'orderId': '#order_'+i,
-	  'division': '#division_'+i,
-	  'uneco': '#uneco_'+i,
-	  'ref':'#ref_'+i,
-	  'brand':'#brand_'+i,
-	  'season':'#season_'+i,
-	  'qty':'#qty_'+i,
-	  'sampleType':'#sampleType_'+i,
-	  'description':'This is the shipment number '+i
-	}
-	*/
-
-/***/ },
-/* 271 */
+/* 246 */
 /***/ function(module, exports) {
 
 	// Copyright Joyent, Inc. and other Node contributors.
@@ -28794,7 +27571,454 @@
 
 
 /***/ },
-/* 272 */
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.register = register;
+	exports.dispatch = dispatch;
+
+	var _flux = __webpack_require__(248);
+
+	var flux = new _flux.Dispatcher();
+
+	function register(callback) {
+	  return flux.register(callback);
+	}
+
+	function dispatch(actionType, action) {
+	  console.log(actionType);
+	  flux.dispatch(actionType, action);
+	}
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright (c) 2014-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 */
+
+	module.exports.Dispatcher = __webpack_require__(249);
+
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright (c) 2014-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule Dispatcher
+	 * 
+	 * @preventMunge
+	 */
+
+	'use strict';
+
+	exports.__esModule = true;
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	var invariant = __webpack_require__(250);
+
+	var _prefix = 'ID_';
+
+	/**
+	 * Dispatcher is used to broadcast payloads to registered callbacks. This is
+	 * different from generic pub-sub systems in two ways:
+	 *
+	 *   1) Callbacks are not subscribed to particular events. Every payload is
+	 *      dispatched to every registered callback.
+	 *   2) Callbacks can be deferred in whole or part until other callbacks have
+	 *      been executed.
+	 *
+	 * For example, consider this hypothetical flight destination form, which
+	 * selects a default city when a country is selected:
+	 *
+	 *   var flightDispatcher = new Dispatcher();
+	 *
+	 *   // Keeps track of which country is selected
+	 *   var CountryStore = {country: null};
+	 *
+	 *   // Keeps track of which city is selected
+	 *   var CityStore = {city: null};
+	 *
+	 *   // Keeps track of the base flight price of the selected city
+	 *   var FlightPriceStore = {price: null}
+	 *
+	 * When a user changes the selected city, we dispatch the payload:
+	 *
+	 *   flightDispatcher.dispatch({
+	 *     actionType: 'city-update',
+	 *     selectedCity: 'paris'
+	 *   });
+	 *
+	 * This payload is digested by `CityStore`:
+	 *
+	 *   flightDispatcher.register(function(payload) {
+	 *     if (payload.actionType === 'city-update') {
+	 *       CityStore.city = payload.selectedCity;
+	 *     }
+	 *   });
+	 *
+	 * When the user selects a country, we dispatch the payload:
+	 *
+	 *   flightDispatcher.dispatch({
+	 *     actionType: 'country-update',
+	 *     selectedCountry: 'australia'
+	 *   });
+	 *
+	 * This payload is digested by both stores:
+	 *
+	 *   CountryStore.dispatchToken = flightDispatcher.register(function(payload) {
+	 *     if (payload.actionType === 'country-update') {
+	 *       CountryStore.country = payload.selectedCountry;
+	 *     }
+	 *   });
+	 *
+	 * When the callback to update `CountryStore` is registered, we save a reference
+	 * to the returned token. Using this token with `waitFor()`, we can guarantee
+	 * that `CountryStore` is updated before the callback that updates `CityStore`
+	 * needs to query its data.
+	 *
+	 *   CityStore.dispatchToken = flightDispatcher.register(function(payload) {
+	 *     if (payload.actionType === 'country-update') {
+	 *       // `CountryStore.country` may not be updated.
+	 *       flightDispatcher.waitFor([CountryStore.dispatchToken]);
+	 *       // `CountryStore.country` is now guaranteed to be updated.
+	 *
+	 *       // Select the default city for the new country
+	 *       CityStore.city = getDefaultCityForCountry(CountryStore.country);
+	 *     }
+	 *   });
+	 *
+	 * The usage of `waitFor()` can be chained, for example:
+	 *
+	 *   FlightPriceStore.dispatchToken =
+	 *     flightDispatcher.register(function(payload) {
+	 *       switch (payload.actionType) {
+	 *         case 'country-update':
+	 *         case 'city-update':
+	 *           flightDispatcher.waitFor([CityStore.dispatchToken]);
+	 *           FlightPriceStore.price =
+	 *             getFlightPriceStore(CountryStore.country, CityStore.city);
+	 *           break;
+	 *     }
+	 *   });
+	 *
+	 * The `country-update` payload will be guaranteed to invoke the stores'
+	 * registered callbacks in order: `CountryStore`, `CityStore`, then
+	 * `FlightPriceStore`.
+	 */
+
+	var Dispatcher = (function () {
+	  function Dispatcher() {
+	    _classCallCheck(this, Dispatcher);
+
+	    this._callbacks = {};
+	    this._isDispatching = false;
+	    this._isHandled = {};
+	    this._isPending = {};
+	    this._lastID = 1;
+	  }
+
+	  /**
+	   * Registers a callback to be invoked with every dispatched payload. Returns
+	   * a token that can be used with `waitFor()`.
+	   */
+
+	  Dispatcher.prototype.register = function register(callback) {
+	    var id = _prefix + this._lastID++;
+	    this._callbacks[id] = callback;
+	    return id;
+	  };
+
+	  /**
+	   * Removes a callback based on its token.
+	   */
+
+	  Dispatcher.prototype.unregister = function unregister(id) {
+	    !this._callbacks[id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.unregister(...): `%s` does not map to a registered callback.', id) : invariant(false) : undefined;
+	    delete this._callbacks[id];
+	  };
+
+	  /**
+	   * Waits for the callbacks specified to be invoked before continuing execution
+	   * of the current callback. This method should only be used by a callback in
+	   * response to a dispatched payload.
+	   */
+
+	  Dispatcher.prototype.waitFor = function waitFor(ids) {
+	    !this._isDispatching ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.waitFor(...): Must be invoked while dispatching.') : invariant(false) : undefined;
+	    for (var ii = 0; ii < ids.length; ii++) {
+	      var id = ids[ii];
+	      if (this._isPending[id]) {
+	        !this._isHandled[id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.waitFor(...): Circular dependency detected while ' + 'waiting for `%s`.', id) : invariant(false) : undefined;
+	        continue;
+	      }
+	      !this._callbacks[id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.waitFor(...): `%s` does not map to a registered callback.', id) : invariant(false) : undefined;
+	      this._invokeCallback(id);
+	    }
+	  };
+
+	  /**
+	   * Dispatches a payload to all registered callbacks.
+	   */
+
+	  Dispatcher.prototype.dispatch = function dispatch(payload) {
+	    !!this._isDispatching ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatch.dispatch(...): Cannot dispatch in the middle of a dispatch.') : invariant(false) : undefined;
+	    this._startDispatching(payload);
+	    try {
+	      for (var id in this._callbacks) {
+	        if (this._isPending[id]) {
+	          continue;
+	        }
+	        this._invokeCallback(id);
+	      }
+	    } finally {
+	      this._stopDispatching();
+	    }
+	  };
+
+	  /**
+	   * Is this Dispatcher currently dispatching.
+	   */
+
+	  Dispatcher.prototype.isDispatching = function isDispatching() {
+	    return this._isDispatching;
+	  };
+
+	  /**
+	   * Call the callback stored with the given id. Also do some internal
+	   * bookkeeping.
+	   *
+	   * @internal
+	   */
+
+	  Dispatcher.prototype._invokeCallback = function _invokeCallback(id) {
+	    this._isPending[id] = true;
+	    this._callbacks[id](this._pendingPayload);
+	    this._isHandled[id] = true;
+	  };
+
+	  /**
+	   * Set up bookkeeping needed when dispatching.
+	   *
+	   * @internal
+	   */
+
+	  Dispatcher.prototype._startDispatching = function _startDispatching(payload) {
+	    for (var id in this._callbacks) {
+	      this._isPending[id] = false;
+	      this._isHandled[id] = false;
+	    }
+	    this._pendingPayload = payload;
+	    this._isDispatching = true;
+	  };
+
+	  /**
+	   * Clear bookkeeping used for dispatching.
+	   *
+	   * @internal
+	   */
+
+	  Dispatcher.prototype._stopDispatching = function _stopDispatching() {
+	    delete this._pendingPayload;
+	    this._isDispatching = false;
+	  };
+
+	  return Dispatcher;
+	})();
+
+	module.exports = Dispatcher;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule invariant
+	 */
+
+	"use strict";
+
+	/**
+	 * Use invariant() to assert state which your program assumes to be true.
+	 *
+	 * Provide sprintf-style format (only %s is supported) and arguments
+	 * to provide information about what broke and what you were
+	 * expecting.
+	 *
+	 * The invariant message will be stripped in production, but the invariant
+	 * will remain to ensure logic does not differ in production.
+	 */
+
+	var invariant = function (condition, format, a, b, c, d, e, f) {
+	  if (process.env.NODE_ENV !== 'production') {
+	    if (format === undefined) {
+	      throw new Error('invariant requires an error message argument');
+	    }
+	  }
+
+	  if (!condition) {
+	    var error;
+	    if (format === undefined) {
+	      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
+	    } else {
+	      var args = [a, b, c, d, e, f];
+	      var argIndex = 0;
+	      error = new Error('Invariant Violation: ' + format.replace(/%s/g, function () {
+	        return args[argIndex++];
+	      }));
+	    }
+
+	    error.framesToPop = 1; // we don't care about invariant's own frame
+	    throw error;
+	  }
+	};
+
+	module.exports = invariant;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 251 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _appConstants = __webpack_require__(244);
+
+	var _appConstants2 = _interopRequireDefault(_appConstants);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ShipmentAPI = {
+
+	  shipments: [],
+
+	  init: function init() {
+
+	    var origins = [{ initial: 'NY', city: 'New York', contact: 'Joan Kim' }, { initial: 'P', city: 'Paris', contact: 'Laurent Blanc' }, { initial: 'M', city: 'Milan', contact: 'Giovanni Vitale' }, { initial: 'B', city: 'Barcelona', contact: 'Xavier Tarradellas' }];
+
+	    for (var i = 1; i < 16; i++) {
+	      this.shipments.push({
+	        'id': 'Shipment' + i,
+	        'state': _appConstants2.default.SHIPMENT_STATE[Object.keys(_appConstants2.default.SHIPMENT_STATE)[i % 5]],
+	        'dateCreated': new Date(),
+	        'dateClosed': new Date(),
+	        'dateSent': new Date(),
+	        'dateEstimatedReception': new Date(),
+	        'dateReceived': new Date(),
+	        'origin': origins[i % 4],
+	        'samples': []
+	      });
+	    }
+	    console.table(this.shipments);
+	  },
+	  getAll: function getAll() {
+	    return this.shipments.map(function (item) {
+	      return Object.assign({}, item);
+	    });
+	  },
+	  getAllFilterByState: function getAllFilterByState(state) {
+	    return this.shipments.filter(function (item) {
+	      return item.state === state;
+	    }).map(function (item) {
+	      return Object.assign({}, item);
+	    });
+	  },
+	  getShipment: function getShipment() {
+	    return {
+	      'id': '12345678',
+	      'bar-code': '',
+	      'timeline': [{ 'event': 'created', 'date': new Date(), 'author': 'John Smith' }, { 'event': 'closed', 'date': new Date(), 'author': 'John Smith' }, { 'event': 'send', 'date': new Date(), 'author': 'Mary Higgins' }]
+	    };
+	  },
+	  add: function add(item) {
+	    this.shipments.push(Object.assign({ dateCreated: new Date() }, item));
+	  },
+	  remove: function remove(item) {
+	    this.shipments.splice(this.shipments.findIndex(function (i) {
+	      return i === item;
+	    }), 1);
+	  }
+	};
+
+	ShipmentAPI.init();
+	exports.default = ShipmentAPI;
+
+	/*  sample model
+	{
+	  'id': 'Shipment' + i,
+	  'providerId': '#provider_' + i,
+	  'orderId': '#order_'+i,
+	  'division': '#division_'+i,
+	  'uneco': '#uneco_'+i,
+	  'ref':'#ref_'+i,
+	  'brand':'#brand_'+i,
+	  'season':'#season_'+i,
+	  'qty':'#qty_'+i,
+	  'sampleType':'#sampleType_'+i,
+	  'description':'This is the shipment number '+i
+	}
+	*/
+
+/***/ },
+/* 252 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _appConstants = __webpack_require__(244);
+
+	var _appConstants2 = _interopRequireDefault(_appConstants);
+
+	var _appDispatcher = __webpack_require__(247);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+	  send: function send(action, payload) {
+	    (0, _appDispatcher.dispatch)({ actionType: action, payload: payload });
+	  },
+	  getShipmentsByStatus: function getShipmentsByStatus(status) {
+	    (0, _appDispatcher.dispatch)({ actionType: _appConstants2.default.INBOX.GET_SHIPMENTS, status: status });
+	  }
+	};
+
+/***/ },
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28811,10 +28035,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appStore = __webpack_require__(267);
-
-	var _appStore2 = _interopRequireDefault(_appStore);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28823,7 +28043,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	exports.default = function (InnerComponent, stateCallback) {
+	exports.default = function (InnerComponent, store, stateCallback) {
 	  return function (_React$Component) {
 	    _inherits(_class, _React$Component);
 
@@ -28840,12 +28060,12 @@
 	    _createClass(_class, [{
 	      key: 'componentWillMount',
 	      value: function componentWillMount() {
-	        _appStore2.default.addChangeListener(this._onChange);
+	        store.addChangeListener(this._onChange);
 	      }
 	    }, {
 	      key: 'componentWillUnmount',
 	      value: function componentWillUnmount() {
-	        _appStore2.default.removeChangeListener(this._onChange);
+	        store.removeChangeListener(this._onChange);
 	      }
 	    }, {
 	      key: '_onChange',
@@ -28864,7 +28084,47 @@
 	};
 
 /***/ },
-/* 273 */
+/* 254 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.Page = undefined;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _appHeader = __webpack_require__(255);
+
+	var _appHeader2 = _interopRequireDefault(_appHeader);
+
+	var _page = __webpack_require__(259);
+
+	var _page2 = _interopRequireDefault(_page);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Page = function Page(props) {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'page' },
+	    _react2.default.createElement(_appHeader2.default, { title: props.title, icon: props.icon, to: props.to, toggleDrawer: props.toggleDrawer }),
+	    _react2.default.createElement(
+	      'main',
+	      null,
+	      props.children
+	    )
+	  );
+	};
+
+	exports.Page = Page;
+
+/***/ },
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28877,13 +28137,509 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appPage = __webpack_require__(264);
+	var _appActions = __webpack_require__(252);
+
+	var _appActions2 = _interopRequireDefault(_appActions);
+
+	var _appSearch = __webpack_require__(231);
+
+	var _appSearch2 = _interopRequireDefault(_appSearch);
+
+	var _reactRouter = __webpack_require__(168);
+
+	var _button = __webpack_require__(256);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Header = function Header(props) {
+
+	  var toggleDrawer = function toggleDrawer() {
+	    props.toggleDrawer();
+	  };
+
+	  var goBack = function goBack() {
+	    console.log(props.to);
+	    _reactRouter.browserHistory.push(props.to);
+	  };
+
+	  var goSearch = function goSearch() {
+	    _reactRouter.browserHistory.push("search");
+	  };
+
+	  var searchButton = _react2.default.createElement(_button.Button, { id: 'search-button', icon: 'search', onClick: goSearch });
+	  var icon = props.to ? "" : _react2.default.createElement(_button.Icon, { id: 'header-icon', icon: props.icon });
+	  var drawerButton = props.to ? "" : _react2.default.createElement(_button.Button, { id: 'drawer-button', icon: 'menu', onClick: toggleDrawer });
+	  var backButton = props.to ? _react2.default.createElement(_button.Button, { id: 'back-button', icon: 'arrow_back', onClick: goBack }) : "";
+
+	  return _react2.default.createElement(
+	    'header',
+	    null,
+	    drawerButton,
+	    ' ',
+	    backButton,
+	    ' ',
+	    icon,
+	    ' ',
+	    _react2.default.createElement(
+	      'span',
+	      { className: 'title' },
+	      props.title
+	    ),
+	    ' ',
+	    searchButton
+	  );
+	};
+
+	exports.default = Header;
+
+/***/ },
+/* 256 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.FAB = exports.Button = exports.Icon = undefined;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(168);
+
+	var _button = __webpack_require__(257);
+
+	var _button2 = _interopRequireDefault(_button);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Icon = function Icon(props) {
+	  return _react2.default.createElement(
+	    'div',
+	    { id: props.id, className: 'icon' },
+	    _react2.default.createElement(
+	      'i',
+	      { className: 'material-icons md-24' },
+	      props.icon
+	    )
+	  );
+	};
+
+	var Button = function Button(props) {
+	  return _react2.default.createElement(
+	    'button',
+	    { id: props.id, className: 'button', onClick: props.onClick },
+	    _react2.default.createElement(
+	      'i',
+	      { className: 'material-icons md-24' },
+	      props.icon
+	    )
+	  );
+	};
+
+	var FAB = function FAB(props) {
+	  return _react2.default.createElement(
+	    _reactRouter.Link,
+	    { to: props.to },
+	    _react2.default.createElement(
+	      'button',
+	      { className: 'mui-btn mui-btn--accent mui-btn--fab  fab' },
+	      _react2.default.createElement(
+	        'i',
+	        { className: 'material-icons' },
+	        props.icon
+	      )
+	    )
+	  );
+	};
+
+	exports.Icon = Icon;
+	exports.Button = Button;
+	exports.FAB = FAB;
+
+/***/ },
+/* 257 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(258);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(163)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./button.css", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./button.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(162)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".icon {\n  padding: 0.2rem 0.6rem 0.3rem 0.6rem;\n  width: 4.8rem;\n  height: 4.8rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.button {\n  background-color: transparent;\n  outline: 0px;\n  padding: 0.2rem 0.6rem 0.3rem 0.6rem;\n  width: 4.8rem;\n  height: 4.8rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 259 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(260);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(163)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./page.css", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./page.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 260 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(162)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".page {\n  display: flex;\n  flex-direction: column;\n}\n\n.page > header {\n  min-height: 5.6rem;\n  max-height: 5.6rem;\n  color: #FFF;\n  padding: 0.4rem 1.6rem 0.4rem 1.6rem;\n  display: flex;\n  align-items: center;;\n\n  z-index: 1;\n  -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);\n  -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);\n  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);\n}\n\n.page > header #header-icon {\n  display: none;\n}\n\n.page > header .title {\n  flex:1;\n  font-size: 1.8rem;\n  font-weight: 500;\n  line-height: 5.6rem;\n  white-space: nowrap;\n}\n\n.page > main {\n  flex:1;\n  background-color: #EEE;\n  display:flex;\n  flex-direction: column;\n  padding: 0.8rem;\n  overflow: hidden;\n}\n\n.page > main > .inbox {\n  flex:1;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n}\n\n@media (min-width: 960px) and (orientation: landscape) {\n\n  .page > header {\n    position: fixed;\n    z-index: 2000;\n    width: 100%;\n    left:0px;\n  }\n\n  .page > main {\n    z-index: 1999;\n    margin-top: 5.6rem;\n    box-shadow: -1px 3px 2px 1px rgba(0,0,0,0.3);\n  }\n}\n\n\n@media (min-width: 1280px) {\n\n.page > header {\n  position: relative;\n}\n\n.page > header {\n  color:rgba(0, 0, 0, 0.8);\n  background-color: #FFF;\n}\n\n.page > header #drawer-button {\n  display:none;\n}\n\n.page > header #header-icon {\n  display: flex;\n}\n\n.page > main {\n  margin-top: 0px;\n}\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 261 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.Tab = exports.Tabs = undefined;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _tabs = __webpack_require__(262);
+
+	var _tabs2 = _interopRequireDefault(_tabs);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Tab = function Tab(props) {
+
+	  var activeClass = props.active ? "tab mui--is-active" : "tab";
+	  var selectTab = function selectTab() {
+	    props.selected(props.id);
+	  };
+
+	  return _react2.default.createElement(
+	    'li',
+	    { className: activeClass, onClick: selectTab },
+	    _react2.default.createElement(
+	      'a',
+	      null,
+	      _react2.default.createElement('i', { className: 'fa fa-' + props.icon + ' fab-lg' }),
+	      '   ',
+	      props.label
+	    )
+	  );
+	};
+
+	var Tabs = function Tabs(props) {
+	  return _react2.default.createElement(
+	    'ul',
+	    { className: 'tabbar mui-tabs__bar' },
+	    props.children
+	  );
+	};
+
+	exports.Tabs = Tabs;
+	exports.Tab = Tab;
+
+/***/ },
+/* 262 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(263);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(163)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./tabs.css", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./tabs.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 263 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(162)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".tabpanel {\n  display:flex;\n  flex-direction: column;\n}\n\n.tabbar {\n  min-height: 5rem;\n  background-color: #FFF;\n  margin-bottom: 8px;\n  display: flex;\n}\n\n.tab {\n  flex:1;\n}\n\n.tabcontents {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  background-color: #FFF;\n}\n\n.tabcontent {\n  flex:1;\n  display:flex;\n  flex-direction: column;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 264 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.ListDivider = exports.ListItem = exports.List = undefined;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _list = __webpack_require__(265);
+
+	var _list2 = _interopRequireDefault(_list);
+
+	var _button = __webpack_require__(256);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ListItem = function ListItem(_ref) {
+	  var title = _ref.title;
+	  var subtitle = _ref.subtitle;
+	  var icon = _ref.icon;
+	  var children = _ref.children;
+
+	  return _react2.default.createElement(
+	    'li',
+	    { className: 'listitem' },
+	    icon,
+	    _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'title' },
+	        title
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'subtitle' },
+	        subtitle
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'content' },
+	        children
+	      )
+	    )
+	  );
+	};
+
+	var ListDivider = function ListDivider(props) {
+	  return _react2.default.createElement('li', { className: 'mui-divider' });
+	};
+
+	var List = function List(props) {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'list' },
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'textfield mui-textfield' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'mui-textfield expand' },
+	        _react2.default.createElement('input', { type: 'text', placeholder: 'Filter by...' })
+	      ),
+	      '   ',
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'mui-select' },
+	        _react2.default.createElement(
+	          'select',
+	          null,
+	          _react2.default.createElement(
+	            'option',
+	            null,
+	            'Contact'
+	          ),
+	          _react2.default.createElement(
+	            'option',
+	            null,
+	            'Origin'
+	          ),
+	          _react2.default.createElement(
+	            'option',
+	            null,
+	            'Sent Date'
+	          )
+	        )
+	      )
+	    ),
+	    _react2.default.createElement(
+	      'ul',
+	      null,
+	      props.children
+	    )
+	  );
+	};
+
+	exports.List = List;
+	exports.ListItem = ListItem;
+	exports.ListDivider = ListDivider;
+
+/***/ },
+/* 265 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(266);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(163)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./list.css", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./list.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 266 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(162)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".list {\n  flex:1;\n  display: flex;\n  flex-direction: column;\n  border-right: solid 1px #DDD;\n  border-left: solid 1px #DDD;\n}\n\n.list .fab {\n  position: absolute;\n  top: auto;\n  right: auto;\n  bottom:2rem;\n  left: 30rem;\n}\n\n.list > .textfield {\n  padding-top : 0.8rem;\n  padding-left: 1.4rem;\n  padding-right: 1.4rem;\n  padding-bottom: 1rem;\n  background-color: #FFF;\n  margin-bottom: 3px;\n  min-height: 5rem;\n  display: flex;\n  justify-content: space-between;\n}\n\n.list > ul {\n  flex:1;\n  overflow-y: auto;\n}\n\n.listitem:hover {\n  background-color: #EEF;\n}\n\n@media all and (min-width:960px) and (orientation:landscape) {\n  .list .fab {\n    position: absolute;\n    bottom:2rem;\n    left: 38rem;\n  }\n}\n\n@media all and (min-width:1280px) {\n  .list .fab {\n    position: absolute;\n    bottom:2rem;\n    left: 58rem;\n  }\n}\n\n.list > ul {\n  list-style: none;\n  padding:0px;\n  margin: 0px;\n}\n\n.listitem {\n  flex:1;\n  min-height: 9rem;\n  background-color: #FFF;\n  color: rgba(0, 0, 0, 0.8);\n  border-bottom: solid 1px #DDD;\n\n  display: flex;\n  align-items: center;\n  padding-left: 1.6rem;\n}\n\n\n.listitem > div {\n  flex:1;\n  display:flex;\n  flex-direction: column;\n  padding-top: 2rem;\n  padding-bottom: 1.6rem;\n}\n\n.listitem .title {\n  font-size: 1.6rem;\n  font-weight: 500;\n  letter-spacing: .01em;\n  line-height: 2.4rem;\n  color: rgba(0, 0, 0, 0.8);\n}\n\n.listitem .subtitle {\n  font-size: 1.4rem;\n  font-weight: 500;\n  letter-spacing: .01em;\n  line-height: 1.6rem;\n  color: rgba(0, 0, 0, 0.5);\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 267 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(268);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(163)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./app-shipments.css", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./app-shipments.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 268 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(162)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\nth {\n  vertical-align: bottom;\n}\n.timeline-item {\n  display: flex;\n}\n\n.formField {\n  display:flex;\n  flex-wrap: wrap;\n}\n\n.formField .icon {\n  color : rgba(0, 0, 0, 0.8);\n}\n\n.formField .input-textfield {\n  flex:1;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 269 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _page = __webpack_require__(254);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Issues = function Issues(props) {
 	  return _react2.default.createElement(
-	    _appPage.Page,
+	    _page.Page,
 	    { title: 'Issues', icon: 'warning', toggleDrawer: props.toggleDrawer },
 	    _react2.default.createElement(
 	      'p',
@@ -28896,7 +28652,7 @@
 	exports.default = Issues;
 
 /***/ },
-/* 274 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28962,7 +28718,7 @@
 	exports.default = Search;
 
 /***/ },
-/* 275 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28979,17 +28735,17 @@
 
 	var _reactRouter = __webpack_require__(168);
 
-	var _appConstants = __webpack_require__(248);
+	var _appConstants = __webpack_require__(244);
 
 	var _appConstants2 = _interopRequireDefault(_appConstants);
 
-	var _appPage = __webpack_require__(264);
+	var _page = __webpack_require__(254);
 
-	var _appShipments = __webpack_require__(262);
+	var _appShipments = __webpack_require__(267);
 
 	var _appShipments2 = _interopRequireDefault(_appShipments);
 
-	var _appShipments3 = __webpack_require__(276);
+	var _appShipments3 = __webpack_require__(272);
 
 	var _appShipments4 = _interopRequireDefault(_appShipments3);
 
@@ -29017,7 +28773,7 @@
 	      var states = [_appConstants2.default.SHIPMENT_STATE.NEW, _appConstants2.default.SHIPMENT_STATE.CLOSED];
 
 	      return _react2.default.createElement(
-	        _appPage.Page,
+	        _page.Page,
 	        { title: 'Outbox', icon: 'inbox', toggleDrawer: this.props.toggleDrawer },
 	        _react2.default.createElement(_appShipments4.default, { states: states }),
 	        _react2.default.createElement(
@@ -29043,7 +28799,7 @@
 	exports.default = Outbox;
 
 /***/ },
-/* 276 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29056,23 +28812,23 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appShipments = __webpack_require__(262);
+	var _appShipments = __webpack_require__(267);
 
 	var _appShipments2 = _interopRequireDefault(_appShipments);
 
-	var _appStore = __webpack_require__(267);
+	var _appStore = __webpack_require__(273);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
 
-	var _appShipmentItem = __webpack_require__(277);
+	var _appShipmentItem = __webpack_require__(276);
 
 	var _appShipmentItem2 = _interopRequireDefault(_appShipmentItem);
 
-	var _appShipmentCard = __webpack_require__(278);
+	var _appShipmentCard = __webpack_require__(277);
 
 	var _appShipmentCard2 = _interopRequireDefault(_appShipmentCard);
 
-	var _storeWatchMixin = __webpack_require__(272);
+	var _storeWatchMixin = __webpack_require__(279);
 
 	var _storeWatchMixin2 = _interopRequireDefault(_storeWatchMixin);
 
@@ -29109,7 +28865,159 @@
 	exports.default = (0, _storeWatchMixin2.default)(Shipments, shipmentItems);
 
 /***/ },
-/* 277 */
+/* 273 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _appConstants = __webpack_require__(244);
+
+	var _appConstants2 = _interopRequireDefault(_appConstants);
+
+	var _appDispatcher = __webpack_require__(247);
+
+	var _events = __webpack_require__(246);
+
+	var _apiProducts = __webpack_require__(274);
+
+	var _apiProducts2 = _interopRequireDefault(_apiProducts);
+
+	var _apiShipment = __webpack_require__(251);
+
+	var _apiShipment2 = _interopRequireDefault(_apiShipment);
+
+	var _apiPages = __webpack_require__(275);
+
+	var _apiPages2 = _interopRequireDefault(_apiPages);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	var CHANGE_EVENT = "change";
+
+	var _inbox = {
+	  tab: "opened"
+	};
+
+	var AppStore = Object.assign(_events.EventEmitter.prototype, {
+	  emitChange: function emitChange() {
+	    this.emit(CHANGE_EVENT);
+	  },
+	  addChangeListener: function addChangeListener(callback) {
+	    this.on(CHANGE_EVENT, callback);
+	  },
+	  removeChangeListener: function removeChangeListener(callback) {
+	    this.removeListener(CHANGE_EVENT, callback);
+	  },
+	  getShipments: function getShipments() {
+	    return _apiShipment2.default.getAll();
+	  },
+	  getShipmentsByStatus: function getShipmentsByStatus(state) {
+	    return _apiShipment2.default.getAllFilterByState(state);
+	  },
+	  getShipment: function getShipment() {
+	    return _apiShipment2.default.getShipment();
+	  },
+	  getProducts: function getProducts() {
+	    return _apiProducts2.default.getAll();
+	  },
+	  getInbox: function getInbox() {
+	    return _apiPages2.default.getInbox();
+	  },
+
+
+	  dispatcherIndex: (0, _appDispatcher.register)(function (action) {
+
+	    var actions = _defineProperty({}, _appConstants2.default.INBOX.GET_SHIPMENTS, function (action) {
+	      return _apiPages2.default.setInboxTab(action.status);
+	    });
+
+	    var doAction = actions[action.actionType];
+	    if (typeof doAction === 'function') {
+	      doAction(action);
+	      AppStore.emitChange();
+	    }
+	  })
+	});
+
+	exports.default = AppStore;
+
+/***/ },
+/* 274 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _appConstants = __webpack_require__(244);
+
+	var _appConstants2 = _interopRequireDefault(_appConstants);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ProductsAPI = {
+
+	  products: [],
+
+	  init: function init() {
+	    console.log('loading products');
+	    for (var i = 1; i < 30; i++) {
+	      this.products.push({
+	        'id': 'P' + i,
+	        'name': 'Product ' + i
+	      });
+	    }
+	  },
+	  getAll: function getAll() {
+	    return this.products.map(function (item) {
+	      return Object.assign({}, item);
+	    });
+	  }
+	};
+
+	ProductsAPI.init();
+	exports.default = ProductsAPI;
+
+/***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _appConstants = __webpack_require__(244);
+
+	var _appConstants2 = _interopRequireDefault(_appConstants);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var PagesAPI = {
+
+	  inbox: { tab: 'OPENED' },
+
+	  getInbox: function getInbox() {
+	    return this.inbox;
+	  },
+	  setInboxTab: function setInboxTab(tab) {
+	    this.inbox.tab = tab;
+	  }
+	};
+
+	exports.default = PagesAPI;
+
+/***/ },
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29122,7 +29030,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appConstants = __webpack_require__(248);
+	var _appConstants = __webpack_require__(244);
 
 	var _appConstants2 = _interopRequireDefault(_appConstants);
 
@@ -29184,7 +29092,7 @@
 	};
 
 /***/ },
-/* 278 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29197,13 +29105,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appConstants = __webpack_require__(248);
+	var _appConstants = __webpack_require__(244);
 
 	var _appConstants2 = _interopRequireDefault(_appConstants);
 
 	var _reactRouter = __webpack_require__(168);
 
-	var _appCard = __webpack_require__(279);
+	var _appCard = __webpack_require__(278);
 
 	var _appCard2 = _interopRequireDefault(_appCard);
 
@@ -29233,7 +29141,7 @@
 	exports.default = ShipmentCard;
 
 /***/ },
-/* 279 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29293,6 +29201,76 @@
 	exports.default = Card;
 
 /***/ },
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _appStore = __webpack_require__(273);
+
+	var _appStore2 = _interopRequireDefault(_appStore);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	exports.default = function (InnerComponent, stateCallback) {
+	  return function (_React$Component) {
+	    _inherits(_class, _React$Component);
+
+	    function _class(props) {
+	      _classCallCheck(this, _class);
+
+	      var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(_class).call(this));
+
+	      _this.state = stateCallback(props);
+	      _this._onChange = _this._onChange.bind(_this);
+	      return _this;
+	    }
+
+	    _createClass(_class, [{
+	      key: 'componentWillMount',
+	      value: function componentWillMount() {
+	        _appStore2.default.addChangeListener(this._onChange);
+	      }
+	    }, {
+	      key: 'componentWillUnmount',
+	      value: function componentWillUnmount() {
+	        _appStore2.default.removeChangeListener(this._onChange);
+	      }
+	    }, {
+	      key: '_onChange',
+	      value: function _onChange() {
+	        this.setState(stateCallback(this.props));
+	      }
+	    }, {
+	      key: 'render',
+	      value: function render() {
+	        return _react2.default.createElement(InnerComponent, _extends({}, this.state, this.props));
+	      }
+	    }]);
+
+	    return _class;
+	  }(_react2.default.Component);
+	};
+
+/***/ },
 /* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -29306,9 +29284,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appPage = __webpack_require__(264);
+	var _page = __webpack_require__(254);
 
-	var _appShipments = __webpack_require__(262);
+	var _appShipments = __webpack_require__(267);
 
 	var _appShipments2 = _interopRequireDefault(_appShipments);
 
@@ -29316,7 +29294,7 @@
 
 	var _appShipments4 = _interopRequireDefault(_appShipments3);
 
-	var _appConstants = __webpack_require__(248);
+	var _appConstants = __webpack_require__(244);
 
 	var _appConstants2 = _interopRequireDefault(_appConstants);
 
@@ -29327,7 +29305,7 @@
 	  var states = [_appConstants2.default.SHIPMENT_STATE.SENT, _appConstants2.default.SHIPMENT_STATE.RECEIVED];
 
 	  return _react2.default.createElement(
-	    _appPage.Page,
+	    _page.Page,
 	    { title: 'Monitor', icon: 'send', toggleDrawer: props.toggleDrawer },
 	    _react2.default.createElement(_appShipments4.default, { states: states })
 	  );
@@ -29349,19 +29327,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appStore = __webpack_require__(267);
+	var _appStore = __webpack_require__(273);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
 
-	var _appShipmentItem = __webpack_require__(277);
+	var _appShipmentItem = __webpack_require__(276);
 
 	var _appShipmentItem2 = _interopRequireDefault(_appShipmentItem);
 
-	var _storeWatchMixin = __webpack_require__(272);
+	var _storeWatchMixin = __webpack_require__(279);
 
 	var _storeWatchMixin2 = _interopRequireDefault(_storeWatchMixin);
 
-	var _appShipments = __webpack_require__(262);
+	var _appShipments = __webpack_require__(267);
 
 	var _appShipments2 = _interopRequireDefault(_appShipments);
 
@@ -29449,9 +29427,9 @@
 	  value: true
 	});
 
-	var _appPage = __webpack_require__(264);
+	var _page = __webpack_require__(254);
 
-	var _appCard = __webpack_require__(279);
+	var _appCard = __webpack_require__(278);
 
 	var _appCard2 = _interopRequireDefault(_appCard);
 
@@ -29463,11 +29441,11 @@
 
 	var _appProducts2 = _interopRequireDefault(_appProducts);
 
-	var _appStore = __webpack_require__(267);
+	var _appStore = __webpack_require__(273);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
 
-	var _storeWatchMixin = __webpack_require__(272);
+	var _storeWatchMixin = __webpack_require__(279);
 
 	var _storeWatchMixin2 = _interopRequireDefault(_storeWatchMixin);
 
@@ -29494,7 +29472,7 @@
 	  });
 
 	  return _react2.default.createElement(
-	    _appPage.Page,
+	    _page.Page,
 	    { title: 'Products', icon: 'local_offer', toggleDrawer: props.toggleDrawer },
 	    _react2.default.createElement(
 	      'div',
@@ -29562,7 +29540,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appHeader = __webpack_require__(246);
+	var _appHeader = __webpack_require__(255);
 
 	var _appHeader2 = _interopRequireDefault(_appHeader);
 
@@ -29742,19 +29720,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appPage = __webpack_require__(264);
+	var _page = __webpack_require__(254);
 
 	var _reactRouter = __webpack_require__(168);
 
-	var _appStore = __webpack_require__(267);
+	var _appStore = __webpack_require__(273);
 
 	var _appStore2 = _interopRequireDefault(_appStore);
 
-	var _storeWatchMixin = __webpack_require__(272);
+	var _storeWatchMixin = __webpack_require__(279);
 
 	var _storeWatchMixin2 = _interopRequireDefault(_storeWatchMixin);
 
-	var _appShipments = __webpack_require__(262);
+	var _appShipments = __webpack_require__(267);
 
 	var _appShipments2 = _interopRequireDefault(_appShipments);
 
@@ -29795,7 +29773,7 @@
 	  });
 
 	  return _react2.default.createElement(
-	    _appPage.Page,
+	    _page.Page,
 	    { title: 'Shipment Info', to: '/' },
 	    _react2.default.createElement('br', null),
 	    _react2.default.createElement(
@@ -29926,7 +29904,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appPage = __webpack_require__(264);
+	var _page = __webpack_require__(254);
 
 	var _reactRouter = __webpack_require__(168);
 
@@ -29936,7 +29914,7 @@
 
 	var ShipmentReceptionForm = function ShipmentReceptionForm(props) {
 	  return _react2.default.createElement(
-	    _appPage.Page,
+	    _page.Page,
 	    { icon: 'unarchive', title: 'Check-In', to: '/inbox' },
 	    _react2.default.createElement(
 	      'h5',
@@ -30109,7 +30087,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appPage = __webpack_require__(264);
+	var _page = __webpack_require__(254);
 
 	var _reactRouter = __webpack_require__(168);
 
@@ -30248,7 +30226,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _appPage = __webpack_require__(264);
+	var _page = __webpack_require__(254);
 
 	var _reactBrowserDetection = __webpack_require__(291);
 
@@ -30271,7 +30249,7 @@
 
 	var PhotoBoothPage = function PhotoBoothPage(props) {
 	  return _react2.default.createElement(
-	    _appPage.Page,
+	    _page.Page,
 	    { title: 'Camera', to: '/inbox' },
 	    _react2.default.createElement(
 	      _reactBrowserDetection2.default,
