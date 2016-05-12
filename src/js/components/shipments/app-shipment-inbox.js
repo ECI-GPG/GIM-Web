@@ -20,7 +20,6 @@ const StepInfo = ({icon, city, date}) => {
   );
 }
 
-
 class ShipmentsInbox extends React.Component {
 
   constructor(props) {
@@ -32,19 +31,11 @@ class ShipmentsInbox extends React.Component {
     AppActions.send( AppConstants.INBOX.SELECT_TAB, tab)
   }
 
+  filterChanged(value) {
+    AppActions.send( AppConstants.INBOX.FILTER_SHIPMENTS, value);
+  }
+
   render() {
-
-    let shipments = this.props.shipments.map((shipment) => {
-      let icon = (<i className="logo up">{shipment.origin.initial}</i>)
-      return (
-        <ListItem icon={icon} title={shipment.origin.contact}>
-          <StepInfo icon="keyboard_arrow_right" city={shipment.origin.city} date={shipment.dateSent}/>
-          <div><i className="material-icons md-18 mui--text-dark-secondary mui--text-dark-hint">more_vert</i></div>
-          <StepInfo icon="keyboard_arrow_left" city="Madrid" date={shipment.dateReceived}/>
-        </ListItem>
-      )
-    });
-
     return (
       <Page title="Inbox" icon="move_to_inbox" toggleDrawer={this.props.toggleDrawer}>
         <div className="inbox">
@@ -52,12 +43,24 @@ class ShipmentsInbox extends React.Component {
             <Tab id="CLOSED" icon="cube" label="Closed" active={this.props.tab === "CLOSED"} selected={this.tabSelected}/>
             <Tab id="OPENED" icon="cube" label="Opened" active={this.props.tab === "OPENED"} selected={this.tabSelected}/>
           </Tabs>
-          <List>{shipments}</List>
+          <List filtered={this.filterChanged}>{this.props.shipments.map(this.renderShipment)}</List>
           <div className="viewer">{this.props.children}</div>
         </div>
       </Page>
     )
   }
+
+  renderShipment(shipment) {
+    let icon = (<i className="logo up">{shipment.origin.initial}</i>)
+    return (
+        <ListItem icon={icon} title={shipment.origin.contact}>
+          <StepInfo icon="keyboard_arrow_right" city={shipment.origin.city} date={shipment.dateSent}/>
+          <div><i className="material-icons md-18 mui--text-dark-secondary mui--text-dark-hint">more_vert</i></div>
+          <StepInfo icon="keyboard_arrow_left" city="Madrid" date={shipment.dateReceived}/>
+        </ListItem>
+    )
+  }
+
 }
 
 export default StoreWatchMixin(ShipmentsInbox, InboxStore, (props) => {

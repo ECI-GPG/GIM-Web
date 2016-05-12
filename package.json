@@ -10,10 +10,9 @@
   "dependencies": {
     "express": "^4.13.4",
     "flux": "^2.1.1",
-    "react": "^0.14.8",
-    "react-addons-css-transition-group": "^15.0.1",
+    "react": "^15.0.2",
     "react-browser-detection": "^1.0.1",
-    "react-dom": "^0.14.8",
+    "react-dom": "^15.0.2",
     "react-router": "^2.0.1"
   },
   "devDependencies": {

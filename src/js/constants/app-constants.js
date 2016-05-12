@@ -10,7 +10,7 @@ export default {
 
   INBOX: {
     SELECT_TAB:'SELECT_TAB',
-    GET_SHIPMENTS: 'GET_SHIPMENTS'
+    FILTER_SHIPMENTS: 'FILTER_SHIPMENTS'
   }
 
 }

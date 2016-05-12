@@ -22,18 +22,27 @@ const ListDivider = (props) => {
 }
 
 const List = (props) => {
+
+  const filter = (e) => {
+    props.filtered({ value : e.target.value});
+  }
+
+  const criteria = (e) => {
+    props.filtered({ criteria : e.target.value});
+  }
+
   return (
     <div className="list">
       <div className="textfield mui-textfield">
         <div className="mui-textfield expand">
-          <input type="text" placeholder="Filter by..."></input>
+          <input type="text" placeholder="Filter by..." onChange={filter}></input>
         </div>
         &nbsp;&nbsp;&nbsp;
         <div className="mui-select">
-          <select>
+          <select onChange={criteria}>
             <option>Contact</option>
             <option>Origin</option>
-            <option>Sent Date</option>
+            <option>state</option>
           </select>
         </div>
       </div>
