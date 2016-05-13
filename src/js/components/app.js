@@ -23,7 +23,7 @@ export default () =>  <Router history={browserHistory}>
                           <IndexRoute component={Inbox}/>
 
                           <Route path="inbox" component={Inbox}>
-                            <Route path="shipment/:id" component={ShipmentCheckinDetail}/>
+                            <Route path="shipments/:id" component={ShipmentCheckinDetail}/>
                           </Route>
 
                           <Route path="inbox/checkin" component={ShipmentCheckin}/>

@@ -8,6 +8,7 @@ import StoreWatchMixin from '../../mixin/storeWatchMixin0';
 import {Page} from '../layout/page';
 import {Tabs, Tab} from '../layout/tabs';
 import {List, ListItem} from '../layout/list';
+import {FAB} from '../layout/button';
 
 import styles from './app-shipments.css';
 
@@ -44,6 +45,7 @@ class ShipmentsInbox extends React.Component {
             <Tab id="OPENED" icon="cube" label="Opened" active={this.props.tab === "OPENED"} selected={this.tabSelected}/>
           </Tabs>
           <List filtered={this.filterChanged}>{this.props.shipments.map(this.renderShipment)}</List>
+          <FAB icon="add" to="/inbox/checkin" />
           <div className="viewer">{this.props.children}</div>
         </div>
       </Page>

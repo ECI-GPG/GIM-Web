@@ -21,7 +21,7 @@ const Button = (props) => {
 const FAB = (props) => {
   return (
     <Link to={props.to}>
-      <button className="mui-btn mui-btn--accent mui-btn--fab  fab">
+      <button className="mui-btn mui-btn--accent mui-btn--fab fab">
         <i className="material-icons">{props.icon}</i>
       </button>
     </Link>
