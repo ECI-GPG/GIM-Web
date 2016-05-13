@@ -41,6 +41,11 @@ const ShipmentAPI = {
         .map(item => Object.assign({}, item));
   },
 
+  filter(criteria, value) {
+    return this.shipments
+      .filter(item => item[criteria] === value);
+  },
+
   getShipment() {
     return {
       'id': '12345678',
