@@ -2,9 +2,14 @@ import React from 'react';
 import style from './list.css';
 import {Button} from './button';
 
-const ListItem = ({title, subtitle, icon, children}) => {
+const ListItem = ({id, title, subtitle, icon, children, selected, onClick}) => {
+
+  const clicked = () => {
+    onClick(id);
+  }
+
   return (
-      <li className="listitem">
+      <li className={`listitem ${selected}`} onClick={clicked}>
         {icon}
         <div>
           <div className="title">{title}</div>

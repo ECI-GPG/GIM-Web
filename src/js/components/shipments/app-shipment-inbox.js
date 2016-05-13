@@ -9,6 +9,7 @@ import {Page} from '../layout/page';
 import {Tabs, Tab} from '../layout/tabs';
 import {List, ListItem} from '../layout/list';
 import {FAB} from '../layout/button';
+import {Link} from 'react-router';
 
 import styles from './app-shipments.css';
 
@@ -36,6 +37,10 @@ class ShipmentsInbox extends React.Component {
     AppActions.send( AppConstants.INBOX.FILTER_SHIPMENTS, value);
   }
 
+  shipmentSelected(id) {
+    AppActions.send( AppConstants.INBOX.SELECT_SHIPMENT, id);
+  }
+
   render() {
 
     const filter = {
@@ -48,15 +53,21 @@ class ShipmentsInbox extends React.Component {
       ]
     }
 
+    const selectedClass = this.props.shipment ? "selected" : "";
+
     return (
       <Page title="Inbox" icon="move_to_inbox" toggleDrawer={this.props.toggleDrawer}>
         <div className="inbox">
-          <Tabs>
-            <Tab id="CLOSED" icon="cube" label="Closed" active={this.props.tab === "CLOSED"} selected={this.tabSelected}/>
-            <Tab id="OPENED" icon="cube" label="Opened" active={this.props.tab === "OPENED"} selected={this.tabSelected}/>
-          </Tabs>
-          <List filter={filter} filtered={this.filterChanged}> {this.props.shipments.map(this.renderShipment)} </List>
-          <FAB icon="add" to="/inbox/checkin" />
+          <div className={`inbox-list ${selectedClass}`}>
+            <Tabs>
+              <Tab id="CLOSED" icon="cube" label="Closed" active={this.props.tab === "CLOSED"} selected={this.tabSelected}/>
+              <Tab id="OPENED" icon="cube" label="Opened" active={this.props.tab === "OPENED"} selected={this.tabSelected}/>
+            </Tabs>
+            <List filter={filter} filtered={this.filterChanged}>
+              {this.props.shipments.map(this.renderShipment.bind(this))}
+            </List>
+            <FAB icon="add" to="/inbox/checkin" />
+          </div>
           <div className="viewer">{this.props.children}</div>
         </div>
       </Page>
@@ -64,12 +75,15 @@ class ShipmentsInbox extends React.Component {
   }
 
   renderShipment(shipment) {
-    let icon = (<i className="logo up">{shipment.origin.initial}</i>)
+    let icon = (<i className="logo up">{shipment.origin.initial}</i>);
+    let selected =  (this.props.shipment && this.props.shipment.id === shipment.id)? "selected" : "unselected";
     return (
-        <ListItem icon={icon} title={shipment.origin.contact}>
-          <StepInfo icon="keyboard_arrow_right" city={shipment.origin.city} date={shipment.dateSent}/>
-          <div><i className="material-icons md-18 mui--text-dark-secondary mui--text-dark-hint">more_vert</i></div>
-          <StepInfo icon="keyboard_arrow_left" city="Madrid" date={shipment.dateReceived}/>
+        <ListItem id={shipment.id} icon={icon} title={shipment.origin.contact} onClick={this.shipmentSelected} selected={selected}>
+          <Link to={`inbox/shipments/${shipment.id}`}>
+            <StepInfo icon="keyboard_arrow_right" city={shipment.origin.city} date={shipment.dateSent}/>
+            <div><i className="material-icons md-18 mui--text-dark-secondary mui--text-dark-hint">more_vert</i></div>
+            <StepInfo icon="keyboard_arrow_left" city="Madrid" date={shipment.dateReceived}/>
+          </Link>
         </ListItem>
     )
   }

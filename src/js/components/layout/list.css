@@ -29,10 +29,14 @@
 .list > ul {
   flex:1;
   overflow-y: auto;
+  list-style: none;
+  padding:0px;
+  margin: 0px;
+  background-color: #FFF;
 }
 
 .listitem:hover {
-  background-color: #EEF;
+  background-color: #EFEFEF;
 }
 
 @media all and (min-width:960px) and (orientation:landscape) {
@@ -41,20 +45,23 @@
     bottom:2rem;
     left: 38rem;
   }
+
+  .listitem.selected {
+    background-color: #EEF;
+  }
 }
 
 @media all and (min-width:1280px) {
+
   .list .fab {
     position: absolute;
     bottom:2rem;
     left: 58rem;
   }
-}
 
-.list > ul {
-  list-style: none;
-  padding:0px;
-  margin: 0px;
+  .listitem.selected {
+    background-color: #EEF;
+  }
 }
 
 .listitem {

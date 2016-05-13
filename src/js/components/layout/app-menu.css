@@ -48,7 +48,6 @@ nav  h5 {
 }
 
 #menu-title {
-  background-color: #444;
   padding-left:16px;
   text-shadow: 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
@@ -59,7 +58,6 @@ nav  h5 {
 }
 
 #menu-user {
-  background-color: #444;
   padding-top: 16px;
   padding-left:16px;
 }
@@ -83,6 +81,15 @@ nav  h5 {
   display:flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width:960px) {
+  #menu-title {
+    background-color: #444;
+  }
+  #menu-user {
+    background-color: #444;
+  }
 }
 
 @media (min-width:960px) and (orientation:landscape) {
@@ -121,6 +128,7 @@ nav  h5 {
 
   #menu-user {
     max-height: none;
+    background-color: inherit;
   }
 
 	#header {

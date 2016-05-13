@@ -5,7 +5,8 @@ import Shipments from '../api/api-shipment';
 const model = {
   tab : 'OPENED',
   filter : { criteria : '', value : ''},
-  shipments : Shipments.getAllFilterByState('OPENED')
+  shipments : Shipments.getAllFilterByState('OPENED'),
+  shipment: null
 };
 
 var handlers = (model) => {
@@ -24,6 +25,11 @@ var handlers = (model) => {
           Shipments.getAllFilterByState(model.tab) :
             Shipments.getAllFilterByState(model.tab, model.filter.criteria, model.filter.value);
       Object.assign(model, { shipments: shipments});
+    },
+
+    [AppConstants.INBOX.SELECT_SHIPMENT]: (action) => {
+      const shipment = Shipments.getById(action.payload);
+      Object.assign(model, {shipment: shipment})
     }
 
   }

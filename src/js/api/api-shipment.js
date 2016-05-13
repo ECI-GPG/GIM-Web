@@ -49,6 +49,10 @@ const ShipmentAPI = {
         return _.get(item, criteria).toUpperCase().indexOf(value.toUpperCase())>-1});
   },
 
+  getById(id) {
+    return this.shipments.filter((item) => item.id === id)[0] || -1;
+  },
+
   getShipment() {
     return {
       'id': '12345678',
