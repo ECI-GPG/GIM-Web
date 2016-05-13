@@ -13,7 +13,7 @@ var handlers = (model) => {
 
     [AppConstants.INBOX.SELECT_TAB]: (action) => {
       Object.assign( model, { tab: action.payload});
-      const shipments = Shipments.getAllFilterByState(model.tab);
+      const shipments = Shipments.getAllFilterByState(model.tab, model.filter.criteria, model.filter.value);
       Object.assign( model, { shipments: shipments});
     },
 
@@ -22,7 +22,7 @@ var handlers = (model) => {
       const shipments =
         model.filter.value === "" || model.filter.criteria === "" ?
           Shipments.getAllFilterByState(model.tab) :
-            Shipments.filter(model.filter.criteria, model.filter.value);
+            Shipments.getAllFilterByState(model.tab, model.filter.criteria, model.filter.value);
       Object.assign(model, { shipments: shipments});
     }
 

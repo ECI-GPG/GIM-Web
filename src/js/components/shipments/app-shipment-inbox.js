@@ -38,12 +38,13 @@ class ShipmentsInbox extends React.Component {
 
   render() {
 
-
     const filter = {
       value : this.props.filter.value,
+      criteria : this.props.filter.criteria,
       options : [
         { label: 'Contact', value: 'origin.contact'},
-        { label: 'ID', value: 'id'}
+        { label: 'Origin', value: 'origin.city'},
+        { label: 'Send Date', value: 'dateSent'}
       ]
     }
 
@@ -77,6 +78,5 @@ class ShipmentsInbox extends React.Component {
 
 export default StoreWatchMixin(ShipmentsInbox, InboxStore, (props) => {
   const state = InboxStore.getState();
-  console.log(state.filter);
   return state;
 });

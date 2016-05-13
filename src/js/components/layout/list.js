@@ -41,13 +41,11 @@ const List = (props) => {
     });
   }
 
-  console.log(filter);
-
   return (
     <div className="list">
       <div className="textfield mui-textfield">
         <div className="mui-select">
-          <select onChange={criteria}>
+          <select onChange={criteria} value={props.filter.criteria}>
             <option value="" disabled selected>Filter By...</option>
             {renderOptions(props.filter.options)}
           </select>

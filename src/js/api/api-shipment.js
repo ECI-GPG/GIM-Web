@@ -36,8 +36,9 @@ const ShipmentAPI = {
     });
   },
 
-  getAllFilterByState(state) {
-    return this.shipments
+  getAllFilterByState(state, criteria, value) {
+    const shipments = criteria ? this.filter(criteria, value) : this.shipments;
+    return shipments
       .filter(item => item.state === state)
         .map(item => Object.assign({}, item));
   },
@@ -45,8 +46,7 @@ const ShipmentAPI = {
   filter(criteria, value) {
     return this.shipments
       .filter(item => {
-        console.log(criteria + ' : ' + value + '===' + JSON.stringify(_.get(item, criteria)));
-        return _.get(item, criteria).indexOf(value)>-1});
+        return _.get(item, criteria).toUpperCase().indexOf(value.toUpperCase())>-1});
   },
 
   getShipment() {
