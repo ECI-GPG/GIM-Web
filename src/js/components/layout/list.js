@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './list.css';
-import {FAB} from './button';
+import {Button} from './button';
 
 const ListItem = ({title, subtitle, icon, children}) => {
   return (
@@ -31,20 +31,32 @@ const List = (props) => {
     props.filtered({ criteria : e.target.value});
   }
 
+  const clearFilter = () => {
+    props.filtered({ criteria: '', value :  ''});
+  }
+
+  const renderOptions = (options) => {
+    return options.map( (option) => {
+      return (<option value={option.value}>{option.label}</option>);
+    });
+  }
+
+  console.log(filter);
+
   return (
     <div className="list">
       <div className="textfield mui-textfield">
-        <div className="mui-textfield expand">
-          <input type="text" placeholder="Filter by..." onChange={filter}></input>
-        </div>
-        &nbsp;&nbsp;&nbsp;
         <div className="mui-select">
           <select onChange={criteria}>
-            <option>Contact</option>
-            <option>Origin</option>
-            <option>state</option>
+            <option value="" disabled selected>Filter By...</option>
+            {renderOptions(props.filter.options)}
           </select>
         </div>
+        &nbsp;&nbsp;&nbsp;
+        <div className="mui-textfield expand">
+          <input type="text" placeholder="..." value={props.filter.value} onChange={filter}></input>
+        </div>
+        <Button icon="close" onClick={clearFilter}/>
       </div>
       <ul>{props.children}</ul>
     </div>

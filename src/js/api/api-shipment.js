@@ -1,4 +1,5 @@
 import AppConstants from '../constants/app-constants';
+import _ from 'lodash';
 
 const ShipmentAPI = {
 
@@ -43,7 +44,9 @@ const ShipmentAPI = {
 
   filter(criteria, value) {
     return this.shipments
-      .filter(item => item[criteria] === value);
+      .filter(item => {
+        console.log(criteria + ' : ' + value + '===' + JSON.stringify(_.get(item, criteria)));
+        return _.get(item, criteria).indexOf(value)>-1});
   },
 
   getShipment() {

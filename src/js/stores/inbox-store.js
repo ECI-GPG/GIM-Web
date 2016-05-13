@@ -4,7 +4,7 @@ import Shipments from '../api/api-shipment';
 
 const model = {
   tab : 'OPENED',
-  filter : { criteria : 'STATE', value : ''},
+  filter : { criteria : '', value : ''},
   shipments : Shipments.getAllFilterByState('OPENED')
 };
 
@@ -20,7 +20,7 @@ var handlers = (model) => {
     [AppConstants.INBOX.FILTER_SHIPMENTS]: (action) => {
       Object.assign(model.filter, action.payload);
       const shipments =
-        model.filter.value === "" ?
+        model.filter.value === "" || model.filter.criteria === "" ?
           Shipments.getAllFilterByState(model.tab) :
             Shipments.filter(model.filter.criteria, model.filter.value);
       Object.assign(model, { shipments: shipments});

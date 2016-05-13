@@ -10,6 +10,7 @@
   "dependencies": {
     "express": "^4.13.4",
     "flux": "^2.1.1",
+    "lodash": "^4.12.0",
     "react": "^15.0.2",
     "react-browser-detection": "^1.0.1",
     "react-dom": "^15.0.2",

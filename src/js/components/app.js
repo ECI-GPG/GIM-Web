@@ -17,7 +17,7 @@ import ShipmentCheckinDetail from './shipments/app-checkin-form';
 
 import Camera from './media/app-photobooth';
 
-export default () =>  <Router history={browserHistory}>
+export default () =>  <Router >
                         <Route path="/" component={Layout}>
 
                           <IndexRoute component={Inbox}/>

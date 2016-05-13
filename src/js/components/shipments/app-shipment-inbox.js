@@ -37,6 +37,16 @@ class ShipmentsInbox extends React.Component {
   }
 
   render() {
+
+
+    const filter = {
+      value : this.props.filter.value,
+      options : [
+        { label: 'Contact', value: 'origin.contact'},
+        { label: 'ID', value: 'id'}
+      ]
+    }
+
     return (
       <Page title="Inbox" icon="move_to_inbox" toggleDrawer={this.props.toggleDrawer}>
         <div className="inbox">
@@ -44,7 +54,7 @@ class ShipmentsInbox extends React.Component {
             <Tab id="CLOSED" icon="cube" label="Closed" active={this.props.tab === "CLOSED"} selected={this.tabSelected}/>
             <Tab id="OPENED" icon="cube" label="Opened" active={this.props.tab === "OPENED"} selected={this.tabSelected}/>
           </Tabs>
-          <List filtered={this.filterChanged}>{this.props.shipments.map(this.renderShipment)}</List>
+          <List filter={filter} filtered={this.filterChanged}> {this.props.shipments.map(this.renderShipment)} </List>
           <FAB icon="add" to="/inbox/checkin" />
           <div className="viewer">{this.props.children}</div>
         </div>
@@ -67,5 +77,6 @@ class ShipmentsInbox extends React.Component {
 
 export default StoreWatchMixin(ShipmentsInbox, InboxStore, (props) => {
   const state = InboxStore.getState();
+  console.log(state.filter);
   return state;
 });
