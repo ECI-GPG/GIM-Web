@@ -3,7 +3,32 @@ import _ from 'lodash';
 
 const ShipmentAPI = {
 
+  count : 30,
+
   shipments: [],
+
+  _shipment(id) {
+    return {
+      'id': 'Shipment' + id,
+      'courrier': null,
+      'orderId' : null,
+      'state': 'CLOSED',
+      'dateCreated': null,
+      'dateClosed': null,
+      'dateSent': null,
+      'dateEstimatedReception': null,
+      'dateReceived': null,
+      'origin': null,
+      'samples': [],
+      'observations':[],
+      'agency': null,
+      'issues':[],
+      'origin':{
+        'city':null,
+        'contact':null
+      }
+    }
+  },
 
   init() {
 
@@ -11,23 +36,31 @@ const ShipmentAPI = {
       { initial:'NY', city : 'New York', contact : 'Joan Kim'},
       { initial:'P' , city : 'Paris', contact : 'Laurent Blanc'},
       { initial:'M' , city : 'Milan', contact : 'Giovanni Vitale'},
-      { initial:'B' , city : 'Barcelona', contact : 'Xavier Tarradellas'}
+      { initial:'B' , city : 'Barcelona', contact : 'Xavier Tarradellas'},
+      { initial:'L' , city : 'London', contact : 'Elizabeth Holmes'},
+      { initial:'T' , city : 'Tokio', contact : 'Hatori Hanzo'}
     ]
 
-    for (let i = 1; i < 16; i++) {
-      this.shipments.push({
-        'id': 'Shipment' + i,
+    for (let i = 1; i < this.count; i++) {
+      let shipment = this._shipment(i);
+      Object.assign(shipment, {
         'state': AppConstants.SHIPMENT_STATE[Object.keys(AppConstants.SHIPMENT_STATE)[(i%5)]],
         'dateCreated': new Date(),
         'dateClosed': new Date(),
         'dateSent': new Date(),
         'dateEstimatedReception': new Date(),
         'dateReceived': new Date(),
-        'origin': origins[i%4],
+        'origin': origins[i%6],
         'samples': []
       });
+      this.shipments.push(shipment);
     }
+
     console.table(this.shipments)
+  },
+
+  create() {
+    return this._shipment(this.count++);
   },
 
   getAll() {

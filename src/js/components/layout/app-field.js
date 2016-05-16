@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './field.css';
 
 const FieldGroup = (props) => {
   return (
@@ -18,4 +19,21 @@ const Field = (props) => {
   )
 }
 
-export {FieldGroup, Field};
+const Select = (props) => {
+
+  let options = props.options.map(option => {
+    return (
+      <option>{option}</option>
+    )
+  })
+
+  return (
+    <div className="field mui-select">
+      <select className="mui-select" value={props.value}>
+        {options}
+      </select>
+    </div>
+  )
+}
+
+export {FieldGroup, Field, Select};

@@ -34,8 +34,15 @@
   background-color: #EEE;
   display:flex;
   flex-direction: column;
-  padding: 0.8rem;
   overflow: hidden;
+}
+
+.page .scrollpane {
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow-y: auto;
 }
 
 .page .inbox {
@@ -50,6 +57,11 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+
+  -webkit-transition: left 1.5s;
+  -webkit-transition-timming-function: ease-in-out;
+  transition: height 1.5s ease-in-out;
+
 }
 
 .page .inbox > .viewer {
@@ -58,7 +70,22 @@
   overflow-y: auto;
 }
 
+.inbox-list .fab {
+  position: absolute;
+  bottom: 4rem;
+}
+
 @media (max-width: 960px) {
+
+  .inbox-list .fab {
+    position: absolute;
+    right: 4rem;
+    bottom: 4rem;
+  }
+
+  .inbox-list.selected .fab {
+    display: none;
+  }
 
   .inbox-list.selected > .tabbar {
     display:none;
@@ -73,9 +100,10 @@
   }
 
   .inbox-list.selected {
-    min-height: 12rem;
+    min-height: 12.5rem;
     margin-bottom: 1rem;
   }
+
 }
 
 @media (min-width: 960px) and (orientation: landscape) {
@@ -85,6 +113,7 @@
     z-index: 2000;
     width: 100%;
     left:0px;
+    background-color: red;
   }
 
   .page > main {
@@ -99,6 +128,7 @@
     flex-direction: row;
   }
 
+
   .page .inbox > .inbox-list{
     max-width: 40rem;
     box-shadow: 2px -3px 2px 1px rgba(0,0,0,0.3);
@@ -106,7 +136,11 @@
   }
 
   .page .inbox > .viewer {
+    padding: 10px;
+  }
 
+  .inbox-list .fab {
+    left: 41rem;
   }
 
 }
@@ -116,6 +150,7 @@
 
 .page > header {
   position: relative;
+  z-index: auto;
 }
 
 .page > header {
@@ -133,5 +168,14 @@
 
 .page > main {
   margin-top: 0px;
+  z-index: auto;
+}
+
+.page .inbox > .inbox-list{
+  z-index: auto;
+}
+
+.inbox-list .fab {
+  left: 56rem;
 }
 }

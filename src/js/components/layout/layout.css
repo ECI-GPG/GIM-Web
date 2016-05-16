@@ -116,6 +116,7 @@ body * {
     position:relative;
     left:0px;
     min-width: 24rem;
+    padding-top: 0px;
   }
 
   .toolbar {

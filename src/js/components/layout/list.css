@@ -6,6 +6,10 @@
   border-left: solid 1px #DDD;
 }
 
+.list .button {
+  color: rgba(0, 0, 0, 0.5);
+}
+
 .list .fab {
   position: absolute;
   top: auto;
@@ -21,9 +25,10 @@
   padding-bottom: 1rem;
   background-color: #FFF;
   margin-bottom: 3px;
-  min-height: 5rem;
+  min-height: 6rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .list > ul {

@@ -1,0 +1,24 @@
+.fieldgroup {
+  flex:1;
+  display: flex;
+}
+
+.fieldgroup > .logo {
+  max-width: 10rem;
+}
+
+.fieldgroup > .fields {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fields > .field {
+  flex:1;
+  min-width: 15rem;
+  padding: 1rem;
+}
+
+h5 > i {
+  padding: 0px 15px 0px 15px;
+}

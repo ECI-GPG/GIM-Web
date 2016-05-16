@@ -95,3 +95,8 @@ a:hover {
     display: flex;
     justify-content: flex-end;
   }
+
+
+.mui-select {
+  color : rgba(0, 0, 0, 0.8);
+}

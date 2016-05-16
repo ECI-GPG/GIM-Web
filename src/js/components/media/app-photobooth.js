@@ -11,9 +11,11 @@ const BrowserHandler = {
 const PhotoBoothPage = (props) => {
   return (
     <Page title="Camera" to="/inbox">
-      <BrowserDetection>
-        {BrowserHandler}
-      </BrowserDetection>
+      <div className="flex centred">
+        <BrowserDetection>
+          {BrowserHandler}
+        </BrowserDetection>
+      </div>
     </Page>
   );
 }

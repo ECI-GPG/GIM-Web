@@ -5,11 +5,12 @@ import AppActions from '../../actions/app-actions';
 import AppConstants from '../../constants/app-constants';
 import StoreWatchMixin from '../../mixin/storeWatchMixin0';
 
+import {FAB} from '../layout/button';
+import {Link} from 'react-router';
 import {Page} from '../layout/page';
 import {Tabs, Tab} from '../layout/tabs';
 import {List, ListItem} from '../layout/list';
-import {FAB} from '../layout/button';
-import {Link} from 'react-router';
+import ShipmentCheckinForm from './app-shipment-checkin-form';
 
 import styles from './app-shipments.css';
 
@@ -41,6 +42,10 @@ class ShipmentsInbox extends React.Component {
     AppActions.send( AppConstants.INBOX.SELECT_SHIPMENT, id);
   }
 
+  unselect() {
+    AppActions.send( AppConstants.INBOX.SELECT_SHIPMENT, "");
+  }
+
   render() {
 
     const filter = {
@@ -53,8 +58,7 @@ class ShipmentsInbox extends React.Component {
       ]
     }
 
-    const selectedClass = this.props.shipment ? "selected" : "";
-
+    const selectedClass = this.props.list.selected ? "selected" : "";
     return (
       <Page title="Inbox" icon="move_to_inbox" toggleDrawer={this.props.toggleDrawer}>
         <div className="inbox">
@@ -68,7 +72,9 @@ class ShipmentsInbox extends React.Component {
             </List>
             <FAB icon="add" to="/inbox/checkin" />
           </div>
-          <div className="viewer">{this.props.children}</div>
+          <div className="viewer">
+            <ShipmentCheckinForm shipment={this.props.shipment} onSave={this.unselect}/>
+          </div>
         </div>
       </Page>
     )
@@ -76,7 +82,7 @@ class ShipmentsInbox extends React.Component {
 
   renderShipment(shipment) {
     let icon = (<i className="logo up">{shipment.origin.initial}</i>);
-    let selected =  (this.props.shipment && this.props.shipment.id === shipment.id)? "selected" : "unselected";
+    let selected =  (this.props.list.selected && this.props.list.selected === shipment.id)? "selected" : "unselected";
     return (
         <ListItem id={shipment.id} icon={icon} title={shipment.origin.contact} onClick={this.shipmentSelected} selected={selected}>
           <Link to={`inbox/shipments/${shipment.id}`}>
@@ -87,7 +93,6 @@ class ShipmentsInbox extends React.Component {
         </ListItem>
     )
   }
-
 }
 
 export default StoreWatchMixin(ShipmentsInbox, InboxStore, (props) => {

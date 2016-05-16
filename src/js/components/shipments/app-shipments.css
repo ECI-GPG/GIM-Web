@@ -18,9 +18,3 @@ th {
 .formField .input-textfield {
   flex:1;
 }
-
-.inbox .fab {
-  position: absolute;
-  right: 4rem;
-  bottom: 4rem;
-}

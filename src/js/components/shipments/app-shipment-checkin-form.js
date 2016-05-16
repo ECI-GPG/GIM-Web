@@ -1,9 +1,23 @@
 import React from 'react';
-import {Page} from '../layout/page';
 import {Link} from 'react-router';
-import {FieldGroup, Field} from '../layout/app-field';
+import {FieldGroup, Field, Select} from '../layout/app-field';
 
 const CheckinForm = (props) => {
+
+  console.log(props)
+
+  let origins = [
+    { initial:'NY', city : 'New York', contact : 'Joan Kim'},
+    { initial:'P' , city : 'Paris', contact : 'Laurent Blanc'},
+    { initial:'M' , city : 'Milan', contact : 'Giovanni Vitale'},
+    { initial:'B' , city : 'Barcelona', contact : 'Xavier Tarradellas'},
+    { initial:'L' , city : 'London', contact : 'Elizabeth Holmes'},
+    { initial:'T' , city : 'Tokio', contact : 'Hatori Hanzo'}
+  ]
+
+  let cities = origins.map(item => item.city);
+
+  if (props.shipment)
 
   return (
     <div>
@@ -11,22 +25,22 @@ const CheckinForm = (props) => {
     <h5 className="mui--text-dark-secondary"><i className="fa fa-barcode fa-lg"></i>&nbsp;&nbsp;&nbsp;Shipment</h5>
     <div className="mui-panel">
       <FieldGroup icon="fingerprint">
-        <Field label="ID" icon="fingerprint" value="1234678"/>
-        <Field label="Currier" value="1234678"/>
-        <Field label="Order ID" value="1234678"/>
+        <Field label="ID" icon="fingerprint" value={props.shipment.id}/>
+        <Field label="Currier" value={props.shipment.courrier}/>
+        <Field label="Order ID" value={props.shipment.orderId}/>
       </FieldGroup>
     </div>
 
     <h5 className="mui--text-dark-secondary"><i className="fa fa-info fa-lg"></i>&nbsp;&nbsp;&nbsp;Info</h5>
     <div className="mui-panel">
       <FieldGroup icon="home">
-        <Field label="Origin Date" icon="today" value="01/10/2015"/>
-        <Field label="Origin" value="New York"/>
-        <Field label="Contact" value="John Smith"/>
+        <Field label="Origin Date" icon="today" value={props.shipment.sendDate}/>
+        <Select value={props.shipment.origin.city} options={cities}/>
+        <Field label="Contact" value={props.shipment.origin.contact}/>
       </FieldGroup>
       <FieldGroup icon="archive">
-        <Field label="State" value="CLOSED"/>
-        <Field label="Num.Samples" value="1"/>
+        <Field label="State" value={props.shipment.state}/>
+        <Field label="Num.Samples" value={props.shipment.samples.length}/>
         <Field label="Observations" value=""/>
       </FieldGroup>
     </div>
@@ -51,12 +65,15 @@ const CheckinForm = (props) => {
       </Link>
     </div>
 
-    <Link to="/inbox">
-      <button className="mui-btn mui-btn--accent mui-btn--fab  fab">
+
+      <button className="mui-btn mui-btn--accent mui-btn--fab  fab" onClick={props.onSave}>
         <i className="material-icons">done</i>
       </button>
-    </Link>
+
     </div>
   )
+
+  else return (<div></div>)
 }
+
 export default CheckinForm;

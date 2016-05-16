@@ -7,12 +7,12 @@ const options = [
   { type: 'divider', txt : 'Central Store'},
   { type: 'menu-item', txt : 'Inbox', to:'/inbox', icon:'move_to_inbox'},
   { type: 'menu-item', txt : 'Products', to:'/products', icon:'local_offer'},
-
+/*
   { type: 'divider', txt : 'International Office'},
   { type: 'menu-item', txt : 'Monitor', to:'monitor', icon: 'send'},
   { type: 'menu-item', txt : 'Outbox', to:'outbox', icon: 'inbox'},
   { type: 'menu-item', txt : 'Issues', to:'issues', icon: 'warning'},
-
+*/
 ];
 
 const MenuButton = (props) => {
@@ -93,8 +93,6 @@ class Menu extends React.Component {
         <MenuButton toggleDrawer={this.toggleDrawer.bind(this)}/>
 
         <MenuTitle title="SampleBook" subtitle="Shipments"/>
-
-        <div className="mui-divider"></div>
 
         <MenuUser name="John Smith" email="johnsmithdoe@gmail.com"/>
 
