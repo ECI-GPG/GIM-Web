@@ -37,11 +37,14 @@
   list-style: none;
   padding:0px;
   margin: 0px;
-  background-color: #FFF;
 }
 
 .listitem:hover {
   background-color: #EFEFEF;
+}
+
+.listitem.selected {
+  background-color: transparent;
 }
 
 @media all and (min-width:960px) and (orientation:landscape) {
