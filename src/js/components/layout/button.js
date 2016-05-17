@@ -7,7 +7,7 @@ const Icon = (props) => {
     <div id={props.id} className="icon">
       <i className="material-icons md-24">{props.icon}</i>
     </div>
-  )
+  );
 }
 
 const Button = (props) => {
@@ -15,13 +15,13 @@ const Button = (props) => {
     <button id={props.id} className="button" onClick={props.onClick}>
       <i className="material-icons md-24">{props.icon}</i>{props.label}
     </button>
-  )
+  );
 }
 
 const FAB = (props) => {
   return (
     <Link to={props.to}>
-      <button className="mui-btn mui-btn--accent mui-btn--fab fab">
+      <button className="fab">
         <i className="material-icons">{props.icon}</i>
       </button>
     </Link>

@@ -7,22 +7,32 @@ import style from './login.css'
 // TODO: Separate sign component from login panel
 class Login extends React.Component {
 
+  static defaultProps = {
+    initial : {
+      tab : 'SIGNIN',
+      name : '',
+      password : ''
+    }
+  };
+
+  state = {
+    tab : this.props.initial.tab,
+    name : this.props.initial.name,
+    password : this.props.initial.password
+  };
+
   constructor(props) {
     super(props);
-    this.state = {
-      'tab' : 'SIGNUP',
-      'name' : '',
-      'password' : ''
-    }
-    this.tabSelected = this.tabSelected.bind(this);
-    this.changePassword = this.changePassword.bind(this);
-    this.changeName = this.changeName.bind(this);
-    this.renderSignIn = this.renderSignIn.bind(this);
-    this.renderSignUp =this.renderSignUp.bind(this);
+    this.renderSignIn = ::this.renderSignIn;
+    this.renderSignUp = ::this.renderSignUp;
   }
 
-  tabSelected(tabid) {
+  tabSelected = (tabid) => {
     this.setState({'tab':tabid});
+  }
+
+  onChange = (inputName, e) => {
+    this.setState({[`${inputName}Value`]: e.target.value,});
   }
 
   signin() {
@@ -31,14 +41,6 @@ class Login extends React.Component {
 
   signup() {
     alert('signup');
-  }
-
-  changeName(name) {
-    this.setState({'name':name});
-  }
-
-  changePassword(pwd) {
-    this.setState({'password':pwd});
   }
 
   render () {
@@ -71,8 +73,8 @@ class Login extends React.Component {
     return (
       <div>
         <FieldGroup>
-          <Field label="Name" value={this.state.name} onChange={this.changeName}/>
-          <Field label="Password" value={this.state.password} onChange={this.changePassword}/>
+          <Field label="Name" value={this.state.name} onChange={this.onChange}/>
+          <Field label="Password" value={this.state.password} onChange={this.onChange}/>
         </FieldGroup>
         <Button label="Sign IN" onClick={this.signin}></Button>
       </div>
