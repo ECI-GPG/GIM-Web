@@ -16,11 +16,15 @@ class ShipmentCheckin extends React.Component {
     AppActions.send(AppConstants.INBOX.NEW_CHECKIN, {});
   }
 
+  close() {
+    this.props.history.go("/inbox");
+  }
+
   render() {
     return (
     <Page title="Shipment Checkin" icon="move_to_inbox" toggleDrawer={this.props.toggleDrawer}>
       <div className="scrollpane">
-        <ShipmentCheckinForm shipment={this.props.shipment}></ShipmentCheckinForm>
+        <ShipmentCheckinForm shipment={this.props.shipment} onSave={this.close.bind(this)}></ShipmentCheckinForm>
       </div>
     </Page>
   )}

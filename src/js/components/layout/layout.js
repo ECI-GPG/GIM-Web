@@ -7,8 +7,8 @@ import Dialog from './app-dialog';
 
 class Layout extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { drawer: false, dialog: false};
     this.toggleDrawer = this.toggleDrawer.bind(this);
     this.toggleDialog = this.toggleDialog.bind(this);

@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './field.css';
 
+// TODO: rename to field.js
+// TODO: add Field onChange property
 const FieldGroup = (props) => {
   return (
     <div className="fieldgroup">
@@ -13,7 +15,7 @@ const FieldGroup = (props) => {
 const Field = (props) => {
   return (
     <div className="field input-textfield mui-textfield mui-textfield--float-label">
-      <input type="text" value={props.value}></input>
+      <input type="text" value={props.value} onChange={props.onChange}></input>
       <label>{props.label}</label>
     </div>
   )

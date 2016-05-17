@@ -40,7 +40,6 @@ var handlers = (model) => {
     [AppConstants.INBOX.NEW_CHECKIN]: (action) => {
       const shipment = Shipments.create();
       Object.assign(model, {shipment: shipment});
-      console.log(model);
     }
 
   }

@@ -13,7 +13,7 @@ const Icon = (props) => {
 const Button = (props) => {
   return (
     <button id={props.id} className="button" onClick={props.onClick}>
-      <i className="material-icons md-24">{props.icon}</i>
+      <i className="material-icons md-24">{props.icon}</i>{props.label}
     </button>
   )
 }

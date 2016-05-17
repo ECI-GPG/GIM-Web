@@ -14,10 +14,15 @@ import ShipmentInfo from './shipments/app-shipment-info';
 import ShipmentCheckin from './shipments/app-shipment-checkin';
 import ShipmentCheckinForm from './shipments/app-shipment-checkin-form';
 
+import Login from './login/login';
+
 import Camera from './media/app-photobooth';
 
 export default () =>  <Router >
-                        <Route path="/" component={Layout}>
+
+                        <Route path="/" component={Login}/>
+
+                        <Route path="/samplebook" component={Layout}>
 
                           <IndexRoute component={Inbox}/>
 
@@ -29,7 +34,6 @@ export default () =>  <Router >
                           <Route path="outbox" component={Outbox}/>
                           <Route path="outbox/new" component={ShipmentCheckin}/>
                           <Route path="issues" component={Issues}/>
-                          <Route path="shipment" component={ShipmentCheckin}/>
 
                           <Route path="camera" component={Camera}/>
                           <Route path="search" component={Search}/>
