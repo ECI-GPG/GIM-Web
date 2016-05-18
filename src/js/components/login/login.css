@@ -1,6 +1,5 @@
 .login {
   height: 100vh;
-
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +8,6 @@
 
 .login > .panel {
   width: 30rem;
-
 }
 
 .login .fab {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Menu from './app-menu';
 import Styles from './layout.css';
 import SearchBox from '../search/app-search';

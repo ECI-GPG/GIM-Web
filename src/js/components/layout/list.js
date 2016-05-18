@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './list.css';
-import {Button} from './button';
+import {Button} from '../chips/button/button';
 
 const ListItem = ({id, title, subtitle, icon, children, selected, onClick}) => {
 

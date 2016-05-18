@@ -5,7 +5,7 @@ import AppActions from '../../actions/app-actions';
 import AppConstants from '../../constants/app-constants';
 import StoreWatchMixin from '../../mixin/storeWatchMixin0';
 
-import {FAB} from '../layout/button';
+import {FAB} from '../chips/button/button';
 import {Link} from 'react-router';
 import {Page} from '../layout/page';
 import {Tabs, Tab} from '../layout/tabs';
@@ -70,7 +70,7 @@ class ShipmentsInbox extends React.Component {
             <List filter={filter} filtered={this.filterChanged}>
               {this.props.shipments.map(this.renderShipment.bind(this))}
             </List>
-            <FAB icon="add" to="/inbox/checkin" />
+            <FAB icon="add" to="/inbox/checkin"/>
           </div>
           <div className="viewer">
             <ShipmentCheckinForm shipment={this.props.shipment} onSave={this.unselect}/>

@@ -1,25 +1,23 @@
 import React from 'react';
-import {FieldGroup, Field} from '../layout/app-field';
-import {Tabs, Tab} from '../layout/tabs';
-import {Button} from '../layout/button';
-import style from './login.css'
+import { Tabs, Tab } from '../chips/tabs/tabs';
+import { Button, FAB } from '../chips/button/button';
+import { FieldGroup, Field } from '../layout/app-field';
+import './login.css';
 
-// TODO: Separate sign component from login panel
+// TODO: Separate sign component from login page
 class Login extends React.Component {
 
-  static defaultProps = {
-    initial : {
-      tab : 'SIGNIN',
-      name : '',
-      password : ''
-    }
-  };
+  static propTypes = {
+    tab: React.PropType.string,
+    name: React.PropType.string,
+    password: React.PropType.string,
+  }
 
-  state = {
-    tab : this.props.initial.tab,
-    name : this.props.initial.name,
-    password : this.props.initial.password
-  };
+  static defaultProps = {
+    tab: 'SIGNIN',
+    name: '',
+    password: '',
+  }
 
   constructor(props) {
     super(props);
@@ -27,56 +25,36 @@ class Login extends React.Component {
     this.renderSignUp = ::this.renderSignUp;
   }
 
-  tabSelected = (tabid) => {
-    this.setState({'tab':tabid});
-  }
+  state = {
+    tab: this.props.tab,
+    name: this.props.name,
+    password: this.props.password,
+  };
 
   onChange = (inputName, e) => {
-    this.setState({[`${inputName}Value`]: e.target.value,});
+    this.setState({ [`${inputName}Value`]: e.target.value });
+  }
+
+  tabSelected = (tabid) => {
+    this.setState({ tab: tabid });
   }
 
   signin() {
-    alert('login');
+    // TODO: signin action
   }
 
   signup() {
-    alert('signup');
-  }
-
-  render () {
-
-    return (
-      <div className="login">
-
-        <div className="panel mui-panel">
-          <Tabs>
-            <Tab id="SIGNIN" label="Sign In" active={this.state.tab === "SIGNIN"} selected={this.tabSelected}/>
-            <Tab id="SIGNUP" label="Sign Up" active={this.state.tab === "SIGNUP"} selected={this.tabSelected}/>
-          </Tabs>
-
-          <br></br><br></br>
-
-          {this.renderContent()}
-
-        </div>
-
-      </div>
-    );
-  }
-
-  renderContent() {
-    var renderer = this.state.tab === "SIGNIN" ? this.renderSignIn : this.renderSignUp;
-    return renderer();
+    // TODO: signup action
   }
 
   renderSignIn() {
     return (
       <div>
         <FieldGroup>
-          <Field label="Name" value={this.state.name} onChange={this.onChange}/>
-          <Field label="Password" value={this.state.password} onChange={this.onChange}/>
+          <Field label="Name" value={this.state.name} onChange={this.onChange} />
+          <Field label="Password" value={this.state.password} onChange={this.onChange} />
         </FieldGroup>
-        <Button label="Sign IN" onClick={this.signin}></Button>
+        <Button label="Sign IN" onClick={this.signin} />
       </div>
     );
   }
@@ -85,14 +63,34 @@ class Login extends React.Component {
     return (
       <div>
         <FieldGroup>
-          <Field label="Name" value=""/>
-          <Field label="Email" value=""/>
-          <Field label="Password" value=""/>
-          <Field label="Repeat Password" value=""/>
+          <Field label="Name" value="" />
+          <Field label="Email" value="" />
+          <Field label="Password" value="" />
+          <Field label="Repeat Password" value="" />
         </FieldGroup>
-        <Button label="Sign UP" onClick={this.signup}></Button>
+        <FAB label="Sign UP" onClick={this.signup} />
       </div>
-    )
+    );
+  }
+
+  renderContent() {
+    const renderer = this.state.tab === 'SIGNIN' ? this.renderSignIn : this.renderSignUp;
+    return renderer();
+  }
+
+  render() {
+    return (
+      <div className="login">
+        <div className="panel mui-panel">
+          <Tabs>
+            <Tab id="SIGNIN" label="Sign In" active={this.state.tab === 'SIGNIN'} onSelected={this.tabSelected} />
+            <Tab id="SIGNUP" label="Sign Up" active={this.state.tab === 'SIGNUP'} onSelected={this.tabSelected} />
+          </Tabs>
+          <br></br><br></br>
+          {this.renderContent()}
+        </div>
+      </div>
+    );
   }
 }
 

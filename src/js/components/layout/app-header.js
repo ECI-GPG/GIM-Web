@@ -2,7 +2,7 @@ import React from 'react';
 import AppActions from '../../actions/app-actions';
 import SearchBox from '../search/app-search';
 import {Link} from 'react-router';
-import {Icon, Button} from './button';
+import {Icon, Button} from '../chips/button/button';
 import {browserHistory} from 'react-router';
 
 const Header = (props) => {
