@@ -8,9 +8,9 @@ import './login.css';
 class Login extends React.Component {
 
   static propTypes = {
-    tab: React.PropType.string,
-    name: React.PropType.string,
-    password: React.PropType.string,
+    tab: React.PropTypes.string,
+    name: React.PropTypes.string,
+    password: React.PropTypes.string,
   }
 
   static defaultProps = {
@@ -35,7 +35,7 @@ class Login extends React.Component {
     this.setState({ [`${inputName}Value`]: e.target.value });
   }
 
-  tabSelected = (tabid) => {
+  handleTabChanged = (tabid) => {
     this.setState({ tab: tabid });
   }
 
@@ -82,9 +82,9 @@ class Login extends React.Component {
     return (
       <div className="login">
         <div className="panel mui-panel">
-          <Tabs>
-            <Tab id="SIGNIN" label="Sign In" active={this.state.tab === 'SIGNIN'} onSelected={this.tabSelected} />
-            <Tab id="SIGNUP" label="Sign Up" active={this.state.tab === 'SIGNUP'} onSelected={this.tabSelected} />
+          <Tabs onChanged={this.handleTabChanged}>
+            <Tab id="SIGNIN" label="Sign In" active={this.state.tab === 'SIGNIN'} />
+            <Tab id="SIGNUP" label="Sign Up" active={this.state.tab === 'SIGNUP'} />
           </Tabs>
           <br></br><br></br>
           {this.renderContent()}

@@ -18,7 +18,7 @@ Icon.propTypes = {
 };
 
 const Button = (props) => (
-  <button id={props.id} className={`button ${props.classes}`} onMouseLeave={props.onMouseLeave}>
+  <button id={props.id} className={`button ${props.classes}`} onMouseUp={props.onMouseUp}>
     {props.icon ? materialIcon(props.icon) : null}
     {props.label}
   </button>
@@ -28,7 +28,7 @@ Button.propTypes = {
   id: React.PropTypes.string,
   icon: React.PropTypes.string,
   label: React.PropTypes.string,
-  onMouseLeave: React.PropTypes.func,
+  onMouseUp: React.PropTypes.func,
   classes: React.PropTypes.string,
 };
 

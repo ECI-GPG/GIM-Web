@@ -1,17 +1,20 @@
 import React from 'react';
 import './tabs.css';
 
+const materialIcon = (icon) => (
+  <i className="material-icons">{icon}</i>
+);
+
 const Tab = (props) => {
-  let activeClass = props.active ? 'tab mui--is-active' : 'tab';
-  let selectTab = () => props.onSelected(props.id);
+  const icon = props.icon ? materialIcon(props.icon) : null;
+  const activeClass = props.active ? 'selected' : '';
+  const selectTab = () => {
+    if (props.onMouseUp) props.onMouseUp(props.id);
+  };
   return (
-    <li className={activeClass} onClick={selectTab}>
-      <a>
-        <i className={`fa fa-${props.icon} fab-lg`}></i>
-        &nbsp;&nbsp;&nbsp;
-        {props.label}
-      </a>
-    </li>
+    <label className={`tab ${activeClass}`} onMouseUp={selectTab}>
+      {icon}<span>{props.label}</span>
+    </label>
   );
 };
 
@@ -19,15 +22,21 @@ Tab.propTypes = {
   id: React.PropTypes.string.isRequired,
   icon: React.PropTypes.string,
   label: React.PropTypes.string,
-  active: React.PropTypes.bol,
-  onSelected: React.PropTypes.func,
+  active: React.PropTypes.bool,
+  onMouseUp: React.PropTypes.func,
 };
 
-const Tabs = (props) => (
-  <ul className="tabbar mui-tabs__bar">{props.children}</ul>
-);
+const Tabs = (props) => {
+  const tabs = React.Children.map(
+    props.children, (child) => React.cloneElement(child, { onMouseUp: props.onChanged })
+  );
+  return (
+    <nav className="tabbar">{tabs}</nav>
+  );
+};
 
 Tabs.propTypes = {
+  onChanged: React.PropTypes.func,
   children: React.PropTypes.node,
 };
 

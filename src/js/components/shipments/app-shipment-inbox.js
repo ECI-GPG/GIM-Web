@@ -5,49 +5,67 @@ import AppActions from '../../actions/app-actions';
 import AppConstants from '../../constants/app-constants';
 import StoreWatchMixin from '../../mixin/storeWatchMixin0';
 
-import {FAB} from '../chips/button/button';
-import {Link} from 'react-router';
-import {Page} from '../layout/page';
-import {Tabs, Tab} from '../layout/tabs';
-import {List, ListItem} from '../layout/list';
+import { FAB } from '../chips/button/button';
+import { Link } from 'react-router';
+import { Page } from '../layout/page';
+import { Tabs, Tab } from '../chips/tabs/tabs';
+import { List, ListItem } from '../layout/list';
 import ShipmentCheckinForm from './app-shipment-checkin-form';
 
-import styles from './app-shipments.css';
+import './app-shipments.css';
 
-const StepInfo = ({icon, city, date}) => {
-  return (
-    <div className="flex mui--text-dark-secondary">
-      <span className="flex expand"><i className="material-icons md-18 mui--text-dark-hint">{icon}</i>&nbsp;{city}</span>
-      <span className="mui--text-dark-secondary">{date.toLocaleDateString()}</span>
-    </div>
-  );
-}
+const StepInfo = ({ icon, city, date }) => (
+  <div className="flex mui--text-dark-secondary">
+    <span className="flex expand">
+      <i className="material-icons md-18 mui--text-dark-hint">{icon}</i>&nbsp;{city}
+    </span>
+    <span className="mui--text-dark-secondary">{date.toLocaleDateString()}</span>
+  </div>
+);
+
+StepInfo.propTypes = {
+  icon: React.PropTypes.string,
+  city: React.PropTypes.string,
+  date: React.PropTypes.string,
+};
 
 class ShipmentsInbox extends React.Component {
 
   constructor(props) {
     super(props);
-    this.tabSelected = this.tabSelected.bind(this);
   }
 
-  tabSelected(tab) {
-    AppActions.send( AppConstants.INBOX.SELECT_TAB, tab)
+  handleTabChanged = (tab) => {
+    AppActions.send(AppConstants.INBOX.SELECT_TAB, tab);
   }
 
   filterChanged(value) {
-    AppActions.send( AppConstants.INBOX.FILTER_SHIPMENTS, value);
+    AppActions.send(AppConstants.INBOX.FILTER_SHIPMENTS, value);
   }
 
   shipmentSelected(id) {
-    AppActions.send( AppConstants.INBOX.SELECT_SHIPMENT, id);
+    AppActions.send(AppConstants.INBOX.SELECT_SHIPMENT, id);
   }
 
   unselect() {
-    AppActions.send( AppConstants.INBOX.SELECT_SHIPMENT, "");
+    AppActions.send(AppConstants.INBOX.SELECT_SHIPMENT, '');
+  }
+
+  renderShipment(shipment) {
+    let icon = (<i className="logo up">{shipment.origin.initial}</i>);
+    let selected = (this.props.list.selected && this.props.list.selected === shipment.id)? "selected" : "unselected";
+    return (
+      <ListItem id={shipment.id} icon={icon} title={shipment.origin.contact} onClick={this.shipmentSelected} selected={selected}>
+        <Link to={`inbox/shipments/${shipment.id}`}>
+          <StepInfo icon="keyboard_arrow_right" city={shipment.origin.city} date={shipment.dateSent}/>
+          <div><i className="material-icons md-18 mui--text-dark-secondary mui--text-dark-hint">more_vert</i></div>
+          <StepInfo icon="keyboard_arrow_left" city="Madrid" date={shipment.dateReceived}/>
+        </Link>
+      </ListItem>
+    );
   }
 
   render() {
-
     const filter = {
       value : this.props.filter.value,
       criteria : this.props.filter.criteria,
@@ -63,9 +81,10 @@ class ShipmentsInbox extends React.Component {
       <Page title="Inbox" icon="move_to_inbox" toggleDrawer={this.props.toggleDrawer}>
         <div className="inbox">
           <div className={`inbox-list ${selectedClass}`}>
-            <Tabs>
-              <Tab id="CLOSED" icon="cube" label="Closed" active={this.props.tab === "CLOSED"} selected={this.tabSelected}/>
-              <Tab id="OPENED" icon="cube" label="Opened" active={this.props.tab === "OPENED"} selected={this.tabSelected}/>
+            <Tabs onChanged={this.handleTabChanged}>
+              <Tab id="ALL" label="All" active={this.props.tab === "ALL"} />
+              <Tab id="OPENED" label="In Progress" active={this.props.tab === "OPENED"} />
+              <Tab id="CLOSED" label="Done" active={this.props.tab === "CLOSED"} />
             </Tabs>
             <List filter={filter} filtered={this.filterChanged}>
               {this.props.shipments.map(this.renderShipment.bind(this))}
@@ -80,19 +99,6 @@ class ShipmentsInbox extends React.Component {
     )
   }
 
-  renderShipment(shipment) {
-    let icon = (<i className="logo up">{shipment.origin.initial}</i>);
-    let selected =  (this.props.list.selected && this.props.list.selected === shipment.id)? "selected" : "unselected";
-    return (
-        <ListItem id={shipment.id} icon={icon} title={shipment.origin.contact} onClick={this.shipmentSelected} selected={selected}>
-          <Link to={`inbox/shipments/${shipment.id}`}>
-            <StepInfo icon="keyboard_arrow_right" city={shipment.origin.city} date={shipment.dateSent}/>
-            <div><i className="material-icons md-18 mui--text-dark-secondary mui--text-dark-hint">more_vert</i></div>
-            <StepInfo icon="keyboard_arrow_left" city="Madrid" date={shipment.dateReceived}/>
-          </Link>
-        </ListItem>
-    )
-  }
 }
 
 export default StoreWatchMixin(ShipmentsInbox, InboxStore, (props) => {

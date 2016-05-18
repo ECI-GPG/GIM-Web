@@ -1,27 +1,27 @@
 import React from 'react';
 import Menu from './app-menu';
-import Styles from './layout.css';
 import SearchBox from '../search/app-search';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Dialog from './app-dialog';
+
+import './layout.css';
 
 class Layout extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { drawer: false, dialog: false};
+    this.state = { drawer: false, dialog: false };
     this.toggleDrawer = this.toggleDrawer.bind(this);
     this.toggleDialog = this.toggleDialog.bind(this);
     this.toggleOverlay = this.toggleOverlay.bind(this);
   }
 
   toggleDrawer(forced) {
-    var drawerState = forced!=null ? forced : !this.state.drawer;
-    this.setState({drawer: drawerState});
+    const drawerState = forced != null ? forced : !this.state.drawer;
+    this.setState({ drawer: drawerState });
   }
 
   toggleDialog() {
-    this.setState({dialog: !this.state.dialog});
+    this.setState({ dialog: !this.state.dialog });
   }
 
   toggleOverlay() {
@@ -30,11 +30,9 @@ class Layout extends React.Component {
   }
 
   render() {
-
-    let overlayClass = this.state.drawer || this.state.dialog ? "" : "hidden";
-    let drawerClass = this.state.drawer ? "uncoverleft" : "";
-    let dialogClass = this.state.dialog ? "" : "hidden";
-
+    const overlayClass = this.state.drawer || this.state.dialog ? '' : 'hidden';
+    const drawerClass = this.state.drawer ? 'uncoverleft' : '';
+    const dialogClass = this.state.dialog ? '' : 'hidden';
     return (
       <div className="layout">
         <div className={`overlay ${overlayClass} centred`} onClick={this.toggleOverlay}>
@@ -44,8 +42,11 @@ class Layout extends React.Component {
           <Menu toggleDrawer={this.toggleDrawer} />
         </div>
         <div className="container">
-          <div id="searchbar" onClick={this.toggleDialog}><SearchBox/></div>
-          {React.cloneElement(this.props.children, { key: this.props.location.pathname, toggleDrawer: this.toggleDrawer })}
+          <div id="searchbar" onClick={this.toggleDialog}><SearchBox /></div>
+          {React.cloneElement(
+            this.props.children,
+            { key: this.props.location.pathname, toggleDrawer: this.toggleDrawer, }
+          )}
         </div>
         <div className="toolbar">toolbar</div>
       </div>
