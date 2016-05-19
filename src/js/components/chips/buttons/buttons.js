@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import './button.css';
+import './buttons.css';
 
 const materialIcon = (icon) => (
   <i className="material-icons md-24">{icon}</i>
@@ -34,13 +34,14 @@ Button.propTypes = {
 
 const FAB = (props) => (
   <Link to={props.to}>
-    <Button icon={props.icon} classes="fab" />
+    <Button icon={props.icon} classes="fab" onMouseUp={props.onMouseUp}/>
   </Link>
 );
 
 FAB.propTypes = {
   icon: React.PropTypes.string,
   to: React.PropTypes.string,
+  onMouseUp: React.PropTypes.func,
 };
 
 export { Icon, Button, FAB };

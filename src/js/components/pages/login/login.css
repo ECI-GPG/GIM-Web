@@ -1,0 +1,29 @@
+.login {
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login .window {
+  position:relative;
+  background-color: #555;
+  background-color: rgba(100, 100, 100, 0.5);
+  min-width: 30rem;
+  min-height: 40rem;
+}
+
+.login .window > .header {
+  padding: 2rem;
+}
+
+.login .window > .form {
+  background-color: #FFF;
+  padding: 2rem 2rem 10rem 2rem;
+}
+
+.login .fab {
+  right: -2.8rem;
+  bottom: 2rem;
+}

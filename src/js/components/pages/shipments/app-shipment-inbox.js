@@ -1,15 +1,15 @@
 import React from 'react';
 
-import InboxStore from '../../stores/inbox-store';
-import AppActions from '../../actions/app-actions';
-import AppConstants from '../../constants/app-constants';
-import StoreWatchMixin from '../../mixin/storeWatchMixin0';
+import InboxStore from '../../../stores/inbox-store';
+import AppActions from '../../../actions/app-actions';
+import AppConstants from '../../../constants/app-constants';
+import StoreWatchMixin from '../../../mixin/storeWatchMixin0';
 
-import { FAB } from '../chips/button/button';
+import { FAB } from '../../chips/buttons/buttons';
 import { Link } from 'react-router';
-import { Page } from '../layout/page';
-import { Tabs, Tab } from '../chips/tabs/tabs';
-import { List, ListItem } from '../layout/list';
+import { Page } from '../../layout/page';
+import { Tabs, Tab } from '../../chips/tabs/tabs';
+import { List, ListItem } from '../../layout/list';
 import ShipmentCheckinForm from './app-shipment-checkin-form';
 
 import './app-shipments.css';
@@ -31,10 +31,6 @@ StepInfo.propTypes = {
 
 class ShipmentsInbox extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   handleTabChanged = (tab) => {
     AppActions.send(AppConstants.INBOX.SELECT_TAB, tab);
   }
@@ -53,7 +49,7 @@ class ShipmentsInbox extends React.Component {
 
   renderShipment(shipment) {
     let icon = (<i className="logo up">{shipment.origin.initial}</i>);
-    let selected = (this.props.list.selected && this.props.list.selected === shipment.id)? "selected" : "unselected";
+    const selected = (this.props.list.selected && this.props.list.selected === shipment.id)? "selected" : "unselected";
     return (
       <ListItem id={shipment.id} icon={icon} title={shipment.origin.contact} onClick={this.shipmentSelected} selected={selected}>
         <Link to={`inbox/shipments/${shipment.id}`}>
@@ -98,7 +94,6 @@ class ShipmentsInbox extends React.Component {
       </Page>
     )
   }
-
 }
 
 export default StoreWatchMixin(ShipmentsInbox, InboxStore, (props) => {

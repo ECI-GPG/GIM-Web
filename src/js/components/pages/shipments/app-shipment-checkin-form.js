@@ -1,19 +1,16 @@
 import React from 'react';
-import {Link} from 'react-router';
-import {FieldGroup, Field, Select} from '../layout/app-field';
+import { Link } from 'react-router';
+import { FieldGroup, Field, Select } from '../../chips/fields/fields';
 
 const CheckinForm = (props) => {
-
-  console.log(props)
-
-  let origins = [
-    { initial:'NY', city : 'New York', contact : 'Joan Kim'},
-    { initial:'P' , city : 'Paris', contact : 'Laurent Blanc'},
-    { initial:'M' , city : 'Milan', contact : 'Giovanni Vitale'},
-    { initial:'B' , city : 'Barcelona', contact : 'Xavier Tarradellas'},
-    { initial:'L' , city : 'London', contact : 'Elizabeth Holmes'},
-    { initial:'T' , city : 'Tokio', contact : 'Hatori Hanzo'}
-  ]
+  const origins = [
+    { initial: 'NY', city: 'New York', contact: 'Joan Kim' },
+    { initial: 'P', city: 'Paris', contact: 'Laurent Blanc' },
+    { initial: 'M', city: 'Milan', contact: 'Giovanni Vitale' },
+    { initial: 'B', city: 'Barcelona', contact: 'Xavier Tarradellas' },
+    { initial: 'L', city: 'London', contact: 'Elizabeth Holmes' },
+    { initial: 'T', city: 'Tokio', contact: 'Hatori Hanzo' },
+  ];
 
   let cities = origins.map(item => item.city);
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import Menu from './app-menu';
-import SearchBox from '../search/app-search';
-import Dialog from './app-dialog';
+import SearchBox from '../pages/search/app-search';
 
 import './layout.css';
 
@@ -44,8 +43,7 @@ class Layout extends React.Component {
         <div className="container">
           <div id="searchbar" onClick={this.toggleDialog}><SearchBox /></div>
           {React.cloneElement(
-            this.props.children,
-            { key: this.props.location.pathname, toggleDrawer: this.toggleDrawer, }
+            this.props.children, { toggleDrawer: this.toggleDrawer }
           )}
         </div>
         <div className="toolbar">toolbar</div>

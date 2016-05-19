@@ -1,41 +1,91 @@
 import React from 'react';
-import Styles from './app.css';
-import Layout from './layout/layout';
-import {browserHistory, Router, Route, IndexRoute} from 'react-router';
+import { browserHistory, Router, Route, IndexRoute } from 'react-router';
+import './app.css';
 
 // Pages
-import Inbox from './shipments/app-shipment-inbox';
-import Issues from './issues/app-issues';
-import Search from './search/app-search-page';
-import Outbox from './shipments/app-shipment-outbox';
-import Monitor from './shipments/app-shipment-monitor';
-import Products from './products/app-products';
-import ShipmentInfo from './shipments/app-shipment-info';
-import ShipmentCheckin from './shipments/app-shipment-checkin';
-import ShipmentCheckinForm from './shipments/app-shipment-checkin-form';
+import Login from './pages/login/login';
+import Layout from './layout/layout';
+import Inbox from './pages/shipments/app-shipment-inbox';
 
-import Login from './login/login';
+const auth = {
 
-import Camera from './media/app-photobooth';
+  login(email, pwd, callback) {
+    console.log('LOGIN');
+    if (email === 'jeroldan@gmail.comm') {
+      localStorage.token = Math.random().toString(36).substring(7);
+      callback(true);
+      this.onChange(true);
+    } else {
+      callback(false);
+      this.onChange(false);
+    }
+  },
 
-export default () =>  <Router >
+  loggedIn() {
+    console.log(!!localStorage.token)
+    return !!localStorage.token;
+  },
 
-                        <Route path="/" component={Login}/>
+  logout() {
+    delete localStorage.token;
+    this.onChange(false);
+  },
 
-                        <Route path="/samplebook" component={Layout}>
+  onChange() {},
+};
 
-                          <IndexRoute component={Inbox}/>
+class LoginRequired extends React.Component {
 
-                          <Route path="inbox" component={Inbox}/>
-                          <Route path="inbox/checkin" component={ShipmentCheckin}/>
-                          <Route path="products" component={Products}/>
+  state = {
+    loggedIn: auth.loggedIn(),
+  }
 
-                          <Route path="monitor" component={Monitor}/>
-                          <Route path="outbox" component={Outbox}/>
-                          <Route path="outbox/new" component={ShipmentCheckin}/>
-                          <Route path="issues" component={Issues}/>
+  componentWillMount() {
+    auth.onChange = this.updateAuth;
+  }
 
-                          <Route path="camera" component={Camera}/>
-                          <Route path="search" component={Search}/>
-                        </Route>
-                      </Router>
+  updateAuth = (logged) => {
+    this.setState({ loggedIn: logged });
+  }
+
+  renderLayout = (children) => (
+    <Layout>{children}</Layout>
+  );
+
+  render() {
+    const children = React.cloneElement(
+      this.props.children, { key: this.props.location.pathname }
+    );
+    return this.state.loggedIn ? <Layout>{children}</Layout> : <Login auth={auth} />;
+  }
+}
+
+class App extends React.Component {
+  render() {
+    return (
+      <Router history={browserHistory}>
+        <Route path="/" component={LoginRequired}>
+          <IndexRoute component={Inbox} />
+        </Route>
+      </Router>
+    );
+  }
+}
+
+
+export default App;
+
+/*
+<Route path="/samplebook" component={Layout}>
+  <IndexRoute component={Inbox} />
+  <Route path="inbox" component={Inbox} />
+  <Route path="inbox/checkin" component={ShipmentCheckin} />
+  <Route path="products" component={Products} />
+  <Route path="monitor" component={Monitor} />
+  <Route path="outbox" component={Outbox} />
+  <Route path="outbox/new" component={ShipmentCheckin} />
+  <Route path="issues" component={Issues} />
+  <Route path="camera" component={Camera} />
+  <Route path="search" component={Search} />
+</Route>
+*/
