@@ -1,24 +1,27 @@
 import AppConstants from '../constants/app-constants';
-import StoreFactory from '../mixin/storeFactory';
+import storeFactory from '../mixin/storeFactory';
 import Shipments from '../api/api-shipment';
 
 const model = {
-  tab : 'OPENED',
-  filter : { criteria : '', value : ''},
-  list : {
-    selected : null
-  },
-  shipments : Shipments.getAllFilterByState('OPENED'),
-  shipment: null
+  tab: 'OPENED',
+  filter: { criteria: '', value: '' },
+  list: { selected: null },
+  shipments: Shipments.getAllFilterByState('OPENED'),
+  shipment: null,
 };
 
-var handlers = (model) => {
+const handlers = (model) => {
   return {
 
     [AppConstants.INBOX.SELECT_TAB]: (action) => {
-      Object.assign( model, { tab: action.payload});
-      const shipments = Shipments.getAllFilterByState(model.tab, model.filter.criteria, model.filter.value);
-      Object.assign( model, { shipments: shipments});
+      Object.assign(model, { tab: action.payload });
+      let newShipments = [];
+      if (model.tab === 'ALL') {
+        newShipments = Shipments.getAll();
+      } else {
+        newShipments = Shipments.getAllFilterByState(model.tab, model.filter.criteria, model.filter.value);
+      }
+      Object.assign(model, { shipments: newShipments });
     },
 
     [AppConstants.INBOX.FILTER_SHIPMENTS]: (action) => {
@@ -37,13 +40,12 @@ var handlers = (model) => {
       model.shipment = nextShipment;
     },
 
-    [AppConstants.INBOX.NEW_CHECKIN]: (action) => {
-      const shipment = Shipments.create();
-      Object.assign(model, {shipment: shipment});
-    }
-
-  }
+    [AppConstants.INBOX.NEW_CHECKIN]: () => {
+      const newShipment = Shipments.create();
+      Object.assign(model, { shipment: newShipment });
+    },
+  };
 };
 
-const InboxStore = StoreFactory(model, handlers);
+const InboxStore = storeFactory(model, handlers);
 export default InboxStore;

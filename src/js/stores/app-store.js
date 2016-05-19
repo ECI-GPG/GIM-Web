@@ -1,6 +1,6 @@
 import AppConstants from '../constants/app-constants';
-import {dispatch, register} from '../dispatchers/app-dispatcher';
-import {EventEmitter } from 'events';
+import { dispatch, register } from '../dispatchers/app-dispatcher';
+import { EventEmitter } from 'events';
 
 import ProductAPI from '../api/api-products';
 import ShipmentAPI from '../api/api-shipment';

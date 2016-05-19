@@ -3,7 +3,7 @@ import _ from 'lodash';
 
 const ShipmentAPI = {
 
-  count : 130,
+  count: 130,
 
   shipments: [],
 
@@ -42,16 +42,16 @@ const ShipmentAPI = {
     ]
 
     for (let i = 1; i < this.count; i++) {
-      let shipment = this._shipment(i);
+      const shipment = this._shipment(i);
       Object.assign(shipment, {
-        'state': AppConstants.SHIPMENT_STATE[Object.keys(AppConstants.SHIPMENT_STATE)[(i%5)]],
-        'dateCreated': new Date(),
-        'dateClosed': new Date(),
-        'dateSent': new Date(),
-        'dateEstimatedReception': new Date(),
-        'dateReceived': new Date(),
-        'origin': origins[i%6],
-        'samples': []
+        state: AppConstants.SHIPMENT_STATE[Object.keys(AppConstants.SHIPMENT_STATE)[(i % 5)]],
+        dateCreated: new Date(),
+        dateClosed: new Date(),
+        dateSent: new Date(),
+        dateEstimatedReception: new Date(),
+        dateReceived: new Date(),
+        origin: origins[i % 6],
+        samples: [],
       });
       this.shipments.push(shipment);
     }
@@ -79,7 +79,8 @@ const ShipmentAPI = {
   filter(criteria, value) {
     return this.shipments
       .filter(item => {
-        return _.get(item, criteria).toUpperCase().indexOf(value.toUpperCase())>-1});
+        return _.get(item, criteria).toUpperCase().indexOf(value.toUpperCase()) > -1
+      });
   },
 
   getById(id) {
