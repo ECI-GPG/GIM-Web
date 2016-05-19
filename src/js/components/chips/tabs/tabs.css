@@ -18,6 +18,10 @@
   align-items: center;
 }
 
+.tab:active {
+  font-size:1.4rem;
+}
+
 .tab > label {
   font-size: 1.4rem !important;
 }

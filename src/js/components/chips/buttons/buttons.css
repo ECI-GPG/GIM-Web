@@ -60,6 +60,7 @@
 .fab:active {
   background-color: #ff5a92;
   box-shadow: 0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
+  font-size: 8rem;
 }
 
 .fab:focus {
