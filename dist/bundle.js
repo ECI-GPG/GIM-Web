@@ -20134,9 +20134,9 @@
 
 	var _layout2 = _interopRequireDefault(_layout);
 
-	var _appShipmentInbox = __webpack_require__(256);
+	var _inbox = __webpack_require__(256);
 
-	var _appShipmentInbox2 = _interopRequireDefault(_appShipmentInbox);
+	var _inbox2 = _interopRequireDefault(_inbox);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20151,8 +20151,7 @@
 
 	var auth = {
 	  login: function login(email, pwd, callback) {
-	    console.log('LOGIN');
-	    if (email === 'jeroldan@gmail.comm') {
+	    if (email === 'jeroldan@gmail.com') {
 	      localStorage.token = Math.random().toString(36).substring(7);
 	      callback(true);
 	      this.onChange(true);
@@ -20233,11 +20232,11 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        _reactRouter.Router,
-	        { history: _reactRouter.browserHistory },
+	        null,
 	        _react2.default.createElement(
 	          _reactRouter.Route,
 	          { path: '/', component: LoginRequired },
-	          _react2.default.createElement(_reactRouter.IndexRoute, { component: _appShipmentInbox2.default })
+	          _react2.default.createElement(_reactRouter.IndexRoute, { component: _inbox2.default })
 	        )
 	      );
 	    }
@@ -26332,7 +26331,7 @@
 
 
 	// module
-	exports.push([module.id, ".tabbar {\n  min-height: 5rem;\n  display: flex;\n  background-color: #FFF;\n  margin-bottom: 1px;\n}\n\n.tab {\n  flex:1;\n  color: #000;\n  color: rgba(0, 0, 0, 0.65);\n  font-size: 1.3rem;\n  font-weight: 500;\n  text-transform: uppercase;\n  padding: 0 1.2rem 0 1.2rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.tab > label {\n  font-size: 1.4rem !important;\n}\n\n.tab.selected {\n  color: blue;\n  border-bottom: solid 2px blue;\n}\n", ""]);
+	exports.push([module.id, ".tabbar {\n  min-height: 5rem;\n  display: flex;\n  background-color: #FFF;\n  margin-bottom: 1px;\n}\n\n.tab {\n  flex:1;\n  color: #000;\n  color: rgba(0, 0, 0, 0.65);\n  font-size: 1.3rem;\n  font-weight: 500;\n  text-transform: uppercase;\n  padding: 0 1.2rem 0 1.2rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.tab:active {\n  font-size:1.4rem;\n}\n\n.tab > label {\n  font-size: 1.4rem !important;\n}\n\n.tab.selected {\n  color: blue;\n  border-bottom: solid 2px blue;\n}\n", ""]);
 
 	// exports
 
@@ -26466,7 +26465,7 @@
 	var Icon = function Icon(props) {
 	  return _react2.default.createElement(
 	    'div',
-	    { id: props.id, className: 'icon' },
+	    { id: props.id, className: 'icon ' + props.size },
 	    materialIcon(props.icon)
 	  );
 	};
@@ -27332,13 +27331,13 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var StepInfo = function StepInfo(_ref) {
+	var LineInfo = function LineInfo(_ref) {
 	  var icon = _ref.icon;
-	  var city = _ref.city;
-	  var date = _ref.date;
+	  var text = _ref.text;
+	  var info = _ref.info;
 	  return _react2.default.createElement(
 	    'div',
-	    { className: 'flex mui--text-dark-secondary' },
+	    { className: 'line-info flex mui--text-dark-secondary' },
 	    _react2.default.createElement(
 	      'span',
 	      { className: 'flex expand' },
@@ -27347,21 +27346,21 @@
 	        { className: 'material-icons md-18 mui--text-dark-hint' },
 	        icon
 	      ),
-	      ' ',
-	      city
+	      '  ',
+	      text
 	    ),
 	    _react2.default.createElement(
 	      'span',
 	      { className: 'mui--text-dark-secondary' },
-	      date.toLocaleDateString()
+	      info
 	    )
 	  );
 	};
 
-	StepInfo.propTypes = {
+	LineInfo.propTypes = {
 	  icon: _react2.default.PropTypes.string,
-	  city: _react2.default.PropTypes.string,
-	  date: _react2.default.PropTypes.string
+	  text: _react2.default.PropTypes.string,
+	  info: _react2.default.PropTypes.string
 	};
 
 	var ShipmentsInbox = function (_React$Component) {
@@ -27380,15 +27379,12 @@
 
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(ShipmentsInbox)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.handleTabChanged = function (tab) {
 	      _appActions2.default.send(_appConstants2.default.INBOX.SELECT_TAB, tab);
+	    }, _this.filterChanged = function (value) {
+	      _appActions2.default.send(_appConstants2.default.INBOX.FILTER_SHIPMENTS, value);
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
 	  _createClass(ShipmentsInbox, [{
-	    key: 'filterChanged',
-	    value: function filterChanged(value) {
-	      _appActions2.default.send(_appConstants2.default.INBOX.FILTER_SHIPMENTS, value);
-	    }
-	  }, {
 	    key: 'shipmentSelected',
 	    value: function shipmentSelected(id) {
 	      _appActions2.default.send(_appConstants2.default.INBOX.SELECT_SHIPMENT, id);
@@ -27401,29 +27397,32 @@
 	  }, {
 	    key: 'renderShipment',
 	    value: function renderShipment(shipment) {
+	      var departments = {
+	        'Compras': { initial: 'Co', color: '#EAA' },
+	        'Almacen': { initial: 'Al', color: '#AAE' },
+	        'Oficina Internacional': { initial: 'OI', color: '#AEA' },
+	        'Marketing': { initial: 'Ma', color: '#EEE' },
+	        'Centros': { initial: 'Ce', color: '#EE0' }
+	      };
+
+	      var color = departments[shipment.origin.department].color;
+	      var initial = departments[shipment.origin.department].initial;
 	      var icon = _react2.default.createElement(
 	        'i',
-	        { className: 'logo up' },
-	        shipment.origin.initial
+	        { className: 'logo up' + shipment.origin.color, style: { backgroundColor: color } },
+	        initial
 	      );
+	      var title = '' + shipment.origin.office;
 	      var selected = this.props.list.selected && this.props.list.selected === shipment.id ? "selected" : "unselected";
+
 	      return _react2.default.createElement(
 	        _list.ListItem,
-	        { id: shipment.id, icon: icon, title: shipment.origin.contact, onClick: this.shipmentSelected, selected: selected },
+	        { id: shipment.id, icon: icon, title: title, onClick: this.shipmentSelected, selected: selected },
 	        _react2.default.createElement(
 	          _reactRouter.Link,
 	          { to: 'inbox/shipments/' + shipment.id },
-	          _react2.default.createElement(StepInfo, { icon: 'keyboard_arrow_right', city: shipment.origin.city, date: shipment.dateSent }),
-	          _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement(
-	              'i',
-	              { className: 'material-icons md-18 mui--text-dark-secondary mui--text-dark-hint' },
-	              'more_vert'
-	            )
-	          ),
-	          _react2.default.createElement(StepInfo, { icon: 'keyboard_arrow_left', city: 'Madrid', date: shipment.dateReceived })
+	          _react2.default.createElement(LineInfo, { icon: 'location_city', text: shipment.origin.city, info: shipment.dateSent.toLocaleDateString() }),
+	          _react2.default.createElement(LineInfo, { icon: 'person', text: shipment.origin.contact, info: '' })
 	        )
 	      );
 	    }
@@ -27433,10 +27432,11 @@
 	      var filter = {
 	        value: this.props.filter.value,
 	        criteria: this.props.filter.criteria,
-	        options: [{ label: 'Contact', value: 'origin.contact' }, { label: 'Origin', value: 'origin.city' }, { label: 'Send Date', value: 'dateSent' }]
+	        options: [{ label: 'Department', value: 'origin.department' }, { label: 'Contact', value: 'origin.contact' }, { label: 'Origin', value: 'origin.city' }, { label: 'Send Date', value: 'dateSent' }]
 	      };
 
 	      var selectedClass = this.props.list.selected ? "selected" : "";
+
 	      return _react2.default.createElement(
 	        _page.Page,
 	        { title: 'Inbox', icon: 'move_to_inbox', toggleDrawer: this.props.toggleDrawer },
@@ -27505,12 +27505,10 @@
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 	var model = {
-	  tab: 'OPENED',
+	  tab: 'ALL',
 	  filter: { criteria: '', value: '' },
-	  list: {
-	    selected: null
-	  },
-	  shipments: _apiShipment2.default.getAllFilterByState('OPENED'),
+	  list: { selected: null },
+	  shipments: _apiShipment2.default.getAllFilterByState('ALL'),
 	  shipment: null
 	};
 
@@ -27519,20 +27517,25 @@
 
 	  return _ref = {}, _defineProperty(_ref, _appConstants2.default.INBOX.SELECT_TAB, function (action) {
 	    Object.assign(model, { tab: action.payload });
-	    var shipments = _apiShipment2.default.getAllFilterByState(model.tab, model.filter.criteria, model.filter.value);
-	    Object.assign(model, { shipments: shipments });
+	    var newShipments = [];
+	    if (model.tab === 'ALL') {
+	      newShipments = _apiShipment2.default.getAll();
+	    } else {
+	      newShipments = _apiShipment2.default.getAllFilterByState(model.tab, model.filter.criteria, model.filter.value);
+	    }
+	    Object.assign(model, { shipments: newShipments });
 	  }), _defineProperty(_ref, _appConstants2.default.INBOX.FILTER_SHIPMENTS, function (action) {
 	    Object.assign(model.filter, action.payload);
-	    var shipments = model.filter.value === "" || model.filter.criteria === "" ? _apiShipment2.default.getAllFilterByState(model.tab) : _apiShipment2.default.getAllFilterByState(model.tab, model.filter.criteria, model.filter.value);
+	    var shipments = _apiShipment2.default.getAllFilterByState(model.tab, model.filter.criteria, model.filter.value);
 	    Object.assign(model, { shipments: shipments });
 	  }), _defineProperty(_ref, _appConstants2.default.INBOX.SELECT_SHIPMENT, function (action) {
 	    Object.assign(model.list, { selected: action.payload });
 	    var shipment = _apiShipment2.default.getById(action.payload);
 	    var nextShipment = shipment === -1 ? null : shipment;
 	    model.shipment = nextShipment;
-	  }), _defineProperty(_ref, _appConstants2.default.INBOX.NEW_CHECKIN, function (action) {
-	    var shipment = _apiShipment2.default.create();
-	    Object.assign(model, { shipment: shipment });
+	  }), _defineProperty(_ref, _appConstants2.default.INBOX.NEW_CHECKIN, function () {
+	    var newShipment = _apiShipment2.default.create();
+	    Object.assign(model, { shipment: newShipment });
 	  }), _ref;
 	};
 
@@ -28276,8 +28279,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 	var ShipmentAPI = {
 
 	  count: 130,
@@ -28285,41 +28286,42 @@
 	  shipments: [],
 
 	  _shipment: function _shipment(id) {
-	    return _defineProperty({
-	      'id': 'Shipment' + id,
-	      'courrier': null,
-	      'orderId': null,
-	      'state': 'CLOSED',
-	      'dateCreated': null,
-	      'dateClosed': null,
-	      'dateSent': null,
-	      'dateEstimatedReception': null,
-	      'dateReceived': null,
-	      'origin': null,
-	      'samples': [],
-	      'observations': [],
-	      'agency': null,
-	      'issues': []
-	    }, 'origin', {
-	      'city': null,
-	      'contact': null
-	    });
+	    return {
+	      id: 'Shipment' + id,
+	      courrier: null,
+	      orderId: null,
+	      state: 'CLOSED',
+	      dateCreated: null,
+	      dateClosed: null,
+	      dateSent: null,
+	      dateEstimatedReception: null,
+	      dateReceived: null,
+	      samples: [],
+	      observations: [],
+	      agency: null,
+	      issues: [],
+	      origin: {
+	        department: null,
+	        office: null,
+	        city: null,
+	        contact: null
+	      }
+	    };
 	  },
 	  init: function init() {
-
-	    var origins = [{ initial: 'NY', city: 'New York', contact: 'Joan Kim' }, { initial: 'P', city: 'Paris', contact: 'Laurent Blanc' }, { initial: 'M', city: 'Milan', contact: 'Giovanni Vitale' }, { initial: 'B', city: 'Barcelona', contact: 'Xavier Tarradellas' }, { initial: 'L', city: 'London', contact: 'Elizabeth Holmes' }, { initial: 'T', city: 'Tokio', contact: 'Hatori Hanzo' }];
+	    var origins = [{ department: 'Compras', office: 'Tomas Breton', city: 'Madrid', contact: 'Pedro Castro' }, { department: 'Compras', office: 'Hermosilla', city: 'Madrid', contact: 'Pedro Castro' }, { department: 'Almacen', office: '050 Valdemoro', city: 'Madrid', contact: 'Pilar Barba' }, { department: 'Almacen', office: '090 Valdemoro', city: 'Madrid', contact: 'Pilar Barba' }, { department: 'Oficina Internacional', office: 'China', city: 'Pekin', contact: 'Marco Polo' }, { department: 'Oficina Internacional', office: 'New York', city: 'New York', contact: 'Paul Pierce' }, { department: 'Oficina Internacional', office: 'Bangladesh', city: 'Daca', contact: 'Adbul Hamid' }, { department: 'Oficina Internacional', office: 'Sri Lanka', city: 'Colombo', contact: 'Marco Polo' }, { department: 'Oficina Internacional', office: 'India', city: 'Nueva Delhi', contact: 'Arun Gupta' }, { department: 'Oficina Internacional', office: 'Marruecos', city: 'Rabat', contact: 'Ahmed Bouchra' }, { department: 'Marketing', office: 'Hermosilla', city: 'Madrid', contact: '' }, { department: 'Marketing', office: 'Lab. Promocional', city: 'Madrid', contact: 'Sonia Diaz' }, { department: 'Centros', office: '001 Preciados', city: 'Madrid', contact: '' }, { department: 'Centros', office: '006 Castellana', city: 'Madrid', contact: '' }, { department: 'Centros', office: '003 Goya', city: 'Madrid', contact: '' }];
 
 	    for (var i = 1; i < this.count; i++) {
 	      var shipment = this._shipment(i);
 	      Object.assign(shipment, {
-	        'state': _appConstants2.default.SHIPMENT_STATE[Object.keys(_appConstants2.default.SHIPMENT_STATE)[i % 5]],
-	        'dateCreated': new Date(),
-	        'dateClosed': new Date(),
-	        'dateSent': new Date(),
-	        'dateEstimatedReception': new Date(),
-	        'dateReceived': new Date(),
-	        'origin': origins[i % 6],
-	        'samples': []
+	        state: _appConstants2.default.SHIPMENT_STATE[Object.keys(_appConstants2.default.SHIPMENT_STATE)[i % 5]],
+	        dateCreated: new Date(),
+	        dateClosed: new Date(),
+	        dateSent: new Date(),
+	        dateEstimatedReception: new Date(),
+	        dateReceived: new Date(),
+	        origin: origins[i % 15],
+	        samples: []
 	      });
 	      this.shipments.push(shipment);
 	    }
@@ -28329,7 +28331,7 @@
 	  create: function create() {
 	    return this._shipment(this.count++);
 	  },
-	  getAll: function getAll() {
+	  getAll: function getAll(criteria, value) {
 	    return this.shipments.map(function (item) {
 	      return Object.assign({}, item);
 	    });
@@ -28337,7 +28339,7 @@
 	  getAllFilterByState: function getAllFilterByState(state, criteria, value) {
 	    var shipments = criteria ? this.filter(criteria, value) : this.shipments;
 	    return shipments.filter(function (item) {
-	      return item.state === state;
+	      return state === 'ALL' ? true : item.state === state;
 	    }).map(function (item) {
 	      return Object.assign({}, item);
 	    });

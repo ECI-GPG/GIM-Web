@@ -23,7 +23,6 @@ const LineInfo = ({ icon, text, info }) => (
   </div>
 );
 
-
 LineInfo.propTypes = {
   icon: React.PropTypes.string,
   text: React.PropTypes.string,
@@ -36,7 +35,7 @@ class ShipmentsInbox extends React.Component {
     AppActions.send(AppConstants.INBOX.SELECT_TAB, tab);
   }
 
-  filterChanged(value) {
+  filterChanged = (value) => {
     AppActions.send(AppConstants.INBOX.FILTER_SHIPMENTS, value);
   }
 
@@ -49,8 +48,6 @@ class ShipmentsInbox extends React.Component {
   }
 
   renderShipment(shipment) {
-
-
     const departments = {
       'Compras': { initial: 'Co', color: '#EAA'},
       'Almacen': { initial: 'Al', color: '#AAE'},
@@ -58,7 +55,7 @@ class ShipmentsInbox extends React.Component {
       'Marketing': { initial: 'Ma', color: '#EEE'},
       'Centros': { initial:'Ce', color: '#EE0'}
     }
-    console.log(shipment.origin.department)
+
     const color = departments[shipment.origin.department].color;
     const initial = departments[shipment.origin.department].initial;
     const icon = (<i className={`logo up${shipment.origin.color}`} style={{backgroundColor: color}}>{initial}</i>);

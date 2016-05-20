@@ -8,8 +8,8 @@ module.exports = {
   devServer: {
     inline: true,
     contentBase: './dist',
-    https: true,
-    host: '192.168.1.134',
+    //https: true,
+    //host: '192.168.1.134',
     port: 3333,
   },
   module: {

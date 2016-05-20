@@ -10,8 +10,7 @@ import Inbox from './pages/shipments/inbox';
 const auth = {
 
   login(email, pwd, callback) {
-    console.log('LOGIN');
-    if (email === 'jeroldan@gmail.comm') {
+    if (email === 'jeroldan@gmail.com') {
       localStorage.token = Math.random().toString(36).substring(7);
       callback(true);
       this.onChange(true);
@@ -63,7 +62,7 @@ class LoginRequired extends React.Component {
 class App extends React.Component {
   render() {
     return (
-      <Router history={browserHistory}>
+      <Router>
         <Route path="/" component={LoginRequired}>
           <IndexRoute component={Inbox} />
         </Route>

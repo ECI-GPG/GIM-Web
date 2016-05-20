@@ -76,16 +76,16 @@ const ShipmentAPI = {
     return this._shipment(this.count++);
   },
 
-  getAll() {
+  getAll(criteria, value) {
     return this.shipments.map(item => {
-      return Object.assign({}, item);
-    });
+        return Object.assign({}, item);
+      });
   },
 
   getAllFilterByState(state, criteria, value) {
     const shipments = criteria ? this.filter(criteria, value) : this.shipments;
     return shipments
-      .filter(item => item.state === state)
+      .filter(item => state === 'ALL' ? true : item.state === state)
         .map(item => Object.assign({}, item));
   },
 

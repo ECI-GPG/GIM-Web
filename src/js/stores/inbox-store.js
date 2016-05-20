@@ -3,10 +3,10 @@ import storeFactory from '../mixin/storeFactory';
 import Shipments from '../api/api-shipment';
 
 const model = {
-  tab: 'OPENED',
+  tab: 'ALL',
   filter: { criteria: '', value: '' },
   list: { selected: null },
-  shipments: Shipments.getAllFilterByState('OPENED'),
+  shipments: Shipments.getAllFilterByState('ALL'),
   shipment: null,
 };
 
@@ -26,10 +26,7 @@ const handlers = (model) => {
 
     [AppConstants.INBOX.FILTER_SHIPMENTS]: (action) => {
       Object.assign(model.filter, action.payload);
-      const shipments =
-        model.filter.value === "" || model.filter.criteria === "" ?
-          Shipments.getAllFilterByState(model.tab) :
-            Shipments.getAllFilterByState(model.tab, model.filter.criteria, model.filter.value);
+      const shipments = Shipments.getAllFilterByState(model.tab, model.filter.criteria, model.filter.value);
       Object.assign(model, { shipments: shipments});
     },
 
