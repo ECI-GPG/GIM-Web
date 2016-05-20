@@ -5,7 +5,7 @@ import './app.css';
 // Pages
 import Login from './pages/login/login';
 import Layout from './layout/layout';
-import Inbox from './pages/shipments/app-shipment-inbox';
+import Inbox from './pages/shipments/inbox';
 
 const auth = {
 

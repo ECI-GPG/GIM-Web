@@ -14,19 +14,20 @@ import ShipmentCheckinForm from './app-shipment-checkin-form';
 
 import './app-shipments.css';
 
-const StepInfo = ({ icon, city, date }) => (
-  <div className="flex mui--text-dark-secondary">
+const LineInfo = ({ icon, text, info }) => (
+  <div className="line-info flex mui--text-dark-secondary">
     <span className="flex expand">
-      <i className="material-icons md-18 mui--text-dark-hint">{icon}</i>&nbsp;{city}
+      <i className="material-icons md-18 mui--text-dark-hint">{icon}</i>&nbsp;&nbsp;{text}
     </span>
-    <span className="mui--text-dark-secondary">{date.toLocaleDateString()}</span>
+    <span className="mui--text-dark-secondary">{info}</span>
   </div>
 );
 
-StepInfo.propTypes = {
+
+LineInfo.propTypes = {
   icon: React.PropTypes.string,
-  city: React.PropTypes.string,
-  date: React.PropTypes.string,
+  text: React.PropTypes.string,
+  info: React.PropTypes.string,
 };
 
 class ShipmentsInbox extends React.Component {
@@ -48,14 +49,27 @@ class ShipmentsInbox extends React.Component {
   }
 
   renderShipment(shipment) {
-    let icon = (<i className="logo up">{shipment.origin.initial}</i>);
+
+
+    const departments = {
+      'Compras': { initial: 'Co', color: '#EAA'},
+      'Almacen': { initial: 'Al', color: '#AAE'},
+      'Oficina Internacional': { initial:'OI', color:'#AEA'},
+      'Marketing': { initial: 'Ma', color: '#EEE'},
+      'Centros': { initial:'Ce', color: '#EE0'}
+    }
+    console.log(shipment.origin.department)
+    const color = departments[shipment.origin.department].color;
+    const initial = departments[shipment.origin.department].initial;
+    const icon = (<i className={`logo up${shipment.origin.color}`} style={{backgroundColor: color}}>{initial}</i>);
+    const title = '' + shipment.origin.office;
     const selected = (this.props.list.selected && this.props.list.selected === shipment.id)? "selected" : "unselected";
+
     return (
-      <ListItem id={shipment.id} icon={icon} title={shipment.origin.contact} onClick={this.shipmentSelected} selected={selected}>
+      <ListItem id={shipment.id} icon={icon} title={title} onClick={this.shipmentSelected} selected={selected}>
         <Link to={`inbox/shipments/${shipment.id}`}>
-          <StepInfo icon="keyboard_arrow_right" city={shipment.origin.city} date={shipment.dateSent}/>
-          <div><i className="material-icons md-18 mui--text-dark-secondary mui--text-dark-hint">more_vert</i></div>
-          <StepInfo icon="keyboard_arrow_left" city="Madrid" date={shipment.dateReceived}/>
+         <LineInfo icon="location_city" text={shipment.origin.city} info={shipment.dateSent.toLocaleDateString()}/>
+          <LineInfo icon="person" text={shipment.origin.contact} info=""/>
         </Link>
       </ListItem>
     );
@@ -63,16 +77,18 @@ class ShipmentsInbox extends React.Component {
 
   render() {
     const filter = {
-      value : this.props.filter.value,
+      value: this.props.filter.value,
       criteria : this.props.filter.criteria,
-      options : [
-        { label: 'Contact', value: 'origin.contact'},
-        { label: 'Origin', value: 'origin.city'},
-        { label: 'Send Date', value: 'dateSent'}
-      ]
+      options: [
+        { label: 'Department', value: 'origin.department' },
+        { label: 'Contact', value: 'origin.contact' },
+        { label: 'Origin', value: 'origin.city' },
+        { label: 'Send Date', value: 'dateSent' },
+      ],
     }
 
     const selectedClass = this.props.list.selected ? "selected" : "";
+
     return (
       <Page title="Inbox" icon="move_to_inbox" toggleDrawer={this.props.toggleDrawer}>
         <div className="inbox">

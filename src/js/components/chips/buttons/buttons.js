@@ -7,7 +7,7 @@ const materialIcon = (icon) => (
 );
 
 const Icon = (props) => (
-  <div id={props.id} className="icon">
+  <div id={props.id} className={`icon ${props.size}`}>
     {materialIcon(props.icon)}
   </div>
 );

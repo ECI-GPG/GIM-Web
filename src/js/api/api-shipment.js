@@ -9,37 +9,50 @@ const ShipmentAPI = {
 
   _shipment(id) {
     return {
-      'id': 'Shipment' + id,
-      'courrier': null,
-      'orderId' : null,
-      'state': 'CLOSED',
-      'dateCreated': null,
-      'dateClosed': null,
-      'dateSent': null,
-      'dateEstimatedReception': null,
-      'dateReceived': null,
-      'origin': null,
-      'samples': [],
-      'observations':[],
-      'agency': null,
-      'issues':[],
-      'origin':{
-        'city':null,
-        'contact':null
-      }
-    }
+      id: 'Shipment' + id,
+      courrier: null,
+      orderId: null,
+      state: 'CLOSED',
+      dateCreated: null,
+      dateClosed: null,
+      dateSent: null,
+      dateEstimatedReception: null,
+      dateReceived: null,
+      samples: [],
+      observations: [],
+      agency: null,
+      issues: [],
+      origin: {
+        department: null,
+        office: null,
+        city: null,
+        contact: null,
+      },
+    };
   },
 
   init() {
+    const origins = [
+      { department: 'Compras', office: 'Tomas Breton', city: 'Madrid', contact: 'Pedro Castro' },
+      { department: 'Compras', office: 'Hermosilla', city: 'Madrid', contact: 'Pedro Castro' },
 
-    let origins = [
-      { initial:'NY', city : 'New York', contact : 'Joan Kim'},
-      { initial:'P' , city : 'Paris', contact : 'Laurent Blanc'},
-      { initial:'M' , city : 'Milan', contact : 'Giovanni Vitale'},
-      { initial:'B' , city : 'Barcelona', contact : 'Xavier Tarradellas'},
-      { initial:'L' , city : 'London', contact : 'Elizabeth Holmes'},
-      { initial:'T' , city : 'Tokio', contact : 'Hatori Hanzo'}
-    ]
+      { department: 'Almacen', office: '050 Valdemoro', city: 'Madrid', contact: 'Pilar Barba' },
+      { department: 'Almacen', office: '090 Valdemoro', city: 'Madrid', contact: 'Pilar Barba' },
+
+      { department: 'Oficina Internacional', office: 'China', city: 'Pekin', contact: 'Marco Polo' },
+      { department: 'Oficina Internacional', office: 'New York', city: 'New York', contact: 'Paul Pierce' },
+      { department: 'Oficina Internacional', office: 'Bangladesh', city: 'Daca', contact: 'Adbul Hamid' },
+      { department: 'Oficina Internacional', office: 'Sri Lanka', city: 'Colombo', contact: 'Marco Polo' },
+      { department: 'Oficina Internacional', office: 'India', city: 'Nueva Delhi', contact: 'Arun Gupta' },
+      { department: 'Oficina Internacional', office: 'Marruecos', city: 'Rabat', contact: 'Ahmed Bouchra' },
+
+      { department: 'Marketing', office: 'Hermosilla', city: 'Madrid', contact: '' },
+      { department: 'Marketing', office: 'Lab. Promocional', city: 'Madrid', contact: 'Sonia Diaz' },
+
+      { department: 'Centros', office: '001 Preciados', city: 'Madrid', contact: '' },
+      { department: 'Centros', office: '006 Castellana', city: 'Madrid', contact: '' },
+      { department: 'Centros', office: '003 Goya', city: 'Madrid', contact: '' },
+    ];
 
     for (let i = 1; i < this.count; i++) {
       const shipment = this._shipment(i);
@@ -50,13 +63,13 @@ const ShipmentAPI = {
         dateSent: new Date(),
         dateEstimatedReception: new Date(),
         dateReceived: new Date(),
-        origin: origins[i % 6],
+        origin: origins[i % 15],
         samples: [],
       });
       this.shipments.push(shipment);
     }
 
-    console.table(this.shipments)
+    console.table(this.shipments);
   },
 
   create() {
