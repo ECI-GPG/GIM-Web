@@ -11,8 +11,9 @@ const Tab = (props) => {
   const selectTab = () => {
     if (props.onMouseUp) props.onMouseUp(props.id);
   };
+
   return (
-    <label className={`tab ${activeClass}`} onMouseUp={selectTab}>
+    <label className={`tab secondary-text-color ${activeClass}`} onClick={selectTab}>
       {icon}<span>{props.label}</span>
     </label>
   );

@@ -1,29 +1,46 @@
 .icon {
   box-sizing: border-box;
-  padding: 0.2rem 0.6rem 0.3rem 0.6rem;
   width: 4.8rem;
   height: 4.8rem;
+  border: 0;
+  border-radius: 5rem;
+  padding: 1rem;
+  background: transparent;
+}
+
+.icon-button {
+  width: 4.8rem;
+  height: 4.8rem;
+  border: 0;
+  border-radius: 5rem;
+  padding: 1rem;
+  background-color: transparent;
+}
+
+.icon-button:focus {
+  outline: 0;
+}
+
+.icon-button:active {
+  background-color: #CCC;
+  background-color: rgba(200, 200, 200, 0.3);
+}
+
+.button {
+  box-sizing: border-box;
+  height: 4.8rem;
+  min-width: 8.8rem;
+  padding: 1rem;
+  border: 0;
+  border-radius: 0.2rem;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.button {
-  box-sizing: border-box;
-  width: 4.8rem;
-  height: 4.8rem;
-  border: 0;
-  padding: 0.2rem 0.6rem 0.3rem 0.6rem;
-  border-radius: 4rem;
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -o-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -webkit-transition: all 0.2s;
-  -webkit-transition-timming-function: ease-in-out;
-  transition: all 0.2s easy-in-out;
+.button:hover {
+  background-color: rgba(200, 200, 200, 0.2);
 }
 
 .button:focus {
@@ -31,35 +48,48 @@
 }
 
 .button:active {
-  background-color: #CCC;
-  background-color: rgba(200, 200, 200, 0.2);
+  background-color: rgba(200, 200, 200, 0.7);
+}
+
+.button.disabled {
+  color: #CCC;
+  color: rgba(200, 200, 200, 0.7);
+}
+
+.button.raised {
+  box-shadow: 0 2px 3px rgba(0,0,0,.19),0 1px 1px rgba(0,0,0,.23);
+}
+
+.button.raised:active {
+  box-shadow: 0 4px 6px rgba(0,0,0,.19),0 3px 3px rgba(0,0,0,.23);
 }
 
 .fab {
-  box-sizing: border-box;
+
+  color: #FFF;
+
+  width: 5.5rem;
+  height: 5.5rem;
+  border: 0;
+  border-radius: 5rem;
+
   position:absolute;
   bottom: 4rem;
   right: 4rem;
-  width: 5.5rem;
-  height: 5.5rem;
-  color: #FFF;
-  background-color: #FF4081;
-  border:solid 0;
-  border-radius: 4rem;
-  box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 2px rgba(0,0,0,.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -o-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -webkit-transition: all 0.2s;
-  -webkit-transition-timming-function: ease-in-out;
-  transition: all 0.2s easy-in-out;
+  z-index: 3000;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
+}
+
+.fab:hover {
+  width: 6rem;
+  height: 6rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
 }
 
 .fab:active {
-  background-color: #ff5a92;
-  box-shadow: 0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
+  background-color: #ff6aa2;
+  box-shadow: 0 10px 20px rgba(0,0,0,.39),0 6px 6px rgba(0,0,0,.43);
 }
 
 .fab:focus {

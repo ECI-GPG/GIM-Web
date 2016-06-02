@@ -3,7 +3,7 @@ import _ from 'lodash';
 
 const ShipmentAPI = {
 
-  count: 130,
+  count: 30,
 
   shipments: [],
 

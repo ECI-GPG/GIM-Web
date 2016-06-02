@@ -5,105 +5,40 @@ html {
 
 body {
   color: #FFF;
-  background-color: #000;
+  background-color: #FFF;
   font-size: 1.4rem;
-  font-family: 'Roboto', sans-serif !important;
-  text-rendering: geometricPrecision;
+  font-family: 'Roboto', sans-serif;
+  text-rendering:optimizeSpeed;
+  margin: 0;
 }
 
-a {
-  text-decoration:none;
+button {
+  color: #FFF;
 }
 
-a:focus {
-  text-decoration: none;
-}
+h1 { font-size: 2.25rem; margin: 0.5rem 0;}
+h2 { font-size: 1.75rem; margin: 0;}
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.875rem; }
+p  { font-size: 1rem; }
+small { font-size: 0.875rem; }
 
-a:hover {
-  text-decoration:none;
-}
+a       { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:hover { text-decoration: none; }
 
-.material-icons.md-12 {
-  font-size: 12px; }
+.hidden { display: none; }
 
-.material-icons.md-18 {
-  font-size: 18px; }
-.material-icons.md-24 {
-  font-size: 24px; }
-  .material-icons.md-32 {
-    font-size: 3rem; }
-.material-icons.md-36 {
-  font-size: 36px; }
-.material-icons.md-48 {
-  font-size: 48px; }
-.material-icons.md-dark {
-  color: rgba(0, 0, 0, 0.54); }
-.material-icons.md-dark.md-inactive {
-  color: rgba(0, 0, 0, 0.26); }
-.material-icons.md-light {
-  color: white; }
-.material-icons.md-light.md-inactive {
-  color: rgba(255, 255, 255, 0.3); }
+.flex      { display: flex; }
+.expand    { flex:1; }
+.center    { justify-content: center; }
+.centred   { align-items: center; }
+.up        { align-self: flex-start; }
+.right     { justify-content: flex-end;}
+.left      { justify-content: flex-start; }
+.justified { justify-content: space-between; }
+.vertical  { flex-direction: column; }
 
-
-  .card {
-    display : flex;
-    flex-direction:column;
-    min-height: 18rem;
-  }
-
-  .card > .header {
-    display:flex;
-  }
-
-  .logo {
-    padding: 12px;
-    margin-right:12px;
-    width:40px;
-    height:40px;
-    background: #FFF;
-    color: rgba(0, 0, 0, 0.8);
-    border-radius: 20px;
-    border : 1px solid #CCC;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .card > .header > .title {
-    flex:1;
-    display:flex;
-    flex-direction: column;
-  }
-
-  .card > .header > .title > .title1 {
-    margin-top: 2px;
-    font-size: 1.4rem;
-    font-weight: 600;
-  }
-
-  .card > .header > .title > .title2 {
-    font-size: 1.2rem;
-    font-weight: 400;
-  }
-
-  .card > .content {
-    flex:1;
-  }
-
-  .card > .actions {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-
-.mui-select {
-  color : rgba(0, 0, 0, 0.8);
-}
-
-
-.primary {
-  .color {
-    color:red;
-  }
-}
+.scrollable { overflow-y: auto; }

@@ -3,7 +3,7 @@ import './fields.css';
 
 const FieldGroup = (props) => (
   <div className="fieldgroup">
-    <div className="logo"><i className="material-icons">{props.icon}</i></div>
+    <div className="icon"><i className="material-icons">{props.icon}</i></div>
     <div className="fields">{props.children}</div>
   </div>
 );
@@ -36,9 +36,9 @@ class Field extends React.Component {
 }
 
 const Select = (props) => {
-  const options = props.options.map(option => (<option>{option}</option>));
+  const options = props.options.map(option => (<option>{option.label}</option>));
   return (
-    <div className="field mui-select">
+    <div className="field select mui-select">
       <select className="mui-select" value={props.value}>
         {options}
       </select>
@@ -47,8 +47,55 @@ const Select = (props) => {
 };
 
 Select.propTypes = {
-  options: React.PropTypes.array,
+  options: React.PropTypes.array.isRequired,
   value: React.PropTypes.string,
 };
 
-export { FieldGroup, Field, Select };
+const Checkbox = (props) => {
+  const checked = props.checked ? 'checked' : '';
+  const label = props.checkedLabel ? (props.checked ? props.checkedLabel : props.label) : props.label;
+  const handleChange = (event) => {
+    props.onChange(props.id, event.target.checked);
+  };
+  return (
+    <div className="field">
+      <div className="checkbox mui-checkbox">
+        <label>
+          <input id={props.id} type="checkbox" checked={checked} onClick={handleChange} />
+          {label}
+        </label>
+      </div>
+    </div>
+  );
+};
+
+Checkbox.propTypes = {
+  id: React.PropTypes.string,
+  label: React.PropTypes.string,
+  checked: React.PropTypes.bool,
+  checkedLabel: React.PropTypes.string,
+  onChange: React.PropTypes.func,
+};
+
+class Slider extends React.Component {
+
+  state = {
+    checked: true,
+  }
+
+  toggleSlider = () => {
+    this.setState({ checked: !this.state.checked });
+  }
+
+  render() {
+    const selectedClass = this.state.checked ? 'selected' : '';
+    return (
+      <div className={`slider ${selectedClass}`} onMouseUp={this.toggleSlider}>
+        <div className="slider-ball"></div>
+      </div>
+    );
+  }
+
+};
+
+export { FieldGroup, Field, Select, Checkbox, Slider };

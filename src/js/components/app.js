@@ -1,11 +1,13 @@
 import React from 'react';
 import { browserHistory, Router, Route, IndexRoute } from 'react-router';
+import { Tatami, Drawer, Container, Toolbar, Overlay } from './tatami/tatami';
+import Menu from './layout/app-menu';
 import './app.css';
+import './palette-indigo.css';
 
 // Pages
 import Login from './pages/login/login';
-import Layout from './layout/layout';
-import Inbox from './pages/shipments/inbox';
+import Inbox from './pages/shipments/shipments';
 
 const auth = {
 
@@ -21,7 +23,6 @@ const auth = {
   },
 
   loggedIn() {
-    console.log(!!localStorage.token)
     return !!localStorage.token;
   },
 
@@ -59,18 +60,26 @@ class LoginRequired extends React.Component {
   }
 }
 
-class App extends React.Component {
-  render() {
-    return (
-      <Router>
-        <Route path="/" component={LoginRequired}>
-          <IndexRoute component={Inbox} />
-        </Route>
-      </Router>
-    );
-  }
-}
+const Layout = (props) => (
+  <Tatami>
+    <Drawer><Menu /></Drawer>
+    <Container>{props.children}</Container>
+    <Toolbar>toolbar</Toolbar>
+    <Overlay />
+  </Tatami>
+);
 
+Layout.propTypes = {
+  children: React.PropTypes.node,
+};
+
+const App = () => (
+  <Router>
+    <Route path="/" component={LoginRequired}>
+      <IndexRoute component={Inbox} />
+    </Route>
+  </Router>
+);
 
 export default App;
 

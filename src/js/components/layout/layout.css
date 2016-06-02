@@ -53,7 +53,8 @@
 }
 
 .container > .page {
-  flex:1;
+  
+  height:100%;
 }
 
 .toolbar {

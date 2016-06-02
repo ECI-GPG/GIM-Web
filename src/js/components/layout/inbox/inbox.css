@@ -1,0 +1,71 @@
+.inbox {
+  overflow: hidden;
+  flex:1;
+  display: flex;
+}
+.inbox-list {
+  background-color: #FFF;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.inbox-list > .filter {
+  background-color: #FFF;
+  padding: 1rem;
+  min-height: 6rem;
+}
+.inbox-list > .filter > .select {
+  max-width: 6rem;
+  margin-left: 1rem;
+  margin-right: 2rem;
+}
+.inbox-list .fab {
+  position: absolute;
+  bottom: 2rem;
+}
+.inbox-viewer {
+  flex:1;
+  display:flex;
+}
+
+@media (max-width: 959px) {
+  .inbox-list {
+
+  }
+  .inbox-list.open {
+    display:flex;
+  }
+  .inbox-list .fab {
+    right: 2rem;
+  }
+  .inbox-viewer {
+    display: none;
+  }
+  .inbox-viewer.open {
+    display:flex;
+  }
+}
+
+@media (min-width: 960px) and (max-width:1279px) and (orientation: landscape) {
+  .inbox-list {
+    max-width: 40rem;
+    box-shadow: 2px -3px 2px 1px rgba(0,0,0,0.3);
+    z-index: 500;
+  }
+  .inbox-list .fab {
+    left: 40rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .inbox-list {
+    min-width: 40rem;
+    max-width: 40rem;
+    box-shadow: 2px -3px 2px 1px rgba(0,0,0,0.3);
+    z-index: 500;
+  }
+  .inbox-list .fab {
+    left: 58rem;
+  }
+}
