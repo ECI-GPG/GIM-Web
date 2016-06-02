@@ -11,6 +11,7 @@ import { Page } from '../../layout/page/page';
 import { Inbox, InboxList, InboxViewer } from '../../layout/inbox/inbox';
 import { Tabs, Tab } from '../../chips/tabs/tabs';
 import { List, ListItem } from '../../layout/list/list';
+import Filter from '../../chips/fields/filter';
 import ShipmentCheckinForm from './app-shipment-checkin-form';
 
 
@@ -74,8 +75,8 @@ class Shipments extends React.Component {
 
   render() {
     const filter = {
-      value: this.props.filter.value,
-      criteria : this.props.filter.criteria,
+      value: '',
+      criteria : '',
       options: [
         { label: 'Department', value: 'origin.department' },
         { label: 'Contact', value: 'origin.contact' },
@@ -93,7 +94,8 @@ class Shipments extends React.Component {
               <Tab id="OPENED" label="In Progress" active={this.props.tab === "OPENED"} />
               <Tab id="CLOSED" label="Done" active={this.props.tab === "CLOSED"} />
             </Tabs>
-            <List filter={filter} filtered={this.filterChanged}>
+            <Filter value={filter.value} options={filter.options} onChange={this.filterChanged}/>
+            <List>
               {this.props.shipments.map(this.renderShipment)}
             </List>
             <FAB icon="add" to="/inbox/checkin"/>

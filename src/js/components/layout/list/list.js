@@ -3,7 +3,7 @@ import { Icon, Button } from '../../chips/buttons/buttons';
 import './list.css';
 
 const Avatar = ({color, initial}) => (
-  <div className="flex center centred" style={{color:'#000', backgroundColor:color, borderRadius:'10rem', width:'3.6rem', height:'3.6rem'}}>
+  <div className="flex center centred" style={{color: '#000', backgroundColor: color, borderRadius: '10rem', width: '3.6rem', height: '3.6rem'}}>
     {initial}
   </div>
 );
@@ -36,7 +36,8 @@ const ListItem = ({ id, title, subtitle, info, icon, avatar, children, selected,
         <div className="title">{title}</div>
         <div className="subtitle">
           <span className="flex expand">{subtitle}</span>
-          <span>{info}</span></div>
+          <span>{info}</span>
+        </div>
         <div className="content">{children}</div>
       </div>
     </li>
