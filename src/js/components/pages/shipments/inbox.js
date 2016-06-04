@@ -1,9 +1,7 @@
 import React from 'react';
 
 import InboxStore from '../../../stores/inbox-store';
-import AppActions from '../../../actions/app-actions';
 import AppConstants from '../../../constants/app-constants';
-import StoreWatchMixin from '../../../mixin/storeWatchMixin0';
 
 import { FAB } from '../../chips/buttons/buttons';
 import { Link } from 'react-router';
@@ -12,7 +10,7 @@ import { Tabs, Tab } from '../../chips/tabs/tabs';
 import { List, ListItem } from '../../layout/list';
 import ShipmentCheckinForm from './app-shipment-checkin-form';
 
-import './app-shipments.css';
+import './app-shipments.css'; 
 
 const LineInfo = ({ icon, text, info }) => (
   <div className="line-info flex mui--text-dark-secondary">

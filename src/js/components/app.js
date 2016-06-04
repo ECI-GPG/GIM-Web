@@ -8,6 +8,9 @@ import './palette-indigo.css';
 // Pages
 import Login from './pages/login/login';
 import Inbox from './pages/shipments/shipments';
+import Products from './pages/products/products'; // refactor this page
+import Shipment from './pages/shipments/shipment';
+import ShipmentWizard from './pages/shipments/shipmentWizard';
 
 const auth = {
 
@@ -74,9 +77,12 @@ Layout.propTypes = {
 };
 
 const App = () => (
-  <Router>
+  <Router history={browserHistory}>
     <Route path="/" component={LoginRequired}>
-      <IndexRoute component={Inbox} />
+      <IndexRoute component={ShipmentWizard} />
+      <Route path="shipments/new" component={ShipmentWizard} />
+      <Route path="shipments/:id" component={Shipment} />
+      <Route path="products" component={Products} />
     </Route>
   </Router>
 );
@@ -88,7 +94,6 @@ export default App;
   <IndexRoute component={Inbox} />
   <Route path="inbox" component={Inbox} />
   <Route path="inbox/checkin" component={ShipmentCheckin} />
-  <Route path="products" component={Products} />
   <Route path="monitor" component={Monitor} />
   <Route path="outbox" component={Outbox} />
   <Route path="outbox/new" component={ShipmentCheckin} />

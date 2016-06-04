@@ -10,16 +10,7 @@
   display: flex;
   flex-direction: column;
 }
-.inbox-list > .filter {
-  background-color: #FFF;
-  padding: 1rem;
-  min-height: 6rem;
-}
-.inbox-list > .filter > .select {
-  max-width: 6rem;
-  margin-left: 1rem;
-  margin-right: 2rem;
-}
+
 .inbox-list .fab {
   position: absolute;
   bottom: 2rem;

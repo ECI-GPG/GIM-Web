@@ -5,7 +5,7 @@ import './header.css';
 
 const Header = (props) => {
   const goBack = () => { browserHistory.push(props.to); };
-  // const goSearch = () => { browserHistory.push('search'); };
+  const goSearch = () => { browserHistory.push('search'); };
   const logout = () => { delete localStorage.token; };
   const print = () => { browserHistory.push('print'); };
 
@@ -15,6 +15,7 @@ const Header = (props) => {
   const backButton = props.to ? <IconButton id="back-button" icon="arrow_back" onMouseUp={goBack} /> : '';
   const logoutButton = <IconButton id="logout-button" icon="exit_to_app" onMouseUp={logout} />;
   const printButton = <IconButton id="print-button" icon="print" onMouseUp={print} />;
+  const searchButton = props.search ? <IconButton id="search" icon="search" onMouseUp={goSearch} /> : '';
 
   return (
     <header className="header shadow-bottom">
@@ -22,6 +23,7 @@ const Header = (props) => {
       {backButton}
       {icon}
       <span className="title">{props.title}</span>
+      {searchButton}
       {printButton}
       {logoutButton}
     </header>

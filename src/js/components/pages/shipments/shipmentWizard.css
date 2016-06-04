@@ -1,0 +1,42 @@
+.wizard {
+  border:  red 2px;
+  flex:1;
+  display:flex;
+  flex-direction: column;
+}
+
+.wizard * {
+  border:  blue 1px;
+}
+
+.wizard .step {
+  color: #000;
+  background-color: #FFF;
+}
+
+.wizard .stepper {
+  background-color: #58AB81;
+}
+
+.wizard .step .button {
+  margin: 0 auto;
+  background-color: #58AB81;
+  margin-top: 10rem;
+  width: 40rem;
+}
+
+@media (max-width: 960px) {
+  .wizard .step {
+    flex:1;
+  }
+}
+
+@media (min-width: 960px) {
+  .wizard {
+    padding: 5%;
+  }
+  .wizard .step {
+    max-width: 200rem;
+    max-height: 200rem;
+  }
+}

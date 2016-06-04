@@ -1,0 +1,8 @@
+// TODO: navegacion a /shipment/:id
+
+Problemas entre react-router y flux:
+al navegar se monta la pagina destino
+pero tambien hay que hacer fetch de datos del store.
+Si lanzo una accion de flux se renderiza otra vez... ¿?¿?¿?
+
+Cambio a Redux/Relay...

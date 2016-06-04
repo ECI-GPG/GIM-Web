@@ -1,39 +1,27 @@
 import React from 'react';
+import { browserHistory, Link } from 'react-router';
 
-import InboxStore from '../../../stores/inbox-store';
-import AppActions from '../../../actions/app-actions';
-import AppConstants from '../../../constants/app-constants';
-import StoreWatchMixin from '../../../mixin/storeWatchMixin0';
+import store from '../../../stores/shipments-store';
 
+import Filter from '../../chips/fields/filter';
 import { FAB } from '../../chips/buttons/buttons';
-import { Link } from 'react-router';
 import { Page } from '../../layout/page/page';
-import { Inbox, InboxList, InboxViewer } from '../../layout/inbox/inbox';
 import { Tabs, Tab } from '../../chips/tabs/tabs';
 import { List, ListItem } from '../../layout/list/list';
-import Filter from '../../chips/fields/filter';
-import ShipmentCheckinForm from './app-shipment-checkin-form';
-
+import { Inbox, InboxList, InboxViewer } from '../../layout/inbox/inbox';
 
 class ShipmentListItem extends React.Component {
 
-  departments = {
-    Compras: { initial: 'Co', color: '#EAA' },
-    Almacen: { initial: 'Al', color: '#AAE' },
-    'Oficina Internacional': { initial:'OI', color:'#AEA' },
-    Marketing: { initial: 'Ma', color: '#EEE' },
-    Centros: { initial: 'Ce', color: '#EE0' },
-  }
-
   handleSelected = () => {
     this.props.onSelected(this.props.shipment.id);
+    browserHistory.push('/shipments/'+this.props.shipment.id);
   }
 
   render() {
     const shipment = this.props.shipment;
 
-    const color = this.departments[shipment.origin.department].color;
-    const initial = this.departments[shipment.origin.department].initial;
+    const color = store.departments[shipment.origin.department].color;
+    const initial = store.departments[shipment.origin.department].initial;
     const title = '' + shipment.origin.office;
     const selected = (this.props.selected === shipment.id)? "selected" : "unselected";
 
@@ -42,10 +30,10 @@ class ShipmentListItem extends React.Component {
         <Link to={`inbox/shipments/${shipment.id}`}>
           <div className="line-info flex centred secondary-text-color">
             <span className="flex centred expand">
-              <i className="material-icons small" style={{fontSize:'1.8rem'}}>location_city</i>
-              <span style={{alignSelf:'flex-end', marginRight:'1rem'}}>{shipment.origin.city}</span>
-              <i className="material-icons small" style={{fontSize:'1.8rem'}}>person</i>
-              <span style={{alignSelf:'flex-end'}}>{shipment.origin.contact}</span>
+              <i className="material-icons small" style={{fontSize:'1.8rem', marginBottom:'2px'}}>location_city</i>
+              <span style={{minWidth:'8rem',alignSelf:'flex-end', marginRight:'1rem'}}>{shipment.origin.city}</span>
+              <i className="material-icons small" style={{fontSize:'1.8rem', marginBottom:'2px'}}>person</i>
+              <span style={{minWidth:'8rem',alignSelf:'flex-end'}}>{shipment.origin.contact}</span>
             </span>
             <span>{shipment.dateCreated.toLocaleDateString()}</span>
           </div>
@@ -57,59 +45,64 @@ class ShipmentListItem extends React.Component {
 
 class Shipments extends React.Component {
 
-  handleTabChanged = (tab) => {
-    AppActions.send(AppConstants.INBOX.SELECT_TAB, tab);
+  defaultProps = {
+    tab: store.filter.tab,
+    filter: store.filter,
+    shipments: store.shipments,
   }
 
-  filterChanged = (value) => {
-    AppActions.send(AppConstants.INBOX.FILTER_SHIPMENTS, value);
+  state = {
+    tab: this.defaultProps.tab,
+    filter: this.defaultProps.filter,
+    shipments: this.defaultProps.shipments,
+    shipment: null,
+  }
+
+  handleTabChanged = (nextTab) => {
+    store.selectTab(nextTab, (model) => {
+      this.setState({ tab: nextTab, shipments: model.shipments });
+    });
+  }
+
+  handleFilterChanged = (nextFilter) => {
+    store.changeFilter(nextFilter, (model) => {
+      this.setState({ filter: model.filter, shipments: model.shipments });
+    });
   }
 
   shipmentSelected(id) {
-    AppActions.send(AppConstants.INBOX.SELECT_SHIPMENT, id);
+    alert(id);
   }
 
-  renderShipment = (shipment) => (
-    <ShipmentListItem shipment={shipment} selected={this.props.list.selected} onSelected={this.shipmentSelected}/>
-  );
+  renderShipment = (shipment) =>
+    <ShipmentListItem shipment={shipment} onSelected={this.shipmentSelected} />
 
   render() {
-    const filter = {
-      value: '',
-      criteria : '',
-      options: [
-        { label: 'Department', value: 'origin.department' },
-        { label: 'Contact', value: 'origin.contact' },
-        { label: 'Origin', value: 'origin.city' },
-        { label: 'Send Date', value: 'dateSent' },
-      ],
-    }
+
+    const listitems = this.state.shipments ?
+      this.state.shipments.map(this.renderShipment) : '';
+
+    const viewer = this.state.shipment ?
+      (<ShipmentCheckinForm shipment={this.state.shipment} onSave={this.unselect}/>) : '';
 
     return (
-      <Page title="SampleBook" icon="content_copy" toggleDrawer={this.props.toggleDrawer}>
+      <Page title="SampleBook" icon="content_copy" toggleDrawer={this.props.toggleDrawer} search="/search">
         <Inbox>
           <InboxList>
             <Tabs onChanged={this.handleTabChanged} className="shadow-bottom">
-              <Tab id="ALL" label="All" active={this.props.tab === "ALL"} />
-              <Tab id="OPENED" label="In Progress" active={this.props.tab === "OPENED"} />
-              <Tab id="CLOSED" label="Done" active={this.props.tab === "CLOSED"} />
+              <Tab id="ALL" label="All" active={this.state.tab === "ALL"} />
+              <Tab id="OPENED" label="In Progress" active={this.state.tab === "OPENED"} />
+              <Tab id="CLOSED" label="Done" active={this.state.tab === "CLOSED"} />
             </Tabs>
-            <Filter value={filter.value} options={filter.options} onChange={this.filterChanged}/>
-            <List>
-              {this.props.shipments.map(this.renderShipment)}
-            </List>
-            <FAB icon="add" to="/inbox/checkin"/>
+            <Filter filter={this.state.filter} options={store.selector} onChange={this.handleFilterChanged}/>
+            <List> {listitems} </List>
+            <FAB icon="add" to="/shipments/new"/>
           </InboxList>
-          <InboxViewer>
-            <ShipmentCheckinForm shipment={this.props.shipment} onSave={this.unselect}/>
-          </InboxViewer>
+          <InboxViewer> {viewer} </InboxViewer>
         </Inbox>
       </Page>
     );
   }
 }
 
-export default StoreWatchMixin(Shipments, InboxStore, (props) => {
-  const state = InboxStore.getState();
-  return state;
-});
+export default Shipments;

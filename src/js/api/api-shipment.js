@@ -77,15 +77,16 @@ const ShipmentAPI = {
   },
 
   getAll(criteria, value) {
+    console.log('get all')
     return this.shipments.map(item => {
         return Object.assign({}, item);
       });
   },
 
-  getAllFilterByState(state, criteria, value) {
+  getAllFilterByState({tab, criteria, value}) {
     const shipments = criteria ? this.filter(criteria, value) : this.shipments;
     return shipments
-      .filter(item => state === 'ALL' ? true : item.state === state)
+      .filter(item => tab === 'ALL' ? true : item.state === tab)
         .map(item => Object.assign({}, item));
   },
 

@@ -5,7 +5,6 @@ const ProductsAPI = {
   products: [],
 
   init() {
-    console.log('loading products');
     for (let i = 1; i < 30; i++) {
       this.products.push({
         'id': 'P' + i,
