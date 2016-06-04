@@ -67,33 +67,36 @@ class ShipmentWizard extends React.Component {
 
   steps = {
     1: <div className="flex vertical expand center" style={{minHeight:'60rem', padding:'2rem 0'}}>
-      <center><h1>Identificación</h1></center>
-      <br />
+      <h2>Identificación</h2>
       <div style={{flex:'10'}}>
         {identificationForm()}
       </div>
     </div>,
     2: <div className="flex vertical expand center" style={{minHeight:'60rem', padding:'2rem 0'}}>
+        <h4>Identificacion</h4>
         {identificationForm()}
-      <center><h1>Origen</h1></center>
-      <br />
+      <h2>Origen</h2>
       <div style={{flex:'10'}}>
         {originForm()}
       </div>
     </div>,
     3: <div className="flex vertical expand center" style={{minHeight:'60rem', padding:'2rem 0'}}>
+      <h4>Identificacion</h4>
       {identificationForm()}
+      <h4>Origen</h4>
       {originForm()}
-      <center><h1>Recepción</h1></center>
-      <br />
+      <h2>Recepción</h2>
       <div style={{flex:'10'}}>
         {receptionForm()}
       </div>
     </div>,
     4: <div className="flex vertical expand center" style={{minHeight:'60rem', padding:'2rem 0'}}>
       <div style={{flex:'10'}}>
+        <h4>Identificación</h4>
         {identificationForm()}
+        <h4>Origen</h4>
         {originForm()}
+        <h4>Recapción</h4>
         {receptionForm()}
         <Button classes="raised" label="OK" />
       </div>

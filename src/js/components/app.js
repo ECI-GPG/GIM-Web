@@ -79,7 +79,7 @@ Layout.propTypes = {
 const App = () => (
   <Router history={browserHistory}>
     <Route path="/" component={LoginRequired}>
-      <IndexRoute component={ShipmentWizard} />
+      <IndexRoute component={Inbox} />
       <Route path="shipments/new" component={ShipmentWizard} />
       <Route path="shipments/:id" component={Shipment} />
       <Route path="products" component={Products} />
