@@ -1,8 +1,34 @@
 import Shipments from '../api/api-shipment';
 
+const newShipment = () => {
+  return {
+    id: '',
+    courrier: '',
+    orderId: '',
+
+    deptno: '',
+    center: '',
+    city: '',
+    contact: '',
+
+    agency: '',
+    sendDate: '',
+
+    receptionDate: '',
+    registryDate: '',
+
+    samples: [],
+
+    changeField(field, value, cb) {
+      Object.assign(this, { [field]: value });
+      if (cb) cb(this);
+    }
+  };
+};
+
 const ShipmentsStore = {
 
-  departments : {
+  departments: {
     Compras: { initial: 'Co', color: '#EAA' },
     Almacen: { initial: 'Al', color: '#AAE' },
     'Oficina Internacional': { initial:'OI', color:'#AEA' },
@@ -10,7 +36,7 @@ const ShipmentsStore = {
     Centros: { initial: 'Ce', color: '#EE0' },
   },
 
-  selector : [
+  selector: [
     { label: '...', value: '', disabled: true },
     { label: 'Department', value: 'origin.department' },
     { label: 'Contact', value: 'origin.contact' },
@@ -20,15 +46,24 @@ const ShipmentsStore = {
 
   shipments: [],
   shipment: null,
+  shipmentTab: 'FILE',
+  newShipment: newShipment(),
   filter: {
     tab: 'ALL',
     criteria: '',
     value: '',
   },
 
+
+
   selectTab(tab, cb) {
     this.filter.tab = tab;
     this.reloadShipments(cb);
+  },
+
+  selectShipmentTab(tab, cb) {
+    this.shipmentTab = tab;
+    cb();
   },
 
   changeFilter(newFilter, cb) {
@@ -41,6 +76,13 @@ const ShipmentsStore = {
     if (cb)
       cb(this);
   },
+
+  selectShipment (id, cb) {
+    this.shipment = Shipments.getById(id);
+    console.log(this.shipment);
+    if (cb)
+      cb(this.shipment);
+  }
 };
 
 ShipmentsStore.reloadShipments();

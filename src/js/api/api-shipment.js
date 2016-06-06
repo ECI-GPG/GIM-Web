@@ -27,7 +27,7 @@ const ShipmentAPI = {
         office: null,
         city: null,
         contact: null,
-      },
+      }
     };
   },
 
@@ -66,6 +66,16 @@ const ShipmentAPI = {
         origin: origins[i % 15],
         samples: [],
       });
+
+      for (let j= 1; j < 6; j++) {
+        shipment.samples.push({
+          'id': 'P' + j,
+          'title' : 'EASY WEAR',
+          'description' : 'Camiseta de mujer Easy Wear con encaje y canesu',
+          'image' : '/img/products/producto'+ ((j % 4)+1) +'.jpg',
+        });
+      }
+
       this.shipments.push(shipment);
     }
 

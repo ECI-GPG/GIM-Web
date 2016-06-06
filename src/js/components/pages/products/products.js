@@ -1,14 +1,23 @@
 import React from 'react';
-import productStore from '../../../stores/products-store';
+import store from '../../../stores/products-store';
 import { Page } from '../../layout/page/page';
-import { List } from '../../layout/list/list';
+import { Grid, GridItem } from '../../layout/grid/grid';
+import { Inbox, InboxList, InboxViewer } from '../../layout/inbox/inbox';
+import { CheckButton } from '../../chips/buttons/buttons';
+import { FieldGroup, Fiels } from '../../chips/fields/fields';
+
+
 import './products.css';
 
-const ProductListItem = (props) => (
-  <div className="product">
-    product
-  </div>
-);
+const ProductGridItem = (props) => {
+  const product = props.product;
+  const title = product.title;
+  return (
+    <GridItem id={product.id} title={title} subtitle={product.description} image={product.image}>
+
+    </GridItem>
+  );
+}
 
 class Products extends React.Component {
 
@@ -17,14 +26,34 @@ class Products extends React.Component {
     toggleDrawer: React.PropTypes.func,
   }
 
+  defaultProps = {
+    products: store.products,
+  }
+
+  state = {
+    products: this.defaultProps.products,
+  }
+
   renderProduct = (product) => (
-    <ProductListItem product={product} />
+    <ProductGridItem product={product} />
   );
 
   render() {
     return (
-      <Page title="Products" icon="local_offer" toggleDrawer={this.props.toggleDrawer}>
-        <List>{this.props.products.map(this.renderProduct)}</List>
+      <Page title="Productos" icon="local_offer" >
+        <Inbox>
+          <InboxList>
+            <FieldGroup>
+              <div className="field">
+                <label>Criterio 1</label>
+                <CheckButton id="c1" />
+              </div>
+            </FieldGroup>
+          </InboxList>
+          <InboxViewer>
+            <Grid> {this.state.products.map(this.renderProduct)} </Grid>
+          </InboxViewer>
+        </Inbox>
       </Page>
     );
   }

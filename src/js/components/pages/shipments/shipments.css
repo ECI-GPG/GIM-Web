@@ -1,0 +1,7 @@
+.inbox-viewer .header {
+  display: none;
+}
+
+.inbox-viewer .page .body {
+  margin-top: 0;
+}

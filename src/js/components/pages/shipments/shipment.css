@@ -1,0 +1,27 @@
+.shipment {
+  display: flex;
+  flex-direction: column;
+  color: #000;
+  margin: 2rem;
+}
+
+.shipment * {
+  border:  blue 1px;
+}
+
+.shipment h2 {
+  margin: 0 1rem 1rem 7.2rem;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.shipment h3 {
+  font-weight: 500;
+  margin: 0 1rem 0 2.2rem;
+  color: rgba(100, 100, 100, 1);
+}
+
+.shipment p {
+  font-size: 1.4rem;
+  margin: 0 1rem 0 2.2rem;
+}

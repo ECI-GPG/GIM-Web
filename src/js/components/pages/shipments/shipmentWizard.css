@@ -1,5 +1,4 @@
 .wizard {
-  border:  red 2px;
   flex:1;
   display:flex;
   flex-direction: column;
@@ -27,14 +26,15 @@
 }
 
 .wizard .stepper {
-  background-color: #58AB81;
+  border-top: solid 1px #C5CAE9;
 }
 
 .wizard .step .button {
   margin: 0 auto;
-  background-color: #58AB81;
-  margin-top: 10rem;
-  width: 40rem;
+  margin-top: 2rem;
+  width: 20rem;
+  color: #FFF;
+  background-color: #FF4081;
 }
 
 @media (max-width: 960px) {

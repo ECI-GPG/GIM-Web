@@ -11,7 +11,7 @@ import Inbox from './pages/shipments/shipments';
 import Products from './pages/products/products'; // refactor this page
 import Shipment from './pages/shipments/shipment';
 import ShipmentWizard from './pages/shipments/shipmentWizard';
-
+import PhotoBoot from './pages/media0/photoupload';
 const auth = {
 
   login(email, pwd, callback) {
@@ -79,9 +79,11 @@ Layout.propTypes = {
 const App = () => (
   <Router history={browserHistory}>
     <Route path="/" component={LoginRequired}>
-      <IndexRoute component={Inbox} />
+      <IndexRoute component={Products} />
+      <Route path="shipments" component={Inbox} />
       <Route path="shipments/new" component={ShipmentWizard} />
       <Route path="shipments/:id" component={Shipment} />
+      <Route path="shipments/:id/samples" component={PhotoBoot} />
       <Route path="products" component={Products} />
     </Route>
   </Router>

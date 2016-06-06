@@ -5,8 +5,8 @@ import {Link} from 'react-router';
 const options = [
 
   { type: 'divider', txt : 'Central Store'},
-  { type: 'menu-item', txt : 'Inbox', to:'/inbox', icon:'move_to_inbox'},
   { type: 'menu-item', txt : 'Products', to:'/products', icon:'local_offer'},
+  { type: 'menu-item', txt : 'Inbox', to:'/shipments', icon:'move_to_inbox'},
 /*
   { type: 'divider', txt : 'International Office'},
   { type: 'menu-item', txt : 'Monitor', to:'monitor', icon: 'send'},
