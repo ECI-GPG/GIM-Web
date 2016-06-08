@@ -2,8 +2,7 @@ import React from 'react';
 import { browserHistory, Router, Route, IndexRoute } from 'react-router';
 import { Tatami, Drawer, Container, Toolbar, Overlay } from './tatami/tatami';
 import Menu from './layout/app-menu';
-import './app.css';
-import './palette-indigo.css';
+import './app.scss';
 
 // Pages
 import Login from './pages/login/login';

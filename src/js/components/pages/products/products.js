@@ -40,20 +40,11 @@ class Products extends React.Component {
 
   render() {
     return (
-      <Page title="Productos" icon="local_offer" >
-        <Inbox>
-          <InboxList>
-            <FieldGroup>
-              <div className="field">
-                <label>Criterio 1</label>
-                <CheckButton id="c1" />
-              </div>
-            </FieldGroup>
-          </InboxList>
-          <InboxViewer>
-            <Grid> {this.state.products.map(this.renderProduct)} </Grid>
-          </InboxViewer>
-        </Inbox>
+      <Page title="Productos" icon="local_offer" toggleDrawer={this.props.toggleDrawer}>
+        
+        <Grid> {this.state.products.map(this.renderProduct)} </Grid>
+           
+
       </Page>
     );
   }

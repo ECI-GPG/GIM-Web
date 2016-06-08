@@ -1,3 +1,5 @@
+@import 'palette-indigo.scss';
+
 html {
   font-size:62.5%;
   box-sizing: border-box;
@@ -5,7 +7,6 @@ html {
 
 body {
   color: #FFF;
-  background-color: #FFF;
   font-size: 1.4rem;
   font-family: 'Roboto', sans-serif;
   text-rendering:optimizeSpeed;

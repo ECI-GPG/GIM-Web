@@ -90,9 +90,9 @@ class Shipments extends React.Component {
         <Inbox>
           <InboxList>
             <Tabs onChanged={this.handleTabChanged} className="shadow-bottom">
-              <Tab id="ALL" label="All" active={this.state.tab === "ALL"} />
-              <Tab id="OPENED" label="In Progress" active={this.state.tab === "OPENED"} />
-              <Tab id="CLOSED" label="Done" active={this.state.tab === "CLOSED"} />
+              <Tab id="ALL" label="Todos" active={this.state.tab === "ALL"} />
+              <Tab id="OPENED" label="Abiertos" active={this.state.tab === "OPENED"} />
+              <Tab id="CLOSED" label="Cerrados" active={this.state.tab === "CLOSED"} />
             </Tabs>
             <Filter filter={this.state.filter} options={store.selector} onChange={this.handleFilterChanged}/>
             <List> {listitems} </List>
